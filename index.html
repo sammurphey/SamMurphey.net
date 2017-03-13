@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"xml:lang="en"lang="en">
+<head>
+	<title>Sam Murphey</title>
+	<meta http-equiv="Content-Type"content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible"content="IE=edge">
+	<meta name="viewport"content="width=device-width,minimum-scale=1,initial-scale=1">
+	<meta name="description"content="I'm a web developer and digital designer, with a passion for merging art and code.">
+	<meta name="keywords"content="web developer, interaction designer, internet, progressive web apps, websites, design, los angeles">
+	<meta name="robots"content="NOINDEX NOFOLLOW">
+	<meta name="version"content="7.0">
+	<meta name="creation_date"content="2/27/2017">
+	<meta name="author"content="Sam Murphey">
+	<meta name="language"content="en">
+	<link rel="alternate"href="http://sammurphey.net/index.html"hreflang="x-default">
+	<link rel="alternate"href="http://sammurphey.net/index.html"hreflang="en">
+	<link rel="cannonical"href="http://sammurphey.net/">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png?v=69k0MXwqb9">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png?v=69k0MXwqb9" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png?v=69k0MXwqb9" sizes="16x16">
+	<link rel="manifest" href="/manifest.json?v=69k0MXwqb9">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg?v=69k0MXwqb9" color="#000000">
+	<link rel="shortcut icon" href="/favicon.ico?v=69k0MXwqb9">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="theme-color" content="#ffffff">
+	<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-93371306-1','auto');ga('send','pageview');</script>
+	<style>
+		html{
+			height:100%
+		}
+		body{
+			align-items:center;
+			box-sizing:border-box;
+			color:#000;
+			cursor:default;
+			display:flex;
+			flex-direction:column;
+			font-family:monospace;
+			margin:0;
+			min-height:100%;
+			-webkit-tap-highlight-color:transparent;
+			-webkit-touch-callout:none;
+			-webkit-user-select:none;
+			-moz-user-select:none;
+			-ms-user-select:none;
+			user-select:none
+		}
+		*{
+			box-sizing:inherit;
+			cursor:inherit;
+			-webkit-transition-duration:.2s;
+			transition-duration:.2s;
+			-webkit-transition-property:none;
+			transition-property:none;
+			-webkit-transition-timing-function:cubic-bezier(.4,0,.2,1);
+			transition-timing-function:cubic-bezier(.4,0,.2,1)
+		}
+		a{
+			cursor: pointer;
+			text-decoration:none
+		}
+		#header {
+			padding: 32px 0;
+		}
+		#wrap, #nowrap {
+			max-width: calc(100% - 32px);
+		}
+		#wrap {
+			display: block;
+		}
+		#nowrap {
+			display: none;
+		}
+		#main {
+			width: calc(100% - 32px);
+		}
+		#intro a {
+			color: #000;
+			cursor: alias;
+			text-decoration: underline;
+		}
+		#projects {
+			padding: 32px 0;
+		}
+		.flex {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.flex a {
+			background-color: #ccc;
+			background-size: cover;
+			border: 2px solid #000;
+			margin-bottom: 64px;
+			opacity: 1;
+			width: 100%;
+		}
+		.flex a:active,
+		.flex a:focus,
+		.flex a:hover {
+			opacity: 0.75
+		}
+		.flex p {
+			display: flex;
+			font-size: 18px;
+			justify-content: center;
+			margin: 20% 0;
+			text-align: center;
+			width: 100%;
+		}
+		.flex p span {
+			background: #000;
+			color: #FFF;
+		}
+		#mdi {
+			background-image: url("http://sammurphey.net/img/mdi_web/2.jpg");
+		}
+		#mdi_admin {
+			background-image: url("http://sammurphey.net/img/mdi_admin/2.jpg");
+			background-position: center -84%;
+			background-size: 200%;
+		}
+		#order_confirmations {
+			background-image: url("http://sammurphey.net/img/order_confirmations/3.png");
+			background-position: center 16%;
+			background-size: 140%;
+		}
+		#becreative360 {
+			background-image: url("http://sammurphey.net/img/becreative360/1.png");
+			background-size: 130%;
+			background-position: 92% 64%;
+		}
+
+		@media(min-width: 600px) {
+			#wrap {
+				display: none;
+			}
+			#nowrap {
+				display: block;
+			}
+			.flex a {
+				width: calc(50% - 16px);
+			}
+		}
+		@media(min-width: 768px) {
+			#main {
+				width: calc(100% - 112px);
+			}
+		}
+		@media(min-width: 900px) {
+			#main {
+				width: 800px;
+			}
+		}
+		@media(min-width: 1400px) {
+			#main {
+				width: 1200px;
+			}
+		}
+	</style>
+</head>
+<body id="body">
+	<header id="header">
+		<a id="name" href="http://sammurphey.net">
+			<img id="wrap" src="http://sammurphey.net/img/name/wrap.jpg" alt="Sam Murphey">
+			<img id ="nowrap" src="http://sammurphey.net/img/name/nowrap.jpg" alt="Sam Murphey">
+		</a>
+	</header>
+	<main id="main">
+		<article>
+			<section id="intro">
+				<p>I'm a web developer and digital designer, with a passion for merging art and code. <br/><br/>When I create a website, I'm interested in creating a full immersive experience that really connects with people. I am passionate about animation, studying new web design trends, and producing work that I'm proud of. I love to focus on designing engaging user experiences to deliver a product that looks great, feels welcoming, and works flawlessly. <br/><br/>I've pursued my interest in programming since early childhood, and successfully started my freelance business while still in high school. I currently live in the San Fernando Valley.<br/><br/><a href="https://codepen.io/sammurphey/"rel="noopener"target="blank">Codepen</a> <a href="https://codepen.io/sammurphey/"rel="noopener"target="blank">GitHub</a> <a href="http://stackoverflow.com/users/2719504/sam-murphey"rel="noopener"target="blank">Stack Overflow</a> <a href="https://twitter.com/weirdoonthebus/"rel="noopener"target="blank">Twitter</a> <a href="https://ello.co/sammurphey"rel="noopener"target="blank">Ello</a></p>
+			</section>
+			<section id="projects">
+				<h2>Projects</h2>
+				<div class="flex">
+				<a id="mdi" href="http://sammurphey.net/projects/master-demolition-inc/">
+					<p><span>Master Demolition Inc.</span></p>
+				</a>
+				<a id="mdi_admin" href="http://sammurphey.net/projects/mdi-admin/">
+					<p><span>Mdi Admin</span></p>
+				</a>
+				<a id="order_confirmations" href="http://sammurphey.net/projects/order-confirmations/">
+					<p><span>Order Confirmations</span></p>
+				</a>
+				<a id="becreative360" href="http://sammurphey.net/projects/becreative360">
+					<p><span>BeCreative360</span></p>
+				</a>
+			</div>
+			</section>
+		</article>
+	</main>
+</body>
+</html>
