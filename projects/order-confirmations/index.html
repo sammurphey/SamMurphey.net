@@ -1,121 +1,124 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"xml:lang="en"lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Order Confirmations by Sam Murphey</title>
-	<meta http-equiv="Content-Type"content="text/html;charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible"content="IE=edge">
-	<meta name="viewport"content="width=device-width,minimum-scale=1,initial-scale=1">
-	<meta name="description"content="Case study of my web development work for Local Trash Hauling's order confirmation web app.">
-	<meta name="keywords"content="web developer, interaction designer, internet, progressive web apps, websites, design, los angeles">
-	<meta name="robots"content="NOINDEX NOFOLLOW">
-	<meta name="version"content="7.0">
-	<meta name="creation_date"content="2/27/2017">
-	<meta name="author"content="Sam Murphey">
-	<meta name="language"content="en">
-	<link rel="alternate"href="http://sammurphey.net/projects/order-confirmations/index.html"hreflang="x-default">
-	<link rel="alternate"href="http://sammurphey.net/projects/order-confirmations/index.html"hreflang="en">
-	<link rel="cannonical"href="http://sammurphey.net/projects/order-confirmations/">
-	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png?v=69k0MXwqb9">
-	<link rel="icon" type="image/png" href="/favicon-32x32.png?v=69k0MXwqb9" sizes="32x32">
-	<link rel="icon" type="image/png" href="/favicon-16x16.png?v=69k0MXwqb9" sizes="16x16">
-	<link rel="manifest" href="/manifest.json?v=69k0MXwqb9">
-	<link rel="shortcut icon" href="/favicon.ico?v=69k0MXwqb9">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg?v=69k0MXwqb9" color="#000000">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+	<meta name="description" content="Case study of my web development work for Local Trash Hauling's order confirmation web app.">
+	<meta name="keywords" content="web developer, interaction designer, internet, progressive web apps, websites, design, los angeles">
+	<meta name="robots" content="INDEX FOLLOW">
+	<meta name="version" content="7.01">
+	<meta name="creation_date" content="01/08/2017">
+	<meta name="author" content="Sam Murphey">
+	<meta name="language" content="en">
+	<link rel="alternate" href="https://sammurphey.net/projects/order-confirmations/index.html" hreflang="x-default">
+	<link rel="alternate "href="https://sammurphey.net/projects/order-confirmations/index.html" hreflang="en">
+	<link rel="cannonical" href="https://sammurphey.net/projects/order-confirmations">
+	<link rel="apple-touch-icon" sizes="76x76" href="https://sammurphey.net/apple-touch-icon.png?v=69k0MXwqb9">
+	<link rel="icon" type="image/png" href="https://sammurphey.net/favicon-32x32.png?v=69k0MXwqb9" sizes="32x32">
+	<link rel="icon" type="image/png" href="https://sammurphey.net/favicon-16x16.png?v=69k0MXwqb9" sizes="16x16">
+	<link rel="manifest" href="https://sammurphey.net/manifest.json?v=69k0MXwqb9">
+	<link rel="mask-icon" href="https://sammurphey.net/safari-pinned-tab.svg?v=69k0MXwqb9" color="#000000">
+	<link rel="shortcut icon" href="https://sammurphey.net/favicon.ico?v=69k0MXwqb9">
 	<meta name="msapplication-TileColor" content="#000000">
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="#FFFFFF">
 	<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-93371306-1','auto');ga('send','pageview');</script>
 	<style>
-		html{
-			height:100%
+		html {
+			height: 100%
 		}
-		body{
-			align-items:center;
-			box-sizing:border-box;
+		body {
+			align-items: center;
+			box-sizing: border-box;
 			color: #000;
-			cursor:default;
-			display:flex;
-			flex-direction:column;
-			font-family:monospace;
-			margin:0;
-			min-height:100%;
-			-webkit-tap-highlight-color:transparent;
-			-webkit-touch-callout:none;
-			-webkit-user-select:none;
-			-moz-user-select:none;
-			-ms-user-select:none;
-			user-select:none
+			cursor: default;
+			display: flex;
+			flex-direction: column;
+			font-family: monospace;
+			margin: 0;
+			min-height: 100%;
+			-webkit-tap-highlight-color: transparent;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none
 		}
-		*{
-			box-sizing:inherit;
-			cursor:inherit;
-			-webkit-transition-duration:.2s;
-			transition-duration:.2s;
-			-webkit-transition-property:none;
-			transition-property:none;
-			-webkit-transition-timing-function:cubic-bezier(.4,0,.2,1);
-			transition-timing-function:cubic-bezier(.4,0,.2,1)
+		* {
+			box-sizing: inherit;
+			cursor: inherit;
+			-webkit-transition-duration: .2s;
+			transition-duration: .2s;
+			-webkit-transition-property: none;
+			transition-property: none;
+			-webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+			transition-timing-function: cubic-bezier(.4, 0, .2, 1)
 		}
-		a{
+		a {
 			cursor: pointer;
-			text-decoration:none
+			text-decoration: none
 		}
 		#header {
-			padding: 32px 0;
+			padding: 32px 0
 		}
 		#wrap, #nowrap {
-			max-width: calc(100% - 32px);
+			max-width: calc(100% - 32px)
 		}
 		#wrap {
-			display: block;
+			display: block
 		}
 		#nowrap {
-			display: none;
+			display: none
 		}
 		#main {
 			margin-bottom: 28px;
-			width: calc(100% - 32px);
+			width: calc(100% - 32px)
 		}
 		@media(min-width: 600px) {
 			#wrap {
-				display: none;
+				display: none
 			}
 			#nowrap {
-				display: block;
+				display: block
 			}
 		}
 		@media(min-width: 768px) {
 			#main {
-				width: calc(100% - 112px);
+				width: calc(100% - 112px)
 			}
 		}
 		@media(min-width: 900px) {
 			#main {
-				width: 800px;
+				width: 800px
 			}
 		}
 		@media(min-width: 1400px) {
 			#main {
-				width: 1200px;
+				width: 1200px
 			}
 		}
 		.flex {
 			display:flex;
 			justify-content: center;
-			margin: 56px 0;
+			margin: 56px 0
 		}
 		.flex div {
-			margin: 0 8px;
+			margin: 0 8px
 		}
 		.flex div img {
-			width: 100%;
+			width: 100%
+		}
+		figure a img {
+			cursor: zoom-in
 		}
 	</style>
 </head>
 <body id="body">
 	<header id="header">
-		<a id="name" href="http://sammurphey.net">
-			<img id="wrap" src="http://sammurphey.net/img/name/wrap.jpg" alt="Sam Murphey">
-			<img id ="nowrap" src="http://sammurphey.net/img/name/nowrap.jpg" alt="Sam Murphey">
+		<a id="name" href="https://sammurphey.net" title="Back to homepage.">
+			<img id="wrap" src="https://sammurphey.net/img/name/wrap.jpg" alt="Sam Murphey">
+			<img id="nowrap" src="https://sammurphey.net/img/name/nowrap.jpg" alt="Sam Murphey">
 		</a>
 	</header>
 	<main id="main">
@@ -124,79 +127,143 @@
 		<article>
 			<section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/1.png"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/1.png"><img src="https://sammurphey.net/img/order_confirmations/1.png"></a>
+						</figure>
+					</div>
 				</div>
-        <p></p>
+        <!--<p></p>-->
       </section>
       <section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/2.1.png"></div>
-        	<div><img src="http://sammurphey.net/img/order_confirmations/2.2.png"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/2.1.png"><img src="https://sammurphey.net/img/order_confirmations/2.1.png"></a>
+						</figure>
+					</div>
+        	<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/2.2.png"><img src="https://sammurphey.net/img/order_confirmations/2.2.png"></a>
+						</figure>
+					</div>
 				</div>
-        <p></p>
+        <!--<p></p>-->
 			</section>
       <section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/2.3.gif"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/2.3.gif"><img src="https://sammurphey.net/img/order_confirmations/2.3.gif"></a>
+						</figure>
+					</div>
 				</div>
-        <p></p>
+        <!--<p></p>-->
 			</section>
       <section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/3.png"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/3.png"><img src="https://sammurphey.net/img/order_confirmations/3.png"></a>
+						</figure>
+					</div>
 				</div>
-        <p></p>
+        <!--<p></p>-->
 			</section>
       <section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/4.gif"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/4.gif"><img src="https://sammurphey.net/img/order_confirmations/4.gif"></a>
+						</figure>
+					</div>
 				</div>
-        <p></p>
+        <!--<p></p>-->
 			</section>
       <section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/5.1.png"></div>
-        	<div><img src="http://sammurphey.net/img/order_confirmations/5.2.gif"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/5.1.png"><img src="https://sammurphey.net/img/order_confirmations/5.1.png"></a>
+						</figure>
+					</div>
+        	<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/5.2.gif"><img src="https://sammurphey.net/img/order_confirmations/5.2.gif"></a>
+						</figure>
+					</div>
 				</div>
-				<p></p>
+				<!--<p></p>-->
 			</section>
       <section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/6.gif"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/6.gif"><img src="https://sammurphey.net/img/order_confirmations/6.gif"></a>
+						</figure>
+					</div>
 				</div>
-        <p></p>
+        <!--<p></p>-->
 			</section>
       <section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/7.jpg"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/7.jpg"><img src="https://sammurphey.net/img/order_confirmations/7.jpg"></a>
+						</figure>
+					</div>
 				</div>
-				<p></p>
+				<!--<p></p>-->
 			</section>
       <section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/8.gif"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/8.gif"><img src="https://sammurphey.net/img/order_confirmations/8.gif"></a>
+						</figure>
+					</div>
 				</div>
-        <p></p>
+        <!--<p></p>-->
 			</section>
       <section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/9.1.gif"></div>
-        	<div><img src="http://sammurphey.net/img/order_confirmations/9.2.gif"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/9.1.gif"><img src="https://sammurphey.net/img/order_confirmations/9.1.gif"></a>
+						</figure>
+					</div>
+        	<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/9.2.gif"><img src="https://sammurphey.net/img/order_confirmations/9.2.gif"></a>
+						</figure>
+					</div>
 				</div>
-        <p></p>
+        <!--<p></p>-->
 			</section>
       <section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/10.gif"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/10.gif"><img src="https://sammurphey.net/img/order_confirmations/10.gif"></a>
+						</figure>
+					</div>
 				</div>
-        <p></p>
+        <!--<p></p>-->
 			</section>
       <section>
 				<div class="flex">
-					<div><img src="http://sammurphey.net/img/order_confirmations/11.1.gif"></div>
-        	<div><img src="http://sammurphey.net/img/order_confirmations/11.2.gif"></div>
+					<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/11.1.gif"><img src="https://sammurphey.net/img/order_confirmations/11.1.gif"></a>
+						</figure>
+					</div>
+        	<div>
+						<figure>
+							<a href="https://sammurphey.net/img/order_confirmations/11.2.gif"><img src="https://sammurphey.net/img/order_confirmations/11.2.gif"></a>
+						</figure>
+					</div>
 				</div>
-				<p></p>
+				<!--<p></p>-->
 			</section>
 		</article>
 	</main>
