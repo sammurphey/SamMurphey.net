@@ -1,8 +1,36 @@
-.anim {
-	-webkit-transition-duration: .2s;
-	transition-duration: .2s;
-	-webkit-transition-property: none;
-	transition-property: none;
-	-webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-	transition-timing-function: cubic-bezier(.4, 0, .2, 1)
+$amber:  #FFBF00;
+$teal: #00EFF1;
+
+//reset coordinate system to parent
+.container {
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+
+#console {
+	.log_msg {
+		animation: fade_in .6s linear forwards;
+		bottom: 0;
+		color: #666;
+		font-family: "Kepler-452b", monospace;
+		height: 24px;
+		line-height: 16px;
+		font-size: 16px;
+		margin: 0;
+		padding: 4px 0;
+		position: absolute;
+	}
+	.log_msg:last-child {
+		color: #000;
+	}
+}
+
+@keyframes fade_in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
