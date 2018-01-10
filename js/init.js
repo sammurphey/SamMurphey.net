@@ -1,6 +1,6 @@
 var w = window,
 	sm = sm || {};
-
+sm.st = 0;
 sm.util = {
 	addStyle: function (elem, prop, val, vendors) {
 		var i, ii, property, value
@@ -108,13 +108,13 @@ sm.util = {
 				child = children[i]
 				switch(true) {
 					case (i + 2 == x):
-						sm.util.addStyle(child, "bottom", "53px");
+						sm.util.addStyle(child, "bottom", "52px");
 						break;
 					case (i + 1 == x):
-						sm.util.addStyle(child, "bottom", "29px");
+						sm.util.addStyle(child, "bottom", "28px");
 						break;
 					default:
-						sm.util.addStyle(child, "bottom", "77px");
+						sm.util.addStyle(child, "bottom", "76px");
 				};
 			};
 		} else {
@@ -136,7 +136,17 @@ sm.util = {
 sm.interact = {
 	scroll: {
 		main: function () {
-			sm.util.log("scrolling");
+			var st = w.m.scrollTop;
+			if (st > sm.st) {//dwn
+				if (!w.b.classList.contains("expanded")) {
+					w.b.classList.add("expanded");
+				}
+			} else if (st < sm.st){//up
+				if (w.b.classList.contains("expanded")) {
+					w.b.classList.remove("expanded");
+				}
+			}
+			sm.st = st;
 		}
 	}
 };
@@ -144,10 +154,11 @@ sm.interact = {
 w.onload = function () {
 	setTimeout(function () {
 		w.b = document.getElementById("body");
+		w.m = document.getElementById("main");
 		sm.console = document.getElementById("console").getElementsByClassName("container")[0]
 		sm.util.log("System starting up...");
 		sm.util.load_defered_css();
-		w.onscroll = sm.interact.scroll.main();
+		w.m.onscroll = sm.interact.scroll.main;
 		var i = 0;
 		for (i = 0; i < 12; i += 1) {
 			setTimeout(function (i) {

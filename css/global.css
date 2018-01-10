@@ -1,7 +1,20 @@
+body {
+  overflow: hidden;
+  transition-duration: 1s;
+  transition-property: padding;
+  transition-timing-function: ease; }
+
 .container {
   height: 100%;
   position: relative;
   width: 100%; }
+
+#header, #header::before, #header::after, #footer, #footer::before, #footer::after, #console, #console::before, #console::after {
+  transform: translateX(0), translateY(0);
+  transition-duration: 1s;
+  transition-property: transform;
+  transition-timing-function: ease;
+  will-change: transform; }
 
 #home_icon:active > #logo,
 #home_icon:focus > #logo,
@@ -10,7 +23,7 @@
 
 #console .log_msg {
   animation: fade_in .6s linear forwards;
-  bottom: 0;
+  bottom: 4px;
   color: #666;
   font-family: "Kepler-452b", monospace;
   height: 24px;
@@ -22,6 +35,19 @@
 
 #console .log_msg:last-child {
   color: #000; }
+
+#body.expanded {
+  padding: 2px; }
+  #body.expanded #header {
+    transform: translateY(-80px); }
+    #body.expanded #header::before, #body.expanded #header::after {
+      transform: translateX(-80px); }
+  #body.expanded #footer {
+    transform: translateY(80px); }
+    #body.expanded #footer::before, #body.expanded #footer::after {
+      transform: translateX(80px); }
+  #body.expanded #console {
+    transform: translateY(80px); }
 
 @keyframes fade_in {
   0% {

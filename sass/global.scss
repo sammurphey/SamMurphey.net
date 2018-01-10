@@ -1,11 +1,27 @@
 $amber:  #FFBF00;
 $teal: #00EFF1;
 
+body {
+	overflow: hidden;
+	transition-duration: 1s;
+	transition-property: padding;
+	transition-timing-function: ease;
+}
+
 //reset coordinate system to parent
 .container {
 	height: 100%;
 	position: relative;
 	width: 100%;
+}
+#header, #footer, #console {
+	&, &::before, &::after {
+		transform: translateX(0), translateY(0);
+		transition-duration: 1s;
+		transition-property: transform;
+		transition-timing-function: ease;
+		will-change: transform;
+	}
 }
 
 #home_icon:active,
@@ -19,7 +35,7 @@ $teal: #00EFF1;
 #console {
 	.log_msg {
 		animation: fade_in .6s linear forwards;
-		bottom: 0;
+		bottom: 4px;
 		color: #666;
 		font-family: "Kepler-452b", monospace;
 		height: 24px;
@@ -31,6 +47,25 @@ $teal: #00EFF1;
 	}
 	.log_msg:last-child {
 		color: #000;
+	}
+}
+
+#body.expanded {
+	padding: 2px;
+	#header {
+		transform: translateY(-80px);
+		&::before, &::after {
+			transform: translateX(-80px);
+		}
+	}
+	#footer {
+		transform: translateY(80px);
+		&::before, &::after {
+			transform: translateX(80px);
+		}
+	}
+	#console {
+		transform: translateY(80px);
 	}
 }
 
