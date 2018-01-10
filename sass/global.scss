@@ -8,6 +8,14 @@ $teal: #00EFF1;
 	width: 100%;
 }
 
+#home_icon:active,
+#home_icon:focus,
+#home_icon:hover {
+	& > #logo {
+		fill: $teal!important;
+	}
+}
+
 #console {
 	.log_msg {
 		animation: fade_in .6s linear forwards;

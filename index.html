@@ -42,7 +42,7 @@
 			font: caption;
 			margin: 0;
 			height: 100%;
-			padding: 80px;
+			padding: 82px;
 			position: relative;
 			-webkit-tap-highlight-color: transparent;
 			-webkit-touch-callout: none;
@@ -58,47 +58,124 @@
 			cursor: inherit;
 			z-index: inherit;
 		}
+		#header, #footer {
+			background: #F9F9F9;
+			border-radius: 2px;
+			box-shadow: 0px 0px 3px -1px #333;
+			height: 80px;
+			position: absolute;
+			z-index: 2;
+		}
 		#header {
+			left: 0;
+			top: 0;
+			width: 100%;
+		}
+		#header::before {
+			background: #333;
+			box-shadow: 0px 0px 3px #333;
+			content: "";
+			display: block;
+			height: calc(100vh - 82px);
+			position: absolute;
+			left: 0;
+			top: 82px;
+			width: 79px;
+			z-index: 1;
+		}
+		#header::after {
+			background: #F9F9F9;
+			content: "";
+			display: block;
+			height: 100vh;
+			margin-top: 80px;
+			position: absolute;
+			left: 0;
+			top: -80px;
+			width: 80px;
+			z-index: 3;
+		}
+		#home_icon {
+			cursor: pointer;
 			height: 80px;
 			left: 0;
 			position: absolute;
-			top: 0;
-			z-index: 1;
-		}
-		#home_icon {
-			height: 48px;
-			left: 16px;
-			position: absolute;
-			top: 16px;
-			width: 48px;
+			top: 0px;
+			width: 80px;
+			z-index: 4;
 		}
 		#logo {
-			position: absolute;
-
-
+			height: 48px;
+			margin: 16px;
+			position: relative;
+			width: 48px;
 		}
 		#main {
-			border: .1px solid #000;
-			box-shadow: 1px 1px .6px .6px #AAA, -2px -2px .6px .6px #FFF,
-					inset 2px 2px .6px .6px #AAA, inset -3px -3px .6px .6px #FFF;
+			background: #F9F9F9;
+			border-radius: 2px;
+			box-shadow: 0px 0px 3px -1px #333;
 			display: block;
 			height: 100%;
-			overflow: hidden;
+			overflow-y: scroll;
 			position: relative;
-			z-index: 2;
+			z-index: 3;
+		}
+		#main::before {
+			background: #F9F9F9;
+			content: "";
+			display: block;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 10px;
+			z-index: 4;
+		}
+		#footer {
+			bottom: 0;
+			width: calc(100% - 564px);
+			right: 0;
+			left: auto;
+		}
+		#footer::before {
+			background: #333;
+			box-shadow: 0px 0px 3px #333;
+			content: "";
+			display: block;
+			height: calc(100vh - 164px);
+			position: absolute;
+			right: 0;
+			top: calc(-100vh + 162px);
+			width: 79px;
+			z-index: 1;
+		}
+		#footer::after {
+			background: #F9F9F9;
+			content: "";
+			display: block;
+			height: 100vh;
+			margin-top: 80px;
+			position: absolute;
+			right: 0;
+			top: -100vh;
+			width: 80px;
+			z-index: 3;
 		}
 		#console {
-			border-left: .1px solid #000;
-			border-right: .1px solid #000;
-			box-shadow: 1px 1px .6px .6px #AAA, -2px -2px .6px .6px #FFF,
-					inset 2px 2px .6px .6px #AAA, inset -3px -3px .6px .6px #FFF;
+			background: #F9F9F9;
+			border-radius: 2px;
+			box-shadow: 0px 0px 3px -1px #333;
 			bottom: 0;
 			height: 80px;
-			left: 80px;
-			overflow: hidden;
-			padding: 5px 10px;
+			left: -482px;
 			position: absolute;
 			width: 480px;
+		}
+		#console .container {
+			height: 100%;
+			overflow: hidden;
+			padding: 4px 10px;
+			width: 100%;
 		}
 		#console .log_msg {
 			opacity: 0;
@@ -109,8 +186,8 @@
 	<header id="header">
 		<a id="home_icon" href="https://sammurphey.net" title="Back to the homepage.">
 			<svg id="logo" fill="#000" width="48" height="48" viewBox="0 0 100 100">
-				<polygon fill="#000" points="0 0, 100 0, 100 100, 96 100, 96 56, 52 100, 0 100"/>
-				<g fill="#EEE">
+				<polygon points="0 0, 100 0, 100 100, 96 100, 96 56, 52 100, 0 100"/>
+				<g fill="#F9F9F9">
 					<polygon points="7 4, 50 48, 93 4"/>
 					<polygon points="4 7, 4 48, 44 48"/>
 					<polygon points="56 48, 96 48, 96 7"/>
@@ -225,11 +302,13 @@
 		.<br />
 		.<br />
 	</main>
-	<div id="console">
-		<div class="container"></div>
-	</div>
-	<noscript><p id="log_0">This site is much better if you enable JavaScript.</p>
-	</noscript>
+	<footer id="footer">
+		<div id="console">
+			<div class="container"></div>
+		</div>
+		<noscript><p id="log_0">This site is much better if you enable JavaScript.</p>
+		</noscript>
+	</footer>
 	<div id="stylesheets">
 		<noscript id="defered_styles">
 			<link rel="stylesheet" href="css/global.css">

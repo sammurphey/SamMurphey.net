@@ -3,6 +3,11 @@
   position: relative;
   width: 100%; }
 
+#home_icon:active > #logo,
+#home_icon:focus > #logo,
+#home_icon:hover > #logo {
+  fill: #00EFF1 !important; }
+
 #console .log_msg {
   animation: fade_in .6s linear forwards;
   bottom: 0;

@@ -37,10 +37,9 @@ sm.util = {
 			child, link, href, i;
 
 		for (i = 0; i < children.length; i += 1) {
-			child = children[i].data
-			href = child.split("href")
+			child = children[i].data;
+			href = child.split("href");
 			href = href[1].split("\"");
-			console.log(href[1])
 			link = document.createElement("link");
 			link.id = "css_" + i;
 			link.rel = "stylesheet";
@@ -109,13 +108,13 @@ sm.util = {
 				child = children[i]
 				switch(true) {
 					case (i + 2 == x):
-						sm.util.addStyle(child, "bottom", "48px");
+						sm.util.addStyle(child, "bottom", "53px");
 						break;
 					case (i + 1 == x):
-						sm.util.addStyle(child, "bottom", "24px");
+						sm.util.addStyle(child, "bottom", "29px");
 						break;
 					default:
-						sm.util.addStyle(child, "bottom", "72px");
+						sm.util.addStyle(child, "bottom", "77px");
 				};
 			};
 		} else {
