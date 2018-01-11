@@ -137,15 +137,27 @@ sm.interact = {
 	scroll: {
 		main: function () {
 			var st = w.m.scrollTop;
-			if (st > sm.st) {//dwn
-				if (!w.b.classList.contains("expanded")) {
-					w.b.classList.add("expanded");
-				}
-			} else if (st < sm.st){//up
-				if (w.b.classList.contains("expanded")) {
-					w.b.classList.remove("expanded");
-				}
-			}
+			sm.defer_scroll = sm.defer_scroll || 0
+			if (sm.defer_scroll <= 0) {
+				if (st > sm.st) {//dwn
+					if (!w.b.classList.contains("int")) {
+						w.b.classList.add("int");
+						w.b.classList.remove("ext");
+					}
+				} else if (st < sm.st){//up
+					if (w.b.classList.contains("int")) {
+						w.b.classList.remove("int");
+						w.b.classList.add("ext");
+					}
+				};
+				sm.defer_scroll = 1;
+				sm.scroll_int = setInterval(function () {
+					sm.defer_scroll -= 1;
+					if (sm.defer_scroll <= 0) {
+						clearTimeout(sm.scroll_int);
+					}
+				}, 60);
+			};
 			sm.st = st;
 		}
 	}

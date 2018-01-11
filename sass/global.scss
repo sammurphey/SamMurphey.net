@@ -16,10 +16,6 @@ body {
 }
 #header, #footer, #console {
 	&, &::before, &::after {
-		transform: translateX(0), translateY(0);
-		transition-duration: 1s;
-		transition-property: transform;
-		transition-timing-function: ease;
 		will-change: transform;
 	}
 }
@@ -50,25 +46,122 @@ body {
 	}
 }
 
-#body.expanded {
-	padding: 2px;
+#body.int {
 	#header {
-		transform: translateY(-80px);
+		animation: ext_header .4s linear forwards;
 		&::before, &::after {
-			transform: translateX(-80px);
+			animation: ext_header_pseudo .4s linear forwards;
 		}
 	}
 	#footer {
-		transform: translateY(80px);
+		animation: ext_footer .4s linear forwards;
 		&::before, &::after {
-			transform: translateX(80px);
+			animation: ext_footer_pseudo .4s linear forwards;
 		}
 	}
 	#console {
-		transform: translateY(80px);
+		animation: ext_console .4s linear forwards;
 	}
 }
 
+#body.ext {
+	#header {
+		animation: int_header .4s linear forwards;
+		&::before, &::after {
+			animation: int_header_pseudo .4s linear forwards;
+		}
+	}
+	#footer {
+		animation: int_footer .4s linear forwards;
+		&::before, &::after {
+			animation: int_footer_pseudo .4s linear forwards;
+		}
+	}
+	#console {
+		animation: int_console .4s linear forwards;
+	}
+}
+
+@keyframes ext_header {
+	0% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(-100px);
+	}
+}
+@keyframes ext_header_pseudo {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(-100px);
+	}
+}
+@keyframes ext_footer {
+	0% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(100px);
+	}
+}
+@keyframes ext_footer_pseudo {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	100% {
+		transform: translate(100px, -80px);
+	}
+}
+@keyframes ext_console {
+	0% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(100px);
+	}
+}
+@keyframes int_header {
+	0% {
+		transform: translateY(-100px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+@keyframes int_header_pseudo {
+	0% {
+		transform: translateX(-100px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
+@keyframes int_footer {
+	0% {
+		transform: translateY(100px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+@keyframes int_footer_pseudo {
+	0% {
+		transform: translate(100px, -80px);
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
+}
+@keyframes int_console {
+	0% {
+		transform: translateY(100px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
 @keyframes fade_in {
 	0% {
 		opacity: 0;
