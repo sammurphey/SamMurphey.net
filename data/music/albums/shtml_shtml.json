@@ -1,0 +1,79 @@
+{
+	"artists": [
+		"SHTML"
+	],
+	"cover": "img/albums/shtml_shtml_cover.jpg",
+	"date": "6/27/2015",
+	"description": "",
+	"keywords": [
+
+	],
+	"label": "Self Released",
+	"songs": [
+		{
+			"data": "/data/music/songs/shtml/shtml_sparkly_emoji.json",
+			"files": [
+				"/music/shtml/shtml/sparkly_emoji.wav"
+			],
+			"length": "1:19",
+			"title": "Sparkly Emoji"
+		}, {
+			"data": "/data/music/songs/shtml/shtml_liquid.json",
+			"files": [
+				"/music/shtml/shtml/liquid.wav"
+			],
+			"length": "0:48",
+			"title": "Liquid"
+		}, {
+			"data": "/data/music/songs/shtml/shtml_erie.json",
+			"files": [
+				"/music/shtml/shtml/erie.wav"
+			],
+			"length": "1:29",
+			"title": "Erie"
+		}, {
+			"data": "/data/music/songs/shtml/shtml_password_waterystar.json",
+			"files": [
+				"/music/shtml/shtml/password_waterystar.wav"
+			],
+			"length": "0:31",
+			"title": "Password: Waterystar"
+		}, {
+			"data": "/data/music/songs/shtml/shtml_fake_clouds_hate_you.json",
+			"files": [
+				"/music/shtml/shtml/fake_clouds_hate_you.wav"
+			],
+			"length": "1:04",
+			"title": "Fake Clouds Hate You"
+		}, {
+			"data": "/data/music/songs/shtml/shtml_cheap_mascara.json",
+			"files": [
+				"/music/shtml/shtml/cheap_mascara.wav"
+			],
+			"length": "1:43",
+			"title": "Cheap Mascara (live)"
+		}, {
+			"data": "/data/music/songs/shtml/shtml_late_tax_refunds.json",
+			"files": [
+				"/music/shtml/shtml/late_tax_refunds.wav"
+			],
+			"length": "0:32",
+			"title": "Late Tax Refunds"
+		}, {
+			"data": "/data/music/songs/shtml/shtml_june_27th.json",
+			"files": [
+				"/music/shtml/shtml/june_27th.wav"
+			],
+			"length": "3:49",
+			"title": "June 2th (Stop Far Meshing Pose Mimicry Edit)"
+		}, {
+			"data": "/data/music/songs/shtml/shtml_mobile_waves.json",
+			"files": [
+				"/music/shtml/shtml/mobile_waves.wav"
+			],
+			"length": "7:59",
+			"title": "Mobile Waves (live)"
+		}
+	],
+	"title": "SHTML"
+}

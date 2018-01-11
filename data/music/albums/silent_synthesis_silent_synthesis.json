@@ -1,0 +1,93 @@
+{
+	"artists": [
+		"Silent Synthesis"
+	],
+	"cover": "img/albums/silent_synthesis_silent_synthesis_cover.jpg",
+	"date": "10/13/2012",
+	"description": "",
+	"keywords": [
+		"electronic", "experimental", "glitch", "noise", "live", "remix", "chiptune"
+	],
+	"label": "Self Released",
+	"songs": [
+		{
+			"data": "/data/music/songs/silent_synthesis/patricks_email.json",
+			"files": [
+				"/music/silent_synthesis/silent_synthesis/patricks_email.wav"
+			],
+			"length": "0:59",
+			"title": "Patrick's Email"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/why.json",
+			"files": [
+				"/music/silent_synthesis/silent_synthesis/why.wav"
+			],
+			"length": "0:08",
+			"title": "Why"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/crunchy.json",
+			"files": [
+				"/music/silent_synthesis/silent_synthesis/crunchy.wav"
+			],
+			"length": "0:04",
+			"title": "Crunchy"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/insane.json",
+			"files": [
+				"/music/silent_synthesis/silent_synthesis/insane.wav"
+			],
+			"length": "0:05",
+			"title": "Insane"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/hashcat.json",
+			"files": [
+				"/music/silent_synthesis/silent_synthesis/hashcat.wav"
+			],
+			"length": "0:15",
+			"title": "Hashcat"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/abejas.json",
+			"files": [
+				"/music/silent_synthesis/silent_synthesis/abejas.wav"
+			],
+			"length": "1:53",
+			"title": "Abejas"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/o.json",
+			"files": [
+				"/music/silent_synthesis/silent_synthesis/o.wav"
+			],
+			"length": "0:05",
+			"title": "O"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/mash_up.json",
+			"files": [
+				"/music/silent_synthesis/silent_synthesis/mash_up.wav"
+			],
+			"length": "1:09",
+			"title": "Mash Up (Linken Park & Lady Gaga Remix)"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/slayor.json",
+			"files": [
+				"/music/silent_synthesis/silent_synthesis/slayor.wav"
+			],
+			"length": "4:01",
+			"title": "SLAYOR (Lorde Remix)"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/clap_clap.json",
+			"files": [
+				"/music/silent_synthesis/silent_synthesis/clap_clap.wav"
+			],
+			"length": "3:45",
+			"title": "Clap + Clap (Lady Gaga Remix)"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/its_too_bright.json",
+			"files": [
+				"/music/silent_synthesis/silent_synthesis/its_too_bright.wav"
+			],
+			"length": "4:52",
+			"title": "It's Too Bright (TV on the Radio Remix)"
+		}
+	],
+	"title": "Silent Synthesis"
+}

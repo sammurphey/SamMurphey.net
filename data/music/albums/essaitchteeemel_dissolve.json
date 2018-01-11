@@ -1,0 +1,23 @@
+{
+	"artists": [
+		"Essaitchteeemel"
+	],
+	"cover": "img/albums/essaitchteeemel_dissolve_cover.jpg",
+	"date": "1/31/2018",
+	"description": "",
+	"keywords": [
+		"calm", "electronic", "essaitchteeemel", "loops", "plunderphonics", "ambient", "experimental", "cassette tapes", "lo-fi", "emotional"
+	],
+	"label": "Elestial Sound",
+	"songs": [
+		{
+			"data": "/data/music/songs/essaitchteeemel/dissolve.json",
+			"files": [
+				"/music/essaitchteeemel/dissolve/dissolve.wav"
+			],
+			"length": "5:15",
+			"title": "Dissolve"
+		}
+	],
+	"title": "Dissolve"
+}
