@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/silent_synthesis/all_of_the_things_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_all_of_the_things.json",
+	"album_title": "All of the Things I Have Forgotten to Tell You",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "11/15/2013",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/all_of_the_things/food_coloring.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "glitch", "noise", "ambient", "vocal", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "1:01",
+	"show_in_overview": true,
+	"title": "Food Coloring",
+	"track_cover": "img/silent_synthesis/food_coloring_cover.jpg",
+	"track_number": "1",
+	"videos": []
+}

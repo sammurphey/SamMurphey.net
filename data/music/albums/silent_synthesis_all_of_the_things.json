@@ -2,99 +2,111 @@
 	"artists": [
 		"Silent Synthesis"
 	],
-	"cover": "img/albums/silent_synthesis_all_of_the_things_cover.jpg",
+	"cover": "img/silent_synthesis/all_of_the_things_cover.jpg",
 	"date": "12/24/2013",
 	"description": "",
 	"keywords": [
-		"electronic", "experimental", "ambient", "glitch", "noise", "lo-fi", "electric guitar", "vocal", "improvisation", "live", "chiptune", "video games"
+		"electronic", "experimental", "ambient", "glitch", "noise", "lo-fi", "electric guitar", "vocal", "improvisation", "live", "chiptune", "video games", "silent synthesis", "los angeles"
 	],
 	"label": "Self Released",
 	"songs": [
 		{
-			"data": "/data/music/songs/silent_synthesis/food_coloring.json",
+			"data": "data/music/songs/silent_synthesis/food_coloring.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/food_coloring.wav"
+				"music/silent_synthesis/all_of_the_things/food_coloring.wav"
 			],
 			"length": "1:01",
 			"title": "Food Coloring"
 		}, {
-			"data": "/data/music/songs/silent_synthesis/you_dont_care_a_bit.json",
+			"data": "data/music/songs/silent_synthesis/you_dont_care_a_bit.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/you_dont_care_a_bit.wav"
+				"music/silent_synthesis/all_of_the_things/you_dont_care_a_bit.wav"
 			],
 			"length": "3:29",
 			"title": "You Don't Care a Bit (Hide and Seek Remix)"
 		}, {
-			"data": "/data/music/songs/silent_synthesis/watching_adult_swim.json",
+			"data": "data/music/songs/silent_synthesis/watching_adult_swim.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/watching_adult_swim.wav"
+				"music/silent_synthesis/all_of_the_things/watching_adult_swim.wav"
 			],
 			"length": "1:15",
 			"title": "Watching Adult Swim"
 		}, {
-			"data": "/data/music/songs/silent_synthesis/i_was_bored_in_the_parking_lot.json",
+			"data": "data/music/songs/silent_synthesis/i_was_bored_in_the_parking_lot.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/i_was_bored_in_the_parking_lot.wav"
+				"music/silent_synthesis/all_of_the_things/i_was_bored_in_the_parking_lot.wav"
 			],
 			"length": "1:37",
 			"title": "I Was Bored in the Parking Lot"
 		}, {
-			"data": "/data/music/songs/silent_synthesis/misty_morning.json",
+			"data": "data/music/songs/silent_synthesis/misty_morning.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/misty_morning.wav"
+				"music/silent_synthesis/all_of_the_things/misty_morning.wav"
 			],
 			"length": "2:42",
 			"title": "Misty Morning"
 		}, {
-			"data": "/data/music/songs/silent_synthesis/i_wore_a_soft_sweater.json",
+			"data": "data/music/songs/silent_synthesis/i_wore_a_soft_sweater.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/i_wore_a_soft_sweater.wav"
+				"music/silent_synthesis/all_of_the_things/i_wore_a_soft_sweater.wav"
 			],
 			"length": "3:29",
 			"title": "I Wore a Soft Sweater He Wore a Scarf"
 		}, {
-			"data": "/data/music/songs/silent_synthesis/life_in_parallax.json",
+			"data": "data/music/songs/silent_synthesis/life_in_parallax.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/life_in_parallax.wav"
+				"music/silent_synthesis/all_of_the_things/life_in_parallax.wav"
 			],
 			"length": "2:45",
 			"title": "Life in Parallax (fka Paper Lanterns)"
 		}, {
-			"data": "/data/music/songs/silent_synthesis/campfire_song.json",
+			"data": "data/music/songs/silent_synthesis/campfire_song.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/campfine_song.wav"
+				"music/silent_synthesis/all_of_the_things/campfire_song.wav"
 			],
 			"length": "3:27",
 			"title": "Campfire Song"
 		}, {
-			"data": "/data/music/songs/silent_synthesis/mountain_song.json",
+			"data": "data/music/songs/silent_synthesis/mountain_song.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/mountain_song.wav"
+				"music/silent_synthesis/all_of_the_things/mountain_song.wav"
 			],
 			"length": "1:54",
 			"title": "Mountain Song"
 		}, {
-			"data": "/data/music/songs/silent_synthesis/all_of_the_things.json",
+			"data": "data/music/songs/silent_synthesis/all_of_the_things.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/all_of_the_things.wav"
+				"music/silent_synthesis/all_of_the_things/all_of_the_things.wav"
 			],
 			"length": "9:49",
 			"title": "All of the Things I Have Forgotten to Tell You"
 		}, {
-			"data": "/data/music/songs/silent_synthesis/a_painful_christmas_memory.json",
+			"data": "data/music/songs/silent_synthesis/a_painful_christmas_memory.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/a_painful_christmas_memory.wav"
+				"music/silent_synthesis/all_of_the_things/a_painful_christmas_memory.wav"
 			],
 			"length": "0:38",
 			"title": "A Painful Christmas Memory"
 		}, {
-			"data": "/data/music/songs/silent_synthesis/Sanrio Nightmares.json",
+			"data": "data/music/songs/silent_synthesis/sanrio_nightmares.json",
 			"files": [
-				"/music/silent_synthesis/all_of_the_things/sanrio_nightmares.wav"
+				"music/silent_synthesis/all_of_the_things/sanrio_nightmares.wav"
 			],
 			"length": "1:42",
 			"title": "Sanrio Nightmares"
 		}
 	],
-	"title": "All of the Things I Have Forgotten To Tell You"
+	"title": "All of the Things I Have Forgotten To Tell You",
+	"videos": [
+		{
+			"data": "videos/silent_synthesis/you_dont_care_a_bit.json",
+			"title": "You Don't Care a Bit (Official Video)",
+			"url": "https://www.youtube.com/watch?v=2gBwscbruUI"
+		},
+		{
+			"data": "videos/silent_synthesis/watching_adult_swim.json",
+			"title": "Watching Adult Swim (Official Audio)",
+			"url": "https://www.youtube.com/watch?v=y6esk1uvlkM"
+		}
+	],
 }

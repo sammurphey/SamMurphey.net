@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/silent_synthesis/silent_synthesis_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_silent_synthesis.json",
+	"album_title": "Silent Synthesis",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "9/20/2012",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/silent_synthesis/hashcat.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "glitch", "noise", "chiptune", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "0:15",
+	"show_in_overview": true,
+	"title": "Hashcat",
+	"track_cover": "img/silent_synthesis/hashcat_cover.jpg",
+	"track_number": "5",
+	"videos": []
+}

@@ -1,0 +1,23 @@
+{
+	"album_cover": "img/silent_synthesis/broken_teeth_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_broken_teeth.json",
+	"album_title": "Broken Teeth",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "9/13/2013",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/broken_teeth/broken_teeth.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "noise", "drone", "ambient", "vocal", "horror", "dark", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "2:13",
+	"show_in_overview": false,
+	"title": "Broken Teeth",
+	"track_cover": "img/silent_synthesis/broken_teeth_cover.jpg",
+	"track_number": "1"
+}

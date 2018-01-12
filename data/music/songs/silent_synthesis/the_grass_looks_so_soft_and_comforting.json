@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/silent_synthesis/winters_edge_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_winters_edge.json",
+	"album_title": "Winter's Edge",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "8/1/2014",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/winters_edge/the_grass_looks_so_soft_and_comforting.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "glitch", "plunderphonics", "loops", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "0:34",
+	"show_in_overview": true,
+	"title": "The Grass Looks So Soft and Comforting",
+	"track_cover": "img/silent_synthesis/the_grass_looks_so_soft_and_comforting_cover.jpg",
+	"track_number": "4",
+	"videos": []
+}

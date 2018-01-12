@@ -1,0 +1,25 @@
+{
+	"album_cover": "img/shtml/shtml_cover.jpg",
+	"album_data": "data/music/albums/shtml_shtml.json",
+	"album_title": "SHTML",
+	"artists": [
+		"SHTML",
+		"Kinesthetiac"
+	],
+	"date": "6/27/2015",
+	"description": "",
+	"files": [
+		"music/shtml/shtml/june_27th.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "loops", "plunderphonics", "idm", "drum n bass", "remix", "kinesthetiac", "shtml", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "0:32",
+	"show_in_overview": false,
+	"title": "June 27th",
+	"track_cover": "img/shtml/june_27th_cover.jpg",
+	"track_number": "8",
+	"videos": []
+}

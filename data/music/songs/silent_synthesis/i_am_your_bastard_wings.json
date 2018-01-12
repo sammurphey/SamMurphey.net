@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/silent_synthesis/winters_edge_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_winters_edge.json",
+	"album_title": "Winter's Edge",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "11/10/2014",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/winters_edge/i_am_your_bastard_wings.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "lo-fi", "piano", "plunderphonics", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "0:30",
+	"show_in_overview": false,
+	"title": "I am Your Bastard Wings",
+	"track_cover": "img/silent_synthesis/i_am_your_bastard_wings_cover.jpg",
+	"track_number": "2",
+	"videos": []
+}

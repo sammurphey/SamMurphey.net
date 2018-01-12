@@ -1,0 +1,30 @@
+{
+	"album_cover": "img/silent_synthesis/lucid_dreaming_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_lucid_dreaming.json",
+	"album_title": "Lucid Dreaming",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "8/20/2013",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/lucid_dreaming/lucid_dreaming.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "noise", "drone", "ambient", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "2:48",
+	"show_in_overview": true,
+	"title": "Lucid Dreaming",
+	"track_cover": "img/silent_synthesis/lucid_dreaming_track_cover.jpg",
+	"track_number": "2",
+	"videos": [
+		{
+			"data": "videos/silent_synthesis/lucid_dreaming.json",
+			"title": "Lucid Dreaming (Official Video)",
+			"url": "https://www.youtube.com/watch?v=mpPgw9tEc7U"
+		}
+	]
+}

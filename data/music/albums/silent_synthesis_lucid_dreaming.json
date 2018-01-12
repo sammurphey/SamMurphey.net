@@ -2,11 +2,11 @@
 	"artists": [
 		"Silent Synthesis"
 	],
-	"cover": "img/albums/silent_synthesis_lucid_dreaming_cover.jpg",
+	"cover": "img/silent_synthesis/lucid_dreaming_cover.jpg",
 	"date": "8/31/2013",
 	"description": "",
 	"keywords": [
-		"electronic", "experimental", "ambient", "glitch", "noise", "vocal", "drone", "dark", "horror"
+		"electronic", "experimental", "ambient", "glitch", "noise", "vocal", "drone", "dark", "horror", "silent synthesis", "los angeles"
 	],
 	"label": "Self Released",
 	"songs": [
@@ -40,5 +40,12 @@
 			"title": "Crybaby"
 		}
 	],
-	"title": "Lucid Dreaming EP"
+	"title": "Lucid Dreaming EP",
+	"videos": [
+		{
+			"data": "videos/silent_synthesis/lucid_dreaming.json",
+			"title": "Lucid Dreaming (Official Video)",
+			"url": "https://www.youtube.com/watch?v=mpPgw9tEc7U"
+		}
+	]
 }

@@ -2,7 +2,7 @@
 	"artists": [
 		"Ikea@Midnight"
 	],
-	"cover": "img/albums/ikeaatmidnight_seeyouthen_cover.jpg",
+	"cover": "img/ikeaatmidnight/seeyouthen_cover.jpg",
 	"date": "8/24/2015",
 	"description": "Ikea @ Midnight is a collaboration between me and my sister Kami, composed of distant piano and minimal electronics. Come to the Ikea parking lot at midnight and scream with us!/nThe tracks included here are various (failed) attempts at covering Aphex Twin's Minipops 67 [120.2][source field mix] on piano. This final 7 track compilation was burned onto a number of cheap flash drives and spread about the Ikea store in Burbank just before closing.",
 	"keywords": [
@@ -11,51 +11,51 @@
 	"label": "Self Released",
 	"songs": [
 		{
-			"data": "/data/music/songs/ikeaatmidnight/seeyouthen_bloom.json",
+			"data": "data/music/songs/ikeaatmidnight/bloom.json",
 			"files": [
-				"/music/ikeaatmidnight/seeyouthen/bloom.wav"
+				"music/ikeaatmidnight/seeyouthen/bloom.wav"
 			],
 			"length": "0:57",
 			"title": "Bloom"
 		}, {
-			"data": "/data/music/songs/ikeaatmidnight/seeyouthen_mix_dos.json",
+			"data": "data/music/songs/ikeaatmidnight/mix_dos.json",
 			"files": [
-				"/music/ikeaatmidnight/seeyouthen/mix_dos.wav"
+				"music/ikeaatmidnight/seeyouthen/mix_dos.wav"
 			],
 			"length": "0:13",
 			"title": "Mix Dos"
 		}, {
-			"data": "/data/music/songs/ikeaatmidnight/seeyouthen_sang.json",
+			"data": "data/music/songs/ikeaatmidnight/sang.json",
 			"files": [
-				"/music/ikeaatmidnight/seeyouthen/sang.wav"
+				"music/ikeaatmidnight/seeyouthen/sang.wav"
 			],
 			"length": "0:08",
 			"title": "Sång"
 		}, {
-			"data": "/data/music/songs/ikeaatmidnight/seeyouthen_quatro.json",
+			"data": "data/music/songs/ikeaatmidnight/quatro.json",
 			"files": [
-				"/music/ikeaatmidnight/seeyouthen/quatro.wav"
+				"music/ikeaatmidnight/seeyouthen/quatro.wav"
 			],
 			"length": "0:22",
 			"title": "Quatro"
 		}, {
-			"data": "/data/music/songs/ikeaatmidnight/seeyouthen_cinco.json",
+			"data": "data/music/songs/ikeaatmidnight/cinco.json",
 			"files": [
-				"/music/ikeaatmidnight/seeyouthen/cinco.wav"
+				"music/ikeaatmidnight/seeyouthen/cinco.wav"
 			],
 			"length": "0:29",
 			"title": "Cinco"
 		}, {
-			"data": "/data/music/songs/ikeaatmidnight/seeyouthen_small_little_bites_of_popcorn.json",
+			"data": "data/music/songs/ikeaatmidnight/small_little_bites_of_popcorn.json",
 			"files": [
-				"/music/ikeaatmidnight/seeyouthen/small_little_bites_of_popcorn.wav"
+				"music/ikeaatmidnight/seeyouthen/small_little_bites_of_popcorn.wav"
 			],
 			"length": "0:45",
 			"title": "Small Little Bites of Popcorn"
 		}, {
-			"data": "/data/music/songs/ikeaatmidnight/seeyouthen_asdfsdvddf.json",
+			"data": "data/music/songs/ikeaatmidnight/asdfsdvddf.json",
 			"files": [
-				"/music/ikeaatmidnight/seeyouthen/asdfsdvddf.wav"
+				"music/ikeaatmidnight/seeyouthen/asdfsdvddf.wav"
 			],
 			"length": "2:07",
 			"title": "Asdfsdvddf"

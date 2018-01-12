@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/silent_synthesis/winters_edge_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_winters_edge.json",
+	"album_title": "Winter's Edge",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "11/10/2014",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/winters_edge/black_stone.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "lo-fi", "piano", "cover", "clark", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "0:51",
+	"show_in_overview": false,
+	"title": "Black Stone (Clark Cover)",
+	"track_cover": "img/silent_synthesis/black_stone_cover.jpg",
+	"track_number": "1",
+	"videos": []
+}

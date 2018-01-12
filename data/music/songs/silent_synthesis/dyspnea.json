@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/silent_synthesis/lucid_dreaming_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_lucid_dreaming.json",
+	"album_title": "Lucid Dreaming",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "8/31/2013",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/lucid_dreaming/dyspnea.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "noise", "drone", "ambient", "dark", "vocal", "horror", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "4:13",
+	"show_in_overview": false,
+	"title": "Dyspnea",
+	"track_cover": "img/silent_synthesis/dyspnea_cover.jpg",
+	"track_number": "3",
+	"videos": []
+}
