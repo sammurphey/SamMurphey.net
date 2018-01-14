@@ -3,37 +3,61 @@ $teal: #00EFF1;
 
 body {
 	overflow: hidden;
-	transition-duration: 1s;
-	transition-property: padding;
-	transition-timing-function: ease;
 }
-
+a {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: inherit;
+}
 //reset coordinate system to parent
 .container {
 	height: 100%;
 	position: relative;
 	width: 100%;
 }
+
 #header, #footer, #console {
 	&, &::before, &::after {
 		will-change: transform;
 	}
 }
-
-#home_icon:active,
-#home_icon:focus,
-#home_icon:hover {
-	& > #logo {
-		fill: $teal!important;
+#home_icon {
+	&:active,
+	&:focus,
+	&:hover {
+		> #logo {
+			fill: $teal;
+		}
 	}
 }
+#search_icon {
+	&:active,
+	&:focus,
+	&:hover {
+		> #magnifying_glass {
+			stroke: $teal;
+		}
+	}
+}
+#main_nav {
+	.nav_item {
+		color: #000;
+		text-decoration: none;
+		&:active,
+		&:focus,
+		&:hover {
+			color: $teal;
+		}
+	}
+}
+
 
 #console {
 	.log_msg {
 		animation: fade_in .6s linear forwards;
 		bottom: 4px;
 		color: #666;
-		font-family: "Kepler-452b", monospace;
+		font-family: "Kepler", monospace;
 		height: 24px;
 		line-height: 16px;
 		font-size: 16px;
@@ -161,6 +185,9 @@ body {
 	100% {
 		transform: translateY(0px);
 	}
+}
+.visible {
+	animation: fade_in .6s linear forwards;
 }
 @keyframes fade_in {
 	0% {

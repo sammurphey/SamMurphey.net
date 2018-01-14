@@ -26,7 +26,7 @@
 	<!--<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-93371306-1','auto');ga('send','pageview');</script>-->
 	<style>
 		@font-face {
-			font-family: "Kepler-452b";
+			font-family: "Kepler";
 			src: url('fonts/kepler-452b.eot'), url('fonts/kepler-452b.ttf') format('truetype'), url('fonts/kepler-452b.svg') format('svg');
 			font-weight: normal;
 			font-style: normal;
@@ -57,6 +57,9 @@
 			box-sizing: inherit;
 			cursor: inherit;
 			z-index: inherit;
+		}
+		a {
+			cursor: pointer;
 		}
 		#header, #footer {
 			background: #F9F9F9;
@@ -95,20 +98,50 @@
 			width: 80px;
 			z-index: 3;
 		}
-		#home_icon {
-			cursor: pointer;
+		#home_icon, #search_icon {
+			display: block;
 			height: 80px;
-			left: 0;
 			position: absolute;
 			top: 0px;
 			width: 80px;
 			z-index: 4;
 		}
-		#logo {
+		#home_icon {
+			left: 0;
+		}
+		#search_icon {
+			right: 0;
+		}
+		#logo, #magnifying_glass {
 			height: 48px;
 			margin: 16px;
 			position: relative;
 			width: 48px;
+		}
+		#main_nav {
+			left: 80px;
+			position: absolute;
+			top: 0;
+			width: calc(100% - 160px);
+			z-index: 4;
+		}
+		#main_nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		#main_nav .nav_item {
+			display: inline-block;
+			opacity: 0;
+		}
+		#main_nav .nav_item a {
+			display: block;
+			font-family: "Kepler", monospace;
+			font-size: 16px;
+			height: 80px;
+			line-height: 32px;
+			min-width: 80px;
+			padding: 24px 16px;
 		}
 		#main {
 			background: #F9F9F9;
@@ -154,10 +187,10 @@
 			content: "";
 			display: block;
 			height: 100vh;
-			margin-top: 80px;
+			margin-top: 64px;
 			position: absolute;
 			right: 0;
-			top: -100vh;
+			top: calc(-100vh + 82px);
 			width: 80px;
 			z-index: 3;
 		}
@@ -174,7 +207,7 @@
 		#console .container {
 			height: 100%;
 			overflow: hidden;
-			padding: 4px 10px;
+			padding: 4px 16px;
 			width: 100%;
 		}
 		#console .log_msg {
@@ -197,11 +230,36 @@
 			</svg>
 		</a>
 		<nav id="main_nav">
-
+			<ul>
+				<li class="nav_item">
+					<a href="https://sammurphey.net/music" title="Listen to new songs and sample packs.">Music</a>
+				</li>
+				<li class="nav_item">
+					<a href="https://sammurphey.net/code" title="View recent development projects.">Code</a>
+				</li>
+				<li class="nav_item">
+					<a href="https://sammurphey.net/art" title="Browse photos, illustrations, and 3d renders.">Art</a>
+				</li>
+				<li class="nav_item">
+					<a href="https://sammurphey.net/store" title="Purchase music and apparel.">Store</a>
+				</li>
+			</ul>
 		</nav>
+		<a id="search_icon" href="https://sammurphey.net/search" title="Search">
+			<svg id="magnifying_glass" width="48" height="48" viewBox="0 0 100 100">
+				<polygon fill="none" stroke="#000" stroke-width="4.8" transform="rotate(45) translate(11 -40) scale(0.80)" points="5 50, 30 10, 70 10, 95 50, 70 90, 30 90"/>
+				<rect fill="#000" transform="rotate(315) translate(-1 84)" height="55" width="4"/>
+			</svg>
+		</a>
+		<noscript>
+			<style>
+				#main_nav .nav_item {
+					opacity: 1!important;
+				}
+			</style>
+		</noscript>
 	</header>
 	<main id="main">
-		.<br />
 		.<br />
 		.<br />
 		.<br />

@@ -1,8 +1,10 @@
 body {
-  overflow: hidden;
-  transition-duration: 1s;
-  transition-property: padding;
-  transition-timing-function: ease; }
+  overflow: hidden; }
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: inherit; }
 
 .container {
   height: 100%;
@@ -12,16 +14,23 @@ body {
 #header, #header::before, #header::after, #footer, #footer::before, #footer::after, #console, #console::before, #console::after {
   will-change: transform; }
 
-#home_icon:active > #logo,
-#home_icon:focus > #logo,
-#home_icon:hover > #logo {
-  fill: #00EFF1 !important; }
+#home_icon:active > #logo, #home_icon:focus > #logo, #home_icon:hover > #logo {
+  fill: #00EFF1; }
+
+#search_icon:active > #magnifying_glass, #search_icon:focus > #magnifying_glass, #search_icon:hover > #magnifying_glass {
+  stroke: #00EFF1; }
+
+#main_nav .nav_item {
+  color: #000;
+  text-decoration: none; }
+  #main_nav .nav_item:active, #main_nav .nav_item:focus, #main_nav .nav_item:hover {
+    color: #00EFF1; }
 
 #console .log_msg {
   animation: fade_in .6s linear forwards;
   bottom: 4px;
   color: #666;
-  font-family: "Kepler-452b", monospace;
+  font-family: "Kepler", monospace;
   height: 24px;
   line-height: 16px;
   font-size: 16px;
@@ -117,6 +126,9 @@ body {
     transform: translateY(100px); }
   100% {
     transform: translateY(0px); } }
+
+.visible {
+  animation: fade_in .6s linear forwards; }
 
 @keyframes fade_in {
   0% {

@@ -171,11 +171,13 @@ w.onload = function () {
 		sm.util.log("System starting up...");
 		sm.util.load_defered_css();
 		w.m.onscroll = sm.interact.scroll.main;
-		var i = 0;
-		for (i = 0; i < 12; i += 1) {
-			setTimeout(function (i) {
-				sm.util.log("newMessage #" + i);
-			}, 600 * i, i + 1);
+		var i = 0, links = document.getElementsByClassName("nav_item"), link;
+		for (i = 0; i < links.length; i += 1) {
+			link = links[i];
+			setTimeout(function (l) {
+				l.classList.add("visible");
+			}, i * 1E2, link);
 		};
 	}, 100);
+	console.log("its uploading ok");
 };
