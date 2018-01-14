@@ -170,7 +170,7 @@ w.onload = function () {
 		sm.console = document.getElementById("console").getElementsByClassName("container")[0]
 		sm.util.log("System starting up...");
 		sm.util.load_defered_css();
-		w.m.onscroll = sm.interact.scroll.main;
+		w.m.childNodes[0].onscroll = sm.interact.scroll.main;
 		var i = 0, links = document.getElementsByClassName("nav_item"), link;
 		for (i = 0; i < links.length; i += 1) {
 			link = links[i];
