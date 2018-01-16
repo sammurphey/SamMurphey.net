@@ -43,7 +43,7 @@
 			margin: 0;
 			height: 100%;
 			overflow: hidden;
-			padding: 84px 2px;
+			padding: 0;
 			position: relative;
 			-webkit-tap-highlight-color: transparent;
 			-webkit-touch-callout: none;
@@ -62,27 +62,28 @@
 		a {
 			cursor: pointer;
 		}
-		.panel {
-			background: #F9F9F9;
-			border-radius: 2px;
-			box-shadow: 0px 0px 3px -1px #333
+		.container {
+			height: 100%;
+			position: relative;
+			width: 100%;
 		}
 		#header, #footer {
-			height: 80px;
-			left: 2px;
+			background: #F9F9F9;
+			left: 0px;
 			position: absolute;
-			width: calc(100% - 4px);
-			z-index: 2;
+			width: 100%;
+			z-index: 3;
 		}
 		#header {
-			top: 2px;
+			height: 64px;
+			top: 0px;
 		}
 		#home_icon, #search_icon {
 			display: block;
-			height: 80px;
+			height: 64px;
 			position: absolute;
-			top: 0px;
-			width: 80px;
+			top: 0;
+			width: 64px;
 			z-index: 4;
 		}
 		#home_icon {
@@ -92,146 +93,130 @@
 			right: 0;
 		}
 		#logo {
-			height: 48px;
+			height: 32px;
 			margin: 16px;
 			position: relative;
-			width: 48px;
+			width: 32px;
 		}
-		#magnifying_glass {
+		#mag_glass {
 			height: 16px;
-			margin: 32px;
+			margin: 24px;
 			position: relative;
 			width: 16px;
 		}
 		#main_nav {
-			left: 80px;
-			position: absolute;
-			top: 0;
-			width: calc(100% - 160px);
-			z-index: 4;
-		}
-		#main_nav ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-		#main_nav .nav_item {
-			display: inline-block;
-			opacity: 0;
-		}
-		#main_nav .nav_item a {
-			display: block;
-			font-family: "Kepler", monospace;
-			font-size: 16px;
-			height: 80px;
-			line-height: 32px;
-			min-width: 80px;
-			padding: 24px 16px;
+			display: none;
 		}
 		#main {
 			background: #F9F9F9;
-			border-radius: 2px;
-			box-shadow: 0px 0px 3px -1px #333;
 			display: block;
 			height: 100%;
 			overflow: hidden;
+			padding: 64px 8px 84px 8px;
 			position: relative;
-			z-index: 3;
+			z-index: 2;
 		}
-		#main .container {
-			overflow-y: scroll;
+		#main .container,
+		#footer .container {
+			background: #EEE;
+			border-radius: 6px;
+			box-shadow: inset 0px 2px 6px -1px rgba(0,0,0,.5);
+			overflow-y: hidden;
+			padding: 2px;
 		}
 		#footer {
-			bottom: 2px;
+			bottom: 0px;
+			height: 80px;
+			padding: 4px 8px 8px 8px;
+		}
+		#footer .container {
 			display: flex;
 			flex-direction: row;
 		}
-		#footer div {
-			flex: 1 1 auto;
-		}
-		#footer div + * {
-			margin-left: 2px;
-		}
-		@media(min-width: 600px) {
-			body {
-				padding: 84px;
-			}
-			#header::before {
-				background: #333;
-				box-shadow: 0px 0px 3px #333;
-				content: "";
-				display: block;
-				height: calc(100vh - 85px);
-				position: absolute;
-				left: 1px;
-				top: 81px;
-				width: 78px;
-				z-index: -1;
-			}
-			#header::after {
-				background: #F9F9F9;
-				content: "";
-				display: block;
-				height: calc(100vh - 68px);
-				margin-top: 80px;
-				position: absolute;
-				left: 0;
-				top: -16px;
-				width: 80px;
-				z-index: 3;
+		/* big phone */
+		@media(min-width: 414px) {
+			#main {
+				padding: 64px 16px 100px 16px;
 			}
 			#footer {
-				left: 84px;
-				width: calc(100% - 168px);
+				height: 92px;
+				padding: 8px 16px 16px 16px;
 			}
-			#footer::before {
-				background: #333;
-				box-shadow: 0px 0px 3px #333;
-				content: "";
-				display: block;
-				height: calc(100vh - 84px);
-				position: absolute;
-				right: -81px;
-				top: calc(-100vh + 164px);
-				width: 78px;
-				z-index: 1;
-			}
-			#footer::after {
-				background: #F9F9F9;
-				content: "";
-				display: block;
-				height: calc(100vh - 68px);
-				margin-top: 64px;
-				position: absolute;
-				right: -82px;
-				top: calc(-100vh + 84px);
-				width: 80px;
-				z-index: 3;
-			}
-			/*#console {
-				background: #F9F9F9;
-				border-radius: 2px;
-				box-shadow: 0px 0px 3px -1px #333;
-				bottom: 0;
+		}
+		/* tablet */
+		@media(min-width: 768px) {
+			#header {
 				height: 80px;
-				left: -482px;
+			}
+			#home_icon, #search_icon {
+				height: 80px;
+				width: 80px;
+			}
+			#logo {
+				margin: 24px;
+			}
+			#mag_glass {
+				margin: 32px;
+			}
+			#main {
+				padding: 80px 16px 116px 16px;
+			}
+			#footer {
+				height: 108px;
+				padding: 8px 16px 16px 16px;
+			}
+		}
+		/* desktop */
+		@media(min-width: 1024px) {
+			#logo {
+				height: 48px;
+				margin: 16px;
+				width: 48px;
+			}
+			#mag_glass {
+
+			}
+			#main_nav {
+				display: block;
+				left: 80px;
 				position: absolute;
-				width: 480px;
+				top: 0;
+				width: calc(100% - 160px);
+				z-index: 4;
 			}
-			#console .container {
-				height: 100%;
-				overflow: hidden;
-				padding: 4px 16px;
-				width: 100%;
+			#main_nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
 			}
-			#console .log_msg {
+			#main_nav .nav_item {
+				display: inline-block;
 				opacity: 0;
-			}*/
+			}
+			#main_nav .nav_item a {
+				display: block;
+				font-family: "Kepler", monospace;
+				font-size: 16px;
+				height: 80px;
+				line-height: 32px;
+				min-width: 80px;
+				padding: 24px 16px;
+			}
+			#main {
+				padding: 80px 80px 112px 80px;
+			}
+			#main .container,
+			#footer .container {
+				border-radius: 12px;
+			}
+			#footer {
+				padding: 8px 80px 16px 80px;
+			}
 		}
 	</style>
 </head>
 <body id="body">
-	<header id="header" class="panel">
+	<header id="header">
 		<a id="home_icon" href="https://sammurphey.net" title="Back to the homepage.">
 			<svg id="logo" fill="#000" width="48" height="48" viewBox="0 0 100 100">
 				<polygon points="0 0, 100 0, 100 100, 96 100, 96 56, 52 100, 0 100"/>
@@ -261,9 +246,9 @@
 			</ul>
 		</nav>
 		<a id="search_icon" href="https://sammurphey.net/search" title="Search">
-			<svg id="magnifying_glass" width="48" height="48" viewBox="0 0 100 100">
-				<polygon fill="none" stroke="#000" stroke-width="4.8" transform="rotate(45) translate(11 -40) scale(0.80)" points="5 50, 30 10, 70 10, 95 50, 70 90, 30 90"/>
-				<rect fill="#000" transform="rotate(315) translate(-1 84)" height="55" width="4"/>
+			<svg id="mag_glass" width="48" height="48" viewBox="0 0 100 100">
+				<polygon id="mag_glass_hex" fill="none" stroke="#000" stroke-width="12" transform="rotate(45) translate(24 -36) scale(0.7)" points="5 50, 30 10, 70 10, 95 50, 70 90, 30 90"/>
+				<rect id="mag_glass_hndl" fill="#000" transform="rotate(315) translate(-4 84)" height="48" width="12"/>
 			</svg>
 		</a>
 		<noscript>
@@ -274,123 +259,18 @@
 			</style>
 		</noscript>
 	</header>
-	<main id="main" class="panel">
+	<main id="main">
 		<div class="container">
-			.<br />
-			.<br />Currently in Development...
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
-			.<br />
 		</div>
 	</main>
 	<footer id="footer">
-		<div id="console" class="panel">
-			<div class="container">
-				<noscript><p id="log_0">This site is much better if you enable JavaScript.</p>
-				</noscript>
-			</div>
-		</div>
-		<div class="panel"></div>
+		<div class="container"></div>
 	</footer>
 	<div id="stylesheets">
 		<noscript id="defered_styles">
 			<link rel="stylesheet" href="css/global.css">
 		</noscript>
 	</div>
-	<script type="text/javascript" src="js/init.js"></script>
+	<script async defer type="text/javascript" src="js/init.js"></script>
 </body>
 </html>

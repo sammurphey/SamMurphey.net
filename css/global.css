@@ -6,19 +6,22 @@ a {
   cursor: pointer;
   text-decoration: inherit; }
 
-.container {
-  height: 100%;
-  position: relative;
-  width: 100%; }
+.panel {
+  background: #F9F9F9;
+  border-radius: 2px;
+  box-shadow: 0px 0px 3px -1px #333; }
 
 #header, #header::before, #header::after, #footer, #footer::before, #footer::after, #console, #console::before, #console::after {
   will-change: transform; }
 
-#home_icon:active > #logo, #home_icon:focus > #logo, #home_icon:hover > #logo {
+#home_icon:active #logo, #home_icon:focus #logo, #home_icon:hover #logo {
   fill: #00EFF1; }
 
-#search_icon:active > #magnifying_glass, #search_icon:focus > #magnifying_glass, #search_icon:hover > #magnifying_glass {
+#search_icon:active #mag_glass_hex, #search_icon:focus #mag_glass_hex, #search_icon:hover #mag_glass_hex {
   stroke: #00EFF1; }
+
+#search_icon:active #mag_glass_hndl, #search_icon:focus #mag_glass_hndl, #search_icon:hover #mag_glass_hndl {
+  fill: #00EFF1; }
 
 #main_nav .nav_item {
   color: #000;
@@ -41,31 +44,29 @@ a {
 #console .log_msg:last-child {
   color: #000; }
 
-#body.int #header {
-  animation: ext_header .4s linear forwards; }
-  #body.int #header::before, #body.int #header::after {
-    animation: ext_header_pseudo .4s linear forwards; }
-
-#body.int #footer {
-  animation: ext_footer .4s linear forwards; }
-  #body.int #footer::before, #body.int #footer::after {
-    animation: ext_footer_pseudo .4s linear forwards; }
-
-#body.int #console {
-  animation: ext_console .4s linear forwards; }
-
-#body.ext #header {
-  animation: int_header .4s linear forwards; }
-  #body.ext #header::before, #body.ext #header::after {
-    animation: int_header_pseudo .4s linear forwards; }
-
-#body.ext #footer {
-  animation: int_footer .4s linear forwards; }
-  #body.ext #footer::before, #body.ext #footer::after {
-    animation: int_footer_pseudo .4s linear forwards; }
-
-#body.ext #console {
-  animation: int_console .4s linear forwards; }
+/*#console {
+	background: #F9F9F9;
+	border-radius: 2px;
+	box-shadow: 0px 0px 3px -1px #333;
+	bottom: 0;
+	height: 80px;
+	left: -482px;
+	position: absolute;
+	width: 480px;
+}
+#console .container {
+	height: 100%;
+	overflow: hidden;
+	padding: 4px 16px;
+	width: 100%;
+}
+#console .log_msg {
+	opacity: 0;
+}*/
+#footer .container * {
+  flex: 1 1 auto; }
+  #footer .container * + * {
+    margin-left: 2px; }
 
 @keyframes ext_header {
   0% {

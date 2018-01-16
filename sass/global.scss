@@ -10,10 +10,11 @@ a {
 	text-decoration: inherit;
 }
 //reset coordinate system to parent
-.container {
-	height: 100%;
-	position: relative;
-	width: 100%;
+
+.panel {
+	background: #F9F9F9;
+	border-radius: 2px;
+	box-shadow: 0px 0px 3px -1px #333
 }
 
 #header, #footer, #console {
@@ -25,7 +26,7 @@ a {
 	&:active,
 	&:focus,
 	&:hover {
-		> #logo {
+		#logo {
 			fill: $teal;
 		}
 	}
@@ -34,8 +35,11 @@ a {
 	&:active,
 	&:focus,
 	&:hover {
-		> #magnifying_glass {
+		#mag_glass_hex {
 			stroke: $teal;
+		}
+		#mag_glass_hndl {
+			fill: $teal;
 		}
 	}
 }
@@ -69,40 +73,33 @@ a {
 		color: #000;
 	}
 }
-
-#body.int {
-	#header {
-		animation: ext_header .4s linear forwards;
-		&::before, &::after {
-			animation: ext_header_pseudo .4s linear forwards;
-		}
-	}
-	#footer {
-		animation: ext_footer .4s linear forwards;
-		&::before, &::after {
-			animation: ext_footer_pseudo .4s linear forwards;
-		}
-	}
-	#console {
-		animation: ext_console .4s linear forwards;
-	}
+/*#console {
+	background: #F9F9F9;
+	border-radius: 2px;
+	box-shadow: 0px 0px 3px -1px #333;
+	bottom: 0;
+	height: 80px;
+	left: -482px;
+	position: absolute;
+	width: 480px;
 }
-
-#body.ext {
-	#header {
-		animation: int_header .4s linear forwards;
-		&::before, &::after {
-			animation: int_header_pseudo .4s linear forwards;
+#console .container {
+	height: 100%;
+	overflow: hidden;
+	padding: 4px 16px;
+	width: 100%;
+}
+#console .log_msg {
+	opacity: 0;
+}*/
+#footer {
+	.container {
+		* {
+			flex: 1 1 auto;
+			& + * {
+				margin-left: 2px;
+			}
 		}
-	}
-	#footer {
-		animation: int_footer .4s linear forwards;
-		&::before, &::after {
-			animation: int_footer_pseudo .4s linear forwards;
-		}
-	}
-	#console {
-		animation: int_console .4s linear forwards;
 	}
 }
 

@@ -48,7 +48,7 @@ sm.util = {
 			new_css.appendChild(link);
 		};
 		new_css.removeChild(old_css);
-		sm.util.log("Global CSS loaded.");
+	//	sm.util.log("Global CSS loaded.");
 	},
 	events: {
 		cancel: function (event) {
@@ -167,8 +167,7 @@ w.onload = function () {
 	setTimeout(function () {
 		w.b = document.getElementById("body");
 		w.m = document.getElementById("main");
-		sm.console = document.getElementById("console").getElementsByClassName("container")[0]
-		sm.util.log("System starting up...");
+		//sm.util.log("System starting up...");
 		sm.util.load_defered_css();
 		w.m.childNodes[0].onscroll = sm.interact.scroll.main;
 		var i = 0, links = document.getElementsByClassName("nav_item"), link;
@@ -179,5 +178,4 @@ w.onload = function () {
 			}, i * 1E2, link);
 		};
 	}, 100);
-	console.log("its uploading ok");
 };
