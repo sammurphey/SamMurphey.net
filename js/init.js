@@ -48,7 +48,6 @@ sm.util = {
 			new_css.appendChild(link);
 		};
 		new_css.removeChild(old_css);
-	//	sm.util.log("Global CSS loaded.");
 	},
 	events: {
 		cancel: function (event) {
@@ -131,6 +130,50 @@ sm.util = {
 	},
 	replaceAt: function(str, index, char) {
 		return str.substr(0, index) + char + str.substr(index + char.length);
+	},
+	xhr: function (method, url, data, cb, args) {
+		var conn = new XMLHttpRequest,
+			resp = false,
+			i, data_items, formatted_data = "";
+
+		conn.onreadystatechange = function() {
+			if (conn.readyState === 4) {
+				if (conn.status === 200) {
+					resp = conn.responseText;
+					if (url.indexOf(".json") > 0) {
+						resp = JSON.parse(resp, true);
+					}
+				} else {
+					resp = conn.status;
+				}
+				console.log(resp);
+				if (typeof cb !== "undefined") {
+					typeof args !== "undefined" ? cb(resp, args) : cb(resp);
+				} else {
+					return resp;
+				}
+			}
+		}
+		method = method.toUpperCase();
+		if (typeof data !== "undefined") {
+			if (sm.util.isArray(data)) {
+				data_items = data[0];
+				for (i in data_items) {
+					if (formatted_data.length > 0) {
+						formatted_data += "&";
+					} else {
+						formatted_data += "?";
+					}
+					formatted_data += i + "=" + data_items[i];
+				}
+				url += formatted_data;
+				formatted_data = "";
+			} else {
+				formatted_data = data;
+			}
+		}
+		conn.open(method, url, !0);
+		conn.send(formatted_data);
 	}
 };
 sm.interact = {
@@ -162,20 +205,23 @@ sm.interact = {
 		}
 	}
 };
-
+sm.build = function (resp) {
+	console.log("building")
+	w.m.childNodes[0].innerHTML += JSON.stringify(resp);
+}
 w.onload = function () {
-	setTimeout(function () {
-		w.b = document.getElementById("body");
-		w.m = document.getElementById("main");
-		//sm.util.log("System starting up...");
-		sm.util.load_defered_css();
-		w.m.childNodes[0].onscroll = sm.interact.scroll.main;
-		var i = 0, links = document.getElementsByClassName("nav_item"), link;
-		for (i = 0; i < links.length; i += 1) {
-			link = links[i];
-			setTimeout(function (l) {
-				l.classList.add("visible");
-			}, i * 1E2, link);
-		};
-	}, 100);
+	w.b = document.getElementById("body");
+	w.m = document.getElementById("main");
+	//sm.util.log("System starting up...");
+	sm.util.load_defered_css();
+	w.m.childNodes[0].onscroll = sm.interact.scroll.main;
+	var i = 0, links = document.getElementsByClassName("nav_item"), link;
+	for (i = 0; i < links.length; i += 1) {
+		link = links[i];
+		setTimeout(function (l) {
+			l.classList.add("visible");
+		}, i * 1E2, link);
+	};
+	sm.url = window.location.origin + "/";
+	sm.util.xhr("get", sm.url + "data/ref/music.json", "", sm.build);
 };

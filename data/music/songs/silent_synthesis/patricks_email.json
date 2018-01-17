@@ -5,7 +5,7 @@
 	"artists": [
 		"Silent Synthesis"
 	],
-	"date": "10/13/2012",
+	"date": "10/6/2012",
 	"description": "",
 	"files": [
 		"music/silent_synthesis/silent_synthesis/patricks_email.wav"
@@ -16,7 +16,7 @@
 	],
 	"label": "Self Released",
 	"length": "0:59",
-	"show_in_overview": false,
+	"show_in_overview": true,
 	"title": "Patrick's Email",
 	"track_cover": "img/silent_synthesis/patricks_email_cover.jpg",
 	"track_number": "1",

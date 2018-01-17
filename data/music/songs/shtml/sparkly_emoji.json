@@ -5,7 +5,7 @@
 	"artists": [
 		"SHTML"
 	],
-	"date": "6/27/2015",
+	"date": "5/6/2015",
 	"description": "",
 	"files": [
 		"music/shtml/shtml/sparkly_emoji.wav"
@@ -16,7 +16,7 @@
 	],
 	"label": "Self Released",
 	"length": "1:19",
-	"show_in_overview": false,
+	"show_in_overview": true,
 	"title": "Sparkly Emoji",
 	"track_cover": "img/shtml/sparkly_emoji_cover.jpg",
 	"track_number": "1",

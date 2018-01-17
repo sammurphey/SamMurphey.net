@@ -1,0 +1,129 @@
+[
+	{
+		"artists": ["Essaitchteeemel"],
+		"data": "essaitchteeemel_dissolve.json",
+		"date": "1/31/2018",
+		"title": "Dissolve",
+		"type": "album"
+	}, {
+		"artists": ["Ikea@Midnight"],
+		"data": "ikeaatmidnight_see_you_then.json",
+		"date": "8/24/2015",
+		"title": "SeeYouThen",
+		"type": "album"
+	}, {
+		"artists": ["SHTML"],
+		"data": "shtml_shtml.json",
+		"date": "6/27/2018",
+		"title": "SHTML",
+		"type": "album"
+	}, {
+		"artists": ["SHTML"],
+		"data": "shtml/erie.json",
+		"date": "5/20/2015",
+		"title": "Erie",
+		"type": "song"
+	},  {
+		"artists": ["SHTML"],
+		"data": "shtml/sparkly_emoji.json",
+		"date": "5/6/2015",
+		"title": "Sparkly Emoji",
+		"type": "song"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis_winters_edge.json",
+		"date": "11/10/2014",
+		"title": "Winter's Edge",
+		"type": "album"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis/ace.json",
+		"date": "11/7/2014",
+		"title": "Ace",
+		"type": "song"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis/peppermint.json",
+		"date": "10/31/2014",
+		"title": "Peppermint",
+		"type": "song"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis/the_grass_looks_so_soft_and_comforting.json",
+		"date": "8/1/2014",
+		"title": "The Grass Looks so Soft and Comforting",
+		"type": "song"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis_all_of_the_things.json",
+		"date": "12/24/2013",
+		"title": "All of the Things I Have Forgotten to Tell You",
+		"type": "album"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis/you_dont_care_a_bit.json",
+		"date": "12/12/2013",
+		"title": "You Don't Care a Bit (Official Video)",
+		"type": "video"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis/you_dont_care_a_bit.json",
+		"date": "12/12/2013",
+		"title": "You Don't Care a Bit",
+		"type": "song"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis/watching_adult_swim.json",
+		"date": "11/30/2013",
+		"title": "Watching Adult Swim",
+		"type": "song"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis/food_coloring.json",
+		"date": "11/15/2013",
+		"title": "Food Coloring",
+		"type": "song"
+	}, {
+		"artists": ["Silent Synthesis", "Bones"],
+		"data": "silent_synthesis_broken_teeth.json",
+		"date": "9/13/2013",
+		"title": "Broken Teeth",
+		"type": "album"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis_lucid_dreaming.json",
+		"date": "8/31/2013",
+		"title": "Lucid Dreaming",
+		"type": "album"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis/lucid_dreaming.json",
+		"date": "8/20/2013",
+		"title": "Lucid Dreaming (Official Video)",
+		"type": "video"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis/lucid_dreaming.json",
+		"date": "8/20/2013",
+		"title": "Lucid Dreaming (single)",
+		"type": "song"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis_silent_synthesis.json",
+		"date": "10/13/2012",
+		"title": "Silent Synthesis",
+		"type": "album"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis/patricks_email.json",
+		"date": "10/6/2012",
+		"title": "Partick's Email",
+		"type": "song"
+	}, {
+		"artists": ["Silent Synthesis"],
+		"data": "silent_synthesis/hashcat.json",
+		"date": "9/20/2012",
+		"title": "Hashcat",
+		"type": "song"
+	}
+]
