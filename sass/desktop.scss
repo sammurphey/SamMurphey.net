@@ -1,0 +1,13 @@
+@import "vars";
+#main_nav {
+	.nav_item {
+		color: #000;
+		text-decoration: none;
+		&:active,
+		&:focus,
+		&:hover {
+			background: #FFF;
+			color: $teal;
+		}
+	}
+}

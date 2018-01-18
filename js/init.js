@@ -1,7 +1,40 @@
 var w = window,
-	sm = sm || {};
-sm.st = 0;
+	sm = {};
+sm.route = {
+	viewport: function () {
+		var x = w.innerWidth || document.documentElement.clientWidth || sm.body.clientWidth
+		if (x >= 1024) {
+			sm.util.add_new.js("desktop");
+		} else {
+			sm.util.add_new.js("mobile");
+		}
+	}
+};
 sm.util = {
+	add_new: {
+		css: function () {},
+		js: function (url) {
+			var elem = document.createElement("script"),
+				siblings = document.getElementsByTagName("script"),
+				sib_src, i, found_duplicate = false;
+			url = url.indexOf("http") >= 0 ? url : sm.url_base + "js/" + url + ".js";
+			elem.setAttribute("async", "");
+			elem.setAttribute("defer", "");
+			elem.type = "text/javascript";
+			elem.src = url;
+			for (i = 0; i < siblings.length; i += 1) {
+				sib_src = siblings[i].src
+				if (typeof sib_src !== "undefined") {
+					if (sib_src.toLowerCase() == url.toLowerCase()) {
+						found_duplicate = true;
+					}
+				}
+			}
+			if (!found_duplicate) {
+				sm.body.appendChild(elem);
+			}
+		}
+	},
 	addStyle: function (elem, prop, val, vendors) {
 		var i, ii, property, value
 		if (!sm.util.isElem(elem)) {
@@ -27,27 +60,6 @@ sm.util = {
 				elem.style[thisProp] = thisVal
 			}
 		}
-	},
-	load_css: function (url, cb, args) {
-	},
-	load_defered_css: function () {
-		var old_css = document.getElementById("defered_styles"),
-			new_css = document.getElementById("stylesheets"),
-			children = old_css.childNodes,
-			child, link, href, i;
-
-		for (i = 0; i < children.length; i += 1) {
-			child = children[i].data;
-			href = child.split("href");
-			href = href[1].split("\"");
-			link = document.createElement("link");
-			link.id = "css_" + i;
-			link.rel = "stylesheet";
-
-			link.href = href[1];
-			new_css.appendChild(link);
-		};
-		new_css.removeChild(old_css);
 	},
 	events: {
 		cancel: function (event) {
@@ -98,38 +110,41 @@ sm.util = {
 	isObj: function (v) {
 		return (typeof v == "object")
 	},
-	log: function (text) {
-		var msg = document.createElement("p"),
-			children = sm.console.childNodes,
-			child, i, x = children.length;
-		if (x) {
-			for (i = 0; i < x; i += 1) {
-				child = children[i]
-				switch(true) {
-					case (i + 2 == x):
-						sm.util.addStyle(child, "bottom", "52px");
-						break;
-					case (i + 1 == x):
-						sm.util.addStyle(child, "bottom", "28px");
-						break;
-					default:
-						sm.util.addStyle(child, "bottom", "76px");
-				};
-			};
-		} else {
-			x = 2;
+	load_defered_css: function () {
+		var old_css = document.getElementById("defered_styles"),
+			new_css = document.getElementById("stylesheets"),
+			children = old_css.childNodes,
+			child, link, href, i;
+
+		for (i = 0; i < children.length; i += 1) {
+			child = children[i].data;
+			href = child.split("href");
+			href = href[1].split("\"");
+			link = document.createElement("link");
+			link.id = "css_" + i;
+			link.rel = "stylesheet";
+
+			link.href = href[1];
+			new_css.appendChild(link);
 		};
-		x -= 1;
-		msg.id = "log_" + x;
-		msg.className = "log_msg";
-		msg.innerHTML = text;
-		sm.console.appendChild(msg);
+		new_css.removeChild(old_css);
 	},
 	replaceAll: function(target, search, replacement) {
 		return target.split(search).join(replacement)
 	},
 	replaceAt: function(str, index, char) {
 		return str.substr(0, index) + char + str.substr(index + char.length);
+	},
+	throttle: function (cb, args) {
+		sm.throttle_wait = sm.throttle_wait || 0
+		if (sm.throttle_wait <= 0) {
+			clearTimeout(sm.throttle_timer);
+			typeof args !== "undefined" ? cb(args) : cb();
+			sm.throttle_wait = 1;
+			sm.throttle_timer = setTimeout(function () {
+				sm.throttle_wait -= 1;
+			}, 60);
+		}
 	},
 	xhr: function (method, url, data, cb, args) {
 		var conn = new XMLHttpRequest,
@@ -175,53 +190,18 @@ sm.util = {
 		conn.open(method, url, !0);
 		conn.send(formatted_data);
 	}
-};
-sm.interact = {
-	scroll: {
-		main: function () {
-			var st = w.m.scrollTop;
-			sm.defer_scroll = sm.defer_scroll || 0
-			if (sm.defer_scroll <= 0) {
-				if (st > sm.st) {//dwn
-					if (!w.b.classList.contains("int")) {
-						w.b.classList.add("int");
-						w.b.classList.remove("ext");
-					}
-				} else if (st < sm.st){//up
-					if (w.b.classList.contains("int")) {
-						w.b.classList.remove("int");
-						w.b.classList.add("ext");
-					}
-				};
-				sm.defer_scroll = 1;
-				sm.scroll_int = setInterval(function () {
-					sm.defer_scroll -= 1;
-					if (sm.defer_scroll <= 0) {
-						clearTimeout(sm.scroll_int);
-					}
-				}, 60);
-			};
-			sm.st = st;
-		}
-	}
-};
-sm.build = function (resp) {
-	console.log("building")
-	w.m.childNodes[0].innerHTML += JSON.stringify(resp);
 }
-w.onload = function () {
-	w.b = document.getElementById("body");
-	w.m = document.getElementById("main");
-	//sm.util.log("System starting up...");
+
+sm.init = sm.init || {};
+sm.init.init = function () {
 	sm.util.load_defered_css();
-	w.m.childNodes[0].onscroll = sm.interact.scroll.main;
-	var i = 0, links = document.getElementsByClassName("nav_item"), link;
-	for (i = 0; i < links.length; i += 1) {
-		link = links[i];
-		setTimeout(function (l) {
-			l.classList.add("visible");
-		}, i * 1E2, link);
-	};
-	sm.url = window.location.origin + "/";
-	sm.util.xhr("get", sm.url + "data/ref/music.json", "", sm.build);
+	sm.url = window.location.href.split(".net/");
+	sm.url_base = sm.url[0] + ".net/";
+	sm.url_dir = sm.url[1];
+	sm.body = document.getElementById("body");
+	sm.main = document.getElementById("main");
+	sm.inner_main = sm.main.childNodes[0];
+	sm.route.viewport();
 };
+
+w.onload = sm.init.init;

@@ -1,5 +1,4 @@
-$amber:  #FFBF00;
-$teal: #00EFF1;
+@import "vars";
 
 body {
 	overflow: hidden;
@@ -9,7 +8,6 @@ a {
 	cursor: pointer;
 	text-decoration: inherit;
 }
-//reset coordinate system to parent
 
 .panel {
 	background: #F9F9F9;
@@ -17,11 +15,6 @@ a {
 	box-shadow: 0px 0px 3px -1px #333
 }
 
-#header, #footer, #console {
-	&, &::before, &::after {
-		will-change: transform;
-	}
-}
 #home_icon {
 	&:active,
 	&:focus,
@@ -29,6 +22,7 @@ a {
 		#logo {
 			fill: $teal;
 		}
+		background: #FFF;
 	}
 }
 #search_icon {
@@ -41,17 +35,7 @@ a {
 		#mag_glass_hndl {
 			fill: $teal;
 		}
-	}
-}
-#main_nav {
-	.nav_item {
-		color: #000;
-		text-decoration: none;
-		&:active,
-		&:focus,
-		&:hover {
-			color: $teal;
-		}
+		background: #FFF;
 	}
 }
 
