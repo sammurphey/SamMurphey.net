@@ -1,46 +1,41 @@
-sm.route = sm.route || {};
-sm.route.page = function () {
-	var url = sm.url_dir;
-	if (url.length > 1) {
-		url.split("/");
-		switch(true) {
-			case (url[0].indexOf("music") >= 0): {
-
-				break;
-			}
-			case (url[0].indexOf("code") >= 0): {
-
-				break;
-			}
-			case (url[0].indexOf("art") >= 0): {
-
-				break;
-			}
-			case (url[0].indexOf("store") >= 0): {
-
-				break;
-			}
-			default: {
-				// 404
-			}
+sm.build = sm.build || {};
+sm.build.skeleton = function (resp) {
+	var elem, i, item;
+	console.log("Building skeleton..");
+	for (i = 0; i < resp.length; i += 1) {
+		item = resp[i];
+		elem = document.createElement("div");
+		if (typeof item.id !== "undefined") {
+			elem.id = item.id;
 		}
-	} else {
-		sm.util.add_new.js("home");
-		//homepage
+		if (typeof item.class !== "undefined") {
+			elem.className = item.class;
+		}
+		if (typeof item.content !== "undefined") {
+			elem.innerHTML = item.content;
+		}
+		sm.main_content_container.appendChild(elem);
 	}
 };
 
 //onload stuff
 sm.init.desktop = function () {
-	var i = 0, links = document.getElementsByClassName("nav_item"), link;
+	console.log("Init: Desktop");
+	var link, links = document.getElementsByClassName("nav_item"),
+		i = 0, int;
 	for (i = 0; i < links.length; i += 1) {
 		link = links[i];
 		setTimeout(function (l) {
 			l.classList.add("visible");
 		}, i * 1E2, link);
 	};
-	w.addEventListener("resize", function () {
-		sm.util.throttle(sm.route.viewport);
-	});
+	int = setInterval(function () {
+		if (sm.router.find_page !== "undefined") {
+			clearInterval(int);
+			sm.router.find_page(sm.build.skeleton);
+		} else {
+			console.log("waiting..");
+		}
+	}, 100)
 };
 sm.init.desktop();

@@ -1,27 +1,52 @@
 var w = window,
 	sm = {};
-sm.route = {
+sm.router = {
 	viewport: function () {
 		var x = w.innerWidth || document.documentElement.clientWidth || sm.body.clientWidth
 		if (x >= 1024) {
-			sm.util.add_new.js("desktop");
+			sm.util.throttle("size_desk_js", sm.util.add_new.js, "desktop");
+			sm.util.throttle("size_desk_css", sm.util.add_new.css, "desktop");
 		} else {
-			sm.util.add_new.js("mobile");
+			sm.util.throttle("size_mobl_js", sm.util.add_new.js, "mobile");
+			sm.util.throttle("size_mobl_css", sm.util.add_new.css, "mobile");
 		}
 	}
 };
 sm.util = {
 	add_new: {
-		css: function () {},
+		css: function (url) {
+			var elem,
+				siblings = document.getElementsByTagName("link"),
+				sib_href, i, found_duplicate = false;
+			url = String(url);
+			if (url.indexOf("https") < 0) {
+				url = sm.url_base + "css/" + url + ".css";
+			}
+			for (i = 0; i < siblings.length; i += 1) {
+				sib_href = siblings[i].href;
+				if (typeof sib_href !== "undefined") {
+					if (sib_href.toLowerCase() == url.toLowerCase()) {
+						found_duplicate = true;
+					}
+				}
+			}
+			if (!found_duplicate) {
+				console.log("Adding: " + url);
+				elem = document.createElement("link");
+				elem.href = url;
+				elem.rel = "stylesheet";
+				sm.body.appendChild(elem);
+			}
+		},
 		js: function (url) {
-			var elem = document.createElement("script"),
+			var elem,
 				siblings = document.getElementsByTagName("script"),
-				sib_src, i, found_duplicate = false;
-			url = url.indexOf("http") >= 0 ? url : sm.url_base + "js/" + url + ".js";
-			elem.setAttribute("async", "");
-			elem.setAttribute("defer", "");
-			elem.type = "text/javascript";
-			elem.src = url;
+				sib_src, i, found_duplicate = false, func = false;
+			url = String(url);
+			if (url.indexOf("http") < 0) {
+				func = sm.init[url];
+				url = sm.url_base + "js/" + url + ".js";
+			}
 			for (i = 0; i < siblings.length; i += 1) {
 				sib_src = siblings[i].src
 				if (typeof sib_src !== "undefined") {
@@ -31,7 +56,16 @@ sm.util = {
 				}
 			}
 			if (!found_duplicate) {
+				console.log("Activating: " + url);
+				elem = document.createElement("script"),
+				elem.setAttribute("async", "");
+				elem.setAttribute("defer", "");
+				elem.src = url;
+				elem.type = "text/javascript";
 				sm.body.appendChild(elem);
+			} else if (func) {
+				console.log("Restarting: " + url);
+				func();
 			}
 		}
 	},
@@ -112,7 +146,6 @@ sm.util = {
 	},
 	load_defered_css: function () {
 		var old_css = document.getElementById("defered_styles"),
-			new_css = document.getElementById("stylesheets"),
 			children = old_css.childNodes,
 			child, link, href, i;
 
@@ -125,9 +158,9 @@ sm.util = {
 			link.rel = "stylesheet";
 
 			link.href = href[1];
-			new_css.appendChild(link);
+			sm.body.appendChild(link);
 		};
-		new_css.removeChild(old_css);
+		sm.body.removeChild(old_css);
 	},
 	replaceAll: function(target, search, replacement) {
 		return target.split(search).join(replacement)
@@ -135,14 +168,27 @@ sm.util = {
 	replaceAt: function(str, index, char) {
 		return str.substr(0, index) + char + str.substr(index + char.length);
 	},
-	throttle: function (cb, args) {
-		sm.throttle_wait = sm.throttle_wait || 0
-		if (sm.throttle_wait <= 0) {
-			clearTimeout(sm.throttle_timer);
-			typeof args !== "undefined" ? cb(args) : cb();
-			sm.throttle_wait = 1;
-			sm.throttle_timer = setTimeout(function () {
-				sm.throttle_wait -= 1;
+	throttle: function (id, cb, args) {
+		sm.throttle_wait = sm.throttle_wait || {};
+		if (typeof sm.throttle_wait[id] == "undefined") {
+			sm.throttle_wait[id] = 0
+		}
+		if (sm.throttle_wait[id] <= 0) {
+			if (typeof sm.throttle_timer !== "undefined") {
+				if (typeof sm.throttle_timer[id] !== "undefined") {
+					clearTimeout(sm.throttle_timer[id]);
+				}
+			} else {
+				sm.throttle_timer = {};
+			}
+			if (typeof args !== "undefined") {
+				cb(args);
+			} else {
+				cb();
+			}
+			sm.throttle_wait[id] = 1;
+			sm.throttle_timer[id] = setTimeout(function () {
+				sm.throttle_wait[id] -= 1;
 			}, 60);
 		}
 	},
@@ -150,12 +196,13 @@ sm.util = {
 		var conn = new XMLHttpRequest,
 			resp = false,
 			i, data_items, formatted_data = "";
-
 		conn.onreadystatechange = function() {
 			if (conn.readyState === 4) {
 				if (conn.status === 200) {
+					console.log("Xhr handshake successful!");
 					resp = conn.responseText;
 					if (url.indexOf(".json") > 0) {
+						console.log("Parsing json response..");
 						resp = JSON.parse(resp, true);
 					}
 				} else {
@@ -187,6 +234,7 @@ sm.util = {
 				formatted_data = data;
 			}
 		}
+		console.log("Activating xhr \"" + method + "\" connection to: " + url);
 		conn.open(method, url, !0);
 		conn.send(formatted_data);
 	}
@@ -194,14 +242,19 @@ sm.util = {
 
 sm.init = sm.init || {};
 sm.init.init = function () {
-	sm.util.load_defered_css();
 	sm.url = window.location.href.split(".net/");
 	sm.url_base = sm.url[0] + ".net/";
 	sm.url_dir = sm.url[1];
 	sm.body = document.getElementById("body");
 	sm.main = document.getElementById("main");
-	sm.inner_main = sm.main.childNodes[0];
-	sm.route.viewport();
+	sm.main_content = document.getElementById("main_content");
+	sm.main_content_container = document.getElementById("main_content_container");
+	sm.util.load_defered_css();
+	sm.util.add_new.js("router");
+	sm.router.viewport();
+	w.addEventListener("resize", function () {
+		sm.util.throttle("resize", sm.router.viewport);
+	});
 };
 
 w.onload = sm.init.init;

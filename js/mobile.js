@@ -32,9 +32,15 @@ sm.route.page = function () {
 
 //onload stuff
 sm.init.mobile = function () {
-	w.addEventListener("resize", function () {
-		sm.util.throttle(sm.route.viewport);
-	});
+	console.log("Init: Mobile");
+	var link, links = document.getElementsByClassName("nav_item"),
+		i = 0, int;
+	for (i = 0; i < links.length; i += 1) {
+		link = links[i];
+		setTimeout(function (l) {
+			l.classList.remove("visible");
+		}, i * 1E2, link);
+	};
 };
 
 sm.init.mobile();
