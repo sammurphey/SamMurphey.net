@@ -1,6 +1,10 @@
 RewriteEngine On
-  RewriteCond %{HTTPS} on
-  RewriteRule ^ http://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteCond %{SERVER_PORT} 80
+  RewriteRule ^(.*)$ https://sammurphey.net/$1 [L,R=301]
+
+  RewriteCond %{HTTP_HOST} ^www\.sammurphey\.net [NC]
+  RewriteRule ^(.*)$ https://sammurphey.net/$1 [L,R=301]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond $1 !\.(css|js|jpe?g|gif|png|tiff|txt|html|php|otf|svg|ttf|woff|woff2)$
