@@ -32,13 +32,15 @@ sm.router.getCurrentPage = function (cb, args) {
 					case "": {
 						//use defaults
 						break;
-					} case "music":
+					}
+					case "music":
 					case "code":
 					case "art":
 					case "store": {
 						file = shard;
 						break;
-					} default: {
+					}
+					default: {
 						view = "error";
 						file = "404";
 					}
@@ -50,12 +52,14 @@ sm.router.getCurrentPage = function (cb, args) {
 						switch(shard) {
 							case "": {
 								break;
-							} case "shtml":
+							}
+							case "shtml":
 							case "silentsynthesis":
 							case "syntacticsugar": {
 								file += "/" + shard;
 								break;
-							} default: {
+							}
+							default: {
 								view = "error";
 								file = "404";
 							}
@@ -66,11 +70,13 @@ sm.router.getCurrentPage = function (cb, args) {
 						switch(shard) {
 							case "": {
 								break;
-							} case "projects":
+							}
+							case "projects":
 							case "labs": {
 								file += "/shard";
 								break;
-							} default: {
+							}
+							default: {
 								view = "error";
 								file = "404";
 							}
@@ -81,14 +87,16 @@ sm.router.getCurrentPage = function (cb, args) {
 						switch(shard) {
 							case "": {
 								break;
-							} case "3d":
+							}
+							case "3d":
 							case "design":
 							case "illustration":
 							case "photography":
 							case "video": {
 								file += "/" + shard;
 								break;
-							} default: {
+							}
+							default: {
 								view = "error";
 								file = "404";
 							}
@@ -99,12 +107,16 @@ sm.router.getCurrentPage = function (cb, args) {
 						switch(shard) {
 							case "": {
 								break;
-							} case "albums":
+							}
+							case "albums":
+							case "fonts":
+							case "icons":
 							case "samplepacks":
 							case "shirts": {
 								file += "/" + shard;
 								break;
-							} default: {
+							}
+							default: {
 								view = "error";
 								file = "404";
 							}

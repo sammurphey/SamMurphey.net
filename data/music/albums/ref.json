@@ -1,0 +1,43 @@
+[
+	{
+		"category": "music",
+		"date": "1/31/2018",
+		"file": "data/music/albums/sunnli5hh-t_dissolve.json",
+		"name": "Sunnli5hh/t - Dissolve"
+	}, {
+		"category": "music",
+		"date": "8/24/2015",
+		"file": "data/music/albums/ikeaatmidnight_see_you_then.json",
+		"name": "Ikea@Midnight - See You Then"
+	}, {
+		"category": "music",
+		"date": "6/27/2015",
+		"file": "data/music/albums/shtml_shtml.json",
+		"title": "SHTML - SHTML"
+	}, {
+		"category": "music",
+		"date": "11/10/2014",
+		"file": "data/music/albums/silent_synthesis_winters_edge.json",
+		"name": "Silent Synthesis - Winters Edge"
+	}, {
+		"category": "music",
+		"date": "12/24/2013",
+		"file": "data/music/albums/silent_synthesis_all_of_the_things.json",
+		"name": "Silent Synthesis - All of the Things I Have Forgotten To Tell You"
+	}, {
+		"category": "music",
+		"date": "9/13/2013",
+		"file": "data/music/albums/silent_synthesis_broken_teeth.json",
+		"name": "Bones and Silent Synthesis - Broken Teeth"
+	}, {
+		"category": "music",
+		"date": "8/31/2013",
+		"file": "data/music/albums/silent_synthesis_lucid_dreaming.json",
+		"name": "Silent Synthesis - Lucid Dreaming"
+	}, {
+		"category": "music",
+		"date": "10/13/2012",
+		"file": "data/music/albums/silent_synthesis_silent_synthesis.json",
+		"name": "Silent Synthesis - Silent Synthesis"
+	}
+]

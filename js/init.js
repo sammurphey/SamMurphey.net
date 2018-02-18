@@ -244,7 +244,7 @@ var w = window,
 				sm.util.add_new.js("router");
 				sm.util.add_new.css("desktop");
 				i = setInterval(function () {
-					if (typeof sm.router.getCurrentPage !== "undefined") {
+					if (typeof sm.router !== "undefined") {
 						clearInterval(i);
 						sm.router.getCurrentPage();
 					} else {
