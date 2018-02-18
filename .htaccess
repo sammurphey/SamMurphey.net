@@ -1,9 +1,9 @@
-<IfModule mod_rewrite.c>
+RewriteEngine On
+  RewriteBase /
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond $1 !\.(css|js|jpe?g|gif|png|tiff|txt|html|php|otf|svg|ttf|woff|woff2)$
-  RewriteRule ^(.*)$ index.html [NC,L,QSA]
-</IfModule>
+  RewriteRule . /sam/index.html [NC,L,QSA]
 <IfModule mod_expires.c>
   #ExpiresActive On
   #ExpiresByType image/jpg "access 1 year"

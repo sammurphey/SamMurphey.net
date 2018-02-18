@@ -232,7 +232,7 @@ var w = window,
 		},
 		init: {
 			init: function () {
-				var i;
+				var i, j, link, links;
 				sm.url_base = "http://127.0.0.1/sam/";
 				sm.url = window.location.href.replace(sm.url_base, "");
 				sm.url.split("/");
@@ -250,7 +250,14 @@ var w = window,
 					} else {
 						console.log("waiting..");
 					}
-				}, 100)
+				}, 100);
+				links = document.getElementsByClassName("nav_item");
+				for (j = 0; j < links.length; j += 1) {
+					link = links[j];
+					setTimeout(function (l) {
+						l.classList.add("visible");
+					}, j * 1E2, link);
+				};
 			}
 		}
 	};
