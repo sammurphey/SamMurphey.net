@@ -30,9 +30,9 @@ sm.init.desktop = function () {
 		}, i * 1E2, link);
 	};
 	int = setInterval(function () {
-		if (sm.router.find_page !== "undefined") {
+		if (sm.router.getCurrentPage !== "undefined") {
 			clearInterval(int);
-			sm.router.find_page(sm.build.skeleton);
+			sm.router.getCurrentPage();
 		} else {
 			console.log("waiting..");
 		}

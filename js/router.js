@@ -1,35 +1,23 @@
 sm.router = sm.router || {};
-sm.router.find_page = function (cb, args) {
-	var url = sm.url_dir,
+sm.router.getCurrentPage = function (cb, args) {
+	var url,
 		data = false,
 		data_addr = sm.url_base + "data/";
-	console.log("Finding page: " + url);
-	if (url.length > 1) {
-		url.split("/");
-		switch(true) {
-			case (url[0].indexOf("music") >= 0): {
 
-				break;
-			}
-			case (url[0].indexOf("code") >= 0): {
+	sm.url_base = "http://127.0.0.1/sam/";
+	sm.url = window.location.href.replace(sm.url_base, "");
+	console.log("Plain: " + sm.url);
+	sm.url = sm.util.removeLastSlash(sm.url);
+	console.log("Remove Last: " + sm.url);
+	sm.url = sm.url.split("/");
+	console.log("Shards:");
+	console.dir(sm.url);
+	//make a copy to manipulate safely
+	url = sm.url;
 
-				break;
-			}
-			case (url[0].indexOf("art") >= 0): {
 
-				break;
-			}
-			case (url[0].indexOf("store") >= 0): {
 
-				break;
-			}
-			default: {
-				// 404
-			}
-		}
-	} else {
-		data_addr += "pages/home";
-	}
+
 	data_addr += ".json";
 	console.log(cb);
 	if (args !== "undefined") {
