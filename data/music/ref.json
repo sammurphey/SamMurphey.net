@@ -95,10 +95,20 @@
 		"file": "data/music/songs/mom_and_dad/demos.json",
 		"name": "Mom and Dad I've Failed You Again - Demos"
 	}, {
+		"category": "single",
+		"date": "8/19/2016",
+		"file": "data/music/songs/syntactic_sugar/replace_me_with_javascript.json",
+		"name": "Syntactic Sugar - Replace Me With Javascript"
+	}, {
+		"category": "single",
+		"date": "8/19/2016",
+		"file": "data/music/songs/syntactic_sugar/compiled_1.json",
+		"name": "Syntactic Sugar - Compiled_1"
+	}, {
 		"category": "ep",
 		"date": "8/24/2015",
 		"file": "data/music/albums/ikeaatmidnight_see_you_then.json",
-		"name": "Ikea@Midnight - See You Then"
+		"name": "Ikea@Midnight - #SeeYouThen"
 	}, {
 		"category": "single",
 		"date": "7/3/2015",
@@ -110,15 +120,55 @@
 		"file": "data/music/albums/shtml_shtml.json",
 		"name": "SHTML - SHTML"
 	}, {
+		"category": "single",
+		"date": "5/20/2015",
+		"file": "data/music/songs/shtml/erie.json",
+		"name": "SHTML - Erie"
+	}, {
+		"category": "single",
+		"date": "5/6/2015",
+		"file": "data/music/songs/shtml/sparkly_emoji.json",
+		"name": "SHTML - Sparkly Emoji"
+	}, {
 		"category": "album",
 		"date": "11/10/2014",
 		"file": "data/music/albums/silent_synthesis_winters_edge.json",
 		"name": "Silent Synthesis - Winters Edge"
 	}, {
+		"category": "single",
+		"date": "11/7/2014",
+		"file": "data/music/songs/silent_synthesis/ace.json",
+		"name": "Silent Synthesis - Ace"
+	}, {
+		"category": "single",
+		"date": "10/31/2014",
+		"file": "data/music/songs/silent_synthesis/peppermint.json",
+		"name": "Silent Synthesis - Peppermint"
+	}, {
+		"category": "single",
+		"date": "8/1/2014",
+		"file": "data/music/songs/silent_synthesis/the_grthe_grass_looks_so_soft_and_comforting.json",
+		"name": "Silent Synthesis - The Grass Looks so Soft and Comforting"
+	}, {
 		"category": "album",
 		"date": "12/24/2013",
 		"file": "data/music/albums/silent_synthesis_all_of_the_things.json",
 		"name": "Silent Synthesis - All of the Things I Have Forgotten To Tell You"
+	}, {
+		"category": "single",
+		"date": "12/12/2013",
+		"file": "data/music/songs/silent_synthesis/you_dont_care_a_bit.json",
+		"name": "Silent Synthesis - You Don't Care a Bit"
+	}, {
+		"category": "single",
+		"date": "11/30/2013",
+		"file": "data/music/songs/silent_synthesis/watching_adult_swim.json",
+		"name": "Silent Synthesis - Watching Adult Swim"
+	}, {
+		"category": "single",
+		"date": "11/15/2013",
+		"file": "data/music/songs/silent_synthesis/food_coloring.json",
+		"name": "Silent Synthesis - Food Coloring"
 	}, {
 		"category": "single",
 		"date": "9/13/2013",
@@ -128,11 +178,26 @@
 		"category": "ep",
 		"date": "8/31/2013",
 		"file": "data/music/albums/silent_synthesis_lucid_dreaming.json",
-		"name": "Silent Synthesis - Lucid Dreaming"
+		"name": "Silent Synthesis - Lucid Dreaming EP"
+	}, {
+		"category": "single",
+		"date": "8/20/2013",
+		"file": "data/music/songs/silent_synthesis/lucid_dreaming.json",
+		"name": "Silent Synthesis - Lucid Dreaming (Single)"
 	}, {
 		"category": "ep",
 		"date": "10/13/2012",
 		"file": "data/music/albums/silent_synthesis_silent_synthesis.json",
 		"name": "Silent Synthesis - Silent Synthesis"
+	}, {
+		"category": "single",
+		"date": "10/6/2012",
+		"file": "data/music/songs/silent_synthesis/patricks_email.json",
+		"name": "Silent Synthesis - Patrick's Email"
+	}, {
+		"category": "single",
+		"date": "9/20/2012",
+		"file": "data/music/songs/silent_synthesis/hashcat.json",
+		"name": "Silent Synthesis - Hashcat"
 	}
 ]
