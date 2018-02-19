@@ -1,11 +1,11 @@
 sm.router = sm.router || {};
 sm.router.getCurrentPage = function (cb, args) {
-	var i,
+	var i, interval,
 		shard,
 		shards,
 		lastLoop = false,
 		view = "overview",
-		file = "all",
+		file = "ref",
 		sorting = "date";
 
 	sm.url_base = "http://127.0.0.1/sam/";
@@ -38,6 +38,9 @@ sm.router.getCurrentPage = function (cb, args) {
 					case "art":
 					case "store": {
 						file = shard;
+						if (lastLoop) {
+							file += "/ref"
+						}
 						break;
 					}
 					default: {
@@ -134,10 +137,12 @@ sm.router.getCurrentPage = function (cb, args) {
 	file = sm.url_base + "data/" + file + ".json";
 	console.log("View: " + view);
 	console.log("File: " + file);
-
-	if (args !== "undefined") {
-	//	sm.util.xhr("GET", data_addr, false, cb, args);
-	} else {
-		//sm.util.xhr("GET", data_addr, false, cb);
-	}
+	interval = setInterval(function () {
+		if (typeof sm.build !== "undefined") {
+			clearInterval(interval);
+			sm.util.xhr("GET", file, false, sm.build.skeleton);
+		} else {
+			console.log("waiting..");
+		}
+	}, 100);
 };

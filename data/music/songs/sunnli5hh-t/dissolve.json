@@ -1,24 +1,23 @@
 {
-	"album_cover": "img/essaitchteeemel/dissolve_cover.jpg",
-	"album_data": "data/music/albums/essaitchteeemel_dissolve.json",
-	"album_title": "Essaitchteeemel",
+	"album_data": "data/music/albums/sunnli5hh-t_dissolve.json",
+	"album_title": "Dissolve",
 	"artists": [
-		"Essaitchteeemel"
+		"Sunnli5hh/t"
 	],
 	"date": "1/31/2018",
 	"description": "",
 	"files": [
-		"music/essaitchteeemel/dissolve/dissolve.wav"
+		"music/sunnli5hh-t/dissolve/dissolve.wav"
 	],
 	"imgs": [],
 	"keywords": [
-		"calm", "electronic", "essaitchteeemel", "loops", "plunderphonics", "ambient", "experimental", "cassette tapes", "lo-fi", "emotional", "essaitchteeemel", "los angeles"
+		"calm", "electronic", "sunnli5hh/t", "loops", "plunderphonics", "ambient", "experimental", "cassette tapes", "lo-fi", "emotional", "essaitchteeemel", "los angeles"
 	],
 	"label": "Elestial Sound",
 	"length": "5:15",
 	"show_in_overview": false,
 	"title": "Dissolve",
-	"track_cover": "img/essaitchteeemel/dissolve_cover.jpg",
+	"track_cover": "img/sunnli5hh-t/dissolve_cover.jpg",
 	"track_number": "1",
 	"videos": []
 }

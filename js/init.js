@@ -2,58 +2,70 @@ var w = window,
 	sm = {
 		util: {
 			add_new: {
-				css: function (url) {
-					var elem,
+				css: function (urls) {
+					var url,
+						elem,
 						siblings = document.getElementsByTagName("link"),
-						sib_href, i, found_duplicate = false;
-					url = String(url);
-					if (url.indexOf("https") < 0) {
-						url = sm.url_base + "css/" + url + ".css";
+						sib_href, i, j, found_duplicate = false;
+					if (!sm.util.isArray(urls)) {
+						urls = [urls]
 					}
-					for (i = 0; i < siblings.length; i += 1) {
-						sib_href = siblings[i].href;
-						if (typeof sib_href !== "undefined") {
-							if (sib_href.toLowerCase() == url.toLowerCase()) {
-								found_duplicate = true;
+					for (i = 0; i < urls.length; i += 1) {
+						url = String(urls[i]);
+						if (url.indexOf("https") < 0) {
+							url = sm.url_base + "css/" + url + ".css";
+						}
+						for (j = 0; j < siblings.length; j += 1) {
+							sib_href = siblings[j].href;
+							if (typeof sib_href !== "undefined") {
+								if (sib_href.toLowerCase() == url.toLowerCase()) {
+									found_duplicate = true;
+								}
 							}
 						}
-					}
-					if (!found_duplicate) {
-						console.log("Adding: " + url);
-						elem = document.createElement("link");
-						elem.href = url;
-						elem.rel = "stylesheet";
-						sm.body.appendChild(elem);
+						if (!found_duplicate) {
+							console.log("Adding: " + url);
+							elem = document.createElement("link");
+							elem.href = url;
+							elem.rel = "stylesheet";
+							sm.body.appendChild(elem);
+						}
 					}
 				},
-				js: function (url) {
-					var elem,
+				js: function (urls) {
+					var url,
+						elem,
 						siblings = document.getElementsByTagName("script"),
-						sib_src, i, found_duplicate = false, func = false;
-					url = String(url);
-					if (url.indexOf("http") < 0) {
-						func = sm.init[url];
-						url = sm.url_base + "js/" + url + ".js";
+						sib_src, i, j, found_duplicate = false, func = false;
+					if (!sm.util.isArray(urls)) {
+						urls = [urls]
 					}
-					for (i = 0; i < siblings.length; i += 1) {
-						sib_src = siblings[i].src
-						if (typeof sib_src !== "undefined") {
-							if (sib_src.toLowerCase() == url.toLowerCase()) {
-								found_duplicate = true;
+					for (i = 0; i < urls.length; i += 1) {
+						url = String(urls[i]);
+						if (url.indexOf("http") < 0) {
+							func = sm.init[url];
+							url = sm.url_base + "js/" + url + ".js";
+						}
+						for (j = 0; j < siblings.length; j += 1) {
+							sib_src = siblings[j].src
+							if (typeof sib_src !== "undefined") {
+								if (sib_src.toLowerCase() == url.toLowerCase()) {
+									found_duplicate = true;
+								}
 							}
 						}
-					}
-					if (!found_duplicate) {
-						console.log("Activating: " + url);
-						elem = document.createElement("script"),
-						elem.setAttribute("async", "");
-						elem.setAttribute("defer", "");
-						elem.src = url;
-						elem.type = "text/javascript";
-						sm.body.appendChild(elem);
-					} else if (func) {
-						console.log("Restarting: " + url);
-						func();
+						if (!found_duplicate) {
+							console.log("Activating: " + url);
+							elem = document.createElement("script"),
+							elem.setAttribute("async", "");
+							elem.setAttribute("defer", "");
+							elem.src = url;
+							elem.type = "text/javascript";
+							sm.body.appendChild(elem);
+						} else if (func) {
+							console.log("Restarting: " + url);
+							func();
+						}
 					}
 				}
 			},
@@ -239,10 +251,8 @@ var w = window,
 				sm.body = document.getElementById("body");
 				sm.main = document.getElementById("main");
 				sm.main_content = document.getElementById("main_content");
-				sm.main_content_container = document.getElementById("main_content_container");
 				sm.util.load_defered_css();
-				sm.util.add_new.js("router");
-				sm.util.add_new.css("desktop");
+				sm.util.add_new.js(["router", "build"]);
 				i = setInterval(function () {
 					if (typeof sm.router !== "undefined") {
 						clearInterval(i);
