@@ -11,16 +11,16 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0; }
 
-#home_icon:active, #home_icon:focus, #home_icon:hover {
+#logo_btn:active, #logo_btn:focus, #logo_btn:hover {
   background: #FFF; }
-  #home_icon:active #logo, #home_icon:focus #logo, #home_icon:hover #logo {
+  #logo_btn:active #logo_icon, #logo_btn:focus #logo_icon, #logo_btn:hover #logo_icon {
     fill: #00EFF1; }
 
-#search_icon:active, #search_icon:focus, #search_icon:hover {
+#search_btn:active, #search_btn:focus, #search_btn:hover {
   background: #FFF; }
-  #search_icon:active #mag_glass_hex, #search_icon:focus #mag_glass_hex, #search_icon:hover #mag_glass_hex {
+  #search_btn:active #search_icon_shape_1, #search_btn:focus #search_icon_shape_1, #search_btn:hover #search_icon_shape_1 {
     stroke: #00EFF1; }
-  #search_icon:active #mag_glass_hndl, #search_icon:focus #mag_glass_hndl, #search_icon:hover #mag_glass_hndl {
+  #search_btn:active #search_icon_shape_2, #search_btn:focus #search_icon_shape_2, #search_btn:hover #search_icon_shape_2 {
     fill: #00EFF1; }
 
 @media (min-width: 1024px) {
@@ -29,26 +29,26 @@ h1, h2, h3, h4, h5, h6 {
     left: 80px;
     position: absolute;
     top: 0;
+    visibility: visible;
     width: calc(100% - 160px);
     z-index: 4; }
     #main_nav ul {
       list-style: none;
       margin: 0;
       padding: 0; }
-      #main_nav ul .nav_item {
+      #main_nav ul li {
         color: #000;
         display: inline-block;
-        opacity: 0;
         text-decoration: none; }
-        #main_nav ul .nav_item a {
+        #main_nav ul li a {
           display: block;
           font-family: "kepler", monospace;
           font-size: 16px;
+          font-weight: bold;
           height: 80px;
           line-height: 32px;
-          min-width: 80px;
           padding: 24px 16px; }
-          #main_nav ul .nav_item a:active, #main_nav ul .nav_item a:focus, #main_nav ul .nav_item a:hover {
+          #main_nav ul li a:active, #main_nav ul li a:focus, #main_nav ul li a:hover {
             background: #FFF;
             color: #00EFF1; } }
 

@@ -14,24 +14,24 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0;
 }
 //header
-#home_icon {
+#logo_btn {
 	&:active,
 	&:focus,
 	&:hover {
-		#logo {
+		#logo_icon {
 			fill: $teal;
 		}
 		background: $highlight;
 	}
 }
-#search_icon {
+#search_btn {
 	&:active,
 	&:focus,
 	&:hover {
-		#mag_glass_hex {
+		#search_icon_shape_1 {
 			stroke: $teal;
 		}
-		#mag_glass_hndl {
+		#search_icon_shape_2 {
 			fill: $teal;
 		}
 		background: $highlight;
@@ -43,24 +43,24 @@ h1, h2, h3, h4, h5, h6 {
 		left: 80px;
 		position: absolute;
 		top: 0;
+		visibility: visible;
 		width: calc(100% - 160px);
 		z-index: 4;
 		ul {
 			list-style: none;
 			margin: 0;
 			padding: 0;
-			.nav_item {
+			li {
 				color: #000;
 				display: inline-block;
-				opacity: 0;
 				text-decoration: none;
 				a {
 					display: block;
 					font-family: "kepler", monospace;
 					font-size: 16px;
+					font-weight: bold;
 					height: 80px;
 					line-height: 32px;
-					min-width: 80px;
 					padding: 24px 16px;
 					&:active,
 					&:focus,
