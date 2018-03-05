@@ -1,5 +1,44 @@
+@font-face {
+	font-family: "kepler";
+	src: url("/fonts/kepler.eot"), url("fonts/kepler.ttf") format("truetype"), url("fonts/kepler.woff2") format("woff2"), url("fonts/kepler.woff") format("woff"), url("fonts/kepler.svg") format("svg");
+	font-weight: normal;
+	font-style: normal
+}
+html {
+	height: 100%;
+	width: 100%
+}
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	background: #F9F9F9;
+	box-sizing: border-box;
+	cursor: default;
+	font: caption;
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	width: 100%;
+	z-index: 1
+}
+* {
+	box-sizing: inherit;
+	cursor: inherit;
+	z-index: inherit
+}
+a {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "kepler", monospace;
+	margin: 0;
+	padding: 0;
 }

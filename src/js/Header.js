@@ -4,7 +4,7 @@ class LogoIcon extends Component {
 	render () {
 		return (
 			<Link to={`/`} id="logo_btn" className="header_btn">
-				<svg id="logo" fill="#000" width="48" height="48" viewBox="0 0 100 100">
+				<svg id="logo_icon" fill="#000" width="48" height="48" viewBox="0 0 100 100">
 					<polygon points="0 0,100 0,100 100,96 100,96 56,52 100,0 100" />
 					<g fill="#F9F9F9">
 						<polygon points="7 4,50 48,93 4" />
@@ -55,7 +55,7 @@ class SearchIcon extends Component {
 class Header extends Component {
 	render () {
 		return (
-			<header id="header" className="container">
+			<header id="header">
 				<LogoIcon />
 				<MainNav />
 				<SearchIcon />

@@ -1,0 +1,19 @@
+//colors
+$amberColor:  #FFBF00;
+$baseColor: #EEE;
+$highlightColor: #FFF;
+$plasticColor: #F8F8F8;
+$tealColor: #00EFF1;
+
+//design elements
+$corners: 6px;
+$padding: 4px;
+$shadow: rgba(0, 0, 0, 0.7);
+$gridSize: 16px;
+$blockSize: calc(#{$gridSize} * 4);
+$rowHeight: 1px;
+@media(min-width: 768px) {
+}
+@media(min-width: 1024px) {
+	$corners: 12px;
+}
