@@ -1,0 +1,90 @@
+@import "vars";
+/////////////////////////////////
+//  buttons ////////////////////
+//////////////////////////////
+%btn {
+	cursor: pointer;
+	display: block;
+	height: $blockSize;
+	font-size: $gridSize;
+	font-weight: bold;
+	line-height: calc(#{$gridSize} * 2);
+	min-width: $blockSize;
+	padding: $gridSize;
+	> * {
+		left: 0;
+		position: absolute;
+		top: 0;
+		&.lrg {
+			height: calc(#{$gridSize} * 3);
+			margin: calc(#{$gridSize} / 2);
+			width: calc(#{$gridSize} * 3);
+		}
+		&.sml {
+			height: $gridSize;
+			margin: calc(#{$gridSize} * 1.5);
+			width: $gridSize;
+		}
+	}
+	&:active,
+	&:focus,
+	&:hover {
+		background: $highlightColor;
+		color: $tealColor;
+		.icon,
+		.icon * {
+			fill: $tealColor;
+			stroke: $tealColor;
+		}
+	}
+}
+button, .btn { @extend %btn; }
+
+////////////////////////////
+//  container ////////////
+////////////////////////
+%container {
+	background: #EEE;
+	border-radius: $cornerSml;
+	box-shadow: inset 0px 2px 6px -1px rgba(0,0,0,.5);
+	display: block;
+	left: $paddingSml;
+	overflow: hidden;
+	padding: $gutter;
+	width: calc(100% - (#{$paddingSml} * 2));
+	@media(min-width: 480px) {
+		left: $paddingMed;
+		width: calc(100% - (#{$paddingMed} * 2));
+	}
+	@media(min-width: 768px) {
+		border-radius: $cornerLrg;
+		left: $paddingLrg;
+		width: calc(100% - (#{$paddingLrg} * 2));
+	}
+	@media(min-width: 1024px) {
+		left: $paddingXL;
+		width: calc(100% - (#{$paddingXL} * 2));
+	}
+}
+.container { @extend %container; }
+
+///////////////////
+//  panel  ///////
+////////////////
+%panel {
+	background: $plasticColor;
+	border-radius: $cornerSml;
+	box-shadow: 0px 2px 6px -1px rgba(0,0,0,.5);
+	padding: $paddingSml;
+	@media(min-width: 480px) {
+		padding: $paddingMed;
+	}
+	@media(min-width: 768px) {
+		border-radius: $cornerLrg;
+		padding: $paddingLrg;
+	}
+	@media(min-width: 1024px) {
+		padding: $paddingXL;
+	}
+}
+.panel { @extend %panel; }

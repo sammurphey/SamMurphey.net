@@ -1,4 +1,5 @@
 @import "vars";
+@import "mixins";
 
 #header {
 	background: $plasticColor;
@@ -8,85 +9,44 @@
 	top: 0;
 	width: 100%;
 	z-index: 2;
-	.header_btn {
-		display: block;
-		height: $blockSize;
+	.btn {
 		position: absolute;
 		top: 0;
-		width: $blockSize;
 		z-index: 4;
-		&:active,
-		&:focus,
-		&:hover {
-			background: $highlightColor;
-		}
 		&#logo_btn {
 			left: 0;
-			#logo_icon {
-				height: calc(#{$gridSize} * 3);
-				margin: calc(#{$gridSize} / 2);
-				position: relative;
-				width: calc(#{$gridSize} * 3);
-			}
-			&:active > svg,
-			&:focus > svg,
-			&:hover > svg {
-				fill: $tealColor;
-			}
 		}
 		&#search_btn {
 			right: 0;
-			#search_icon {
-				height: $gridSize;
-				margin: calc(#{$gridSize} * 1.5);
-				position: relative;
-				width: $gridSize;
-			}
-			&:active,
-			&:focus,
-			&:hover {
-				#search_icon_shape_1 {
-					stroke: $tealColor;
-				}
-				#search_icon_shape_2 {
-					fill: $tealColor;
-				}
-				background: $highlightColor;
-			}
 		}
 	}
-	#main_nav {
-		display: block;
-		height: $blockSize;
-		left: $blockSize;
-		overflow-x: auto;
-		position: absolute;
-		top: 0;
-		width: calc(100% - (#{$blockSize} * 2));
-		z-index: 4;
-		ul {
-			display: flex;
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			li {
-				flex: 1 1 auto;
-				color: #000;
-				text-decoration: none;
-				a {
-					display: block;
-					font-family: "kepler", monospace;
-					font-size: $gridSize;
-					font-weight: bold;
-					height: $blockSize;
-					line-height: calc(#{$gridSize} * 2);
-					padding: $gridSize;
-					&:active,
-					&:focus,
-					&:hover {
-						background: $highlightColor;
-						color: $tealColor;
-					}
+}
+
+#main_nav {
+	display: block;
+	height: $blockSize;
+	left: $blockSize;
+	overflow-x: auto;
+	overflow-y: hidden;
+	position: absolute;
+	top: 0;
+	width: calc(100% - (#{$blockSize} * 2));
+	z-index: 4;
+	ul {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			color: #000;
+			text-decoration: none;
+			a {
+				@extend %btn;
+				&:active,
+				&:focus,
+				&:hover {
+					background: $highlightColor;
+					color: $tealColor;
 				}
 			}
 		}
@@ -94,35 +54,39 @@
 }
 
 .container {
-	background: #EEE;
-	border-radius: $corners;
-	box-shadow: inset 0px 2px 6px -1px rgba(0,0,0,.5);
-	display: block;
-	left: $padding;
-	overflow: hidden;
-	padding: $padding;
 	position: absolute;
-	width: calc(100% - (#{$padding} * 2));
 	z-index: 2;
 	&#main {
-		height: calc(100% - ((#{$blockSize} * 2) + (#{$padding} * 4)));
+		height: calc(100% - ((#{$blockSize} * 2) + (#{$paddingSml} * 2) + (#{$gutter} * 2)));
 		top: $blockSize;
-		.panel {
-			background: $plasticColor;
-			border-radius: $corners;
-			box-shadow: 0px 2px 6px -1px rgba(0,0,0,.5);
-			padding: $padding;
-			z-index: 1;
-			&#intro {
-				height: 320px;
-			}
+		@media(min-width: 480px) {
+			height: calc(100% - ((#{$blockSize} * 2) + (#{$paddingMed} * 2) + (#{$gutter} * 2)));
+		}
+		@media(min-width: 768px) {
+			height: calc(100% - ((#{$blockSize} * 2) + (#{$paddingLrg} * 2) + (#{$gutter} * 2)));
+		}
+		@media(min-width: 1024px) {
+			height: calc(100% - ((#{$blockSize} * 2) + (#{$paddingXL} * 2) + (#{$gutter} * 2)));
 		}
 	}
 	&#footer {
-		bottom: $padding;
-		height: calc(#{$blockSize} + (#{$padding} * 2));
-		* {
-			flex: 1 1 auto;
+		bottom: $paddingSml;
+		height: calc(#{$blockSize} + (#{$gutter} * 2));
+		@media(min-width: 480px) {
+			bottom: $paddingMed;
+		}
+		@media(min-width: 768px) {
+			bottom: $paddingLrg;
+		}
+		@media(min-width: 1024px) {
+			bottom: $paddingXL;
+		}
+	}
+	.panel {
+		z-index: 1;
+		&#intro {
+			border-radius-left: 0;
+			height: 320px;
 		}
 	}
 }

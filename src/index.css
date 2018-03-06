@@ -12,7 +12,7 @@ body {
 	background: #F9F9F9;
 	box-sizing: border-box;
 	cursor: default;
-	font: caption;
+	font-family: "kepler", monospace;
 	margin: 0;
 	height: 100%;
 	overflow: hidden;
@@ -38,7 +38,6 @@ a {
 	text-decoration: inherit;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: "kepler", monospace;
 	margin: 0;
 	padding: 0;
 }

@@ -6,14 +6,16 @@ $plasticColor: #F8F8F8;
 $tealColor: #00EFF1;
 
 //design elements
-$corners: 6px;
-$padding: 4px;
-$shadow: rgba(0, 0, 0, 0.7);
 $gridSize: 16px;
 $blockSize: calc(#{$gridSize} * 4);
-$rowHeight: 1px;
-@media(min-width: 768px) {
-}
-@media(min-width: 1024px) {
-	$corners: 12px;
-}
+$gutter: 2px;
+$shadow: rgba(0, 0, 0, 0.7);
+
+//willchange..
+$cornerSml: 6px;
+$cornerLrg: 12px;
+
+$paddingSml: 2px;
+$paddingMed: 4px;
+$paddingLrg: 8px;
+$paddingXL: 16px;
