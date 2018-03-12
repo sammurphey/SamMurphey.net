@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import{BrowserRouter as Router} from "react-router-dom";
 import Header from "./js/Header";
 import Main from "./js/Main"
-import Footer from "./js/Footer";
 import "./css/App.css";
 
 class App extends Component {
@@ -12,7 +11,9 @@ class App extends Component {
 	      <div className="App">
 	        <Header />
 			<Main />
-			<Footer />
+			<footer id="footer">
+				<span className="copyright">V7.3</span>
+			</footer>
 	      </div>
 	  </Router>
     );

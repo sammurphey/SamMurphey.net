@@ -1,6 +1,6 @@
 //colors
 $amberColor:  #FFBF00;
-$baseColor: #EEE;
+$baseColor: #989898;
 $highlightColor: #FFF;
 $plasticColor: #F8F8F8;
 $tealColor: #00EFF1;
@@ -9,7 +9,7 @@ $tealColor: #00EFF1;
 $gridSize: 16px;
 $blockSize: calc(#{$gridSize} * 4);
 $gutter: 2px;
-$shadow: rgba(0, 0, 0, 0.7);
+$shadow: 0px 0px 128px -32px rgba(0,0,0,.5);
 
 //willchange..
 $cornerSml: 6px;

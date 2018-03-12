@@ -4,19 +4,18 @@
 	font-weight: normal;
 	font-style: normal
 }
-html {
+html, body {
 	height: 100%;
+	overflow: hidden;
 	width: 100%
 }
 body {
-	background: #F9F9F9;
 	box-sizing: border-box;
 	cursor: default;
 	font-family: "kepler", monospace;
-	margin: 0;
 	height: 100%;
-	overflow: hidden;
-	padding: 0;
+	margin: 0;
+	padding: 10px;
 	position: relative;
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
@@ -31,13 +30,4 @@ body {
 	box-sizing: inherit;
 	cursor: inherit;
 	z-index: inherit
-}
-a {
-	color: inherit;
-	cursor: pointer;
-	text-decoration: inherit;
-}
-h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-	padding: 0;
 }

@@ -4,15 +4,14 @@ class LogoIcon extends Component {
 	render () {
 		return (
 			<Link to={`/`} id="logo_btn" className="btn">
-				<svg className="lrg icon" fill="#000" width="48" height="48" viewBox="0 0 100 100">
-					<polygon points="0 0,100 0,100 100,96 100,96 56,52 100,0 100" />
-					<g fill="#F9F9F9">
-						<polygon points="7 4,50 48,93 4" />
-						<polygon points="4 7,4 48,44 48" />
-						<polygon points="56 48,96 48,96 7" />
-						<polygon points="4 52,4 93,44 52" />
-						<polygon points="7 96 49,96,94 52,50 52" />
-					</g>
+				<svg className="med icon" width="48" height="48" viewBox="0 0 100 100">
+					<path d="M 0 0 L 100 0 L 110 100 L 96 100 L 96 56 L 52 100 	L 0 100 L 0 0
+					M 7 4 L 50 48 L 93 4
+					M 4 7 L 4 48 L 44 48
+					M 56 48 L 96 48 L 96 7
+					M 4 52 L 4 93 L 44 52
+					M 7 96 L 49 96 L 94 52 L 50 52z">
+					</path>
 				</svg>
 			</Link>
 		);

@@ -1,0 +1,38 @@
+@keyframes moveUp {
+	0% {
+		transform: translateY($paddingMed);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes scaleUp {
+	0% {
+		transform: scale(0.95);
+		> * {
+			opacity: 0;
+		}
+	}
+	100% {
+		transform: scale(1);
+		> * {
+			opacity: 1;
+		}
+	}
+}
+@keyframes pageEnt {
+	0% {
+		transform: translateX(150%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+@keyframes pageEx {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-150%);
+	}
+}
