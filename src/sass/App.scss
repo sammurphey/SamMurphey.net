@@ -6,6 +6,10 @@ a {
 	color: inherit;
 	cursor: pointer;
 	text-decoration: inherit;
+	&:focus,
+	&:hover {
+		color: $tealColor;
+	}
 }
 p {
 	line-height: $gridSize;
@@ -107,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 	width: calc(100% - (#{$paddingSml} * 2 + 28px));
 	z-index: 1;
 	article {
-		animation: pageEnt 1s ease .5s forwards;
+		animation: pageEnt 1s ease forwards;
 		display: block;
 		margin: calc(#{$gridSize} * 2) auto;
 		position: relative;
@@ -116,7 +120,8 @@ h1, h2, h3, h4, h5, h6 {
 		will-change: transform;
 		z-index: 2;
 		&.exit {
-			animation: pageEx 1s ease .5s forwards;
+			animation: pageEx 1s ease forwards;
+			transform: translateX(0);
 		}
 		@media(min-width: 302px) {
 			width: calc(#{$blockSize} * 4);
@@ -137,31 +142,31 @@ h1, h2, h3, h4, h5, h6 {
 			margin: $blockSize auto;
 			width: calc(#{$blockSize} * 8);
 		}
-		@media(min-width: 940px) {
-			width: calc(#{$blockSize} * 10);
-		}
 		@media(min-width: 1068px) {
 			width: calc(#{$blockSize} * 12);
-		}
-		@media(min-width: 1196px) {
-			width: calc(#{$blockSize} * 14);
 		}
 		@media(min-width: 1324px) {
 			width: calc(#{$blockSize} * 16);
 		}
-		@media(min-width: 1452px) {
-			width: calc(#{$blockSize} * 18);
-		}
 		@media(min-width: 1580px) {
 			width: calc(#{$blockSize} * 20);
 		}
-		section {
-			&.panel {
-				@extend %panel;
-			}
+		@media(min-width: 1836px) {
+			width: calc(#{$blockSize} * 24);
+		}
+		@media(min-width: 2092px) {
+			width: calc(#{$blockSize} * 28);
+		}
+		@media(min-width: 2248px) {
+			width: calc(#{$blockSize} * 32);
+		}
+		.panel {
+			@extend %panel;
+		}
+		section, .panel {
 			position: relative;
 			& + * {
-				animation: moveUp 1s ease .75s forwards;
+				animation: moveUp .4s ease 1.8s forwards;
 				transform: translateY($paddingMed);
 				will-change: transform;
 			}
@@ -194,17 +199,19 @@ h1, h2, h3, h4, h5, h6 {
 				display: flex;
 				flex-wrap: wrap;
 				.panel {
-					animation: scaleUp 1s ease .5s forwards;
 					cursor: pointer;
 					flex-shrink: 0;
 					height: calc(#{$blockSize} * 2);
-					transform: scale(0.95);
 					width: calc(#{$blockSize} * 2);
 					&:hover {
 						background: $highlightColor;
 					}
 					&:active {
 						background: $tealColor;
+					}
+					@media(min-width: 812px) {
+						height: calc(#{$blockSize} * 4);
+						width: calc(#{$blockSize} * 4);
 					}
 				}
 			}
@@ -217,46 +224,52 @@ h1, h2, h3, h4, h5, h6 {
 	z-index: 1;
 	@media(min-width: 812px) {
 		display: block;
-		height: 100%;
+		height: calc(100% - 36px);
 		left: 16px;
 		position: fixed;
-		top: 0;
+		top: 16px;
 		width: calc(#{$blockSize} * 2);
-		> * {
-			opacity: 0.3;
-			&#console {
-				bottom: $blockSize;
-				cursor: pointer;
-				display: flex;
-				flex-wrap: wrap;
-				height: $blockSize;
-				justify-content: flex-start;
-				opacity: 1;
-				position: absolute;
-				transform: rotateZ(-90deg);
-				transform-origin: 32px 0px;
-				width: calc(100vh - (#{$blockSize} * 3));
-				* {
-					height: calc(#{$blockSize} / 2);
-					line-height: calc(#{$blockSize} / 2);
-					opacity: 0.3;
-					padding: 0 $gridSize;
+		.contents {
+			height: 100%;
+			position: relative;
+			width: 100%;
+			> * {
+				opacity: 0.3;
+				&#console {
+					bottom: calc(#{$blockSize} + #{$gridSize});
+					cursor: pointer;
+					display: flex;
+					flex-wrap: wrap;
+					height: $blockSize;
+					justify-content: flex-start;
+					opacity: 1;
+					position: absolute;
+					transform: rotateZ(-90deg);
+					transform-origin: 32px 0px;
+					width: calc(100vh - (#{$blockSize} * 3));
+					* {
+						height: calc(#{$blockSize} / 2);
+						font-size: $gridSize;
+						line-height: calc(#{$blockSize} / 2);
+						opacity: 0.4;
+						padding: 0 $gridSize;
+						&:focus,
+						&:hover {
+							opacity: 1;
+						}
+					}
+				}
+				&#qr_code {
+					bottom: calc(#{$gridSize} * 2);
+					cursor: pointer;
+					height: $blockSize;
+					left: calc(#{$gridSize} * 2);
+					position: absolute;
+					width: $blockSize;
 					&:focus,
 					&:hover {
 						opacity: 1;
 					}
-				}
-			}
-			&#qr_code {
-				bottom: calc(#{$blockSize} / 2);
-				cursor: pointer;
-				height: $blockSize;
-				left: calc(#{$blockSize} / 2);
-				position: absolute;
-				width: $blockSize;
-				&:focus,
-				&:hover {
-					opacity: 1;
 				}
 			}
 		}
@@ -266,6 +279,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar {
 	cursor: pointer;
+	height: $paddingMed;
     width: $paddingMed;
 }
 
@@ -278,6 +292,7 @@ h1, h2, h3, h4, h5, h6 {
 		background: $tealColor;
 	}
 }
+
 
 /* angled style...
 ::-webkit-scrollbar-thumb {

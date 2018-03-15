@@ -61,9 +61,9 @@ button, .btn { @extend %btn; }
 ////////////////
 %panel {
 	background: $plasticColor;
-	border-right: 2px solid #AAA;
+	border-right: 2px solid #CC;
 	border-bottom: 2px solid #525252;
-	border-left: 2px solid #CCC;
+	border-left: 2px solid #AAA;
 	* {
 		//outline: 1px dotted #666;
 	}

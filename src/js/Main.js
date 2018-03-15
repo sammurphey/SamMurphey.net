@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import {Route, Switch} from "react-router-dom";
+import React, { Component } from "react";
+import {Route, Switch, Link} from "react-router-dom";
+import Delayed from "react-delayed";
 ////////////////////////
 //  componetns  //////
 ////////////////////
@@ -18,7 +19,9 @@ class Overview extends Component {
 	render () {
 		return (
 			<section id="overview" className="grid">
-				<section className="panel"><p>Result #1</p></section>
+				<Link to={`/search`} className="panel">
+					<p>Result #1</p>
+				</Link>
 				<section className="panel"><p>Result #2</p></section>
 				<section className="panel"><p>Result #3</p></section>
 				<section className="panel"><p>Result #4</p></section>
@@ -33,15 +36,15 @@ class Overview extends Component {
 }
 class Sidebar extends Component {
 	render () {
-		var page = "http://127.0.0.1:3000/";
 		return (
 			<aside id="sidebar">
-				<div id="console">
-					<h4>Homepage</h4>
-					<p>{page}</p>
-					<p>Last Updated: 3/11/2017</p>
+				<div className="contents">
+					<div id="console">
+						<p>Last Updated: <span>3/11/2017</span></p>
+						<p>Contact: <a href="mailto:weirdoonthebus@gmail.com">weirdoonthebus@gmail.com</a></p>
+					</div>
+					<img id="qr_code" src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fsammurphey.net&size=64x64&bgcolor=989898" alt="QR Code" title="Share" />
 				</div>
-				<img id="qr_code" src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fsammurphey.net&size=64x64&bgcolor=989898" alt="QR Code" title="Share" />
 			</aside>
 		);
 	}
@@ -56,31 +59,57 @@ class Corner extends Component {
 //////////////////
 //  pages //////
 //////////////
-class SearchResults extends Component {
+class HomePage extends Component {
+	constructor () {
+		super();
+		this.state = {
+			class: ""
+		}
+	}
+	componentWillUnmount () {
+		this.setState({class: "exit"});
+	}
 	render () {
 		return (
-			<article id="search_results">
+    			<article id="homepage" key="homepage" className={this.state.class}>
+					<Intro title="Hello World"/>
+					<Overview category="all"/>
+				</article>
+		);
+	}
+}
+class SearchResults extends Component {
+	constructor () {
+		super();
+		this.state = {
+			class: ""
+		}
+	}
+	componentWillUnmount () {
+		this.setState({class: "exit"});
+	}
+	render () {
+		return (
+			<article id="search_results" key="search_results" className={this.state.class}>
 				<Intro title="Search Results" />
 			</article>
 		);
 	}
 }
 
+
 class Main extends Component {
 	render () {
 		return (
 			<main id="main" className="container">
+				<Delayed mounted={true} mountAfter={1000} unmountAfter={1000}>
 					<Switch>
-						<Route exact={true} path="/" render={() => (
-							<article id="homepage">
-								<Intro title="Hello World"/>
-								<Overview category="all"/>
-							</article>
-						)}/>
+						<Route exact={true} path="/" component={HomePage}/>
 						<Route path="/search" component={SearchResults} />
 						<Route path="/:category" component ={Category} />
 						<Route component={NoMatch} />
 					</Switch>
+				</Delayed>
 				<Sidebar />
 			</main>
 		);

@@ -37,11 +37,11 @@ button, .btn, #main_nav ul li a {
   border-left: 4px solid #CCC;
   margin: 10px; }
 
-#main article section.panel {
+#main article .panel {
   background: #F8F8F8;
-  border-right: 2px solid #AAA;
+  border-right: 2px solid #CC;
   border-bottom: 2px solid #525252;
-  border-left: 2px solid #CCC; }
+  border-left: 2px solid #AAA; }
 
 @keyframes moveUp {
   0% {
@@ -61,20 +61,22 @@ button, .btn, #main_nav ul li a {
 
 @keyframes pageEnt {
   0% {
-    transform: translateX(150%); }
+    transform: translateX(150%) scale(0.4); }
   100% {
-    transform: translateX(0); } }
+    transform: translateX(0) scale(1); } }
 
 @keyframes pageEx {
   0% {
-    transform: translateX(0); }
+    transform: translateX(0) scale(1); }
   100% {
-    transform: translateX(-150%); } }
+    transform: translateX(-150%) scale(0.4); } }
 
 a {
   color: inherit;
   cursor: pointer;
   text-decoration: inherit; }
+  a:focus, a:hover {
+    color: #00EFF1; }
 
 p {
   line-height: 16px;
@@ -153,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
   width: calc(100% - (2px * 2 + 28px));
   z-index: 1; }
   #main article {
-    animation: pageEnt 1s ease .5s forwards;
+    animation: pageEnt 1s ease forwards;
     display: block;
     margin: calc(16px * 2) auto;
     position: relative;
@@ -162,7 +164,8 @@ h1, h2, h3, h4, h5, h6 {
     will-change: transform;
     z-index: 2; }
     #main article.exit {
-      animation: pageEx 1s ease .5s forwards; }
+      animation: pageEx 1s ease forwards;
+      transform: translateX(0); }
     @media (min-width: 302px) {
       #main article {
         width: calc(calc(16px * 4) * 4); } }
@@ -179,31 +182,31 @@ h1, h2, h3, h4, h5, h6 {
       #main article {
         margin: calc(16px * 4) auto;
         width: calc(calc(16px * 4) * 8); } }
-    @media (min-width: 940px) {
-      #main article {
-        width: calc(calc(16px * 4) * 10); } }
     @media (min-width: 1068px) {
       #main article {
         width: calc(calc(16px * 4) * 12); } }
-    @media (min-width: 1196px) {
-      #main article {
-        width: calc(calc(16px * 4) * 14); } }
     @media (min-width: 1324px) {
       #main article {
         width: calc(calc(16px * 4) * 16); } }
-    @media (min-width: 1452px) {
-      #main article {
-        width: calc(calc(16px * 4) * 18); } }
     @media (min-width: 1580px) {
       #main article {
         width: calc(calc(16px * 4) * 20); } }
-    #main article section {
+    @media (min-width: 1836px) {
+      #main article {
+        width: calc(calc(16px * 4) * 24); } }
+    @media (min-width: 2092px) {
+      #main article {
+        width: calc(calc(16px * 4) * 28); } }
+    @media (min-width: 2248px) {
+      #main article {
+        width: calc(calc(16px * 4) * 32); } }
+    #main article section, #main article .panel {
       position: relative; }
-      #main article section + * {
-        animation: moveUp 1s ease .75s forwards;
+      #main article section + *, #main article .panel + * {
+        animation: moveUp .4s ease 1.8s forwards;
         transform: translateY(4px);
         will-change: transform; }
-      #main article section:first-child .corner {
+      #main article section:first-child .corner, #main article .panel:first-child .corner {
         background: -moz-linear-gradient(-45deg, white 0%, white 50%, white 50%, white 100%);
         background: -webkit-linear-gradient(-45deg, white 0%, white 50%, white 50%, white 100%);
         background: linear-gradient(135deg, #989898 0%, #989898 48%, rgba(152, 152, 152, 0) 48%, rgba(152, 152, 152, 0) 100%);
@@ -213,29 +216,31 @@ h1, h2, h3, h4, h5, h6 {
         position: absolute;
         top: 0px;
         width: calc(calc(16px * 4) + 2px); }
-        #main article section:first-child .corner::after {
+        #main article section:first-child .corner::after, #main article .panel:first-child .corner::after {
           background: #CCC;
           content: "";
           display: block;
           width: calc(calc(16px * 4) * 2); }
-      #main article section:first-child h1 {
+      #main article section:first-child h1, #main article .panel:first-child h1 {
         margin-left: calc(calc(16px * 4) / 2); }
-      #main article section.intro {
+      #main article section.intro, #main article .panel.intro {
         min-height: calc(calc(16px * 4) * 6); }
-      #main article section.grid {
+      #main article section.grid, #main article .panel.grid {
         display: flex;
         flex-wrap: wrap; }
-        #main article section.grid section {
-          animation: scaleUp 1s ease .5s forwards;
+        #main article section.grid .panel, #main article .panel.grid .panel {
           cursor: pointer;
           flex-shrink: 0;
           height: calc(calc(16px * 4) * 2);
-          transform: scale(0.95);
           width: calc(calc(16px * 4) * 2); }
-          #main article section.grid section:hover {
+          #main article section.grid .panel:hover, #main article .panel.grid .panel:hover {
             background: #FFF; }
-          #main article section.grid section:active {
+          #main article section.grid .panel:active, #main article .panel.grid .panel:active {
             background: #00EFF1; }
+          @media (min-width: 812px) {
+            #main article section.grid .panel, #main article .panel.grid .panel {
+              height: calc(calc(16px * 4) * 4);
+              width: calc(calc(16px * 4) * 4); } }
 
 #sidebar {
   display: none;
@@ -243,44 +248,50 @@ h1, h2, h3, h4, h5, h6 {
   @media (min-width: 812px) {
     #sidebar {
       display: block;
-      height: 100%;
+      height: calc(100% - 36px);
       left: 16px;
       position: fixed;
-      top: 0;
+      top: 16px;
       width: calc(calc(16px * 4) * 2); }
-      #sidebar > * {
-        opacity: 0.3; }
-        #sidebar > *#console {
-          bottom: calc(16px * 4);
-          cursor: pointer;
-          display: flex;
-          flex-wrap: wrap;
-          height: calc(16px * 4);
-          justify-content: flex-start;
-          opacity: 1;
-          position: absolute;
-          transform: rotateZ(-90deg);
-          transform-origin: 32px 0px;
-          width: calc(100vh - (calc(16px * 4) * 3)); }
-          #sidebar > *#console * {
-            height: calc(calc(16px * 4) / 2);
-            line-height: calc(calc(16px * 4) / 2);
-            opacity: 0.3;
-            padding: 0 16px; }
-            #sidebar > *#console *:focus, #sidebar > *#console *:hover {
-              opacity: 1; }
-        #sidebar > *#qr_code {
-          bottom: calc(calc(16px * 4) / 2);
-          cursor: pointer;
-          height: calc(16px * 4);
-          left: calc(calc(16px * 4) / 2);
-          position: absolute;
-          width: calc(16px * 4); }
-          #sidebar > *#qr_code:focus, #sidebar > *#qr_code:hover {
-            opacity: 1; } }
+      #sidebar .contents {
+        height: 100%;
+        position: relative;
+        width: 100%; }
+        #sidebar .contents > * {
+          opacity: 0.3; }
+          #sidebar .contents > *#console {
+            bottom: calc(calc(16px * 4) + 16px);
+            cursor: pointer;
+            display: flex;
+            flex-wrap: wrap;
+            height: calc(16px * 4);
+            justify-content: flex-start;
+            opacity: 1;
+            position: absolute;
+            transform: rotateZ(-90deg);
+            transform-origin: 32px 0px;
+            width: calc(100vh - (calc(16px * 4) * 3)); }
+            #sidebar .contents > *#console * {
+              height: calc(calc(16px * 4) / 2);
+              font-size: 16px;
+              line-height: calc(calc(16px * 4) / 2);
+              opacity: 0.4;
+              padding: 0 16px; }
+              #sidebar .contents > *#console *:focus, #sidebar .contents > *#console *:hover {
+                opacity: 1; }
+          #sidebar .contents > *#qr_code {
+            bottom: calc(16px * 2);
+            cursor: pointer;
+            height: calc(16px * 4);
+            left: calc(16px * 2);
+            position: absolute;
+            width: calc(16px * 4); }
+            #sidebar .contents > *#qr_code:focus, #sidebar .contents > *#qr_code:hover {
+              opacity: 1; } }
 
 ::-webkit-scrollbar {
   cursor: pointer;
+  height: 4px;
   width: 4px; }
 
 ::-webkit-scrollbar-thumb {

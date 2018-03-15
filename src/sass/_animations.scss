@@ -22,17 +22,17 @@
 }
 @keyframes pageEnt {
 	0% {
-		transform: translateX(150%);
+		transform: translateX(150%) scale(0.4);
 	}
 	100% {
-		transform: translateX(0);
+		transform: translateX(0) scale(1);
 	}
 }
 @keyframes pageEx {
 	0% {
-		transform: translateX(0);
+		transform: translateX(0) scale(1);
 	}
 	100% {
-		transform: translateX(-150%);
+		transform: translateX(-150%) scale(0.4);
 	}
 }
