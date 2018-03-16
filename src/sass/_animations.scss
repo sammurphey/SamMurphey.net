@@ -1,38 +1,17 @@
-@keyframes moveUp {
-	0% {
-		transform: translateY($paddingMed);
-	}
-	100% {
-		transform: translateY(0);
-	}
+.page-enter {
+	transform: translate3d(150%, 0, 0) scale(0.4);
 }
-@keyframes scaleUp {
-	0% {
-		transform: scale(0.95);
-		> * {
-			opacity: 0;
-		}
-	}
-	100% {
-		transform: scale(1);
-		> * {
-			opacity: 1;
-		}
-	}
+
+.page-enter.page-enter-active {
+ 	transform: translate3d(0, 0, 0) scale(1);
+	transition: transform 1s ease-out;
 }
-@keyframes pageEnt {
-	0% {
-		transform: translateX(150%) scale(0.4);
-	}
-	100% {
-		transform: translateX(0) scale(1);
-	}
+
+.page-leave {
+	transform: translate3d(0, 0, 0) scale(1);
 }
-@keyframes pageEx {
-	0% {
-		transform: translateX(0) scale(1);
-	}
-	100% {
-		transform: translateX(-150%) scale(0.4);
-	}
+
+.page-leave.page-leave-active {
+	transform: translate3d(-150%, 0, 0) scale(0.4);
+	transition: transform 1s ease-out;
 }

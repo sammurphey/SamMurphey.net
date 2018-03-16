@@ -111,18 +111,12 @@ h1, h2, h3, h4, h5, h6 {
 	width: calc(100% - (#{$paddingSml} * 2 + 28px));
 	z-index: 1;
 	article {
-		animation: pageEnt 1s ease forwards;
 		display: block;
 		margin: calc(#{$gridSize} * 2) auto;
 		position: relative;
-		transform: translateX(150%);
 		width: calc(#{$blockSize} * 2);
 		will-change: transform;
 		z-index: 2;
-		&.exit {
-			animation: pageEx 1s ease forwards;
-			transform: translateX(0);
-		}
 		@media(min-width: 302px) {
 			width: calc(#{$blockSize} * 4);
 		}
@@ -165,11 +159,6 @@ h1, h2, h3, h4, h5, h6 {
 		}
 		section, .panel {
 			position: relative;
-			& + * {
-				animation: moveUp .4s ease 1.8s forwards;
-				transform: translateY($paddingMed);
-				will-change: transform;
-			}
 			&:first-child {
 				.corner {
 					background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
