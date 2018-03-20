@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/shtml/shtml_cover.jpg",
+	"album_data": "data/music/albums/shtml_shtml.json",
+	"album_title": "SHTML",
+	"artists": [
+		"SHTML"
+	],
+	"date": "6/27/2015",
+	"description": "",
+	"files": [
+		"music/shtml/shtml/fake_clouds_hate_you.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "loops", "plunderphonics", "shtml", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "1:04",
+	"show_in_overview": false,
+	"title": "Fake Clouds Hate You",
+	"track_cover": "img/shtml/fake_clouds_hate_you_cover.jpg",
+	"track_number": "5",
+	"videos": []
+}

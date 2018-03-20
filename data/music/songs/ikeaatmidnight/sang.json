@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/ikeaatmidnight/seeyouthen_cover.jpg",
+	"album_data": "data/music/albums/ikeaatmidnight_seeyouthen.json",
+	"album_title": "SeeYouThen",
+	"artists": [
+		"Ikea@Midnight"
+	],
+	"date": "8/24/2015",
+	"description": "",
+	"files": [
+		"music/ikeaatmidnight/seeyouthen/sang.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "glitch", "vocal", "doodles", "ikeaatmidnight", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "0:08",
+	"show_in_overview": false,
+	"title": "Sång",
+	"track_cover": "img/ikeaatmidnight/sang_cover.jpg",
+	"track_number": "3",
+	"videos": []
+}

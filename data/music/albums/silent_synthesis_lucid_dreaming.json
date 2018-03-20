@@ -1,0 +1,51 @@
+{
+	"artists": [
+		"Silent Synthesis"
+	],
+	"cover": "img/silent_synthesis/lucid_dreaming_cover.jpg",
+	"date": "8/31/2013",
+	"description": "",
+	"keywords": [
+		"electronic", "experimental", "ambient", "glitch", "noise", "vocal", "drone", "dark", "horror", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"songs": [
+		{
+			"data": "/data/music/songs/silent_synthesis/anxiety.json",
+			"files": [
+				"/music/silent_synthesis/lucid_dreaming/anxiety.wav"
+			],
+			"length": "11:18",
+			"title": "Anxiety"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/lucid_dreaming.json",
+			"files": [
+				"/music/silent_synthesis/lucid_dreaming/lucid_dreaming.wav"
+			],
+			"length": "2:48",
+			"title": "Lucid Dreaming"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/dyspnea.json",
+			"files": [
+				"/music/silent_synthesis/lucid_dreaming/dyspnea.wav"
+			],
+			"length": "4:13",
+			"title": "Dyspnea"
+		}, {
+			"data": "/data/music/songs/silent_synthesis/crybaby.json",
+			"files": [
+				"/music/silent_synthesis/lucid_dreaming/crybaby.wav"
+			],
+			"length": "7:18",
+			"title": "Crybaby"
+		}
+	],
+	"title": "Lucid Dreaming EP",
+	"videos": [
+		{
+			"data": "videos/silent_synthesis/lucid_dreaming.json",
+			"title": "Lucid Dreaming (Official Video)",
+			"url": "https://www.youtube.com/watch?v=mpPgw9tEc7U"
+		}
+	]
+}

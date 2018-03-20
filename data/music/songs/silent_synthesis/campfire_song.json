@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/silent_synthesis/all_of_the_things_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_all_of_the_things.json",
+	"album_title": "All of the Things I Have Forgotten to Tell You",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "12/24/2013",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/all_of_the_things/campfire_song.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "glitch", "ambient", "guitar", "vocal", "lo-fi", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "3:27",
+	"show_in_overview": false,
+	"title": "Campfire Song",
+	"track_cover": "img/silent_synthesis/campfire_song_cover.jpg",
+	"track_number": "8",
+	"videos": []
+}

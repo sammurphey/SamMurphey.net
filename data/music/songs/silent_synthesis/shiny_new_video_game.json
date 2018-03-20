@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/silent_synthesis/winters_edge_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_winters_edge.json",
+	"album_title": "Winter's Edge",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "11/10/2014",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/winters_edge/shiny_new_video_game.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "glitch", "ambient", "video games", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "0:50",
+	"show_in_overview": false,
+	"title": "Shiny New Video Game",
+	"track_cover": "img/silent_synthesis/shiny_new_video_game_cover.jpg",
+	"track_number": "3",
+	"videos": []
+}

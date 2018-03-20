@@ -1,0 +1,50 @@
+body {
+  overflow: hidden; }
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: inherit; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "kepler", monospace;
+  margin: 0;
+  padding: 0; }
+
+#home_icon:active, #home_icon:focus, #home_icon:hover {
+  background: #FFF; }
+  #home_icon:active #logo, #home_icon:focus #logo, #home_icon:hover #logo {
+    fill: #00EFF1; }
+
+#search_icon:active, #search_icon:focus, #search_icon:hover {
+  background: #FFF; }
+  #search_icon:active #mag_glass_hex, #search_icon:focus #mag_glass_hex, #search_icon:hover #mag_glass_hex {
+    stroke: #00EFF1; }
+  #search_icon:active #mag_glass_hndl, #search_icon:focus #mag_glass_hndl, #search_icon:hover #mag_glass_hndl {
+    fill: #00EFF1; }
+
+#main .container {
+  z-index: -1; }
+  #main .container .panel {
+    background: #F8F8F8;
+    box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.5);
+    z-index: 1; }
+
+#intro {
+  text-align: center;
+  height: 320px;
+  padding-top: 16px; }
+
+#footer .container * {
+  flex: 1 1 auto; }
+  #footer .container * + * {
+    margin-left: 2px; }
+
+.visible {
+  animation: fade_in .6s linear forwards; }
+
+@keyframes fade_in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }

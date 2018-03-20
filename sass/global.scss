@@ -1,0 +1,78 @@
+@import "vars";
+//general
+body {
+	overflow: hidden;
+}
+a {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "kepler", monospace;
+	margin: 0;
+	padding: 0;
+}
+//header
+#home_icon {
+	&:active,
+	&:focus,
+	&:hover {
+		#logo {
+			fill: $teal;
+		}
+		background: $highlight;
+	}
+}
+#search_icon {
+	&:active,
+	&:focus,
+	&:hover {
+		#mag_glass_hex {
+			stroke: $teal;
+		}
+		#mag_glass_hndl {
+			fill: $teal;
+		}
+		background: $highlight;
+	}
+}
+//body
+#main {
+	.container {
+		z-index: -1;
+		.panel {
+			background: $plastic;
+			box-shadow: 0px 2px 6px -1px rgba(0,0,0,.5);
+			z-index: 1;
+		}
+	}
+}
+#intro {
+	text-align: center;
+	height: 320px;
+	padding-top: 16px;
+}
+//footer
+#footer {
+	.container {
+		* {
+			flex: 1 1 auto;
+			& + * {
+				margin-left: 2px;
+			}
+		}
+	}
+}
+//effects
+.visible {
+	animation: fade_in .6s linear forwards;
+}
+@keyframes fade_in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/silent_synthesis/winters_edge_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_winters_edge.json",
+	"album_title": "Winter's Edge",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "11/7/2014",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/winters_edge/ace.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "glitch", "noise", "plunderphonics", "idm", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "2:30",
+	"show_in_overview": true,
+	"title": "Ace",
+	"track_cover": "img/silent_synthesis/ace_cover.jpg",
+	"track_number": "6",
+	"videos": []
+}

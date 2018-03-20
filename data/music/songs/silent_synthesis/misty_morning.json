@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/silent_synthesis/all_of_the_things_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_all_of_the_things.json",
+	"album_title": "All of the Things I Have Forgotten to Tell You",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "12/24/2013",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/all_of_the_things/misty_morning.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "glitch", "ambient", "guitar", "vocal", "lo-fi", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "1:37",
+	"show_in_overview": false,
+	"title": "Misty Morning",
+	"track_cover": "img/silent_synthesis/misty_morning_cover.jpg",
+	"track_number": "5",
+	"videos": []
+}

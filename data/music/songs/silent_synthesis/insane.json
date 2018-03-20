@@ -1,0 +1,24 @@
+{
+	"album_cover": "img/silent_synthesis/silent_synthesis_cover.jpg",
+	"album_data": "data/music/albums/silent_synthesis_silent_synthesis.json",
+	"album_title": "Silent Synthesis",
+	"artists": [
+		"Silent Synthesis"
+	],
+	"date": "10/13/2012",
+	"description": "",
+	"files": [
+		"music/silent_synthesis/silent_synthesis/insane.wav"
+	],
+	"imgs": [],
+	"keywords": [
+		"electronic", "experimental", "glitch", "chiptune", "silent synthesis", "los angeles"
+	],
+	"label": "Self Released",
+	"length": "0:05",
+	"show_in_overview": false,
+	"title": "Insane",
+	"track_cover": "img/silent_synthesis/insane_cover.jpg",
+	"track_number": "4",
+	"videos": []
+}
