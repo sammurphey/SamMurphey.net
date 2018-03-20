@@ -8,7 +8,6 @@ import ArtPage from "../views/art";
 import StorePage from "../views/store";
 
 //var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
-
 class Main extends Component {
 	render () {
 		return (

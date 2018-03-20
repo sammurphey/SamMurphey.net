@@ -51,8 +51,8 @@ button, .btn { @extend %btn; }
 %container {
 	background: $baseColor;
 	border-top: 4px solid #525252;
-	border-right: 4px solid #AAA;
-	border-left: 4px solid #CCC;
+	border-right: 4px solid #CCC;
+	border-left: 4px solid #AAA;
 	//box-sizing: content-box;
 	margin: 10px;
 }
@@ -61,10 +61,32 @@ button, .btn { @extend %btn; }
 ////////////////
 %panel {
 	background: $plasticColor;
-	border-right: 2px solid #CC;
-	border-bottom: 2px solid #525252;
-	border-left: 2px solid #AAA;
+	border-right: 3px solid #AAA;
+	border-bottom: 4px solid #525252;
+	border-left: 3px solid #CCC;
 	* {
 		//outline: 1px dotted #666;
+		&.corner {
+			background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+			background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+			background: linear-gradient(135deg, rgba(152, 152, 152, 1) 0%,rgba(152, 152, 152, 1) 48%, rgba(152, 152, 152, 0) 48%,rgba(152, 152, 152, 0) 100%);
+			height: $blockSize;
+			left: -3px;
+			overflow: hidden;
+			position: absolute;
+			top: 0px;
+			width: calc(#{$blockSize} + 3px);
+			&::after {
+				background: #CCC;
+				content: "";
+				display: block;
+				height: 2px;
+				left: -40px;
+				position: absolute;
+				top: -27px;
+				transform: rotate(-45deg);
+				width: calc(#{$blockSize} * 4);
+			}
+		}
 	}
 }
