@@ -6,14 +6,17 @@ import Grid from "../components/Grid";
 
 class HomePage extends Component {
 	render () {
+
 		return (
     			<article id="homepage" key="homepage">
 					<ScrollToTop />
 					<Intro title="Hello World"/>
-					<Grid items="home" />
+					<Grid />
 				</article>
 		);
 	}
 }
+
+
 
 export default HomePage;

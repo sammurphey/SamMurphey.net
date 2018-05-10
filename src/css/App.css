@@ -37,12 +37,12 @@ button, .btn, #main_nav ul li a {
   border-left: 4px solid #AAA;
   margin: 10px; }
 
-#main article .panel {
+#main article .panel, #main article div.grid_items .grid_item, #main article section.grid_items .grid_item, #main article .panel.grid_items .grid_item {
   background: #F8F8F8;
   border-right: 3px solid #AAA;
   border-bottom: 4px solid #525252;
   border-left: 3px solid #CCC; }
-  #main article .panel *.corner {
+  #main article .panel *.corner, #main article div.grid_items .grid_item *.corner, #main article section.grid_items .grid_item *.corner, #main article .panel.grid_items .grid_item *.corner {
     background: -moz-linear-gradient(-45deg, white 0%, white 50%, white 50%, white 100%);
     background: -webkit-linear-gradient(-45deg, white 0%, white 50%, white 50%, white 100%);
     background: linear-gradient(135deg, #989898 0%, #989898 48%, rgba(152, 152, 152, 0) 48%, rgba(152, 152, 152, 0) 100%);
@@ -52,7 +52,7 @@ button, .btn, #main_nav ul li a {
     position: absolute;
     top: 0px;
     width: calc(calc(16px * 4) + 3px); }
-    #main article .panel *.corner::after {
+    #main article .panel *.corner::after, #main article div.grid_items .grid_item *.corner::after, #main article section.grid_items .grid_item *.corner::after, #main article .panel.grid_items .grid_item *.corner::after {
       background: #CCC;
       content: "";
       display: block;
@@ -201,26 +201,26 @@ h1, h2, h3, h4, h5, h6 {
     @media (min-width: 2248px) {
       #main article {
         width: calc(calc(16px * 4) * 32); } }
-    #main article section, #main article .panel {
+    #main article div, #main article section, #main article .panel {
       position: relative; }
-      #main article section.intro, #main article .panel.intro {
+      #main article div.intro, #main article section.intro, #main article .panel.intro {
         min-height: calc(calc(16px * 4) * 6); }
-        #main article section.intro h1, #main article .panel.intro h1 {
+        #main article div.intro h1, #main article section.intro h1, #main article .panel.intro h1 {
           margin-left: calc(calc(16px * 4) / 2); }
-      #main article section.grid, #main article .panel.grid {
+      #main article div.grid_items, #main article section.grid_items, #main article .panel.grid_items {
         display: flex;
         flex-wrap: wrap; }
-        #main article section.grid .panel, #main article .panel.grid .panel {
+        #main article div.grid_items .grid_item, #main article section.grid_items .grid_item, #main article .panel.grid_items .grid_item {
           cursor: pointer;
           flex-shrink: 0;
           height: calc(calc(16px * 4) * 2);
           width: calc(calc(16px * 4) * 2); }
-          #main article section.grid .panel:hover, #main article .panel.grid .panel:hover {
+          #main article div.grid_items .grid_item:hover, #main article section.grid_items .grid_item:hover, #main article .panel.grid_items .grid_item:hover {
             background: #FFF; }
-          #main article section.grid .panel:active, #main article .panel.grid .panel:active {
+          #main article div.grid_items .grid_item:active, #main article section.grid_items .grid_item:active, #main article .panel.grid_items .grid_item:active {
             background: #00EFF1; }
           @media (min-width: 812px) {
-            #main article section.grid .panel, #main article .panel.grid .panel {
+            #main article div.grid_items .grid_item, #main article section.grid_items .grid_item, #main article .panel.grid_items .grid_item {
               height: calc(calc(16px * 4) * 4);
               width: calc(calc(16px * 4) * 4); } }
 

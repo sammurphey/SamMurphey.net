@@ -11,6 +11,7 @@
 
 # private
 /data
+/api
 /src/img
 
 # misc

@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 		.panel {
 			@extend %panel;
 		}
-		section, .panel {
+		div, section, .panel {
 			position: relative;
 			&.intro {
 				min-height: calc(#{$blockSize} * 6);
@@ -165,10 +165,11 @@ h1, h2, h3, h4, h5, h6 {
 					margin-left: calc(#{$blockSize} / 2);
 				}
 			}
-			&.grid {
+			&.grid_items {
 				display: flex;
 				flex-wrap: wrap;
-				.panel {
+				.grid_item {
+					@extend %panel;
 					cursor: pointer;
 					flex-shrink: 0;
 					height: calc(#{$blockSize} * 2);
