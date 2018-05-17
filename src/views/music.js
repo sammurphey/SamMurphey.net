@@ -6,7 +6,7 @@ import Grid from "../components/Grid";
 class MusicPage extends Component {
 	render () {
 		return (
-			<article id="music_page">
+			<article id="music_page" className="page-enter">
 				<ScrollToTop />
 				<Intro title="Music" />
 				<Grid items="music" />

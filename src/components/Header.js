@@ -17,6 +17,18 @@ class LogoIcon extends Component {
 		);
 	}
 }
+class SearchIcon extends Component {
+	render () {
+		return (
+			<Link to={`/search`} id="search_btn" className="btn">
+				<svg className="sml icon" width="48" height="48" viewBox="0 0 100 100">
+					<polygon id="search_icon_shape_1" fill="none" stroke="#000" strokeWidth="12" transform="rotate(45) translate(24 -36) scale(0.7)" points="5 50,30 10,70 10,95 50,70 90,30 90" />
+					<rect id="search_icon_shape_2" fill="#000" transform="rotate(315) translate(-4 84)" height="48" width="12" />
+				</svg>
+			</Link>
+		);
+	}
+}
 class MainNav extends Component {
 	render () {
 		return (
@@ -36,18 +48,6 @@ class MainNav extends Component {
 					</li>
 				</ul>
 			</nav>
-		);
-	}
-}
-class SearchIcon extends Component {
-	render () {
-		return (
-			<Link to={`/search`} id="search_btn" className="btn">
-				<svg className="sml icon" width="48" height="48" viewBox="0 0 100 100">
-					<polygon id="search_icon_shape_1" fill="none" stroke="#000" strokeWidth="12" transform="rotate(45) translate(24 -36) scale(0.7)" points="5 50,30 10,70 10,95 50,70 90,30 90" />
-					<rect id="search_icon_shape_2" fill="#000" transform="rotate(315) translate(-4 84)" height="48" width="12" />
-				</svg>
-			</Link>
 		);
 	}
 }

@@ -1,6 +1,6 @@
 {
   "name": "sam",
-  "version": "0.1.0",
+  "version": "7.3.0",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",

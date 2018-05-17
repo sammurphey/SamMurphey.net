@@ -6,7 +6,7 @@ import Grid from "../components/Grid";
 class StorePage extends Component {
 	render () {
 		return (
-			<article id="store_page">
+			<article id="store_page" className="page-enter">
 				<ScrollToTop />
 				<Intro title="Store" />
 				<Grid items="store" />

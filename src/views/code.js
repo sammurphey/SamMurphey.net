@@ -6,7 +6,7 @@ import Grid from "../components/Grid";
 class CodePage extends Component {
 	render () {
 		return (
-			<article id="code_page">
+			<article id="code_page" className="page-enter">
 				<ScrollToTop />
 				<Intro title="Code" />
 				<Grid items="code" />

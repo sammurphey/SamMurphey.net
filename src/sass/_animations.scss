@@ -1,27 +1,37 @@
 .page-enter {
-	transform: translate3d(150%, 0, 0) scale(0.4);
+	animation: page_enter .6s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+	animation-delay: .6s;
+}
+@keyframes page_enter {
+	0% {
+		opacity: 0;
+		transform: translateY(50%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
 }
 
-.page-enter.page-enter-active {
- 	transform: translate3d(0, 0, 0) scale(1);
-	transition: transform 1s ease-out;
-}
 
 .page-leave {
-	transform: translate3d(0, 0, 0) scale(1);
+	animation: page_leave .6s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+@keyframes page_leave {
+	0% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(50%);
+	}
 }
 
-.page-leave.page-leave-active {
-	transform: translate3d(-150%, 0, 0) scale(0.4);
-	transition: transform 1s ease-out;
-}
+
 .flicker_on {
 	animation: flicker_on 1s linear forwards;
 }
-.flicker_off {
-	animation: flicker_off 1s linear forwards;
-}
-
 @keyframes flicker_on {
 	0% {box-shadow: 0px 0px 0px -8px rgba(255, 0, 0, .1);
 		opacity: 0}
@@ -43,8 +53,12 @@
 		box-shadow: 0px 0px 16px -8px rgba(255, 0, 0, .9)}
 }
 
+
+.flicker_off {
+	animation: flicker_off 1s linear forwards;
+}
 @keyframes flicker_on_quick {
-	0% {box-shadow: 0px 0px 0px -8px rgba(255, 0, 0, .1)
+	0% {box-shadow: 0px 0px 0px -8px rgba(255, 0, 0, .1);
 		opacity: 0;}
 	1%, 7% {opacity: 0.2;}
 	8% {opacity: 0;}
