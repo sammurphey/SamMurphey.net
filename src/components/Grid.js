@@ -6,7 +6,7 @@ class Item extends Component {
 		super(props);
 		this.state = {
 			artist: "",
-			category: this.props.category || "",
+			table: this.props.table || "",
 			date: this.props.date || "",
 			description: "",
 			id: this.props.id || "",
@@ -20,7 +20,7 @@ class Item extends Component {
 	}
 	componentWillReceiveProps (nextProps) {
 		this.setState({
-			category: nextProps.category,
+			table: nextProps.table,
 			date: nextProps.date,
 			id: nextProps.id,
 			title: nextProps.title
@@ -28,7 +28,7 @@ class Item extends Component {
 		this.getData();
 	}
 	getData () {
-		var url = "https://sammurphey.net/api/index.php?category=" + this.state.category + "&id=" + this.state.id;
+		var url = "https://sammurphey.net/api/index.php?table=" + this.state.table + "&id=" + this.state.id;
 		console.log(url);
 		fetch(url)
 			.then(res => res.json())
@@ -51,9 +51,8 @@ class Item extends Component {
 				<img src={this.state.img} onLoad={(e) => this.handleImgLoad(e)} />
 				<div className="container">
 					<div className="content">
-						<h2>{this.state.artist}<br />
-						{this.state.title}</h2>
-						<p>{this.state.description}</p>
+						<h2><span className="artist-title">{this.state.artist}</span><br />
+						<span className="title">{this.state.title}</span></h2>
 						<p className="date">{this.state.date}</p>
 					</div>
 				</div>
@@ -91,7 +90,7 @@ class Items extends Component {
 		return (
 			<div className="grid_items">
 				{this.state.data.map(item =>
-					<Item key={item.id} title={item.title} category={item.category} id={item.ref_id} date={item.date} />
+					<Item key={item.id} title={item.title} table={item.table} id={item.ref_id} date={item.date} />
                 )}
 			</div>
 		);
