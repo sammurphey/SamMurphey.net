@@ -331,13 +331,16 @@ body::after {
             #main article div.grid_items .grid_item, #main article section.grid_items .grid_item, #main article .panel.grid_items .grid_item {
               height: calc(calc(16px * 4) * 4 - 4px);
               width: calc(calc(16px * 4) * 4 - 4px); } }
-          #main article div.grid_items .grid_item img, #main article section.grid_items .grid_item img, #main article .panel.grid_items .grid_item img {
+          #main article div.grid_items .grid_item .img_container, #main article section.grid_items .grid_item .img_container, #main article .panel.grid_items .grid_item .img_container {
             height: 100%;
-            opacity: 0;
-            position: absolute;
             width: 100%; }
-            #main article div.grid_items .grid_item img.loaded, #main article section.grid_items .grid_item img.loaded, #main article .panel.grid_items .grid_item img.loaded {
-              animation: flicker_on 1s linear forwards; }
+            #main article div.grid_items .grid_item .img_container img, #main article section.grid_items .grid_item .img_container img, #main article .panel.grid_items .grid_item .img_container img {
+              height: 100%;
+              opacity: 1;
+              position: absolute;
+              width: 100%; }
+              #main article div.grid_items .grid_item .img_container img.loaded, #main article section.grid_items .grid_item .img_container img.loaded, #main article .panel.grid_items .grid_item .img_container img.loaded {
+                animation: flicker_on 1s linear forwards; }
           #main article div.grid_items .grid_item .container, #main article section.grid_items .grid_item .container, #main article .panel.grid_items .grid_item .container {
             height: 100%;
             left: 0;

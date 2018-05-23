@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import {Route, Switch, Link} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import HomePage from "../views/home";
 import SearchPage from "../views/search";
 import MusicPage from "../views/music";
 import CodePage from "../views/code";
 import ArtPage from "../views/art";
 import StorePage from "../views/store";
+import Gallery from "../views/gallery";
 
 //var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 class Main extends Component {
@@ -13,12 +14,13 @@ class Main extends Component {
 		return (
 			<main id="main" className="container">
 					<Switch>
-						<Route exact={true} path="/" component={HomePage}/>
+						<Route exact={true} path="/" component={HomePage} />
 						<Route path="/search" component={SearchPage} />
 						<Route path="/music" component={MusicPage} />
 						<Route path="/code" component={CodePage} />
 						<Route path="/art" component={ArtPage} />
 						<Route path="/store" component={StorePage} />
+						<Route path="/gallery" component={Gallery} />
 						<Route component={NoMatch} />
 					</Switch>
 			</main>
