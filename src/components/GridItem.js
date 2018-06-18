@@ -6,12 +6,12 @@ class GridItem extends Component {
 		cover_img: "",
 		date: "",
 		img_id: "",
-		path: "https://sammurphey.net",
+		path: "",
 		title: "",
-		subtitle: "",
+		subtitle: ""
 	}
 	componentDidMount() {
-		if (this.props.ref_id) {
+		if (this.props.ref_id && this.props.table) {
 			this.getData(this.props.ref_id, this.props.table)
 		}
 	}
@@ -22,20 +22,23 @@ class GridItem extends Component {
 		}
 	}
 	getData(ref_id, table) {
-		fetch("https://sammurphey.net/api/index.php?table=" + table + "&id=" + ref_id)
-			.then(res => res.json())
-				.then((data) => {
-					var item = data[0];
-					this.setState({
-						category: item.category,
-						cover_img: item.cover_img,
-						date: item.date,
-						img_id: item.cover_img,
-						path: "https://sammurphey.net/" + item.path,
-						title: item.title,
-						subtitle: item.artists || item.client
-					});
-				})
+		if (ref_id && table) {
+			fetch("https://sammurphey.net/api/index.php?table=" + table + "&id=" + ref_id)
+				.then(res => res.json())
+					.then((data) => {
+						var item = data[0];
+						this.setState({
+							category: item.category,
+							color: item.color || "",
+							cover_img: item.cover_img,
+							date: item.date,
+							img_id: item.cover_img,
+							path: "https://sammurphey.net/" + item.path,
+							title: item.title,
+							subtitle: item.artists || item.client
+						});
+					})
+		}
 	}
 	render() {
 		return (

@@ -1,16 +1,19 @@
 //colors
-$amberColor:  #FFBF00;
+$textColor: #000;
+$darkGrey: #5f5f5f;
 $baseColor: #989898;
-$highlightColor: #FFF;
-$plasticColor: #F8F8F8;
+$lightGrey: #b1b1b1;
 $darkPlastic: #ECECEC;
+$plasticColor: #F8F8F8;
+$highlightColor: #FFF;
 $tealColor: #00EFF1;
-
+$amberColor:  #FFBF00;
 //design elements
 $gridSize: 16px;
-$blockSize: calc(#{$gridSize} * 4);
+$blockSize: 64px;
 $gutter: 2px;
-$shadow: 0px 0px 128px -32px rgba(0,0,0,.5);
+$panel_shadow: 0px 0px 128px -32px rgba(0,0,0,.5);
+$chip_shadow: 0px 1px 3px rgba(0,0,0,0.3);
 
 //willchange..
 $cornerSml: 6px;

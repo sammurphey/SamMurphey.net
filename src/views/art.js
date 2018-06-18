@@ -4,12 +4,20 @@ import Intro from "../components/Intro";
 import Grid from "../components/Grid";
 
 class ArtPage extends Component {
+	state = {anim: "page-enter"}
+
+	componentWillUnmount () {
+		this.setState({anim: "page-leave"});
+	}
+
 	render () {
+		var url = "https://sammurphey.net/api/index.php?category=art&sort_by=date&sort_dir=DESC";
 		return (
-			<article id="art_page"  className="page-enter">
+			<article id="art_page" className={this.state.anim} key="art_page">
 				<ScrollToTop />
 				<Intro title="Art" />
-				<Grid items="art" />
+
+				<Grid endpoint={url} />
 			</article>
 		);
 	}

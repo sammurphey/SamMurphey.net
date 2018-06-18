@@ -29,34 +29,12 @@ class SearchIcon extends Component {
 		);
 	}
 }
-class MainNav extends Component {
-	render () {
-		return (
-			<nav id="main_nav">
-				<ul>
-					<li>
-						<Link to={`/music`}>Music</Link>
-					</li>
-					<li>
-						<Link to={`/code`}>Code</Link>
-					</li>
-					<li>
-						<Link to={`/art`}>Art</Link>
-					</li>
-					<li>
-						<Link to={`/store`}>Store</Link>
-					</li>
-				</ul>
-			</nav>
-		);
-	}
-}
+
 class Header extends Component {
 	render () {
 		return (
 			<header id="header">
 				<LogoIcon />
-				<MainNav />
 				<SearchIcon />
 			</header>
 		);

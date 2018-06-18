@@ -21,11 +21,7 @@ class Grid extends Component {
 							<GridItem key={k} ref_id={item.ref_id} table={item.table}>
 								{griditem => (
 									<Link to={griditem.path}>
-										<ImageElement ref_id={griditem.cover_img}>
-											{image => (
-												<img alt={image.alt} src={image.path} title={image.title} />
-											)}
-										</ImageElement>
+										<ImageElement ref_id={griditem.cover_img} />
 										<div className="container">
 											<div className="content">
 												<h2><span className="subtitle">{griditem.subtitle}</span><br />

@@ -13,6 +13,7 @@ class Gallery extends Component {
 			.then(res => res.json())
 			.then((data) => {
 				this.setState({data});
+				console.log(data)
 			});
 	}
 	render () {
@@ -22,7 +23,7 @@ class Gallery extends Component {
 					<section className="panel">
 						{this.state.data.map(item =>
 							<div key={item.id} style={{float: "left", margin: 10 + "px", width: 250 + "px"}}>
-								<img src={item.src} alt={item.title} width="250px"/>
+								<img src={item.path} alt={item.title} width="250px"/>
 								<h2><span>{item.title}</span></h2>
 								<p>Id: <span>{item.id}</span></p>
 							</div>

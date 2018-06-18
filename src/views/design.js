@@ -3,7 +3,7 @@ import ScrollToTop from "../components/ScrollToTop";
 import Intro from "../components/Intro";
 import Grid from "../components/Grid";
 
-class CodePage extends Component {
+class DesignPage extends Component {
 	state = {anim: "page-enter"}
 
 	componentWillUnmount () {
@@ -11,11 +11,11 @@ class CodePage extends Component {
 	}
 
 	render () {
-		var url = "https://sammurphey.net/api/index.php?category=code&&sort_by=date&sort_dir=DESC";
+		var url = "https://sammurphey.net/api/index.php?category=design&sort_by=date&sort_dir=DESC";
 		return (
-			<article id="code_page" className={this.state.anim} key="code_page">
+			<article id="design_page" className={this.state.anim} key="design_page">
 				<ScrollToTop />
-				<Intro title="Code" />
+				<Intro title="Design" />
 
 				<Grid endpoint={url} />
 			</article>
@@ -23,4 +23,4 @@ class CodePage extends Component {
 	}
 }
 
-export default CodePage;
+export default DesignPage;
