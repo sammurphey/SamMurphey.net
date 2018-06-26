@@ -6,7 +6,7 @@ class GridItem extends Component {
 		cover_img: "",
 		date: "",
 		img_id: "",
-		path: "",
+		url: "",
 		title: "",
 		subtitle: ""
 	}
@@ -28,12 +28,12 @@ class GridItem extends Component {
 					.then((data) => {
 						var item = data[0];
 						this.setState({
-							category: item.category,
+							category: item.category || "",
 							color: item.color || "",
 							cover_img: item.cover_img,
 							date: item.date,
 							img_id: item.cover_img,
-							path: "https://sammurphey.net/" + item.path,
+							url: item.url,
 							title: item.title,
 							subtitle: item.artists || item.client
 						});

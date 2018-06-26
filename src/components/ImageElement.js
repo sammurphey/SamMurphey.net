@@ -33,7 +33,6 @@ class ImageElement extends Component {
 		fetch("https://sammurphey.net/api/index.php?table=imgs&id=" + ref_id)
 			.then(res => res.json())
 				.then((data) => {
-					console.log(data);
 					var img = data[0],
 						cs  = {},
 						is  = {},
@@ -54,10 +53,6 @@ class ImageElement extends Component {
 						case "bottom":
 							cs = {flexDirection: "column-reverse"};
 							break;
-					}
-
-					if (img.id == "426") {
-						console.log(cs)
 					}
 					if (this.state.override_shape) {
 						shape = this.state.override_shape;
@@ -85,7 +80,7 @@ class ImageElement extends Component {
 				});
 	}
 	handleImgLoad (e) {
-		e.target.classList.add("loaded");
+		e.target.parentNode.classList.add("loaded");
 	}
 	render () {
 		return (

@@ -5,8 +5,21 @@ import ImageElement from "./ImageElement";
 
 class Grid extends Component {
 	state = {items: []}
-	componentDidMount() {
-		fetch(this.props.endpoint)
+	componentDidMount () {
+		if (this.props.endpoint) {
+			this.setState({items: []});
+			this.getData(this.props.endpoint);
+		}
+	}
+	componentDidUpdate (prevProps) {
+		var _props = this.props;
+		if (_props.endpoint !== prevProps.endpoint) {
+			this.setState({items: []});
+			this.getData(_props.endpoint);
+		}
+	}
+	getData (url) {
+		fetch(url)
 			.then(res => res.json())
 				.then (items => {
 					this.setState({items: items})
@@ -20,7 +33,7 @@ class Grid extends Component {
 						return (
 							<GridItem key={k} ref_id={item.ref_id} table={item.table}>
 								{griditem => (
-									<Link to={griditem.path}>
+									<Link to={griditem.url}>
 										<ImageElement ref_id={griditem.cover_img} />
 										<div className="container">
 											<div className="content">

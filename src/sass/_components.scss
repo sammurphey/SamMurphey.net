@@ -16,6 +16,19 @@
 	outline: none;
 	padding: $gridSize;
 	position: relative;
+	p > & {
+		display: inline-block;
+		font-weight: lighter;
+		&:hover {
+			background: $highlightColor!important;
+			border-color: $darkGrey!important;
+			color: $darkGrey!important;
+		}
+		&:focus, &:active {
+			border-color: $tealColor!important;
+			color: $tealColor!important;
+		}
+	}
 	&.chip {
 		background: $plasticColor;
 		border: 0;
@@ -170,6 +183,7 @@ button, .btn, input, textarea { @extend %outline_style; }
 	display: block;
 	margin: 2px;
 	padding: $paddingXL calc(#{$blockSize} / 2);
+	padding: calc(#{$blockSize} / 2);
 	transition: background .2s linear;
 	&:hover {
 		background: $plasticColor;

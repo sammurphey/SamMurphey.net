@@ -1,97 +1,55 @@
 import React, { Component } from "react";
 import {Route, Switch} from "react-router-dom";
-import HomePage from "../views/home";
-import SearchPage from "../views/search";
-import MusicPage from "../views/music";
-import CodePage from "../views/code";
-import ArtPage from "../views/art";
-import DesignPage from "../views/design";
-import StorePage from "../views/store";
-import Gallery from "../views/gallery";
-import Footer from "./Footer";
-//
+//views
+import OverviewView from "../views/Overview";
+import DetailsView from "../views/Details";
+import NoMatch from "../views/404";
 
-import {Link} from "react-router-dom";
-import ScrollToTop from "../components/ScrollToTop";
-import Intro from "../components/Intro";
-import Grid from "../components/Grid";
-import ImageElement from "../components/ImageElement";
-import InlinePanel from "../components/InlinePanel";
-//var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+import Gallery from "../views/gallery"; //delete later
 
-class CategoryOverview extends Component {
-	render () {
-		return (
-			<section id={this.props.category && "-overview"}>
-				<div className="panel">
-					<h2>{this.props.category}</h2>
-					<p>I make experimental music under lots of different aliases.</p>
-				</div>
-				<div className="panel_container">
-					<InlinePanel url="/music/silent-synthesis" title="Silent Synthesis" bg="484" profile="99"/>
-					<InlinePanel url="/music/shtml" title="SHTML" bg="480" profile="241" />
-					<InlinePanel url="/music/sunnli5hh/t" title="Sunnli5hh/t" bg="118" profile="476" />
-					<InlinePanel url="/music/syntactic-sugar" title="Syntactic Sugar" bg="289" profile="271"/>
-					<InlinePanel url="/music/ikeaatmidnight" title="Ikea@Midnight" bg="485" profile="66" />
-					<InlinePanel url="/music/emma-o-yama" title="Emma O'Yama" bg="63" profile="193"/>
-				</div>
-			</section>
-		)
-	}
-}
-
-class OverviewView extends Component {
-	render () {
-		var url = "https://sammurphey.net/api/index.php?view=overview&sort_by=date&sort_dir=DESC";
-		return (
-			<div id="overview_view">
-				<article id="homepage_intro">
-					<ScrollToTop />
-					<Intro title="" description="" />
-					<CategoryOverview category="music" />
-					<CategoryOverview category="code" />
-					<CategoryOverview category="art" />
-					<CategoryOverview category="design" />
-					<CategoryOverview category="store" />
-				</article>
-				<article id="homepage_grid">
-					<h1>All Projects</h1>
-					<Grid endpoint={url} />
-				</article>
-			</div>
-		)
-	}
-}
-
-class DetailView extends Component {
-
-}
 
 class Main extends Component {
+	state = {
+		categories: [],
+		title: false,
+		description: false
+	}
+	componentDidMount () {
+		fetch("https://sammurphey.net/api/index.php?table=categories&public=true")
+			.then(res => res.json())
+				.then((data) => {
+					this.setState({
+						categories: data
+					})
+				})
+	}
 	render () {
+		console.log(this.state.subcategories);
 		return (
 			<main id="main" className="container">
 					<Switch>
-						<Route exact={true} path="/" component={OverviewView} />
-						<Route path="/search" component={SearchPage} />
-						<Route path="/music" component={MusicPage} />
-						<Route path="/code" component={CodePage} />
-						<Route path="/art" component={ArtPage} />
-						<Route path="/design" component={DesignPage} />
-						<Route path="/store" component={StorePage} />
-						<Route path="/gallery" component={Gallery} />
+						<Route exact={true} path="/" render={() => (
+							<OverviewView category="all" title="Hello World" description="My name is Samantha Murphey. I'm a 23 year old trans-lesbian hacker-girl living in LA. I have a passion for merging art and code and so I spend most of my time building web-apps and producing music. There's quite a lot of material on this site to see / hear / play with, so I suggest choosing one of the categories below or to the left to start off with. Or if you think you can brave the chaos, scroll down a bit further for a full reverse-chronological view of ALL my work." />
+						)} />
+						{this.state.categories.map((route) => (
+							<Route
+								key={route.url}
+								path={route.url}
+								render={() => (
+									<OverviewView
+										category={route.name} subcategories={route.subcategories}
+										title={route.title}
+										description={route.description}
+										url={route.url}
+									/>
+								)}
+							/>
+						))}
 						<Route component={NoMatch} />
 					</Switch>
-					<Footer />
 			</main>
 		);
 	}
 }
-
-const NoMatch = () => (
-	<div id="no_match">
-		<h1>404</h1>
-	</div>
-)
 
 export default Main;

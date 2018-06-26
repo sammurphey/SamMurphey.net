@@ -12,6 +12,16 @@ button, .btn, input, textarea {
   outline: none;
   padding: 16px;
   position: relative; }
+  p > button, p > .btn, p > input, p > textarea {
+    display: inline-block;
+    font-weight: lighter; }
+    p > button:hover, p > .btn:hover, p > input:hover, p > textarea:hover {
+      background: #FFF !important;
+      border-color: #5f5f5f !important;
+      color: #5f5f5f !important; }
+    p > button:focus, p > .btn:focus, p > input:focus, p > textarea:focus, p > button:active, p > .btn:active, p > input:active, p > textarea:active {
+      border-color: #00EFF1 !important;
+      color: #00EFF1 !important; }
   button.chip, .chip.btn, input.chip, textarea.chip {
     background: #F8F8F8;
     border: 0;
@@ -149,6 +159,7 @@ button, .btn, input, textarea {
   display: block;
   margin: 2px;
   padding: 16px calc(64px / 2);
+  padding: calc(64px / 2);
   transition: background .2s linear; }
   .panel:hover {
     background: #F8F8F8; }
@@ -199,7 +210,9 @@ button, .btn, input, textarea {
 
 .page-enter {
   animation: page_enter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  animation-delay: .6s; }
+  animation-delay: .6s;
+  opacity: 0;
+  transform: translateY(50%); }
 
 @keyframes page_enter {
   0% {
@@ -210,7 +223,9 @@ button, .btn, input, textarea {
     transform: translateY(0%); } }
 
 .page-leave {
-  animation: page_leave 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+  animation: page_leave 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 1;
+  transform: translateY(0%); }
 
 @keyframes page_leave {
   0% {
@@ -221,7 +236,9 @@ button, .btn, input, textarea {
     transform: translateY(50%); } }
 
 .flicker_on {
-  animation: flicker_on 1s linear forwards; }
+  animation: flicker_on 1s linear forwards;
+  box-shadow: 0px 0px 0px -8px rgba(255, 0, 0, 0.1);
+  opacity: 0; }
 
 @keyframes flicker_on {
   0% {
@@ -277,20 +294,39 @@ button, .btn, input, textarea {
 a {
   color: inherit;
   cursor: pointer;
+  position: relative;
   text-decoration: inherit; }
   a[rel="nofollow"] {
     cursor: alias; }
   a:focus, a:hover {
     color: #00EFF1; }
+  p > a::before, p > a::after {
+    display: block;
+    position: absolute;
+    top: -8px;
+    transform: translateX(0);
+    transition: transform .2s linear; }
+  p > a::before {
+    content: "[";
+    left: -8px; }
+  p > a::after {
+    content: "]";
+    right: -8px; }
+  p > a:focus::before, p > a:hover::before {
+    transform: translateX(-8px); }
+  p > a:focus::after, p > a:hover::after {
+    transform: translateX(8px); }
 
 p {
   font-family: 'Ubuntu Mono', monospace;
   font-size: 17px;
   font-weight: lighter;
   line-height: calc(16px * 2);
-  margin: 0 0 16px 0; }
+  margin: 0; }
   .panel p {
     color: #989898; }
+  p + * {
+    margin-top: 16px; }
 
 h1, h2, h3, h4, h5, h6 {
   display: inline-block;
@@ -306,7 +342,8 @@ h1 {
   margin: 12px 0 0 0; }
 
 h2 {
-  font-size: 18px; }
+  font-size: 32px;
+  font-weight: 100; }
 
 h3, h4, h5, h6 {
   font-size: 17px; }
@@ -415,7 +452,10 @@ body::after {
   z-index: 1; }
   #main article {
     flex-direction: column;
-    margin-bottom: 18px !important; }
+    margin-bottom: 18px !important;
+    z-index: 3; }
+  #main footer {
+    z-index: 2; }
   #main article, #main footer {
     display: flex;
     flex-wrap: wrap;
@@ -464,7 +504,9 @@ body::after {
     #main article section, #main article .grid_items, #main footer section, #main footer .grid_items {
       position: relative; }
       #main article section.intro, #main article .grid_items.intro, #main footer section.intro, #main footer .grid_items.intro {
-        min-height: 408px; }
+        min-height: 416px;
+        padding-top: 16px;
+        z-index: 4; }
       #main article section.grid_items, #main article .grid_items.grid_items, #main footer section.grid_items, #main footer .grid_items.grid_items {
         display: flex;
         flex-wrap: wrap; }
@@ -485,21 +527,6 @@ body::after {
             #main article section.grid_items .grid_item, #main article .grid_items.grid_items .grid_item, #main footer section.grid_items .grid_item, #main footer .grid_items.grid_items .grid_item {
               height: calc(64px * 4 - 4px);
               width: calc(64px * 4 - 4px); } }
-          #main article section.grid_items .grid_item .img_container, #main article .grid_items.grid_items .grid_item .img_container, #main footer section.grid_items .grid_item .img_container, #main footer .grid_items.grid_items .grid_item .img_container {
-            align-items: center;
-            display: flex;
-            height: 100%;
-            left: 0;
-            overflow: hidden;
-            position: relative;
-            top: 0;
-            width: 100%; }
-            #main article section.grid_items .grid_item .img_container img, #main article .grid_items.grid_items .grid_item .img_container img, #main footer section.grid_items .grid_item .img_container img, #main footer .grid_items.grid_items .grid_item .img_container img {
-              flex-shrink: 0;
-              object-fit: cover;
-              opacity: 0; }
-              #main article section.grid_items .grid_item .img_container img.loaded, #main article .grid_items.grid_items .grid_item .img_container img.loaded, #main footer section.grid_items .grid_item .img_container img.loaded, #main footer .grid_items.grid_items .grid_item .img_container img.loaded {
-                animation: flicker_on 1s linear forwards; }
           #main article section.grid_items .grid_item .container, #main article .grid_items.grid_items .grid_item .container, #main footer section.grid_items .grid_item .container, #main footer .grid_items.grid_items .grid_item .container {
             height: 100%;
             left: 0;
@@ -532,6 +559,22 @@ body::after {
         width: calc(50% - 4px); }
         #main article#footer .panel#social_panel, #main footer#footer .panel#social_panel {
           padding-bottom: 0; }
+
+.img_container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  width: 100%; }
+  .img_container.loaded {
+    animation: flicker_on 1s linear forwards; }
+  .img_container img {
+    flex-shrink: 0;
+    object-fit: cover; }
 
 #sidebar {
   display: none;
@@ -566,9 +609,9 @@ body::after {
               height: calc(64px / 2);
               font-size: 16px;
               line-height: calc(64px / 2);
-              margin: 0;
+              margin: 0 16px;
               opacity: 0.4;
-              padding: 0 16px; }
+              padding: 0; }
               #sidebar .contents > *#console *:focus, #sidebar .contents > *#console *:hover {
                 opacity: 1; }
           #sidebar .contents > *#qr_code {
@@ -589,53 +632,66 @@ body::after {
 .panel_container {
   display: flex;
   flex-wrap: wrap; }
-  .panel_container .panel {
+  .panel_container > * {
     padding: 0;
-    width: calc(33.33333% - 4px); }
-    .panel_container .panel > * {
-      padding: 16px calc(64px / 2); }
-
-.panel_header {
-  align-items: center;
-  background: rgba(0, 0, 0, 0.1);
-  display: flex;
-  min-height: 96px;
-  position: relative; }
-  .panel_header .profile_bg {
-    background: #000;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
     width: 100%; }
-    .panel_header .profile_bg .bg_container {
-      display: flex;
+    @media (min-width: 1068px) {
+      .panel_container > * {
+        width: 50%; } }
+    @media (min-width: 1580px) {
+      .panel_container > * {
+        width: 33.3333333%; } }
+
+.inline_panel {
+  display: flex;
+  flex-direction: column; }
+  .inline_panel > * {
+    padding: 16px calc(64px / 2); }
+  .inline_panel .panel_header {
+    align-items: center;
+    display: flex;
+    min-height: 96px;
+    position: relative; }
+    .inline_panel .panel_header .profile_bg {
       height: 100%;
-      position: relative;
+      left: 0;
+      position: absolute;
+      top: 0;
       width: 100%; }
-      .panel_header .profile_bg .bg_container .img_container {
+      .inline_panel .panel_header .profile_bg .bg_container {
         display: flex;
-        opacity: 0.5;
-        overflow: hidden;
+        height: 100%;
         position: relative;
         width: 100%; }
-  .panel_header .profile_photo {
-    flex-grow: 0;
-    flex-shrink: 0;
-    margin-right: 16px; }
-    .panel_header .profile_photo .img_container {
-      background: #F8F8F8;
-      border-radius: 50%;
-      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-      height: 64px;
-      overflow: hidden;
-      width: 64px; }
-  .panel_header h3 {
-    color: #FFF; }
+        .inline_panel .panel_header .profile_bg .bg_container .img_container {
+          background: #000;
+          display: flex;
+          overflow: hidden;
+          position: relative;
+          width: 100%; }
+          .inline_panel .panel_header .profile_bg .bg_container .img_container img {
+            opacity: 0.5; }
+    .inline_panel .panel_header .profile_photo {
+      flex-grow: 0;
+      flex-shrink: 0;
+      margin-right: 16px; }
+      .inline_panel .panel_header .profile_photo .img_container {
+        background: #F8F8F8;
+        border-radius: 50%;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        height: 64px;
+        overflow: hidden;
+        width: 64px; }
+    .inline_panel .panel_header h3 {
+      color: #FFF;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), 0px 0px 15px rgba(0, 0, 0, 0.2); }
+  .inline_panel .panel_article {
+    min-height: 192px;
+    height: calc(100% - 104px); }
 
 #speakers {
   background-color: #989898;
-  background-image: url("https://sammurphey.net/img/ui/speaker_texture_shadow.png");
+  background-image: url("https://sammurphey.net/img/ui/speaker_texture.jpg");
   background-position: center;
   height: calc(64px * 4 - 68px);
   margin: 16px 34px 34px 34px;
