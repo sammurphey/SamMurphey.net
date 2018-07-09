@@ -9,9 +9,10 @@ class Category extends Component {
 			this.getData(this.props.table)
 		}
 	}
-	componentDidUpdate () {
-		if (this.props.table) {
-			this.getData(this.props.table)
+	componentDidUpdate (prevProps) {
+		var _props = this.props;
+		if (_props.table !== prevProps.table) {
+			this.getData(_props.table)
 		}
 	}
 	getData(table) {
@@ -29,7 +30,7 @@ class Category extends Component {
 					{Array.isArray(this.props.description) && <p>
 						{this.props.description.map((string, k) => {
 							return (
-								<span key="k">
+								<span key={k}>
 									{string}<br/>
 								</span>
 							);
@@ -68,7 +69,7 @@ class CategoryPreview extends Component {
 	}
 	getData (category) {
 		var _url = "https://sammurphey.net/api/index.php?table=categories&public=true";
-		if (category == "all") {
+		if (category === "all") {
 			this.setState({displayHeaders: true});
 		} else {
 			this.setState({displayHeaders: false});

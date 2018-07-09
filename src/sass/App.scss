@@ -15,6 +15,7 @@ a {
 		color: $tealColor;
 	}
 	p > & {
+		padding: 0 10px!important;
 		&::before, &::after {
 			display: block;
 			position: absolute;
@@ -24,11 +25,11 @@ a {
 		}
 		&::before {
 			content: "[";
-			left: -8px;
+			left: 0;
 		}
 		&::after {
 			content: "]";
-			right: -8px;
+			right: 0;
 		}
 		&:focus,
 		&:hover {

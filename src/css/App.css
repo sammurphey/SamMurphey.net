@@ -300,22 +300,24 @@ a {
     cursor: alias; }
   a:focus, a:hover {
     color: #00EFF1; }
-  p > a::before, p > a::after {
-    display: block;
-    position: absolute;
-    top: -8px;
-    transform: translateX(0);
-    transition: transform .2s linear; }
-  p > a::before {
-    content: "[";
-    left: -8px; }
-  p > a::after {
-    content: "]";
-    right: -8px; }
-  p > a:focus::before, p > a:hover::before {
-    transform: translateX(-8px); }
-  p > a:focus::after, p > a:hover::after {
-    transform: translateX(8px); }
+  p > a {
+    padding: 0 10px !important; }
+    p > a::before, p > a::after {
+      display: block;
+      position: absolute;
+      top: -8px;
+      transform: translateX(0);
+      transition: transform .2s linear; }
+    p > a::before {
+      content: "[";
+      left: 0; }
+    p > a::after {
+      content: "]";
+      right: 0; }
+    p > a:focus::before, p > a:hover::before {
+      transform: translateX(-8px); }
+    p > a:focus::after, p > a:hover::after {
+      transform: translateX(8px); }
 
 p {
   font-family: 'Ubuntu Mono', monospace;

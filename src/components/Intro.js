@@ -11,7 +11,7 @@ class Intro extends Component {
 				{Array.isArray(this.props.description) && <p>
 					{this.props.description.map((string, k) => {
 						return (
-							<span key="k">
+							<span key={k}>
 								{string}<br/>
 							</span>
 						);

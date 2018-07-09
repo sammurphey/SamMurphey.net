@@ -38,9 +38,6 @@ class ImageElement extends Component {
 						is  = {},
 						shape = "";
 					switch (img.position) {
-						case "center":
-							cs = {justifyContent: "center", alignItems: "center"};
-							break;
 						case "left":
 							cs = {flexDirection: "row"};
 							break;
@@ -53,6 +50,10 @@ class ImageElement extends Component {
 						case "bottom":
 							cs = {flexDirection: "column-reverse"};
 							break;
+						case "center":
+						default:
+							cs = {justifyContent: "center", alignItems: "center"};
+							break;
 					}
 					if (this.state.override_shape) {
 						shape = this.state.override_shape;
@@ -60,13 +61,14 @@ class ImageElement extends Component {
 						shape = img.shape;
 					}
 					switch (shape) {
-						case "square":
-						case "wide":
-							is = {height: 100 + "%", width: "auto"};
-							break;
 						case "tall":
 							is = {height: "auto", width: 100 + "%"};
 							break;
+							case "square":
+							case "wide":
+							default:
+								is = {height: 100 + "%", width: "auto"};
+								break;
 					}
 					this.setState ({
 						alt: img.alt || img.title,
