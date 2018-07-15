@@ -58,22 +58,22 @@ class ViewContainer extends Component {
 		<div className="view_container">
 			{this.state.overview &&
 				<OverviewView
-					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data._ref_id}
+					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data.ref_id}
 				/>
 			}
 			{this.state.subcategory &&
 				<SubcategoryView
-					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data._ref_id}
+					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data.ref_id}
 				/>
 			}
 			{this.state.project &&
 				<ProjectView
-					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data._ref_id}
+					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data.ref_id}
 				/>
 			}
 			{this.state.details &&
 				<DetailsView
-					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data._ref_id}
+					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data.ref_id}
 				/>
 			}
 		</div>
@@ -85,8 +85,7 @@ class Main extends Component {
 	state = {
 		title: false,
 		description: false,
-		routes: [],
-		print_routes: ""
+		routes: []
 	}
 	componentDidMount () {
 		fetch("https://sammurphey.net/api/index.php?public=true&table=_refs")
@@ -99,12 +98,9 @@ class Main extends Component {
 	render () {
 		return (
 			<main id="main" className="container">
-			<p>
-				{this.state.print_routes}
-			</p>
 					<Switch>
 						<Route exact={true} path="/" render={() => (
-							<OverviewView category="all" title="Hello World" description="My name is Samantha Murphey. I'm a 23 year old trans-lesbian hacker-girl living in LA. I have a passion for merging art and code and so I spend most of my time building web-apps and producing music. There's quite a lot of material on this site to see / hear / play with, so I suggest choosing one of the categories below or to the left to start off with. Or if you think you can brave the chaos, scroll down a bit further for a full reverse-chronological view of ALL my work." />
+							<OverviewView category="all" title="Hello World" table="default" />
 						)} />
 						{this.state.routes.map((route) => (
 							<Route exact={true} path={route.url} key={route.url} render={() => (
