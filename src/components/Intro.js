@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 class Intro extends Component {
+	state = {}
 	componentDidMount () {
 		document.getElementById("main").scrollTo(0,0);
 	}
@@ -8,16 +9,24 @@ class Intro extends Component {
 			<section className="intro panel">
 				<div className="corner"></div>
 				<h1>{this.props.title}</h1>
-				{Array.isArray(this.props.description) && <p>
-					{this.props.description.map((string, k) => {
-						return (
-							<span key={k}>
-								{string}<br/>
-							</span>
-						);
-					})}
-				</p>}
-				{this.props.description && !Array.isArray(this.props.description) && <p>{this.props.description}</p>}
+				{this.props.data && <div>
+					{this.props.data.description &&
+					Array.isArray(this.props.data.description) &&
+					<p>
+						{this.props.data.description.map((string, k) => {
+							return (
+								<span key={k}>
+									{string}<br/>
+								</span>
+							);
+						})}
+					</p>}
+					{this.props.data.description &&
+					!Array.isArray(this.props.data.description) &&
+					<p>
+						{this.props.data.description}
+					</p>}
+				</div>}
 			</section>
 		);
 	}

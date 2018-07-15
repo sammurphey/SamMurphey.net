@@ -3,55 +3,115 @@ import {Route, Switch} from "react-router-dom";
 //views
 import OverviewView from "../views/Overview";
 import SubcategoryView from "../views/Subcategory";
+import ProjectView from "../views/Project";
+import DetailsView from "../views/Details";
 import NoMatch from "../views/404";
 
 import Gallery from "../views/gallery"; //delete later
 
+class ViewContainer extends Component {
+	state = {
+		overview: false,
+		subcategory: false,
+		project: false,
+		details: false
+	}
+	componentDidMount () {
+		if (this.props.data) {
+			this.updateView();
+		}
+	}
+	componentDidUpdate(prevProps) {
+		const _props = this.props;
+		if (_props.data !== prevProps.data) {
+			this.updateView();
+		}
+	}
+	updateView () {
+		switch(this.props.data.view) {
+			case "subcategory":
+				this.setState({
+					"overview": false, "subcategory": true, "project": false, "details": false
+				});
+				break;
+			case "project":
+				this.setState({
+					"overview": false, "subcategory": false, "project": true, "details": false
+				});
+				break;
+			case "details":
+				this.setState({
+					"overview": false, "subcategory": false, "project": false, "details": true
+				});
+				break;
+			case "overview":
+			case "category":
+			case "default":
+				this.setState({
+					"overview": true, "subcategory": false, "project": false, "details": false
+				});
+				break;
+		}
+	}
+	render () {
+		return (
+		<div className="view_container">
+			{this.state.overview &&
+				<OverviewView
+					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data._ref_id}
+				/>
+			}
+			{this.state.subcategory &&
+				<SubcategoryView
+					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data._ref_id}
+				/>
+			}
+			{this.state.project &&
+				<ProjectView
+					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data._ref_id}
+				/>
+			}
+			{this.state.details &&
+				<DetailsView
+					title={this.props.data.title} table={this.props.data.table} ref_id={this.props.data._ref_id}
+				/>
+			}
+		</div>
+		)
+	}
+}
 
 class Main extends Component {
 	state = {
 		title: false,
 		description: false,
-		routes: [
-			"categories", "aliases", "art_subcategories", "code_subcategories", "design_subcategories", "store_subcategories", "3d", "animation", "fonts", "illustration", "logos", "shirts", "websites"
-		],
-		categories: [],
-		aliases: [],
-		art_subcategories: [],
-		code_subcategories: [],
-		design_subcategories: [],
-		store_subcategories: [],
-		three_d: [],
-		animation: [],
-		fonts: [],
-		illustration: [],
-		logos: [],
-		shirts: [],
-		websites: []
+		routes: [],
+		print_routes: ""
 	}
 	componentDidMount () {
-		var url = "https://sammurphey.net/api/index.php?public=true&table=";
-		this.state.routes.map((route) => (
-			fetch(url + route)
-				.then(res => res.json())
-					.then((data) => {
-						var str = route,
-							obj = {};
-						if (route === "3d") {
-							str = "three_d";
-						}
-					    obj[str] = data;
-						this.setState(obj);
-					})
-		));
+		fetch("https://sammurphey.net/api/index.php?public=true&table=_refs")
+			.then(res => res.json())
+				.then((data) => {
+					this.setState({"routes": data});
+					console.log(this.state.routes);
+				})
 	}
 	render () {
 		return (
 			<main id="main" className="container">
+			<p>
+				{this.state.print_routes}
+			</p>
 					<Switch>
 						<Route exact={true} path="/" render={() => (
 							<OverviewView category="all" title="Hello World" description="My name is Samantha Murphey. I'm a 23 year old trans-lesbian hacker-girl living in LA. I have a passion for merging art and code and so I spend most of my time building web-apps and producing music. There's quite a lot of material on this site to see / hear / play with, so I suggest choosing one of the categories below or to the left to start off with. Or if you think you can brave the chaos, scroll down a bit further for a full reverse-chronological view of ALL my work." />
 						)} />
+						{this.state.routes.map((route) => (
+							<Route exact={true} path={route.url} key={route.url} render={() => (
+								<ViewContainer data={route} />
+							)} />
+						))}
+						<Route path="/gallery" component={Gallery} />
 						<Route component={NoMatch} />
 					</Switch>
 			</main>

@@ -4,7 +4,7 @@ import CategoryPreview from "../components/CategoryPreview";
 import Grid from "../components/Grid";
 import Footer from "../components/Footer";
 
-class DetailsView extends Component {
+class ProjectView extends Component {
 	state = {
 		anim: "page-enter",
 		gridTitle: false,
@@ -24,7 +24,7 @@ class DetailsView extends Component {
 	}
 	render () {
 		return (
-			<div className="details_view">
+			<div className="project_view">
 				<article id={this.props.name} className={this.state.anim}>
 					<Intro title={this.props.title} description={this.props.description} />
 					{this.state.gridTitle && <div className="panel">
@@ -46,4 +46,4 @@ class DetailsView extends Component {
 		)
 	}
 }
-export default DetailsView;
+export default ProjectView;

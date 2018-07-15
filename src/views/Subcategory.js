@@ -1,53 +1,48 @@
 import React, { Component } from "react";
-import {Route, Switch} from "react-router-dom";
-
 import Intro from "../components/Intro";
+import CategoryPreview from "../components/CategoryPreview";
 import Grid from "../components/Grid";
-
-import NoMatch from "../views/404";
+import Footer from "../components/Footer";
 
 class SubcategoryView extends Component {
 	state = {
-		aliases: [],
-		gridUrl: false
+		anim: "page-enter",
+		gridTitle: false,
+		gridDesc: false,
+		gridUrl: false,
+		subcategories: []
 	}
-	componentDidMount() {
-		this.getAliases();
+	componentDidMount () {
+		//this.getData();
 	}
-	getAliases () {
-		fetch("https://sammurphey.net/api/index.php?table=aliases&public=true")
-			.then(res => res.json())
-				.then((data) => {
-					console.log(data);
-					this.setState({
-						aliases: data
-					})
-				})
+	componentDidUpdate (prevProps) {
+		//const _props = this.props;
+		//this.getData();
+	}
+	componentWillUnmount () {
+		this.setState({anim: "page-leave"});
 	}
 	render () {
 		return (
-			<Switch>
-				{this.state.aliases.map((route) => (
-					<Route
-						key={route.url}
-						path={route.url}
-						render={() => (
-							<article id="subcategory_view">
-								<Intro title={this.props.title} description={this.props.description} />
-								<div className="panel">
-									<h2>Albums</h2>
-								</div>
-								<Grid endpoint={"https://sammurphey.net/api/index.php?view=overview&subcategory=" + route.name + "&table_field=albums&sort_by=date&sort_dir=DESC&public=true"} />
-								<div className="panel">
-									<h2>Singles</h2>
-								</div>
-								<Grid endpoint={"https://sammurphey.net/api/index.php?view=overview&subcategory=" + route.name + "&table_field=songs&sort_by=date&sort_dir=DESC&public=true"} />
-							</article>
-						)}
-					/>
-				))}
-				<Route component={NoMatch} />
-			</Switch>
+			<div className="subcategory_view">
+				<article id={this.props.name} className={this.state.anim}>
+					<Intro title={this.props.title} description={this.props.description} />
+					{this.state.gridTitle && <div className="panel">
+						<h2>{this.state.gridTitle}</h2>
+						{this.state.gridDesc && <p>
+							{this.state.gridDesc.map((string, k) => {
+								return (
+									<span key={k}>
+										{string}<br/>
+									</span>
+								);
+							})}
+						</p>}
+					</div>}
+					{this.state.gridUrl && <Grid endpoint={this.state.gridUrl} />}
+				</article>
+				<Footer />
+			</div>
 		)
 	}
 }

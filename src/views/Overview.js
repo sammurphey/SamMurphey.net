@@ -9,38 +9,52 @@ class OverviewView extends Component {
 		anim: "page-enter",
 		gridTitle: false,
 		gridDesc: false,
-		gridUrl: false,
-		subcategories: []
+		data: []
 	}
 	componentDidMount () {
-		//this.getData();
+		if (this.props.table && this.props.ref_id)
+		this.getData();
 	}
 	componentDidUpdate (prevProps) {
-		//const _props = this.props;
-		//this.getData();
+		const _props = this.props;
+		if (_props.table !== prevProps.table || _props.ref_id !== prevProps.ref_id) {
+			this.getData();
+		}
 	}
 	componentWillUnmount () {
 		this.setState({anim: "page-leave"});
 	}
+	getData () {
+		console.log("getting overview data")
+		var url = "https://sammurphey.net/api/index.php?table=" + this.props.table + "&id=" + this.props.ref_id + "&public=true";
+		fetch(url)
+			.then(res => res.json())
+				.then((data) => {
+					this.setState({"data": data});
+					console.log(this.state.data);
+				})
+	}
 	render () {
 		return (
-			<div id="category_view">
-				<article id={this.props.name} className={this.state.anim}>
-					<Intro title={this.props.title} description={this.props.description} />
-					{this.props.category && <CategoryPreview category={this.props.category} />}
-					{this.state.gridTitle && <div className="panel">
-						<h2>{this.state.gridTitle}</h2>
-						{this.state.gridDesc && <p>
-							{this.state.gridDesc.map((string, k) => {
-								return (
-									<span key={k}>
-										{string}<br/>
-									</span>
-								);
-							})}
-						</p>}
+			<div className="category_view">
+				<article className={this.state.anim}>
+					<Intro title={this.props.title} data={this.props.data} />
+					{this.state.data && <div>
+						{this.state.data.category && <CategoryPreview category={this.state.data.category} />}
+						{this.state.gridTitle && <div className="panel">
+							<h2>{this.state.gridTitle}</h2>
+							{this.state.gridDesc && <p>
+								{this.state.gridDesc.map((string, k) => {
+									return (
+										<span key={k}>
+											{string}<br/>
+										</span>
+									);
+								})}
+							</p>}
+						</div>}
+						{this.state.gridUrl && <Grid endpoint={this.state.gridUrl} />}
 					</div>}
-					{this.state.gridUrl && <Grid endpoint={this.state.gridUrl} />}
 				</article>
 				<Footer />
 			</div>
