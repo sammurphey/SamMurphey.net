@@ -33,7 +33,15 @@ button, .btn, input, textarea {
     button.chip:focus, .chip.btn:focus, input.chip:focus, textarea.chip:focus, button.chip:hover, .chip.btn:hover, input.chip:hover, textarea.chip:hover {
       background: #FFF;
       box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15); }
-      button.chip:focus .icon, .chip.btn:focus .icon, input.chip:focus .icon, textarea.chip:focus .icon, button.chip:focus .icon *, .chip.btn:focus .icon *, input.chip:focus .icon *, textarea.chip:focus .icon *, button.chip:hover .icon, .chip.btn:hover .icon, input.chip:hover .icon, textarea.chip:hover .icon, button.chip:hover .icon *, .chip.btn:hover .icon *, input.chip:hover .icon *, textarea.chip:hover .icon * {
+      button.chip:focus .icon, .chip.btn:focus .icon, input.chip:focus .icon, textarea.chip:focus .icon,
+      button.chip:focus .icon *,
+      .chip.btn:focus .icon *,
+      input.chip:focus .icon *,
+      textarea.chip:focus .icon *, button.chip:hover .icon, .chip.btn:hover .icon, input.chip:hover .icon, textarea.chip:hover .icon,
+      button.chip:hover .icon *,
+      .chip.btn:hover .icon *,
+      input.chip:hover .icon *,
+      textarea.chip:hover .icon * {
         opacity: 0.3; }
     button.chip:active, .chip.btn:active, input.chip:active, textarea.chip:active {
       background: #00EFF1;
@@ -310,8 +318,10 @@ a {
       transition: transform .2s linear; }
     p > a::before {
       content: "[";
-      left: 0; }
+      left: 0;
+      top: 0; }
     p > a::after {
+      bottom: 0;
       content: "]";
       right: 0; }
     p > a:focus::before, p > a:hover::before {
@@ -324,7 +334,8 @@ p {
   font-size: 17px;
   font-weight: lighter;
   line-height: calc(16px * 2);
-  margin: 0; }
+  margin: 0;
+  position: relative; }
   .panel p {
     color: #989898; }
   p + * {
@@ -505,10 +516,6 @@ body::after {
         width: calc(64px * 32); } }
     #main article section, #main article .grid_items, #main footer section, #main footer .grid_items {
       position: relative; }
-      #main article section.intro, #main article .grid_items.intro, #main footer section.intro, #main footer .grid_items.intro {
-        min-height: 416px;
-        padding-top: 16px;
-        z-index: 4; }
       #main article section.grid_items, #main article .grid_items.grid_items, #main footer section.grid_items, #main footer .grid_items.grid_items {
         display: flex;
         flex-wrap: wrap; }
@@ -561,6 +568,23 @@ body::after {
         width: calc(50% - 4px); }
         #main article#footer .panel#social_panel, #main footer#footer .panel#social_panel {
           padding-bottom: 0; }
+
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 416px;
+  z-index: 4; }
+  .intro .panel {
+    flex-grow: 0;
+    flex-shrink: 1;
+    min-height: 416px;
+    padding-top: 16px;
+    width: 100%; }
+    .intro .panel.hero_img {
+      padding: 0; }
+      .intro .panel.hero_img, .intro .panel.hero_img * {
+        max-height: 416px;
+        max-width: 416px; }
 
 .img_container {
   align-items: center;

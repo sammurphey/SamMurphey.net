@@ -16,7 +16,7 @@ class Category extends Component {
 		}
 	}
 	getData(table) {
-		fetch("https://sammurphey.net/api/index.php?table=" + table + "&public=true")
+		fetch("https://sammurphey.net/api/index.php?table=" + table + "&public=true&sort_by=order")
 			.then(res => res.json())
 				.then((data) => {
 					this.setState({data: data});

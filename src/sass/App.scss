@@ -26,8 +26,10 @@ a {
 		&::before {
 			content: "[";
 			left: 0;
+			top: 0;
 		}
 		&::after {
+			bottom: 0;
 			content: "]";
 			right: 0;
 		}
@@ -48,6 +50,7 @@ p {
 	font-weight: lighter;
 	line-height: calc(#{$gridSize} * 2);
 	margin: 0;
+	position: relative;
 	.panel & {
 		color: $baseColor;
 	}
@@ -273,11 +276,6 @@ body {
 		}
 		section, .grid_items {
 			position: relative;
-			&.intro {
-				min-height: 416px;
-				padding-top: 16px;
-				z-index: 4;
-			}
 			&.grid_items {
 				display: flex;
 				flex-wrap: wrap;
@@ -351,6 +349,32 @@ body {
 		}
 	}
 }
+
+
+
+
+.intro {
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 416px;
+	z-index: 4;
+	.panel {
+		flex-grow: 0;
+		flex-shrink: 1;
+		min-height: 416px;
+		padding-top: 16px;
+		width: 100%;
+		&.hero_img {
+			padding: 0;
+			&, * {
+				max-height: 416px;
+				max-width: 416px;
+			}
+		}
+	}
+}
+
+
 .img_container {
 	align-items: center;
 	display: flex;

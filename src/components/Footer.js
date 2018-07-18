@@ -18,6 +18,7 @@ class Footer extends Component {
 						<input type="text" placeholder="Email Address" />
 						<input type="submit" value="Sign Up" onClick={this.handleSignUp}/>
 					</form>
+					<p><a href="#">Prefer RSS? Click here.</a></p>
 				</section>
 				<section id="social_panel" className="panel">
 					<h2>Connect Online</h2>

@@ -44,9 +44,7 @@ class ViewContainer extends Component {
 					"overview": false, "subcategory": false, "project": false, "details": true
 				});
 				break;
-			case "overview":
-			case "category":
-			case "default":
+			default:
 				this.setState({
 					"overview": true, "subcategory": false, "project": false, "details": false
 				});

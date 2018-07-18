@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ImageElement from "./ImageElement";
 class Intro extends Component {
 	state = {
 		title: "",
@@ -24,26 +25,31 @@ class Intro extends Component {
 	}
 	render () {
 		return (
-			<section className="intro panel">
-				<div className="corner"></div>
-				<h1>{this.props.title}</h1>
-				{this.state.data && <div>
-					{this.state.data.description &&
-					Array.isArray(this.state.data.description) &&
-					<p>
-						{this.state.data.description.map((string, k) => {
-							return (
-								<span key={k}>
-									{string}<br/>
-								</span>
-							);
-						})}
-					</p>}
-					{this.state.data.description &&
-					!Array.isArray(this.state.data.description) &&
-					<p>
-						{this.state.data.description}
-					</p>}
+			<section className="intro">
+				<div className="panel">
+					<div className="corner"></div>
+					<h1>{this.props.title}</h1>
+					{this.state.data && <div className="has_data">
+						{this.state.data.description &&
+						Array.isArray(this.state.data.description) &&
+						<p>
+							{this.state.data.description.map((string, k) => {
+								return (
+									<span key={k}>
+										{string}<br/>
+									</span>
+								);
+							})}
+						</p>}
+						{this.state.data.description &&
+						!Array.isArray(this.state.data.description) &&
+						<p>
+							{this.state.data.description}
+						</p>}
+					</div>}
+				</div>
+				{(this.props.view === "project" || this.props.view === "details") && <div className="hero_img panel">
+					{this.state.data.cover_img && <ImageElement ref_id={this.state.data.cover_img} />}
 				</div>}
 			</section>
 		);

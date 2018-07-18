@@ -6,7 +6,7 @@ class Sidebar extends Component {
 			<aside id="sidebar">
 				<div className="contents">
 					<div id="console">
-						<p>Last Updated: <span>5/23/2018</span></p>
+						<p>Last Updated: <span>7/18/2018</span></p>
 						<p>Contact: <a href="mailto:weirdoonthebus@gmail.com">weirdoonthebus@gmail.com</a></p>
 						<p>Source: <a href="https://github.com/sammurphey/SamMurphey.net.git">github.com/sammurphey/SamMurphey.net.git</a></p>
 					</div>
