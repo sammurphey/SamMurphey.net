@@ -1,0 +1,19 @@
+.intro {
+	display: flex;
+	min-height: 416px;
+	z-index: 4;
+	.panel {
+		flex-grow: 0;
+		flex-shrink: 1;
+		min-height: 416px;
+		padding-top: 16px;
+		width: 100%;
+		&.hero_img {
+			padding: 0;
+			&, * {
+				max-height: 416px;
+				max-width: 416px;
+			}
+		}
+	}
+}

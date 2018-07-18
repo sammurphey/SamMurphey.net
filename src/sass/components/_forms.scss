@@ -1,0 +1,80 @@
+@import "../vars";
+
+textarea,
+input {
+	background: $baseColor!important;
+	border: 1px solid $textColor;
+	color: $highlightColor;
+	cursor: pointer;
+	display: block;
+	height: $blockSize;
+	font-family: "Kepler", monospace;
+	font-size: $gridSize;
+	font-weight: bold;
+	line-height: calc(#{$gridSize} * 2);
+	min-width: $blockSize;
+	outline: none;
+	padding: $gridSize;
+	position: relative;
+	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: $darkPlastic;
+		opacity: 1; /* Firefox */
+	}
+
+	&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: $darkPlastic;
+	}
+
+	&::-ms-input-placeholder { /* Microsoft Edge */
+		color: $darkPlastic;
+	}
+	&:hover {
+		background: $lightGrey!important;
+		border-color: $darkGrey!important;
+		color: $highlightColor;
+		&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			color: $highlightColor;
+			opacity: 1; /* Firefox */
+		}
+
+		&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color: $highlightColor;
+		}
+
+		&::-ms-input-placeholder { /* Microsoft Edge */
+			color: $highlightColor;
+		}
+	}
+	&:focus, &:active {
+		border-color: $tealColor!important;
+		color: $highlightColor;
+		&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			color: $highlightColor;
+			opacity: 1; /* Firefox */
+		}
+
+		&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color: $highlightColor;
+		}
+
+		&::-ms-input-placeholder { /* Microsoft Edge */
+			color: $highlightColor;
+		}
+	}
+	&[type="submit"] {
+		background: rgba(255, 255, 255, 0)!important;
+		color: $textColor!important;
+		&:hover {
+			background: $highlightColor!important;
+			border-color: $darkGrey!important;
+			color: $darkGrey!important;
+		}
+		&:focus, &:active {
+			border-color: $tealColor!important;
+			color: $tealColor!important;
+		}
+	}
+	& + * {
+		margin-top: $paddingLrg;
+	}
+}

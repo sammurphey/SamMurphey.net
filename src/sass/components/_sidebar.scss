@@ -1,0 +1,59 @@
+@import "../vars";
+
+#sidebar {
+	display: none;
+	z-index: 1;
+	@media(min-width: 812px) {
+		display: block;
+		height: calc(100% - 36px);
+		right: 32px;
+		position: fixed;
+		top: 16px;
+		width: calc(#{$blockSize} * 2);
+		.contents {
+			height: 100%;
+			position: relative;
+			width: 100%;
+			> * {
+				opacity: 0.3;
+				&#console {
+					bottom: calc(#{$blockSize} + #{$gridSize});
+					cursor: pointer;
+					display: flex;
+					flex-wrap: wrap;
+					height: $blockSize;
+					justify-content: flex-start;
+					opacity: 1;
+					position: absolute;
+					transform: rotateZ(-90deg);
+					transform-origin: 32px 0px;
+					width: calc(100vh - (#{$blockSize} * 3));
+					* {
+						height: calc(#{$blockSize} / 2);
+						font-size: $gridSize;
+						line-height: calc(#{$blockSize} / 2);
+						margin: 0 $gridSize;;
+						opacity: 0.4;
+						padding: 0;
+						&:focus,
+						&:hover {
+							opacity: 1;
+						}
+					}
+				}
+				&#qr_code {
+					bottom: calc(#{$gridSize} * 2);
+					cursor: pointer;
+					height: $blockSize;
+					left: calc(#{$gridSize} * 2);
+					position: absolute;
+					width: $blockSize;
+					&:focus,
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

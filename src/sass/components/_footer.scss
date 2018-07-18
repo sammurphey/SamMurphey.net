@@ -1,0 +1,20 @@
+#footer {
+	display:flex;
+	justify-content: space-between;
+	margin-top: 0;
+	.panel {
+		width: calc(50% - 4px);
+		&#social_panel {
+			padding-bottom: 0;
+		}
+	}
+}
+
+#speakers {
+	background-color: $baseColor;
+	background-image: url("https://sammurphey.net/img/ui/speaker_texture.jpg");
+	background-position: center;
+	height: calc(#{$blockSize} * 4 - 68px);
+	margin: 16px 34px 34px 34px;
+	width: calc(100% - 68px);
+}

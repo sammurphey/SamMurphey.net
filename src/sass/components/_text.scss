@@ -1,0 +1,78 @@
+@import "../vars";
+
+a {
+	color: inherit;
+	cursor: pointer;
+	position: relative;
+	text-decoration: inherit;
+	&[rel="nofollow"] {
+		cursor: alias;
+	}
+	&:focus,
+	&:hover {
+		color: $tealColor;
+	}
+	p > & {
+		padding: 0 10px!important;
+		&::before, &::after {
+			display: block;
+			position: absolute;
+			top: -8px;
+			transform: translateX(0);
+			transition: transform .2s linear;
+		}
+		&::before {
+			content: "[";
+			left: 0;
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+			content: "]";
+			right: 0;
+		}
+		&:focus,
+		&:hover {
+			&::before {
+				transform: translateX(-8px);
+			}
+			&::after {
+				transform: translateX(8px);
+			}
+		}
+	}
+}
+p {
+	font-family: 'Ubuntu Mono', monospace;
+	font-size: 17px;
+	font-weight: lighter;
+	line-height: calc(#{$gridSize} * 2);
+	margin: 0;
+	position: relative;
+	.panel & {
+		color: $baseColor;
+	}
+	& + * {
+		margin-top: $gridSize;
+	}
+}
+h1, h2, h3, h4, h5, h6 {
+	display: inline-block;
+	min-height: calc(#{$gridSize} * 2);
+	line-height: calc(#{$gridSize} * 2);
+	margin: 0;
+}
+h1 {
+	font-size: 48px;
+    font-weight: 100;
+	height: 48px;
+    line-height: 48px;
+	margin: 12px 0 0 0;
+}
+h2 {
+	font-size: 32px;
+	font-weight: 100;
+}
+h3, h4, h5, h6 {
+	font-size: 17px;
+}

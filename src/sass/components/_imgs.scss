@@ -1,0 +1,18 @@
+.img_container {
+	align-items: center;
+	display: flex;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	overflow: hidden;
+	position: relative;
+	top: 0;
+	width: 100%;
+	&.loaded {
+		animation: flicker_on 1s linear forwards;
+	}
+	img {
+		flex-shrink: 0;
+		object-fit: cover;
+	}
+}
