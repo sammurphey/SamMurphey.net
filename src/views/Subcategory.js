@@ -80,7 +80,7 @@ class SubcategoryView extends Component {
 		return (
 			<div className="subcategory_view">
 				<article className={this.state.anim}>
-					<Intro title={this.props.title} data={this.state.data} view="overview" />
+					<Intro title={this.props.title} data={this.state.data} view="subcategory" />
 					{this.state.data && <div className="has_data">
 						{this.state.gridTitle && <div className="panel">
 							<h2>{this.state.gridTitle}</h2>

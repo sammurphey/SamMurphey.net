@@ -1,18 +1,33 @@
+@import "../vars";
+
 .intro {
 	display: flex;
-	min-height: 416px;
+	min-height: $panelSize;
 	z-index: 4;
 	.panel {
 		flex-grow: 0;
 		flex-shrink: 1;
-		min-height: 416px;
+		min-height: $panelSize;
 		padding-top: 16px;
+		position: relative;
 		width: 100%;
 		&.hero_img {
 			padding: 0;
 			&, * {
-				max-height: 416px;
-				max-width: 416px;
+				max-height: $panelSize;
+				max-width: $panelSize;
+			}
+		}
+
+		.has_data {
+			.info_view {
+				.info_sidebar {
+					max-width: $panelSize;
+					transform: rotateZ(-90deg);
+					position: absolute;
+					right: -64px;
+					bottom: 184px
+				}
 			}
 		}
 	}

@@ -2,6 +2,7 @@
 	display:flex;
 	justify-content: space-between;
 	margin-top: 0;
+	z-index: 2;
 	.panel {
 		width: calc(50% - 4px);
 		&#social_panel {

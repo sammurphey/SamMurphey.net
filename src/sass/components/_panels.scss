@@ -1,5 +1,19 @@
 @import "../vars";
 
+.panel_wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	.panel {
+		flex-grow: 0;
+		flex-shrink: 1;
+		width: 100%;
+	}
+}
+
+
+
+
 .panel_container {
 	display: flex;
 	flex-wrap: wrap;

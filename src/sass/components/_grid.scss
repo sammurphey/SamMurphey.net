@@ -24,8 +24,21 @@ section, .grid_items {
 				height: calc(#{$blockSize} * 4 - 4px);
 				width: calc(#{$blockSize} * 4 - 4px);
 			}
+			a {
+				display: block;
+				height: calc(#{$blockSize} * 2 - 4px);
+				justify-content: center;
+				overflow-x: hidden;
+				overflow-y: auto;
+				position: relative;
+				max-width: calc(#{$blockSize} * 2 - 4px);
+				@media(min-width: 812px) {
+					height: calc(#{$blockSize} * 4 - 4px);
+					max-width: calc(#{$blockSize} * 4 - 4px);
+				}
+			}
 			.container {
-				height: 100%;
+				min-height: 100%;
 				left: 0;
 				opacity: 0;
 				overflow: hidden;
@@ -35,20 +48,25 @@ section, .grid_items {
 				transition-property: all;
 				transition-timing-function: ease-out;
 				width: 100%;
+				max-width: 100%;
 				.content {
 					background-color: $highlightColor;
 					color: #000!important;
 					height: 100%;
-					overflow-x: hidden;
-					overflow-y: auto;
 					padding: $paddingMed;
 					position: absolute;
 					width: 100%;
+					h2,
+					p {
+						hyphens: auto;
+						max-width: calc(100% - 2px);
+						word-wrap: break-word;
+					}
 				}
 			}
 			&:hover {
 				.container {
-					//	animation: flicker_on_quick .3s linear forwards;
+					animation: flicker_on_quick .3s linear forwards;
 					opacity: 1;
 				}
 			}

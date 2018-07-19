@@ -21,24 +21,15 @@
 			//color: $darkPlastic;
 			margin-bottom: $paddingLrg;
 			text-decoration: none;
-	//		a {
-	//			background: rgba(255, 255, 255, 0);
-	//			border: 1px solid #000;
-	//			opacity: 0.4;
-	//			&:focus,
-	//			&:hover {
-	//				background: rgba(255, 255, 255, .1);
-	//				border-color: $plasticColor;
-	//				color: $plasticColor;
-		//			opacity: 1;
-			//	}
-			//	&:active {
-			//		background: rgba(255, 255, 255, .05);
-			//		border-color: $tealColor;
-			//		color: $tealColor;
-			//		opacity: 1;
-		//		}
-		//	}
+			a {
+				&:focus,
+				&:hover {
+					color: $highlightColor!important;
+				}
+				&:active {
+					color: $tealColor!important;
+				}
+			}
 		}
 	}
 }

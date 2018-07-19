@@ -5,6 +5,7 @@
 	border-top: 4px solid #525252;
 	border-right: 4px solid #CCC;
 	border-left: 4px solid #AAA;
+	flex-direction: column;
 	height: calc(100% - (#{$paddingSml} * 2 + 28px));
 	left: $paddingSml;
 	margin: 10px;
@@ -13,6 +14,11 @@
 	top: $paddingSml;
 	width: calc(100% - (#{$paddingSml} * 2 + 28px));
 	z-index: 1;
+	article {
+		flex-direction: column;
+		margin-bottom: 18px!important;
+		z-index: 3;
+	}
 	article, footer {
 		display: flex;
 		flex-wrap: wrap;
@@ -56,11 +62,6 @@
 		}
 		@media(min-width: 2248px) {
 			width: calc(#{$blockSize} * 32);
-		}
-		&article {
-			flex-direction: column;
-			margin-bottom: 18px!important;
-			z-index: 3;
 		}
 	}
 }
