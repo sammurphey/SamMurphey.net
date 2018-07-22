@@ -29,13 +29,14 @@ class GridItem extends Component {
 						var item = data[0];
 						this.setState({
 							category: item.category || "",
+							type: item.type || "",
 							color: item.color || "",
 							cover_img: item.cover_img,
 							date: item.date,
 							img_id: item.cover_img,
 							url: item.url,
 							title: item.title,
-							subtitle: item.artists || item.client
+							subtitle: item.alias
 						});
 					})
 		}

@@ -56,10 +56,6 @@
 	100% {opacity: 1}
 }
 
-
-.flicker_off {
-	animation: flicker_off 1s linear forwards;
-}
 @keyframes flicker_on_quick {
 	0% {opacity: 0}
 	1%, 7% {opacity: 0.2}
@@ -71,4 +67,26 @@
 
 	80% {opacity: 0}
 	100% {opacity: 1}
+}
+
+@keyframes expand_header_text {
+	0% {
+		line-height: 0px;
+		transform: translateY(0px);
+	}
+	100% {
+		line-height: 32px;
+		transform: translateY(-16px);
+	}
+}
+
+@keyframes expand_sidebar_text {
+	0% {
+		line-height: 0px;
+		transform: translateY(0px);
+	}
+	100% {
+		line-height: 16px;
+		transform: translateY(8px);
+	}
 }

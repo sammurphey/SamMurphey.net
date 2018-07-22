@@ -25,6 +25,9 @@ class Grid extends Component {
 					this.setState({items: items})
 				})
 	}
+	capitalizeFirstLetter(string) {
+	    return string.charAt(0).toUpperCase() + string.slice(1);
+	}
 	render () {
 		return (
 			<section className="grid">
@@ -37,10 +40,27 @@ class Grid extends Component {
 										<ImageElement ref_id={griditem.cover_img} />
 										<div className="container">
 											<div className="content">
-												<h2><span className="subtitle">{griditem.subtitle}</span><br />
-												<span className="title">{griditem.title}</span></h2>
+												<h3>
+													{griditem.subtitle && <span className="subtitle">
+														{griditem.subtitle} -
+														<br />
+													</span>}
+													{griditem.title && <span className="title">
+														{griditem.title}
+													</span>}
+												</h3>
 												<p className="date">{griditem.date}</p>
-												<p className="category">{griditem.category}</p>
+												<div className="grid_item_sidebar">
+													<p>
+														{griditem.category && <span>
+															{this.capitalizeFirstLetter(griditem.category)}
+															<br/>
+														</span>}
+														{griditem.type && <span>
+															{this.capitalizeFirstLetter(griditem.type)}
+														</span>}
+													</p>
+												</div>
 											</div>
 										</div>
 									</Link>

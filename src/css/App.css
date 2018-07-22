@@ -55,9 +55,6 @@
   100% {
     opacity: 1; } }
 
-.flicker_off {
-  animation: flicker_off 1s linear forwards; }
-
 @keyframes flicker_on_quick {
   0% {
     opacity: 0; }
@@ -75,6 +72,22 @@
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+@keyframes expand_header_text {
+  0% {
+    line-height: 0px;
+    transform: translateY(0px); }
+  100% {
+    line-height: 32px;
+    transform: translateY(-16px); } }
+
+@keyframes expand_sidebar_text {
+  0% {
+    line-height: 0px;
+    transform: translateY(0px); }
+  100% {
+    line-height: 16px;
+    transform: translateY(8px); } }
 
 .intro {
   display: flex;
@@ -704,17 +717,49 @@ input {
       background-color: #FFF;
       color: #000 !important;
       height: 100%;
-      padding: 4px;
+      padding: 16px;
       position: absolute;
       width: 100%; }
-      .grid_item .container .content h2,
-      .grid_item .container .content p {
+      .grid_item .container .content * {
+        font-family: "kepler", monospace; }
+      .grid_item .container .content h3 {
+        display: block;
         hyphens: auto;
-        max-width: calc(100% - 2px);
+        line-height: 0px;
+        margin: 32px 0 0 0;
+        position: relative;
+        width: calc(100% - 24px);
         word-wrap: break-word; }
+      .grid_item .container .content .date {
+        color: #5f5f5f;
+        font-size: 8px;
+        line-height: 8px;
+        position: absolute;
+        top: 16px; }
+      .grid_item .container .content .grid_item_sidebar {
+        height: 100%;
+        margin: 0;
+        transform: rotateZ(-90deg);
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0; }
+        .grid_item .container .content .grid_item_sidebar p {
+          bottom: 20px;
+          font-size: 12px;
+          height: auto;
+          left: 16px;
+          line-height: 0;
+          position: absolute; }
+          .grid_item .container .content .grid_item_sidebar p span:first-child {
+            color: #5f5f5f; }
   .grid_item:hover .container {
     animation: flicker_on_quick .3s linear forwards;
     opacity: 1; }
+    .grid_item:hover .container h3 {
+      animation: expand_header_text 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards; }
+    .grid_item:hover .container .grid_item_sidebar p {
+      animation: expand_sidebar_text 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards; }
   .grid_item:active .content {
     background-color: #00EFF1; }
 
