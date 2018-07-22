@@ -1,80 +1,75 @@
-section, .grid_items {
-	position: relative;
-	&.grid_items {
+.grid_items {
 		display: flex;
 		flex-wrap: wrap;
-		.grid_item {
-			background-color: $plasticColor;
-			background-size: cover;
-			background-position: center center;
-			//border-radius: 1px;
-			box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-			//border-right: 3px solid #AAA;
-			//border-bottom: 4px solid #525252;
-			//border-left: 3px solid #CCC;
-			cursor: pointer;
-			flex-shrink: 0;
-			height: calc(#{$blockSize} * 2 - 4px);
-			justify-content: center;
-			margin: 1px 2px 3px 2px;
-			overflow: hidden;
-			position: relative;
-			width: calc(#{$blockSize} * 2 - 4px);
-			@media(min-width: 812px) {
-				height: calc(#{$blockSize} * 4 - 4px);
-				width: calc(#{$blockSize} * 4 - 4px);
+		position: relative;
+}
+
+.grid_item {
+	background-color: $plasticColor;
+	background-size: cover;
+	background-position: center center;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+	cursor: pointer;
+	flex-shrink: 0;
+	height: calc(#{$blockSize} * 2 - 4px);
+	justify-content: center;
+	margin: 1px 2px 3px 2px;
+	overflow: hidden;
+	position: relative;
+	width: calc(#{$blockSize} * 2 - 4px);
+	@media(min-width: 812px) {
+		height: calc(#{$blockSize} * 4 - 4px);
+		width: calc(#{$blockSize} * 4 - 4px);
+	}
+	a {
+		display: block;
+		height: calc(#{$blockSize} * 2 - 4px);
+		justify-content: center;
+		overflow-x: hidden;
+		overflow-y: auto;
+		position: relative;
+		max-width: calc(#{$blockSize} * 2 - 4px);
+		@media(min-width: 812px) {
+			height: calc(#{$blockSize} * 4 - 4px);
+			max-width: calc(#{$blockSize} * 4 - 4px);
+		}
+	}
+	.container {
+		min-height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		transition-duration: .1s;
+		transition-property: all;
+		transition-timing-function: ease-out;
+		width: 100%;
+		max-width: 100%;
+		.content {
+			background-color: $highlightColor;
+			color: #000!important;
+			height: 100%;
+			padding: $paddingMed;
+			position: absolute;
+			width: 100%;
+			h2,
+			p {
+				hyphens: auto;
+				max-width: calc(100% - 2px);
+				word-wrap: break-word;
 			}
-			a {
-				display: block;
-				height: calc(#{$blockSize} * 2 - 4px);
-				justify-content: center;
-				overflow-x: hidden;
-				overflow-y: auto;
-				position: relative;
-				max-width: calc(#{$blockSize} * 2 - 4px);
-				@media(min-width: 812px) {
-					height: calc(#{$blockSize} * 4 - 4px);
-					max-width: calc(#{$blockSize} * 4 - 4px);
-				}
-			}
-			.container {
-				min-height: 100%;
-				left: 0;
-				opacity: 0;
-				overflow: hidden;
-				position: absolute;
-				top: 0;
-				transition-duration: .1s;
-				transition-property: all;
-				transition-timing-function: ease-out;
-				width: 100%;
-				max-width: 100%;
-				.content {
-					background-color: $highlightColor;
-					color: #000!important;
-					height: 100%;
-					padding: $paddingMed;
-					position: absolute;
-					width: 100%;
-					h2,
-					p {
-						hyphens: auto;
-						max-width: calc(100% - 2px);
-						word-wrap: break-word;
-					}
-				}
-			}
-			&:hover {
-				.container {
-					animation: flicker_on_quick .3s linear forwards;
-					opacity: 1;
-				}
-			}
-			&:active {
-				.content {
-					background-color: $tealColor;
-				}
-			}
+		}
+	}
+	&:hover {
+		.container {
+			animation: flicker_on_quick .3s linear forwards;
+			opacity: 1;
+		}
+	}
+	&:active {
+		.content {
+			background-color: $tealColor;
 		}
 	}
 }

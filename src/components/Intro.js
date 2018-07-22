@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 import ImageElement from "./ImageElement";
+import MusicPlayer from "./MusicPlayer";
+
 class Intro extends Component {
 	state = {
 		title: "",
 		data: [],
+		alias: [],
 		hasImg: false
 	}
 	componentDidMount () {
@@ -66,19 +70,55 @@ class Intro extends Component {
 
 						{(this.state.view === "project" || this.state.view === "details") && <div className="info_view">
 
+						{/* music */}
 							{this.state.data.category === "music" && <div className="music_data">
-								<p className="subtitle">By: <a href="#">{this.state.data.alias}</a></p>
-							</div>}
+								{this.state.data.alias && <p className="subtitle">
+									By: <Link to="#">{this.state.data.alias}</Link>
+								</p>}
+								{this.props.now_playing && <MusicPlayer now_playing={this.props.now_playing}/>}
 
-							<div className="info_sidebar">
-								{this.state.data.category === "music" && <div className="music_sidebar">
+								<div className="info_sidebar">
 									<p className="subtitle">
 										Released: <span>{this.state.data.date}</span>
 										<br/>
 										Publisher: {this.state.data.label && <a href="#">{this.state.data.label}</a>}{!this.state.data.label && <span>Self Released</span>}
 									</p>
-								</div>}
-							</div>
+								</div>
+							</div>}
+
+						{/* code */}
+							{this.state.data.category === "code" && <div className="code_data">
+								{this.state.data.description && <p className="subtitle">
+									Project: <span>{this.state.data.description}</span>
+								</p>}
+								{this.state.data.role && <p className="subtitle">
+									My Role: <span>{this.state.data.role}</span>
+								</p>}
+								{this.state.data.client && <p className="subtitle">
+									Client: <span>{this.state.data.client}</span>
+								</p>}
+								{this.state.data.tech_stack && <p className="subtitle">
+									Tech Stack:
+									{!Array.isArray(this.state.data.tech_stack) && <span>{this.state.data.tech_stack}</span>}
+									{Array.isArray(this.state.data.tech_stack) && <span>
+										{this.state.data.tech_stack.map((lang, k) => {
+											var delimiter = ", ";
+											if (k + 1 === this.state.data.tech_stack.length) {
+												var delimiter = "";
+											}
+											return (
+												<Link to={"/search/" + lang}>{lang}{delimiter}</Link>
+											)
+										})}
+									</span>}
+								</p>}
+
+								<div className="info_sidebar">
+									<p className="subtitle">
+										Shipped: <span>{this.state.data.date}</span>
+									</p>
+								</div>
+							</div>}
 						</div>}
 
 					</div>}

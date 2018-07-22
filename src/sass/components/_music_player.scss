@@ -1,0 +1,61 @@
+@import "../vars";
+
+.music_player {
+	bottom: 4px;
+	height: calc(#{$panelSize} / 2);
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+
+
+.track_art {
+	background: $baseColor;
+	background: -moz-linear-gradient(top, #989898 90%, #989898 90%, #676767 100%);
+	background: -webkit-linear-gradient(top, #989898 90%,#989898 90%,#676767 100%);
+	background: linear-gradient(to bottom, #989898 90%,#989898 90%, #676767 100%);
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2) inset, 0 2px 2px 0 rgba(0,0,0,.14) inset, 0 1px 5px 0 rgba(0,0,0,.12) inset;
+	flex-grow: 0;
+	flex-shrink: 0;
+	height: calc(#{$panelSize} / 2 + 4px);
+	overflow: hidden;
+	padding: 4px 4px 0 0;
+	position: relative;
+	width: calc((#{$panelSize} / 2) + 4px);
+	.art_wrapper {
+		height: calc(#{$panelSize} / 2);
+		background: $darkPlastic;
+		width: calc(#{$panelSize} / 2);
+		.img_container {
+			box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+		}
+	}
+}
+
+.track_playback {
+	background: $baseColor;
+	flex-direction: column;
+	max-height: calc(#{$panelSize} / 2 + 4px);
+	overflow: hidden;
+	.panel {
+		height: calc(50% - 2px);
+		margin: 0;
+		padding: 0;
+		position: relative;
+		h3 {
+			padding: 0 0 0 32px;
+		}
+		.play_btn {
+			left: 32px;
+			position: absolute;
+			top: -34px;
+		}
+	}
+}
+
+.single_view {
+	.tab_page {
+		width: calc(100% - 4px);
+	}
+}

@@ -1,0 +1,12 @@
+.tab_page {
+	max-height: $panelSize;
+	height: 100%;
+	overflow: auto;
+	width: calc(100% - 4px);
+	&:not(.selected) {
+		height: 0;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+	}
+}

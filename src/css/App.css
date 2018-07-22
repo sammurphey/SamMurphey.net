@@ -80,24 +80,27 @@
   display: flex;
   min-height: 416px;
   z-index: 4; }
-  .intro .panel {
+  .intro > .panel {
     flex-grow: 0;
     flex-shrink: 1;
     min-height: 416px;
     padding-top: 16px;
     position: relative;
     width: 100%; }
-    .intro .panel.hero_img {
+    .intro > .panel.hero_img {
       padding: 0; }
-      .intro .panel.hero_img, .intro .panel.hero_img * {
-        max-height: 416px;
-        max-width: 416px; }
-    .intro .panel .has_data .info_view .info_sidebar {
+      .intro > .panel.hero_img, .intro > .panel.hero_img * {
+        height: 416px;
+        width: 416px; }
+    .intro > .panel:not(.hero_img):hover #connected_panel,
+    .intro > .panel:not(.hero_img):focus #connected_panel {
+      background: #F8F8F8; }
+    .intro > .panel .has_data .info_view .info_sidebar {
       max-width: 416px;
       transform: rotateZ(-90deg);
       position: absolute;
-      right: -64px;
-      bottom: 184px; }
+      right: -59px;
+      bottom: 80px; }
 
 .img_container {
   align-items: center;
@@ -426,7 +429,7 @@ input {
 #footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 0;
+  margin-top: 18px !important;
   z-index: 2; }
   #footer .panel {
     width: calc(50% - 4px); }
@@ -651,70 +654,69 @@ input {
     min-height: 192px;
     height: calc(100% - 104px); }
 
-section, .grid_items {
+.grid_items {
+  display: flex;
+  flex-wrap: wrap;
   position: relative; }
-  section.grid_items, .grid_items.grid_items {
-    display: flex;
-    flex-wrap: wrap; }
-    section.grid_items .grid_item, .grid_items.grid_items .grid_item {
-      background-color: #F8F8F8;
-      background-size: cover;
-      background-position: center center;
-      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-      cursor: pointer;
-      flex-shrink: 0;
-      height: calc(64px * 2 - 4px);
-      justify-content: center;
-      margin: 1px 2px 3px 2px;
-      overflow: hidden;
-      position: relative;
-      width: calc(64px * 2 - 4px); }
-      @media (min-width: 812px) {
-        section.grid_items .grid_item, .grid_items.grid_items .grid_item {
-          height: calc(64px * 4 - 4px);
-          width: calc(64px * 4 - 4px); } }
-      section.grid_items .grid_item a, .grid_items.grid_items .grid_item a {
-        display: block;
-        height: calc(64px * 2 - 4px);
-        justify-content: center;
-        overflow-x: hidden;
-        overflow-y: auto;
-        position: relative;
-        max-width: calc(64px * 2 - 4px); }
-        @media (min-width: 812px) {
-          section.grid_items .grid_item a, .grid_items.grid_items .grid_item a {
-            height: calc(64px * 4 - 4px);
-            max-width: calc(64px * 4 - 4px); } }
-      section.grid_items .grid_item .container, .grid_items.grid_items .grid_item .container {
-        min-height: 100%;
-        left: 0;
-        opacity: 0;
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        transition-duration: .1s;
-        transition-property: all;
-        transition-timing-function: ease-out;
-        width: 100%;
-        max-width: 100%; }
-        section.grid_items .grid_item .container .content, .grid_items.grid_items .grid_item .container .content {
-          background-color: #FFF;
-          color: #000 !important;
-          height: 100%;
-          padding: 4px;
-          position: absolute;
-          width: 100%; }
-          section.grid_items .grid_item .container .content h2,
-          section.grid_items .grid_item .container .content p, .grid_items.grid_items .grid_item .container .content h2,
-          .grid_items.grid_items .grid_item .container .content p {
-            hyphens: auto;
-            max-width: calc(100% - 2px);
-            word-wrap: break-word; }
-      section.grid_items .grid_item:hover .container, .grid_items.grid_items .grid_item:hover .container {
-        animation: flicker_on_quick .3s linear forwards;
-        opacity: 1; }
-      section.grid_items .grid_item:active .content, .grid_items.grid_items .grid_item:active .content {
-        background-color: #00EFF1; }
+
+.grid_item {
+  background-color: #F8F8F8;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  flex-shrink: 0;
+  height: calc(64px * 2 - 4px);
+  justify-content: center;
+  margin: 1px 2px 3px 2px;
+  overflow: hidden;
+  position: relative;
+  width: calc(64px * 2 - 4px); }
+  @media (min-width: 812px) {
+    .grid_item {
+      height: calc(64px * 4 - 4px);
+      width: calc(64px * 4 - 4px); } }
+  .grid_item a {
+    display: block;
+    height: calc(64px * 2 - 4px);
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    max-width: calc(64px * 2 - 4px); }
+    @media (min-width: 812px) {
+      .grid_item a {
+        height: calc(64px * 4 - 4px);
+        max-width: calc(64px * 4 - 4px); } }
+  .grid_item .container {
+    min-height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transition-duration: .1s;
+    transition-property: all;
+    transition-timing-function: ease-out;
+    width: 100%;
+    max-width: 100%; }
+    .grid_item .container .content {
+      background-color: #FFF;
+      color: #000 !important;
+      height: 100%;
+      padding: 4px;
+      position: absolute;
+      width: 100%; }
+      .grid_item .container .content h2,
+      .grid_item .container .content p {
+        hyphens: auto;
+        max-width: calc(100% - 2px);
+        word-wrap: break-word; }
+  .grid_item:hover .container {
+    animation: flicker_on_quick .3s linear forwards;
+    opacity: 1; }
+  .grid_item:active .content {
+    background-color: #00EFF1; }
 
 #sidebar {
   display: none;
@@ -764,6 +766,9 @@ section, .grid_items {
             #sidebar .contents > *#qr_code:focus, #sidebar .contents > *#qr_code:hover {
               opacity: 1; } }
 
+.music_data .info_sidebar {
+  bottom: 188px !important; }
+
 .song_list {
   max-width: 416px; }
   .song_list ol {
@@ -792,16 +797,64 @@ section, .grid_items {
       .album_info .tabs .tab.selected {
         background: #F8F8F8;
         color: #000; }
-  .album_info .tab_view {
-    max-height: 416px;
-    height: 100%;
-    overflow: auto;
-    width: calc(100% - 4px); }
-    .album_info .tab_view:not(.selected) {
-      height: 0;
-      overflow: hidden;
-      margin: 0;
-      padding: 0; }
+
+.music_player {
+  bottom: 4px;
+  height: calc(416px / 2);
+  left: 0;
+  position: absolute;
+  width: 100%; }
+
+.track_art {
+  background: #989898;
+  background: -moz-linear-gradient(top, #989898 90%, #989898 90%, #676767 100%);
+  background: -webkit-linear-gradient(top, #989898 90%, #989898 90%, #676767 100%);
+  background: linear-gradient(to bottom, #989898 90%, #989898 90%, #676767 100%);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2) inset, 0 2px 2px 0 rgba(0, 0, 0, 0.14) inset, 0 1px 5px 0 rgba(0, 0, 0, 0.12) inset;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: calc(416px / 2 + 4px);
+  overflow: hidden;
+  padding: 4px 4px 0 0;
+  position: relative;
+  width: calc((416px / 2) + 4px); }
+  .track_art .art_wrapper {
+    height: calc(416px / 2);
+    background: #ECECEC;
+    width: calc(416px / 2); }
+    .track_art .art_wrapper .img_container {
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+
+.track_playback {
+  background: #989898;
+  flex-direction: column;
+  max-height: calc(416px / 2 + 4px);
+  overflow: hidden; }
+  .track_playback .panel {
+    height: calc(50% - 2px);
+    margin: 0;
+    padding: 0;
+    position: relative; }
+    .track_playback .panel h3 {
+      padding: 0 0 0 32px; }
+    .track_playback .panel .play_btn {
+      left: 32px;
+      position: absolute;
+      top: -34px; }
+
+.single_view .tab_page {
+  width: calc(100% - 4px); }
+
+.tab_page {
+  max-height: 416px;
+  height: 100%;
+  overflow: auto;
+  width: calc(100% - 4px); }
+  .tab_page:not(.selected) {
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0; }
 
 body::after {
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.14) inset, 0 8px 10px 1px rgba(0, 0, 0, 0.1) inset, 0 3px 14px 2px rgba(0, 0, 0, 0.08) inset;

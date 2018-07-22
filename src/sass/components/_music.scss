@@ -1,5 +1,12 @@
 @import "../vars";
 
+.music_data {
+	.info_sidebar {
+		bottom: 188px!important;
+	}
+}
+
+
 .song_list {
 	max-width: $panelSize;
 	ol {
@@ -35,18 +42,6 @@
 				background: $plasticColor;
 				color: $textColor;
 			}
-		}
-	}
-	.tab_view {
-		max-height: $panelSize;
-		height: 100%;
-		overflow: auto;
-		width: calc(100% - 4px);
-		&:not(.selected) {
-			height: 0;
-			overflow: hidden;
-			margin: 0;
-			padding: 0;
 		}
 	}
 }

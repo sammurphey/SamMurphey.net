@@ -4,7 +4,8 @@
 	display: flex;
 	min-height: $panelSize;
 	z-index: 4;
-	.panel {
+
+	> .panel {
 		flex-grow: 0;
 		flex-shrink: 1;
 		min-height: $panelSize;
@@ -14,19 +15,24 @@
 		&.hero_img {
 			padding: 0;
 			&, * {
-				max-height: $panelSize;
-				max-width: $panelSize;
+				height: $panelSize;
+				width: $panelSize;
 			}
 		}
-
+		&:not(.hero_img) {
+			&:hover #connected_panel,
+			&:focus #connected_panel {
+				background: $plasticColor;
+			}
+		}
 		.has_data {
 			.info_view {
 				.info_sidebar {
 					max-width: $panelSize;
 					transform: rotateZ(-90deg);
 					position: absolute;
-					right: -64px;
-					bottom: 184px
+					right: -59px;
+					bottom: 80px
 				}
 			}
 		}
