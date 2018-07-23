@@ -100,11 +100,11 @@
 			animation: flicker_on_quick .3s linear forwards;
 			opacity: 1;
 			h3 {
-				animation: expand_header_text .6s cubic-bezier(0.4, 0.0, 0.2, 1) .5s forwards;
+				animation: expand_header_text .6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s forwards;
 			}
 			.grid_item_sidebar {
 				p {
-					animation: expand_sidebar_text .5s cubic-bezier(0.4, 0.0, 0.2, 1) .7s forwards;
+					animation: expand_sidebar_text .5s cubic-bezier(0.4, 0.0, 0.2, 1) .2s forwards;
 				}
 			}
 		}

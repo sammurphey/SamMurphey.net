@@ -98,8 +98,7 @@ class Intro extends Component {
 									Client: <span>{this.state.data.client}</span>
 								</p>}
 								{this.state.data.tech_stack && <p className="subtitle">
-									Tech Stack:
-									{!Array.isArray(this.state.data.tech_stack) && <span>{this.state.data.tech_stack}</span>}
+									Tech Stack: {!Array.isArray(this.state.data.tech_stack) && <span>{this.state.data.tech_stack}</span>}
 									{Array.isArray(this.state.data.tech_stack) && <span>
 										{this.state.data.tech_stack.map((lang, k) => {
 											var delimiter = ", ";

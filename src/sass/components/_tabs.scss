@@ -2,7 +2,7 @@
 	max-height: $panelSize;
 	height: 100%;
 	overflow: auto;
-	width: calc(100% - 4px);
+	width: calc(100% - 4px)!important;
 	&:not(.selected) {
 		height: 0;
 		overflow: hidden;

@@ -1,0 +1,32 @@
+@import "../vars";
+
+.narrative_view {
+	.panel_wrapper {
+		height: $panelSize;
+		margin-bottom: 4px;
+		.panel {
+			height: 100%;
+			&:first-child {
+				text-align: right;
+			}
+		}
+	}
+	.img_elem {
+		height: 100%;
+		padding: 0;
+		flex-grow:0;
+		width: auto;
+		.img_container {
+			height:100%;
+			width: auto;
+			img {
+				height: 100%!important;
+				width: auto!important;
+			}
+		}
+	}
+	.text_elem {
+		overflow: auto;
+		width:100%;
+	}
+}

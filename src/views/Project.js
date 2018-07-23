@@ -150,14 +150,17 @@ class ProjectView extends Component {
 											{row.map((item, k) => {
 												console.log(item);
 												var para = false,
-													img = false;
+													img = false,
+													cl = "";
 												if (item["p"]) {
 													para = true;
+													cl = "text_elem";
 												}
 												if (item["i"]) {
 													img = true;
+													cl = "img_elem";
 												}
-												return ( <div key={k} className="panel">
+												return ( <div key={k} className={"panel " + cl}>
 													{para && !Array.isArray(item["p"]) && <p>{item["p"]}</p>}
 													{para && Array.isArray(item["p"]) && <div>
 														{item["p"].map((str, k) => {

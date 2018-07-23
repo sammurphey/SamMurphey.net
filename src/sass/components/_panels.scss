@@ -109,6 +109,7 @@
 		align-items: center;
 		display: flex;
 		min-height: 96px;
+		pointer-events: none;
 		position: relative;
 		.profile_bg {
 			height: 100%;

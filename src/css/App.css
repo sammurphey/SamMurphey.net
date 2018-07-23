@@ -67,9 +67,9 @@
   21%, 27% {
     opacity: 0.2; }
   28% {
-    opacity: 0; }
+    opacity: 0.1; }
   80% {
-    opacity: 0; }
+    opacity: 0.1; }
   100% {
     opacity: 1; } }
 
@@ -180,14 +180,14 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   min-height: calc(16px * 2);
   line-height: calc(16px * 2);
-  margin: 0; }
+  margin: 0 0 8px 0; }
 
 h1 {
   font-size: 48px;
   font-weight: 100;
-  height: 48px;
+  min-height: 48px;
   line-height: 48px;
-  margin: 12px 0 0 0; }
+  margin-top: 12px; }
 
 h2 {
   font-size: 32px;
@@ -195,6 +195,9 @@ h2 {
 
 h3, h4, h5, h6 {
   font-size: 17px; }
+
+ul, ol {
+  margin: 8px 0 0 0; }
 
 button,
 .btn {
@@ -629,6 +632,7 @@ input {
     align-items: center;
     display: flex;
     min-height: 96px;
+    pointer-events: none;
     position: relative; }
     .inline_panel .panel_header .profile_bg {
       height: 100%;
@@ -757,9 +761,9 @@ input {
     animation: flicker_on_quick .3s linear forwards;
     opacity: 1; }
     .grid_item:hover .container h3 {
-      animation: expand_header_text 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards; }
+      animation: expand_header_text 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0s forwards; }
     .grid_item:hover .container .grid_item_sidebar p {
-      animation: expand_sidebar_text 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards; }
+      animation: expand_sidebar_text 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards; }
   .grid_item:active .content {
     background-color: #00EFF1; }
 
@@ -817,7 +821,6 @@ input {
 .song_list {
   max-width: 416px; }
   .song_list ol {
-    margin: 16px 0 0 0;
     padding: 0 0 0 40px; }
     .song_list ol li + * {
       padding-top: 8px; }
@@ -894,12 +897,36 @@ input {
   max-height: 416px;
   height: 100%;
   overflow: auto;
-  width: calc(100% - 4px); }
+  width: calc(100% - 4px) !important; }
   .tab_page:not(.selected) {
     height: 0;
     overflow: hidden;
     margin: 0;
     padding: 0; }
+
+.narrative_view .panel_wrapper {
+  height: 416px;
+  margin-bottom: 4px; }
+  .narrative_view .panel_wrapper .panel {
+    height: 100%; }
+    .narrative_view .panel_wrapper .panel:first-child {
+      text-align: right; }
+
+.narrative_view .img_elem {
+  height: 100%;
+  padding: 0;
+  flex-grow: 0;
+  width: auto; }
+  .narrative_view .img_elem .img_container {
+    height: 100%;
+    width: auto; }
+    .narrative_view .img_elem .img_container img {
+      height: 100% !important;
+      width: auto !important; }
+
+.narrative_view .text_elem {
+  overflow: auto;
+  width: 100%; }
 
 body::after {
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.14) inset, 0 8px 10px 1px rgba(0, 0, 0, 0.1) inset, 0 3px 14px 2px rgba(0, 0, 0, 0.08) inset;
