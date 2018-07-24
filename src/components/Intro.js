@@ -91,11 +91,11 @@ class Intro extends Component {
 								{this.state.data.description && <p className="subtitle">
 									Project: <span>{this.state.data.description}</span>
 								</p>}
-								{this.state.data.role && <p className="subtitle">
-									My Role: <span>{this.state.data.role}</span>
-								</p>}
 								{this.state.data.client && <p className="subtitle">
 									Client: <span>{this.state.data.client}</span>
+								</p>}
+								{this.state.data.role && <p className="subtitle">
+									My Role: <span>{this.state.data.role}</span>
 								</p>}
 								{this.state.data.tech_stack && <p className="subtitle">
 									Tech Stack: {!Array.isArray(this.state.data.tech_stack) && <span>{this.state.data.tech_stack}</span>}
@@ -106,7 +106,7 @@ class Intro extends Component {
 												var delimiter = "";
 											}
 											return (
-												<Link to={"/search/" + lang}>{lang}{delimiter}</Link>
+												<Link key={k} to={"/search/" + lang}>{lang}{delimiter}</Link>
 											)
 										})}
 									</span>}

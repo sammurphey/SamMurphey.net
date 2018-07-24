@@ -8,8 +8,9 @@
 		flex-grow: 0;
 		flex-shrink: 1;
 		width: 100%;
-		&.img_elem.single_img {
-			padding: 0!important;
+		&.img_elem {
+			&.single_img {
+				padding: 0!important;
 				img {
 					cursor: zoom-in;
 					height: auto!important;
@@ -21,7 +22,7 @@
 					}
 				}
 			}
-
+		}
 	}
 }
 
@@ -170,4 +171,8 @@
 		min-height: 192px;
 		height: calc(100% - 104px);
 	}
+}
+#social_panel {
+	width: 100%!important;
+	margin: 0;
 }

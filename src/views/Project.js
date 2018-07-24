@@ -88,6 +88,9 @@ class ProjectView extends Component {
 						if (data.keywords) {
 							data.keywords = JSON.parse(data.keywords);
 						}
+						if (data.related) {
+							data.related = JSON.parse(data.related);
+						}
 						this.setState({"data": data});
 						console.log(this.state.data);
 						if (this.state.data.song_ids) {
@@ -148,8 +151,8 @@ class ProjectView extends Component {
 						</div>}
 
 					{/* narratives */}
-						{this.state.data.category !== "music" && <div className="other_view">
-							{this.state.data.narrative && <div className="narrative_view">
+						{this.state.data.category !== "music" && <div className="narrative_view">
+							{this.state.data.narrative && <div className="story_mode">
 								{Array.isArray(this.state.data.narrative) && <div>
 									{this.state.data.narrative.map((row, k) => {
 										return ( <div key={k} className="panel_wrapper">
@@ -238,6 +241,13 @@ class ProjectView extends Component {
 								})}</p>}
 							</div>
 						</div>
+
+					{/* related */}
+						{this.state.data.related && <div className="related_view panel">
+							<h2>Related</h2>
+							<p>Check out these other projects.</p>
+						</div>}
+						{this.state.data.related && <Grid data={this.state.data.related} data_type="related" />}
 					</div>}
 				</article>
 				<Footer />

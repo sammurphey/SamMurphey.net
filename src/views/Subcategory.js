@@ -46,7 +46,7 @@ class SubcategoryView extends Component {
 			});
 	}
 	updateGrid (data) {
-		var url = "https://sammurphey.net/api/index.php?subcategory=" + data.name  + "&public=true&sort_by=date&sort_dir=DESC";
+		var url = "https://sammurphey.net/api/index.php?subcategory=" + data.name  + "&viewNot=subcategory&public=true&sort_by=date&sort_dir=DESC";
 		switch(data.name) {
 			// aliases
 			case "silent-synthesis":

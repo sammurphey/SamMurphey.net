@@ -11,7 +11,7 @@ class Footer extends Component {
 		return (
 			<footer id="footer" className={this.state.anim}>
 				<div id="speakers"></div>
-				<section id="newsletter_panel" className="panel">
+				{/*<section id="newsletter_panel" className="panel">
 					<h2>Stay in Touch</h2>
 					<p>Sign up for email notifications to get alerted whenever I post new material.</p>
 					<form id="newsletter">
@@ -19,7 +19,7 @@ class Footer extends Component {
 						<input type="submit" value="Sign Up" onClick={this.handleSignUp}/>
 					</form>
 					<p><a href="#">Prefer RSS? Click here.</a></p>
-				</section>
+				</section>*/}
 				<section id="social_panel" className="panel">
 					<h2>Connect Online</h2>
 					<p>Follow me on these social networks to see photos, updates, and WIP posts.</p>

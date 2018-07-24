@@ -5,6 +5,7 @@ import ImageElement from "./ImageElement";
 
 class Grid extends Component {
 	state = {
+		data: [],
 		items: [],
 		imgs: []
 	}
@@ -12,6 +13,9 @@ class Grid extends Component {
 		if (this.props.data) {
 			if (this.props.data_type === "imgs") {
 				this.setState({"imgs": this.props.data});
+			} else if (this.props.data_type === "related") {
+				//this.getRelated(this.props.data)
+				this.setState({"items": this.props.data});
 			}
 		} else if (this.props.endpoint) {
 			this.setState({"items": []});
@@ -20,9 +24,14 @@ class Grid extends Component {
 	}
 	componentDidUpdate (prevProps) {
 		var _props = this.props;
-		if (_props.data !== prevProps.data) {
+		if (_props.data !== prevProps.data || _props.data_type !== prevProps.data_type) {
+
 			if (_props.data_type === "imgs") {
 				this.setState({"imgs": _props.data});
+			}
+			if (_props.data_type === "related") {
+				//this.getRelated(_props.data);
+				this.setState({"items": _props.data});
 			}
 		} else if (_props.endpoint !== prevProps.endpoint) {
 			this.setState({items: []});
@@ -63,6 +72,7 @@ class Grid extends Component {
 							</GridItem>
 						)
 					})}
+
 					{this.state.items.map((item, k) => {
 						return (
 							<GridItem key={k} ref_id={item.ref_id} table={item.table}>
