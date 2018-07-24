@@ -8,6 +8,20 @@
 		flex-grow: 0;
 		flex-shrink: 1;
 		width: 100%;
+		&.img_elem.single_img {
+			padding: 0!important;
+				img {
+					cursor: zoom-in;
+					height: auto!important;
+					width: auto!important;
+					max-width: 100%!important;
+					&:active {
+						cursor: zoom-out;
+						width: 100%!important;
+					}
+				}
+			}
+
 	}
 }
 

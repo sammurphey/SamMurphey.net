@@ -554,6 +554,16 @@ input {
     flex-grow: 0;
     flex-shrink: 1;
     width: 100%; }
+    .panel_wrapper .panel.img_elem.single_img {
+      padding: 0 !important; }
+      .panel_wrapper .panel.img_elem.single_img img {
+        cursor: zoom-in;
+        height: auto !important;
+        width: auto !important;
+        max-width: 100% !important; }
+        .panel_wrapper .panel.img_elem.single_img img:active {
+          cursor: zoom-out;
+          width: 100% !important; }
 
 .panel_container {
   display: flex;
@@ -685,7 +695,7 @@ input {
   flex-shrink: 0;
   height: calc(64px * 2 - 4px);
   justify-content: center;
-  margin: 1px 2px 3px 2px;
+  margin: 2px;
   overflow: hidden;
   position: relative;
   width: calc(64px * 2 - 4px); }

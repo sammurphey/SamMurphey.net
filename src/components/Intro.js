@@ -118,6 +118,18 @@ class Intro extends Component {
 									</p>
 								</div>
 							</div>}
+
+						{/* other */}
+							{this.state.data.category !== "music" && this.state.data.category !== "code" && <div className="other_data">
+								{this.state.data.description && <p>
+									{this.state.data.description}
+								</p>}
+								<div className="info_sidebar">
+									<p className="subtitle">
+										Date: <span>{this.state.data.date}</span>
+									</p>
+								</div>
+							</div>}
 						</div>}
 
 					</div>}

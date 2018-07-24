@@ -66,6 +66,12 @@ class ProjectView extends Component {
 								data.description = JSON.parse(data.description);
 							}
 						}
+						if (data.imgs) {
+							data.imgs = JSON.parse(data.imgs);
+						}
+						if (data.adtl_imgs) {
+							data.adtl_imgs = JSON.parse(data.adtl_imgs);
+						}
 						if (data.credits) {
 							if (data.credits.charAt(0) === "[") {
 								data.credits = JSON.parse(data.credits);
@@ -141,8 +147,8 @@ class ProjectView extends Component {
 							</div>}
 						</div>}
 
-					{/* code */}
-						{this.state.data.category === "code" && <div className="code_view">
+					{/* narratives */}
+						{this.state.data.category !== "music" && <div className="other_view">
 							{this.state.data.narrative && <div className="narrative_view">
 								{Array.isArray(this.state.data.narrative) && <div>
 									{this.state.data.narrative.map((row, k) => {
@@ -164,8 +170,19 @@ class ProjectView extends Component {
 													{para && !Array.isArray(item["p"]) && <p>{item["p"]}</p>}
 													{para && Array.isArray(item["p"]) && <div>
 														{item["p"].map((str, k) => {
+															var bodyType = true,
+																headerType = false;
+															if (str.charAt(0) === "#" && str.charAt(1) === "#") {
+																bodyType = false;
+																headerType = true;
+																str = str.substring(2);
+															}
 															return (
-																<p key={k}>{str}</p>
+																<div>
+																	{headerType && <h2 key={k}>{str}
+																	</h2>}
+																	{bodyType && <p key={k}>{str}</p>}
+																</div>
 															)
 														})}
 													</div>}
@@ -174,6 +191,16 @@ class ProjectView extends Component {
 											})}
 										</div>)
 									})}
+								</div>}
+							</div>}
+
+							{/* adtl photos grid */}
+							{this.state.data.imgs && Array.isArray(this.state.data.imgs) && <div className="imgs_data">
+								{this.state.data.imgs.length > 1 && <Grid data={this.state.data.imgs} data_type="imgs" />}
+								{this.state.data.imgs.length === 1 && <div className="single_img_view panel_wrapper">
+									<div className="panel img_elem single_img">
+										<ImageElement ref_id={this.state.data.imgs[0]} />
+									</div>
 								</div>}
 							</div>}
 						</div>}
@@ -199,7 +226,7 @@ class ProjectView extends Component {
 								</p>}
 								{this.state.data.keywords && <p className="subtitle">Keywords: {this.state.data.keywords.map((keyword, k) => {
 									var delimiter = ", ";
-									//console.log(this.state.data.keywords.length)
+								//console.log(this.state.data.keywords.length)
 									if (k + 1 === this.state.data.keywords.length) {
 										delimiter = "";
 									}

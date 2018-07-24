@@ -4,16 +4,27 @@ import GridItem from "./GridItem";
 import ImageElement from "./ImageElement";
 
 class Grid extends Component {
-	state = {items: []}
+	state = {
+		items: [],
+		imgs: []
+	}
 	componentDidMount () {
-		if (this.props.endpoint) {
-			this.setState({items: []});
+		if (this.props.data) {
+			if (this.props.data_type === "imgs") {
+				this.setState({"imgs": this.props.data});
+			}
+		} else if (this.props.endpoint) {
+			this.setState({"items": []});
 			this.getData(this.props.endpoint);
 		}
 	}
 	componentDidUpdate (prevProps) {
 		var _props = this.props;
-		if (_props.endpoint !== prevProps.endpoint) {
+		if (_props.data !== prevProps.data) {
+			if (_props.data_type === "imgs") {
+				this.setState({"imgs": _props.data});
+			}
+		} else if (_props.endpoint !== prevProps.endpoint) {
 			this.setState({items: []});
 			this.getData(_props.endpoint);
 		}
@@ -32,6 +43,26 @@ class Grid extends Component {
 		return (
 			<section className="grid">
 				<div className="grid_items">
+					{this.state.imgs.map((img, k) => {
+						return (
+							<GridItem key={k} ref_id={img} table="imgs">
+								{griditem => (
+									<Link to={"/gallery/" + img}>
+										<ImageElement ref_id={img} />
+										<div className="container">
+											<div className="content">
+												<h3>
+													{griditem.title && <span className="title">
+														{griditem.title}
+													</span>}
+												</h3>
+											</div>
+										</div>
+									</Link>
+								)}
+							</GridItem>
+						)
+					})}
 					{this.state.items.map((item, k) => {
 						return (
 							<GridItem key={k} ref_id={item.ref_id} table={item.table}>

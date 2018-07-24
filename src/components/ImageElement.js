@@ -4,7 +4,7 @@ class ImageElement extends Component {
 	state = {
 		alt: "",
 		id: "",
-		path: "test",
+		path: "error",
 		container_style: {},
 		image_style: {},
 		img_shape: "",
