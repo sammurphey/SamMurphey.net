@@ -7,7 +7,8 @@ import ProjectView from "../views/Project";
 import DetailsView from "../views/Details";
 import NoMatch from "../views/404";
 
-import Gallery from "../views/gallery"; //delete later
+import Gallery from "../views/Gallery";
+import SearchView from "../views/Search";
 
 class ViewContainer extends Component {
 	state = {
@@ -106,6 +107,7 @@ class Main extends Component {
 							)} />
 						))}
 						<Route path="/gallery" component={Gallery} />
+						<Route path="/search" component={SearchView} />
 						<Route component={NoMatch} />
 					</Switch>
 			</main>
