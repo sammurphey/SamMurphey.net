@@ -45,7 +45,21 @@
 	}
 }
 
-
+.has_album_data {
+	display: flex;
+	justify-content: flex-start;
+	.img_container {
+		border: 1px solid transparent;
+		height: calc(#{$blockSize} * 2);
+		flex-shrink: 0;
+		width: calc(#{$blockSize} * 2);
+	}
+	.related_album_info {
+		flex-shrink: 1;
+		margin-left: 32px;
+		width: 100%;
+	}
+}
 
 
 

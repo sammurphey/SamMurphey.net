@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
+import {Redirect, Link} from "react-router-dom";
 import ImageElement from "./ImageElement";
 import MusicPlayer from "./MusicPlayer";
 
@@ -8,7 +8,9 @@ class Intro extends Component {
 		title: "",
 		data: [],
 		alias: [],
-		hasImg: false
+		hasImg: false,
+		currentSearch: "",
+		nextSearch: false
 	}
 	componentDidMount () {
 		document.getElementById("main").scrollTo(0,0);
@@ -17,6 +19,9 @@ class Intro extends Component {
 		}
 		if (this.props.data) {
 			this.setState({"data": this.props.data});
+		}
+		if (this.props.currentSearch) {
+			this.setState({"currentSearch": this.props.currentSearch});
 		}
 		if (this.props.view) {
 			this.setState({"view": this.props.view});
@@ -33,6 +38,9 @@ class Intro extends Component {
 		if (_props.data !== prevProps.data) {
 			this.setState({"data": _props.data});
 		}
+		if (_props.currentSearch !== prevProps.currentSearch) {
+			this.setState({"currentSearch": _props.currentSearch});
+		}
 		if (_props.view !== prevProps.view) {
 			if (_props.view === "project" || _props.view === "details") {
 				this.setState({"hasImg": true});
@@ -40,6 +48,10 @@ class Intro extends Component {
 				this.setState({"hasImg": false});
 			}
 		}
+	}
+	submitSearch () {
+		var str = document.getElementById("search_box").value;
+		this.setState({"nextSearch": str});
 	}
 	render () {
 		return (
@@ -70,12 +82,12 @@ class Intro extends Component {
 
 						{(this.state.view === "project" || this.state.view === "details") && <div className="info_view">
 
-						{/* music */}
+							{/* music */}
 							{this.state.data.category === "music" && <div className="music_data">
 								{this.state.data.alias && <p className="subtitle">
 									By: <Link to="#">{this.state.data.alias}</Link>
 								</p>}
-								{this.props.now_playing && <MusicPlayer now_playing={this.props.now_playing}/>}
+								{this.props.current_song && <MusicPlayer current_song={this.props.current_song} view={this.state.view} song_view={this.props.song_view} />}
 
 								<div className="info_sidebar">
 									<p className="subtitle">
@@ -86,7 +98,7 @@ class Intro extends Component {
 								</div>
 							</div>}
 
-						{/* code */}
+							{/* code */}
 							{this.state.data.category === "code" && <div className="code_data">
 								{this.state.data.description && <p className="subtitle">
 									Project: <span>{this.state.data.description}</span>
@@ -106,7 +118,10 @@ class Intro extends Component {
 												var delimiter = "";
 											}
 											return (
-												<Link key={k} to={"/search/" + lang}>{lang}{delimiter}</Link>
+												<span>
+													<Link key={k} to={"/search/" + lang}>{lang}</Link>
+													{delimiter}
+												</span>
 											)
 										})}
 									</span>}
@@ -119,9 +134,22 @@ class Intro extends Component {
 								</div>
 							</div>}
 
-						{/* other */}
+							{/* other */}
 							{this.state.data.category !== "music" && this.state.data.category !== "code" && <div className="other_data">
-								{this.state.data.description && <p>
+								{this.state.data.description &&
+								Array.isArray(this.state.data.description) &&
+								<p>
+									{this.state.data.description.map((string, k) => {
+										return (
+											<span key={k}>
+												{string}<br/>
+											</span>
+										);
+									})}
+								</p>}
+								{this.state.data.description &&
+								!Array.isArray(this.state.data.description) &&
+								<p>
 									{this.state.data.description}
 								</p>}
 								<div className="info_sidebar">
@@ -132,6 +160,21 @@ class Intro extends Component {
 							</div>}
 						</div>}
 
+
+						{/*search*/}
+						{this.state.view === "search" && <div className="search_view">
+							<div className="panel_wrapper">
+
+								<input type="text" name="search_box" id="search_box" placeholder={this.state.currentSearch} ref={this.input} />
+
+								<input type="submit" name="submit_search" id="submit_search" className="btn" value="Go"  onClick={((e) => this.submitSearch(e))} />
+
+							</div>
+							{this.state.nextSearch && <Redirect
+					          to={{
+					            pathname: "/search/" + this.state.nextSearch
+							}} />}
+						</div>}
 					</div>}
 				</div>
 				{this.state.hasImg && <div className="hero_img panel">

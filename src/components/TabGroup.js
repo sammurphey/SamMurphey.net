@@ -74,7 +74,7 @@ class TabGroup extends Component {
 				<div className="tabs panel_wrapper">
 					{this.state.tabs.map((tab, k) => {
 						var c = "";
-						if (k === 0) {
+						if (k === 1) {
 							c = " selected";
 						}
 						return (
@@ -84,7 +84,7 @@ class TabGroup extends Component {
 				</div>
 					{this.state.tabs.map((page, k) => {
 						var c = "";
-						if (k === 0) {
+						if (k === 1) {
 							c = " selected";
 						}
 						return (

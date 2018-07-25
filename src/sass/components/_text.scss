@@ -47,6 +47,7 @@ p {
 	line-height: calc(#{$gridSize} * 2);
 	margin: 0;
 	position: relative;
+	word-break: break-word;
 	.panel & {
 		color: $baseColor;
 		&.subtitle {
@@ -66,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 	min-height: calc(#{$gridSize} * 2);
 	line-height: calc(#{$gridSize} * 2);
 	margin: 0 0 8px 0;
+	word-break: break-word;
 }
 h1 {
 	font-size: 48px;

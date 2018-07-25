@@ -15,6 +15,8 @@ class ProjectView extends Component {
 		data: [],
 		songs: [],
 		view: "project",
+		song_view: "",
+		current_song: "",
 		now_playing: false
 	}
 	componentDidMount () {
@@ -26,13 +28,27 @@ class ProjectView extends Component {
 	        vars[key] = value;
 	    });
 		if (vars.now_playing) {
-			this.setState({"now_playing": vars.now_playing});
+			this.setState({
+				"current_song": vars.now_playing,
+				"now_playing": true
+			});
 		}
 	}
 	componentDidUpdate (prevProps) {
 		const _props = this.props;
 		if (_props.table !== prevProps.table || _props.ref_id !== prevProps.ref_id) {
 			this.getData();
+
+			var vars = {};
+		    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		        vars[key] = value;
+		    });
+			if (vars.now_playing) {
+				this.setState({
+					"current_song": vars.now_playing,
+					"now_playing": true
+				});
+			}
 		}
 	}
 	componentWillUnmount () {
@@ -40,7 +56,10 @@ class ProjectView extends Component {
 	}
 	playTrack (e, name) {
 		console.log("playing: " + name);
-		this.setState({"now_playing": name});
+		this.setState({
+			"current_song": name,
+			"now_playing": true
+		});
 	}
 	getData () {
 		console.log("getting project data");
@@ -96,10 +115,13 @@ class ProjectView extends Component {
 						if (this.state.data.song_ids) {
 							this.getSongs()
 						}
-						if (this.state.data.album_id) {
+						if (this.state.data.album_id || this.state.data.type === "single") {
 							console.log("is a song")
 							const name = this.state.data.name;
-							this.setState({"now_playing": name});
+							this.setState({
+								"current_song": name,
+								"song_view": "single"
+							});
 						}
 					}
 				})
@@ -120,6 +142,9 @@ class ProjectView extends Component {
 						//console.log(data[0]);
 						songs[k] = data[0];
 						this.setState({"songs": songs});
+						if (k === 0) {
+							this.setState({"current_song": data[0].name});
+						}
 					})
 		})
 	}
@@ -127,7 +152,7 @@ class ProjectView extends Component {
 		return (
 			<div className="project_view">
 				<article className={this.state.anim}>
-					<Intro title={this.props.title} data={this.state.data} view={this.state.view} now_playing={this.state.now_playing}/>
+					<Intro title={this.props.title} data={this.state.data} view={this.state.view} song_view={this.state.song_view} current_song={this.state.current_song} now_playing={this.state.now_playing}/>
 					{this.state.data && <div className="has_data">
 
 					{/* music */}
@@ -143,10 +168,10 @@ class ProjectView extends Component {
 										})}
 									</ol>
 								</div>}
-								<TabGroup data={this.state.data} now_playing={this.state.now_playing} />
+								<TabGroup data={this.state.data} now_playing={this.state.current_song} />
 							</div>}
 							{!this.state.data.song_ids && <div className="single_view panel_wrapper">
-								<TabGroup data={this.state.data} now_playing={this.state.now_playing} />
+								<TabGroup data={this.state.data} now_playing={this.state.current_song} />
 							</div>}
 						</div>}
 
@@ -189,7 +214,8 @@ class ProjectView extends Component {
 															)
 														})}
 													</div>}
-													{img && <ImageElement ref_id={item["i"]}/>}
+													{img && <Link to={"/gallery/" + item["i"]}>
+													<ImageElement ref_id={item["i"]}/></Link>}
 												</div>)
 											})}
 										</div>)

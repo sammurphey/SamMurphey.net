@@ -165,7 +165,8 @@ p {
   font-weight: lighter;
   line-height: calc(16px * 2);
   margin: 0;
-  position: relative; }
+  position: relative;
+  word-break: break-word; }
   .panel p {
     color: #989898; }
     .panel p.subtitle {
@@ -180,7 +181,8 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   min-height: calc(16px * 2);
   line-height: calc(16px * 2);
-  margin: 0 0 8px 0; }
+  margin: 0 0 8px 0;
+  word-break: break-word; }
 
 h1 {
   font-size: 48px;
@@ -242,9 +244,9 @@ button,
       width: 32px; }
     button > *.sml,
     .btn > *.sml {
-      height: 16px;
-      margin: calc(16px * 1.5);
-      width: 16px; }
+      height: calc(16px * 2);
+      margin: calc(16px / 2) 0;
+      width: calc(16px * 2); }
     button > *.med,
     .btn > *.med {
       height: calc(16px * 3);
@@ -437,7 +439,7 @@ input {
       opacity: 0.4;
       position: fixed;
       right: 32px;
-      top: 16px; }
+      top: 0; }
       #header .btn#search_btn:active, #header .btn#search_btn:focus, #header .btn#search_btn:hover {
         background: none;
         opacity: 1; }
@@ -797,37 +799,47 @@ input {
         position: relative;
         width: 100%; }
         #sidebar .contents > * {
-          opacity: 0.3; }
-          #sidebar .contents > *#console {
-            bottom: calc(64px + 16px);
-            cursor: pointer;
-            display: flex;
-            flex-wrap: wrap;
-            height: 64px;
-            justify-content: flex-start;
-            opacity: 1;
-            position: absolute;
-            transform: rotateZ(-90deg);
-            transform-origin: 32px 0px;
-            width: calc(100vh - (64px * 3)); }
-            #sidebar .contents > *#console * {
-              height: calc(64px / 2);
-              font-size: 16px;
-              line-height: calc(64px / 2);
-              margin: 0 16px;
-              opacity: 0.4;
-              padding: 0; }
-              #sidebar .contents > *#console *:focus, #sidebar .contents > *#console *:hover {
-                opacity: 1; }
-          #sidebar .contents > *#qr_code {
-            bottom: calc(16px * 2);
-            cursor: pointer;
-            height: 64px;
-            left: calc(16px * 2);
-            position: absolute;
-            width: 64px; }
-            #sidebar .contents > *#qr_code:focus, #sidebar .contents > *#qr_code:hover {
-              opacity: 1; } }
+          opacity: 0.3; } }
+
+#console {
+  bottom: calc(64px + 16px);
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  height: 64px;
+  justify-content: flex-start;
+  opacity: 1 !important;
+  position: absolute;
+  transform: rotateZ(-90deg);
+  transform-origin: 32px 0px;
+  width: calc(100vh - (64px * 3)); }
+  #console * {
+    height: calc(64px / 2);
+    font-size: 16px;
+    line-height: calc(64px / 2);
+    margin: 0 16px;
+    opacity: 0.4;
+    padding: 0; }
+    #console *:focus, #console *:hover {
+      opacity: 1; }
+
+#qr_wrapper {
+  bottom: calc(16px * 2);
+  border: 1px solid #989898;
+  box-sizing: content-box;
+  cursor: pointer;
+  display: block;
+  height: 64px;
+  left: calc(16px * 2);
+  position: absolute;
+  width: 64px; }
+  #qr_wrapper #qr_code {
+    position: relative; }
+  #qr_wrapper.active {
+    border-color: #00EFF1;
+    opacity: 0.6; }
+  #qr_wrapper:focus, #qr_wrapper:hover {
+    opacity: 1; }
 
 .music_data .info_sidebar {
   bottom: 188px !important; }
@@ -859,6 +871,19 @@ input {
       .album_info .tabs .tab.selected {
         background: #F8F8F8;
         color: #000; }
+
+.has_album_data {
+  display: flex;
+  justify-content: flex-start; }
+  .has_album_data .img_container {
+    border: 1px solid transparent;
+    height: calc(64px * 2);
+    flex-shrink: 0;
+    width: calc(64px * 2); }
+  .has_album_data .related_album_info {
+    flex-shrink: 1;
+    margin-left: 32px;
+    width: 100%; }
 
 .music_player {
   bottom: 4px;
@@ -904,6 +929,9 @@ input {
       position: absolute;
       top: -34px; }
 
+.stream_link {
+  margin: 32px 0 0 32px; }
+
 .single_view .tab_page {
   width: calc(100% - 4px); }
 
@@ -941,6 +969,12 @@ input {
 .narrative_view .story_mode .text_elem {
   overflow: auto;
   width: 100%; }
+
+.search_view .panel_wrapper {
+  justify-content: center;
+  margin-top: 82px; }
+  .search_view .panel_wrapper > * {
+    margin: 0; }
 
 body::after {
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.14) inset, 0 8px 10px 1px rgba(0, 0, 0, 0.1) inset, 0 3px 14px 2px rgba(0, 0, 0, 0.08) inset;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 import ImageElement from "./ImageElement";
 
 class MusicPlayer extends Component {
@@ -6,14 +7,14 @@ class MusicPlayer extends Component {
 		song: []
 	}
 	componentDidMount () {
-		if (this.props.now_playing) {
-			this.getSong(this.props.now_playing);
+		if (this.props.current_song) {
+			this.getSong(this.props.current_song);
 		}
 	}
 	componentDidUpdate (prevProps) {
 		const _props = this.props;
-		if (_props.now_playing !== prevProps.now_playing) {
-			this.getSong(_props.now_playing);
+		if (_props.current_song !== prevProps.current_song) {
+			this.getSong(_props.current_song);
 		}
 	}
 	getSong (name) {
@@ -21,7 +22,7 @@ class MusicPlayer extends Component {
 		fetch(url)
 			.then(res => res.json())
 				.then((data) => {
-					data = data[0];
+					data = data;
 					if (data.description) {
 						if (data.description.charAt(0) === "[") {
 							data.description = JSON.parse(data.description);
@@ -36,20 +37,32 @@ class MusicPlayer extends Component {
 	render () {
 		return(
 			<div className="music_player panel_wrapper">
-				<div className="track_art">
+				{this.props.song_view !== "single" && <div className="track_art">
 					<div className="art_wrapper">
 						{this.state.song.cover_img && <ImageElement ref_id={this.state.song.cover_img} />}
 					</div>
-				</div>
+				</div>}
 				<div className="track_playback panel_wrapper">
 					<div id="connected_panel" className="panel">
-						{this.state.song.title && <h3 className="track_title">{this.state.song.title}</h3>}
+						{this.state.song.title && <Link to={this.state.song.url}>
+							<h3 className="track_title">
+								{this.state.song.title}
+							</h3>
+						</Link>}
 					</div>
 					<div className="panel">
 						<button className="btn chip play_btn">
 							{this.state.isPlaying && <svg height="32px" width="32px" />}
 							{!this.state.isPlaying && <svg height="32px" width="32px" />}
 						</button>
+						<div class="stream_link">
+							<p>
+								Streamable tracks coming soon...
+								{this.state.song.file && <span><br/>
+									Listen here: <a href={this.state.song.file} rel="noopener noreferrer" target="_blank">{this.state.song.file}</a>
+								</span>}
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

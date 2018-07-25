@@ -38,9 +38,9 @@ button,
 			width: 32px;
 		}
 		&.sml {
-			height: $gridSize;
-			margin: calc(#{$gridSize} * 1.5);
-			width: $gridSize;
+			height: calc(#{$gridSize} * 2);
+			margin: calc(#{$gridSize} / 2) 0;
+			width: calc(#{$gridSize} * 2);
 		}
 		&.med {
 			height: calc(#{$gridSize} * 3);

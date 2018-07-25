@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import{BrowserRouter as Router} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Main from "./components/Main";

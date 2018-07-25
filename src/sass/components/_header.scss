@@ -62,11 +62,10 @@
 			top: 0;
 		}
 		&#search_btn {
-		  // visibility: hid
 		  	opacity: 0.4;
 		  	position: fixed;
 			right: 32px;
-			top: 16px;
+			top: 0;
 			&:active,
 			&:focus,
 			&:hover {
