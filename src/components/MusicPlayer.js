@@ -22,7 +22,7 @@ class MusicPlayer extends Component {
 		fetch(url)
 			.then(res => res.json())
 				.then((data) => {
-					data = data;
+					data = data[0];
 					if (data.description) {
 						if (data.description.charAt(0) === "[") {
 							data.description = JSON.parse(data.description);

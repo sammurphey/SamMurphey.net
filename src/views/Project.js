@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import {Link, Switch} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Intro from "../components/Intro";
-import CategoryPreview from "../components/CategoryPreview";
 import Grid from "../components/Grid";
 import ImageElement from "../components/ImageElement";
 import Footer from "../components/Footer";
@@ -24,7 +23,7 @@ class ProjectView extends Component {
 			this.getData();
 		}
 		var vars = {};
-	    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	    window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
 	        vars[key] = value;
 	    });
 		if (vars.now_playing) {
@@ -40,7 +39,7 @@ class ProjectView extends Component {
 			this.getData();
 
 			var vars = {};
-		    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		    window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
 		        vars[key] = value;
 		    });
 			if (vars.now_playing) {
@@ -131,6 +130,7 @@ class ProjectView extends Component {
 		console.log("getting songs...");
 		var ids = this.state.data.song_ids;
 	//	console.log(ids);
+	// eslint-disable-next-line
 		ids.map((id, k) => {
 			var url = "https://sammurphey.net/api/index.php?table=songs&id=" + id + "&public=true";
 			fetch(url)

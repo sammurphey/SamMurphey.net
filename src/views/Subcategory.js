@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Intro from "../components/Intro";
-import CategoryPreview from "../components/CategoryPreview";
 import Grid from "../components/Grid";
 import Footer from "../components/Footer";
 

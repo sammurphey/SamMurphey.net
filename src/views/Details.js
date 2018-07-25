@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import Intro from "../components/Intro";
-import CategoryPreview from "../components/CategoryPreview";
 import ImageElement from "../components/ImageElement";
-import Grid from "../components/Grid";
 import Footer from "../components/Footer";
 
 class DetailsView extends Component {
@@ -20,7 +18,7 @@ class DetailsView extends Component {
 			this.getData();
 		}
 		var vars = {};
-	    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	    window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
 	        vars[key] = value;
 	    });
 		if (vars.now_playing) {
@@ -35,7 +33,7 @@ class DetailsView extends Component {
 		if (_props.table !== prevProps.table || _props.ref_id !== prevProps.ref_id) {
 			this.getData();
 			var vars = {};
-		    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		    window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
 		        vars[key] = value;
 		    });
 			if (vars.now_playing) {

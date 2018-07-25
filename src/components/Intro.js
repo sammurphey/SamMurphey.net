@@ -61,7 +61,7 @@ class Intro extends Component {
 					<h1>{this.props.title}</h1>
 					{this.state.data && <div className="has_data">
 
-						{(this.state.view === "overview" || this.state.view == "subcategory") && <div className="default_view">
+						{(this.state.view === "overview" || this.state.view === "subcategory") && <div className="default_view">
 							{this.state.data.description &&
 							Array.isArray(this.state.data.description) &&
 							<p>
@@ -85,7 +85,7 @@ class Intro extends Component {
 							{/* music */}
 							{this.state.data.category === "music" && <div className="music_data">
 								{this.state.data.alias && <p className="subtitle">
-									By: <Link to="#">{this.state.data.alias}</Link>
+									By: <Link to={"/search/" + this.state.data.alias}>{this.state.data.alias}</Link>
 								</p>}
 								{this.props.current_song && <MusicPlayer current_song={this.props.current_song} view={this.state.view} song_view={this.props.song_view} />}
 
@@ -93,7 +93,7 @@ class Intro extends Component {
 									<p className="subtitle">
 										Released: <span>{this.state.data.date}</span>
 										<br/>
-										Publisher: {this.state.data.label && <a href="#">{this.state.data.label}</a>}{!this.state.data.label && <span>Self Released</span>}
+										Publisher: {this.state.data.label && <span>{this.state.data.label}</span>}{!this.state.data.label && <span>Self Released</span>}
 									</p>
 								</div>
 							</div>}
@@ -115,7 +115,7 @@ class Intro extends Component {
 										{this.state.data.tech_stack.map((lang, k) => {
 											var delimiter = ", ";
 											if (k + 1 === this.state.data.tech_stack.length) {
-												var delimiter = "";
+												delimiter = "";
 											}
 											return (
 												<span>
