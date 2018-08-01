@@ -406,6 +406,10 @@ input {
     width: 181px;
     border-radius: 3px;
     overflow: hidden; }
+    @media (max-width: 640px) {
+      #header::after {
+        left: -64px;
+        top: -30px; } }
   #header::before {
     -webkit-box-shadow: 0px 1px 8px 1.3px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 1px 8px 1.3px rgba(0, 0, 0, 0.15);
@@ -419,6 +423,10 @@ input {
     -ms-transform: rotate(-45deg);
     transform: rotateZ(-45deg);
     width: 179px; }
+    @media (max-width: 640px) {
+      #header::before {
+        left: -25px;
+        top: 62px; } }
   #header .btn {
     border: 0;
     z-index: 4; }
@@ -486,6 +494,9 @@ input {
         color: #FFF !important; }
       #menu ul li a:active {
         color: #00EFF1 !important; }
+  @media (max-width: 640px) {
+    #menu {
+      display: none; } }
 
 #main {
   background: #989898;
@@ -501,24 +512,33 @@ input {
   top: 2px;
   width: calc(100% - (2px * 2 + 28px));
   z-index: 1; }
+  @media (max-width: 640px) {
+    #main {
+      height: calc(100% - 20px);
+      left: 0;
+      top: 0;
+      width: calc(100% - 20px); } }
   #main article {
     flex-direction: column;
     margin-bottom: 18px !important;
     z-index: 3; }
+    @media (max-width: 640px) {
+      #main article {
+        margin-bottom: 8px !important; } }
   #main article, #main footer {
     display: flex;
     flex-wrap: wrap;
-    margin: calc(64px * 2) auto;
+    margin: 60px auto;
     position: relative;
     width: calc(64px * 2);
     will-change: transform;
     z-index: 2; }
     @media (min-width: 302px) {
       #main article, #main footer {
-        width: calc(64px * 4); } }
+        width: 100%; } }
     @media (min-width: 444px) {
       #main article, #main footer {
-        width: calc(64px * 6); } }
+        width: calc(64px * 7); } }
     @media (min-width: 572px) {
       #main article, #main footer {
         width: calc(64px * 8); } }
@@ -986,6 +1006,12 @@ body::after {
   position: fixed;
   top: 15px;
   width: calc(100% - 39px); }
+  @media (max-width: 680px) {
+    body::after {
+      height: calc(100% - 20px);
+      left: 10px;
+      top: 10px;
+      width: calc(100% - 20px); } }
 
 .version_number {
   font-size: 12px;

@@ -24,6 +24,10 @@
 		width: 181px;
 		border-radius: 3px;
 		overflow: hidden;
+		@media(max-width: 640px) {
+			left: -64px;
+			top: -30px;
+		}
 	}
 	&::before {
 		-webkit-box-shadow: 0px 1px 8px 1.3px rgba(0, 0, 0, 0.15);
@@ -38,6 +42,10 @@
 		-ms-transform: rotate(-45deg);
 		transform: rotateZ(-45deg);
 		width: 179px;
+		@media(max-width: 640px) {
+			left: -25px;
+			top: 62px;
+		}
 	}
 	.btn {
 		border: 0;
