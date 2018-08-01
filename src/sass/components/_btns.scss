@@ -1,0 +1,96 @@
+button,
+.btn {
+	background: rgba(255, 255, 255, 0);
+	border: 1px solid $darkGrey;
+	color: $darkGrey;
+	cursor: pointer;
+	display: block;
+	height: $blockSize;
+	font-size: $gridSize;
+	font-weight: bold;
+	line-height: calc(#{$gridSize} * 2);
+	min-width: $blockSize;
+	outline: none;
+	padding: $gridSize;
+	position: relative;
+	p > & {
+		display: inline-block;
+		font-weight: lighter;
+		&:hover {
+			background: $highlightColor!important;
+			border-color: $darkGrey!important;
+			color: $darkGrey!important;
+		}
+		&:focus, &:active {
+			border-color: $tealColor!important;
+			color: $tealColor!important;
+		}
+	}
+	& + * {
+		margin-top: $paddingLrg;
+	}
+	& > * {
+		position: relative;
+		&.icon {
+			height: 32px;
+			opacity: 1;
+			padding: $paddingLrg;
+			width: 32px;
+		}
+		&.sml {
+			height: calc(#{$gridSize} * 2);
+			margin: calc(#{$gridSize} / 2) 0;
+			width: calc(#{$gridSize} * 2);
+		}
+		&.med {
+			height: calc(#{$gridSize} * 3);
+			margin: calc(#{$gridSize} / 2);
+			width: calc(#{$gridSize} * 3);
+		}
+		&.lrg {
+			height: auto;
+			margin: 0;
+			width: auto;
+		}
+	}
+	&:focus,
+	&:hover {
+		background: rgba(255, 255, 255, .2);
+		border-color: $highlightColor;
+		color: $highlightColor;
+	}
+	&:active {
+		background: rgba(0, 0, 0, .05);
+		border-color: $tealColor;
+		color: $tealColor;
+	}
+}
+.chip {
+	background: $plasticColor;
+	border: 0;
+	border-radius: 50%;
+	box-shadow: $chip_shadow;
+	margin: 0 calc(#{$blockSize} / 2) calc(#{$blockSize} / 2) 0;
+	.icon {
+		opacity: 0.5;
+	}
+	&:focus,
+	&:hover {
+		background: $highlightColor;
+		box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+		.icon,
+		.icon * {
+				opacity: 0.3;
+		}
+	}
+	&:active {
+		background: $tealColor;
+		box-shadow: 0 0 1px rgba(0,0,0, 0.1);
+	}
+}
+
+.chips_container {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+}

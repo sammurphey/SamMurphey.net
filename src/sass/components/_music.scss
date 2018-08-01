@@ -1,0 +1,71 @@
+@import "../vars";
+
+.music_data {
+	.info_sidebar {
+		bottom: 188px!important;
+	}
+}
+
+
+.song_list {
+	max-width: $panelSize;
+	ol {
+		padding: 0 0 0 40px;
+		li {
+			& + * {
+				padding-top: 8px;
+			}
+			a {
+				color: $baseColor;
+				font-family: "Ubuntu", sans-serif;
+				font-style: italic;
+			}
+		}
+	}
+}
+
+.album_info {
+	flex-direction: column;
+	flex-grow: 0;
+	flex-shrink: 1;
+	width: 100%;
+	.tabs {
+		flex-grow: 0;
+		flex-shrink: 0;
+		height: 84px;
+		width: 100%;
+		.tab {
+			background: $lightGrey;
+			color: $highlightColor;
+			&.selected {
+				background: $plasticColor;
+				color: $textColor;
+			}
+		}
+	}
+}
+
+.has_album_data {
+	display: flex;
+	justify-content: flex-start;
+	.img_container {
+		border: 1px solid transparent;
+		height: calc(#{$blockSize} * 2);
+		flex-shrink: 0;
+		width: calc(#{$blockSize} * 2);
+	}
+	.related_album_info {
+		flex-shrink: 1;
+		margin-left: 32px;
+		width: 100%;
+	}
+}
+
+
+
+.single_view {
+}
+
+.song_view {
+
+}

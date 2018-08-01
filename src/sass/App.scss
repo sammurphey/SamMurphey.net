@@ -1,0 +1,67 @@
+@import "vars";
+@import "animations";
+//@import "components";
+@import "components/intro";
+@import "components/imgs";
+@import "components/text";
+@import "components/btns";
+@import "components/forms";
+@import "components/header";
+@import "components/footer";
+@import "components/menu";
+@import "components/main";
+@import "components/panels";
+@import "components/grid";
+@import "components/sidebar";
+@import "components/music";
+@import "components/music_player";
+@import "components/tabs";
+@import "components/narrative";
+@import "components/search";
+
+body {
+	&::after {
+		//background: rgba(255, 0, 0, 0.4);
+		box-shadow: 0 5px 5px -3px rgba(0,0,0,.14) inset, 0 8px 10px 1px rgba(0,0,0,.10) inset, 0 3px 14px 2px rgba(0,0,0,.08) inset;
+		content: "";
+		display: block;
+		height: calc(100% - 36px);
+		left: 15px;
+		pointer-events: none;
+		position: fixed;
+		top: 15px;
+		width: calc(100% - 39px);
+	}
+}
+
+.version_number {
+	font-size: 12px;
+	line-height: 20px;
+	margin-right: 20px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+::-webkit-scrollbar {
+	cursor: pointer;
+	height: $paddingMed;
+    width: $paddingMed;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $plasticColor;
+	&:hover {
+		background: $highlightColor;
+	}
+	&:active {
+		background: $tealColor;
+	}
+}
+
+::selection {
+  background: $tealColor; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $tealColor; /* Gecko Browsers */
+}
