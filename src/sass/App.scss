@@ -41,12 +41,14 @@ body {
 }
 
 .version_number {
-	font-size: 12px;
-	line-height: 20px;
-	margin-right: 20px;
+	font-size: 6px;
 	position: absolute;
 	bottom: 0;
-	right: 0;
+	right: 10px;
+	@media(min-width: 800px) {
+		font-size: 12px;
+		line-height: 20px;
+	}
 }
 
 ::-webkit-scrollbar {

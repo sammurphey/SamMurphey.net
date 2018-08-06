@@ -15,7 +15,7 @@ class App extends Component {
 				<Menu />
 				<Main />
 				<Sidebar />
-				<span className="version_number">V7.3</span>
+				<span className="version_number">V7.3.1</span>
 		      </div>
 		  </Router>
 	);
