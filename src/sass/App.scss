@@ -45,7 +45,12 @@ body {
 	position: absolute;
 	bottom: 0;
 	right: 10px;
+	@media(min-width: 680px) {
+		right: 15px;
+		bottom: 4px;
+	}
 	@media(min-width: 800px) {
+		bottom: 0;
 		font-size: 12px;
 		line-height: 20px;
 	}

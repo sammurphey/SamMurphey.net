@@ -2,13 +2,17 @@
 
 .intro {
 	display: flex;
-	min-height: $panelSize;
+	min-height: $blockSize;
+	position: relative;
 	z-index: 4;
-
+	@media(min-width: 840px) {
+		/*same height as menu*/
+		min-height: $panelSize;
+	}
 	> .panel {
 		flex-grow: 0;
 		flex-shrink: 1;
-		min-height: $panelSize;
+		min-height: 100%;
 		padding-top: 16px;
 		position: relative;
 		width: 100%;

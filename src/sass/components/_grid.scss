@@ -10,33 +10,43 @@
 	background-position: center center;
 	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 	cursor: pointer;
+	height: auto;
 	flex-shrink: 0;
-	height: calc(50vw - 20px);
+	padding-bottom: 33%;
 	justify-content: center;
 	margin: 2px;
 	overflow: hidden;
 	position: relative;
-	width: calc(50vw - 20px);
-	@media(min-width: 600px) {
-		height: calc(#{$blockSize} * 2 - 4px);
-		width: calc(#{$blockSize} * 2 - 4px);
+	padding-bottom: calc(100% - 4px);
+	width: calc(100% - 4px);
+	@media(min-width: 340px) {
+		padding-bottom: calc(50% - 4px);
+		width: calc(50% - 4px);
 	}
-	@media(min-width: 812px) {
-		height: calc(#{$blockSize} * 4 - 4px);
-		width: calc(#{$blockSize} * 4 - 4px);
+	@media(min-width: 600px) {
+		padding-bottom: calc(33.333333333333% - 4px);
+		width: calc(33.333333333333% - 4px);
+	}
+	@media(min-width: 840px) {
+		padding-bottom: calc(25% - 4px);
+		width: calc(25% - 4px);
+	}
+	@media(min-width: 1068px) {
+		padding-bottom: calc(20% - 4px);
+		width: calc(20% - 4px);
+	}
+	@media(min-width: 1580px) {
+		padding-bottom: calc(16.666666666666% - 4px);
+		width: calc(16.666666666666% - 4px);
 	}
 	a {
 		display: block;
-		height: calc(#{$blockSize} * 2 - 4px);
+		height: 100%;
 		justify-content: center;
 		overflow-x: hidden;
 		overflow-y: auto;
-		position: relative;
-		max-width: calc(#{$blockSize} * 2 - 4px);
-		@media(min-width: 812px) {
-			height: calc(#{$blockSize} * 4 - 4px);
-			max-width: calc(#{$blockSize} * 4 - 4px);
-		}
+		position: absolute;
+		width: 100%;
 	}
 	.container {
 		min-height: 100%;

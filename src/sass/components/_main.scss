@@ -9,6 +9,7 @@
 	height: calc(100% - (#{$paddingSml} * 2 + 28px));
 	left: $paddingSml;
 	margin: 10px;
+	overflow-x: hidden;
 	overflow-y: scroll;
 	position: absolute;
 	top: $paddingSml;
@@ -34,25 +35,22 @@
 		margin: 55px auto;
 		//opacity: 0;
 		position: relative;
-		width: calc(#{$blockSize} * 2);
+		width: 100%;
 		will-change: transform;
 		z-index: 2;
-		@media(min-width: 302px) {
-			width: 100%;
-		}
 		@media(min-width: 444px) {
-			width: calc(#{$blockSize} * 7);
+	//		width: calc(#{$blockSize} * 7);
 		}
 		@media(min-width: 572px) {
-			width: calc(#{$blockSize} * 8);
+	//		width: calc(#{$blockSize} * 8);
 		}
 		@media(min-width: 700px) {
-			width: calc(#{$blockSize} * 10);
+	//		width: calc(#{$blockSize} * 10);
 		}
 		// sidebar active
-		@media(min-width: 812px) {
+		@media(min-width: 840px) {
 			margin: calc(#{$blockSize} * 1.2) auto;
-			width: calc(#{$blockSize} * 8);
+			width: calc(100% - 288px);
 		}
 		@media(min-width: 1068px) {
 			width: calc(#{$blockSize} * 12);

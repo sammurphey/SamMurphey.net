@@ -3,7 +3,7 @@
 #sidebar {
 	display: none;
 	z-index: 1;
-	@media(min-width: 812px) {
+	@media(min-width: 840px) {
 		display: block;
 		height: calc(100% - 36px);
 		right: 32px;
