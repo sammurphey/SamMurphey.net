@@ -10,7 +10,7 @@ import NoMatch from "../views/404";
 import Gallery from "../views/Gallery";
 import SearchView from "../views/Search";
 
-import ReactGA from 'react-ga';
+//import ReactGA from 'react-ga';
 
 class ViewContainer extends Component {
 	state = {

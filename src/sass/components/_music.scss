@@ -6,6 +6,12 @@
 	}
 }
 
+.album_view {
+	flex-wrap: wrap;
+	@media(min-width: 840px) {
+		flex-wrap: nowrap;
+	}
+}
 
 .song_list {
 	max-width: $panelSize;
@@ -25,10 +31,14 @@
 }
 
 .album_info {
-	flex-direction: column;
-	flex-grow: 0;
-	flex-shrink: 1;
-	width: 100%;
+	display: none;
+	@media(min-width: 840px) {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 0;
+		flex-shrink: 1;
+		width: 100%;
+	}
 	.tabs {
 		flex-grow: 0;
 		flex-shrink: 0;

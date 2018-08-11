@@ -1,26 +1,44 @@
 @import "../vars";
 
-.intro {
+#intro {
 	display: flex;
+	flex-direction: column-reverse;
+	flex-wrap: wrap;
 	min-height: $blockSize;
 	position: relative;
 	z-index: 4;
 	@media(min-width: 840px) {
-		/*same height as menu*/
+		flex-direction: row;
+		flex-wrap: nowrap;
 		min-height: $panelSize;
+	}
+	.project_view & {
+		@media(max-width: 839px) {
+			.corner, .corner-spacer {
+				display: none;
+			}
+		}
 	}
 	> .panel {
 		flex-grow: 0;
 		flex-shrink: 1;
-		min-height: 100%;
+		min-height: calc(100vw - (#{$pageMarginSml} * 2));
 		padding-top: 16px;
 		position: relative;
-		width: 100%;
+
+		@media(min-width: 840px) {
+			min-height: 100%;
+			width: 100%;
+		}
 		&.hero_img {
 			padding: 0;
 			&, * {
-				height: $panelSize;
-				width: $panelSize;
+				height: calc(100vw - (#{$pageMarginSml} * 2));
+				width: 100%;
+				@media(min-width: 840px) {
+					height: $panelSize;
+					width: $panelSize;
+				}
 			}
 		}
 		&:not(.hero_img) {

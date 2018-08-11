@@ -6,21 +6,28 @@
 	border-right: 4px solid #CCC;
 	border-left: 4px solid #AAA;
 	flex-direction: column;
-	height: calc(100% - 10px);
-	left: $paddingSml;
-	margin: 10px;
+	height: 100%;
+	//height: calc(100% - (#{$pageMarginSml} * 2));
+	//left: $pageMarginSml;
+	//margin: 10px;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	position: absolute;
-	top: $paddingSml;
-	width: calc(100% - 10px);
+	position: relative;
+	//position: absolute;
+	//top: $pageMarginSml;
+	//width: calc(100% - (#{$pageMarginSml} * 2));
 	z-index: 1;
-	@media (max-width: 640px) {
-		height: calc(100% - 20px);
-		left: 0;
-		top: 0;
-		width: calc(100% - 20px);
-	}
+	//@media (min-width: 840px) {
+	//	height: calc(100% - (#{$pageMarginLrg} * 2));
+	//	left: $pageMarginLrg;
+	//	top: $pageMarginLrg;
+	//	width: calc(100% - (#{$pageMarginLrg} * 2));
+	//}
+
+	width: 100%;
+	//* {
+	//	display: none;
+	//}
 	article {
 		flex-direction: column;
 		margin-bottom: 18px!important;
@@ -33,26 +40,17 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin: 55px auto;
-		//opacity: 0;
 		position: relative;
 		width: 100%;
 		will-change: transform;
 		z-index: 2;
-		@media(min-width: 444px) {
-	//		width: calc(#{$blockSize} * 7);
-		}
-		@media(min-width: 572px) {
-	//		width: calc(#{$blockSize} * 8);
-		}
-		@media(min-width: 700px) {
-	//		width: calc(#{$blockSize} * 10);
-		}
+
 		// sidebar active
 		@media(min-width: 840px) {
-			margin: calc(#{$blockSize} * 1.2) auto;
-			width: calc(100% - 288px);
+			margin: $blockSize auto;
+			width: calc(100% - (#{$pagePaddingLrg} * 2));
 		}
-		@media(min-width: 1068px) {
+		/*@media(min-width: 1068px) {
 			width: calc(#{$blockSize} * 12);
 		}
 		@media(min-width: 1324px) {
@@ -69,6 +67,6 @@
 		}
 		@media(min-width: 2248px) {
 			width: calc(#{$blockSize} * 32);
-		}
+		}*/
 	}
 }

@@ -1,15 +1,17 @@
 @import "../vars";
 
 #header {
-	height: calc(#{$blockSize} * 2);
+	height: calc(#{$blockSize} * 2 - 6px);
 	left: 10px;
 	position: absolute;
 	top: 10px;
-	width: calc(#{$blockSize} * 2);
+	width: calc(#{$blockSize} * 2 - 6px);
 	z-index: 2;
-	@media(max-width: 640px) {
-		height: calc(#{$blockSize} * 2 - 6px);
-		width: calc(#{$blockSize} * 2 - 6px);
+	@media(min-width: 840px) {
+		height: calc(#{$blockSize} * 2);
+		left: 13px;
+		top: 13px;
+		width: calc(#{$blockSize} * 2);
 	}
 	&::after {
 		background: #FFF;
@@ -60,6 +62,7 @@
 			background: none;
 			display: flex;
 			justify-content: center;
+			margin: 0;
 			padding: 0;
 			&:active, &:focus, &:hover {
 				* {
@@ -78,8 +81,8 @@
 		&#search_btn {
 		  	opacity: 0.4;
 		  	position: absolute;
-			right: calc(0px - 100vw + 151px);
-			top: -9px;
+			right: calc(0px - 100vw + 142px);
+
 			@media(min-width: 600px) {
 				position: fixed;
 				right: 32px;
@@ -90,6 +93,12 @@
 			&:hover {
 				background: none;
 				opacity: 1;
+				svg {
+					polygon {
+						fill: none;
+						stroke: $tealColor;
+					}
+				}
 			}
 		}
 	}

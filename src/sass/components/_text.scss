@@ -64,32 +64,41 @@ p {
 }
 h1, h2, h3, h4, h5, h6 {
 	display: inline-block;
-	min-height: calc(#{$gridSize} * 2);
-	line-height: calc(#{$gridSize} * 2);
 	margin: 0 0 8px 0;
 	word-break: break-word;
+	&:last-child {
+		margin-bottom: 0px;
+	}
 }
 h1 {
 	font-size: 32px;
     font-weight: 100;
-	min-height: 36px;
-    line-height: 36px;
-	margin-top: 12px;
+	min-height: 32px;
+    line-height: 32px;
+	margin-top: 0;
 	@media(min-width: 600px) {
 		font-size: 48px;
+		margin-top: 12px;
 		min-height: 48px;
 	    line-height: 48px;
+		.corner-spacer {
+			display: none;
+		}
 	}
 }
 h2 {
 	font-size: 22px;
 	font-weight: 100;
+	line-height: calc(#{$gridSize} * 2);
+	min-height: calc(#{$gridSize} * 2);
 	@media(min-width: 600px) {
 		font-size: 32px;
 	}
 }
 h3, h4, h5, h6 {
 	font-size: 17px;
+	line-height: 16px;
+	min-height: 16px
 }
 ul, ol {
 	margin: 8px 0 0 0;

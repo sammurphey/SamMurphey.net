@@ -3,8 +3,12 @@
 .narrative_view {
 	.story_mode {
 		.panel_wrapper {
-			height: $panelSize;
+			height: auto;
 			margin-bottom: 4px;
+			width: 100%;
+			@media(min-width: 840px) {
+				height: $panelSize;
+			}
 			.panel {
 				height: 100%;
 				&:first-child {
@@ -13,16 +17,20 @@
 			}
 		}
 		.img_elem {
-			height: 100%;
+			height: auto;
 			padding: 0;
 			flex-grow:0;
-			width: auto;
-			.img_container {
-				height:100%;
+			width: 100%;
+			@media(min-width: 840px) {
+				height: 100%;
 				width: auto;
-				img {
-					height: 100%!important;
-					width: auto!important;
+				.img_container {
+					height: 100%;
+					width: auto;
+					img {
+						height: 100%!important;
+						width: auto!important;
+					}
 				}
 			}
 		}
