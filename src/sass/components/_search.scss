@@ -1,7 +1,11 @@
 .search_view {
 	.panel_wrapper {
+		flex-wrap: nowrap;
 		justify-content: center;
-		margin-top: 82px;
+		margin-top:8px;
+		@media(min-width: 840px) {
+			margin-top: 82px;
+		}
 		>* {
 			margin: 0;
 		}

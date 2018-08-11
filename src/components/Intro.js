@@ -55,10 +55,10 @@ class Intro extends Component {
 	}
 	render () {
 		return (
-			<section id="intro" className={this.state.data.category + "-intro"}>
+			<section id="intro">
 				<div className="panel">
 					<div className="corner"></div>
-					<h1><span class="corner-spacer">&nbsp;</span>{this.props.title}</h1>
+					<h1><span className="corner-spacer">&nbsp;</span>{this.props.title}</h1>
 					{this.state.data && <div className="has_data">
 
 						{(this.state.view === "overview" || this.state.view === "subcategory") && <div className="default_view">
