@@ -62,7 +62,7 @@ class ProjectView extends Component {
 	}
 	getData () {
 		console.log("getting project data");
-		var url = "https://sammurphey.net/api/index.php?table=" + this.props.table + "&id=" + this.props.ref_id + "&public=true";
+		var url = "https://api.sammurphey.net/index.php?table=" + this.props.table + "&id=" + this.props.ref_id + "&public=true";
 		console.log(url);
 		fetch(url)
 			.then(res => res.json())
@@ -132,7 +132,7 @@ class ProjectView extends Component {
 	//	console.log(ids);
 	// eslint-disable-next-line
 		ids.map((id, k) => {
-			var url = "https://sammurphey.net/api/index.php?table=songs&id=" + id + "&public=true";
+			var url = "https://api.sammurphey.net/index.php?table=songs&id=" + id + "&public=true";
 			fetch(url)
 				.then(res => res.json())
 					.then((data) => {

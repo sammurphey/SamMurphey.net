@@ -16,7 +16,7 @@ class Category extends Component {
 		}
 	}
 	getData(table) {
-		fetch("https://sammurphey.net/api/index.php?table=" + table + "&public=true&sort_by=order")
+		fetch("https://api.sammurphey.net/index.php?table=" + table + "&public=true&sort_by=order")
 			.then(res => res.json())
 				.then((data) => {
 					this.setState({data: data});
@@ -68,7 +68,7 @@ class CategoryPreview extends Component {
 		}
 	}
 	getData (category) {
-		var _url = "https://sammurphey.net/api/index.php?table=categories&public=true";
+		var _url = "https://api.sammurphey.net/index.php?table=categories&public=true";
 		if (category === "all") {
 			this.setState({displayHeaders: true});
 		} else {

@@ -30,7 +30,7 @@ class ImageElement extends Component {
 		}
 	}
 	getData (ref_id) {
-		fetch("https://sammurphey.net/api/index.php?table=imgs&id=" + ref_id)
+		fetch("https://api.sammurphey.net/index.php?table=imgs&id=" + ref_id)
 			.then(res => res.json())
 				.then((data) => {
 					var img = data[0],

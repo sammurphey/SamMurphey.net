@@ -10,9 +10,9 @@ Created by FontForge 20170805 at Sun Feb 18 15:34:17 2018
 Created by Sam Murphey,,, with FontForge 2.0 (http://fontforge.sf.net)
 </metadata>
 <defs>
-<font id="Kepler-452b" horiz-adv-x="1000" >
+<font id="Kepler-452b-452b" horiz-adv-x="1000" >
   <font-face 
-    font-family="Kepler"
+    font-family="Kepler-452b"
     font-weight="500"
     font-stretch="normal"
     units-per-em="1175"

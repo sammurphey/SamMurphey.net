@@ -36,7 +36,7 @@ class OverviewView extends Component {
 	getData () {
 		console.log("getting overview data");
 		if (this.props.category !== "all") {
-			var url = "https://sammurphey.net/api/index.php?table=" + this.props.table + "&id=" + this.props.ref_id + "&public=true";
+			var url = "https://api.sammurphey.net/index.php?table=" + this.props.table + "&id=" + this.props.ref_id + "&public=true";
 			console.log(url);
 			fetch(url)
 				.then(res => res.json())
@@ -51,11 +51,11 @@ class OverviewView extends Component {
 				category: "all"
 			}
 			this.setState({"data": data});
-			this.setState({"gridUrl": "https://sammurphey.net/api/index.php?view=overview&public=true&sort_by=date&sort_dir=DESC"});
+			this.setState({"gridUrl": "https://api.sammurphey.net/index.php?view=overview&public=true&sort_by=date&sort_dir=DESC"});
 		}
 	}
 	updateGrid (data) {
-		var url = "https://sammurphey.net/api/index.php?category=" + data.category  + "&view=overview&public=true&sort_by=date&sort_dir=DESC";
+		var url = "https://api.sammurphey.net/index.php?category=" + data.category  + "&view=overview&public=true&sort_by=date&sort_dir=DESC";
 		console.log(url);
 		this.setState({"gridUrl": url});
 		switch(data.category) {

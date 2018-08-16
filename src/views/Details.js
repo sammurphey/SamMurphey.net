@@ -49,7 +49,7 @@ class DetailsView extends Component {
 	}
 	getData () {
 		console.log("getting project data");
-		var url = "https://sammurphey.net/api/index.php?table=" + this.props.table + "&id=" + this.props.ref_id + "&public=true";
+		var url = "https://api.sammurphey.net/index.php?table=" + this.props.table + "&id=" + this.props.ref_id + "&public=true";
 		console.log(url);
 		fetch(url)
 			.then(res => res.json())
@@ -108,7 +108,7 @@ class DetailsView extends Component {
 	}
 	getAlbumData (id) {
 		console.log("getting album data");
-		var url = "https://sammurphey.net/api/index.php?table=albums&id=" + id + "&public=true";
+		var url = "https://api.sammurphey.net/index.php?table=albums&id=" + id + "&public=true";
 		console.log(url);
 		fetch(url)
 			.then(res => res.json())

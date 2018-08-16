@@ -11,7 +11,7 @@ class Gallery extends Component {
 		}
 	}
 	componentDidMount () {
-		fetch("https://sammurphey.net/api/index.php?table=imgs")
+		fetch("https://api.sammurphey.net/index.php?table=imgs")
 			.then(res => res.json())
 			.then((data) => {
 				this.setState({data});

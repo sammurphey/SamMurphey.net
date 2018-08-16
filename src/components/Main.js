@@ -89,7 +89,7 @@ class Main extends Component {
 		routes: []
 	}
 	componentDidMount () {
-		fetch("https://sammurphey.net/api/index.php?public=true&table=_refs")
+		fetch("https://api.sammurphey.net/index.php?public=true&table=_refs")
 			.then(res => res.json())
 				.then((data) => {
 					this.setState({"routes": data});
@@ -101,7 +101,7 @@ class Main extends Component {
 			<main id="main" className="container">
 					<Switch>
 						<Route exact={true} path="/" render={() => (
-							<OverviewView category="all" title="Hello World" table="default" />
+							<OverviewView category="all" title="Hello World," table="default" />
 						)} />
 						{this.state.routes.map((route) => (
 							<Route exact={true} path={route.url} key={route.url} render={() => (

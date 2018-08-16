@@ -18,7 +18,7 @@ class MusicPlayer extends Component {
 		}
 	}
 	getSong (name) {
-		var url = "https://sammurphey.net/api/index.php?table=songs&name=" + name + "&public=true";
+		var url = "https://api.sammurphey.net/index.php?table=songs&name=" + name + "&public=true";
 		fetch(url)
 			.then(res => res.json())
 				.then((data) => {

@@ -12,7 +12,7 @@ class SearchView extends Component {
 	componentDidMount () {
 		var url = window.location.pathname.replace("/search/","");
 		this.setState({
-			"endpoint": "https://sammurphey.net/api/index.php?search=" + url + "&public=true&sort_by=date&sort_dir=DESC",
+			"endpoint": "https://api.sammurphey.net/index.php?search=" + url + "&public=true&sort_by=date&sort_dir=DESC",
 			"currentSearch": url
 		});
 	}
@@ -24,7 +24,7 @@ class SearchView extends Component {
 			this.setState({"currentSearch": url});
 			if (url.length) {
 				this.setState({
-					"endpoint": "https://sammurphey.net/api/index.php?search=" + url + "&public=true&sort_by=date&sort_dir=DESC"
+					"endpoint": "https://api.sammurphey.net/index.php?search=" + url + "&public=true&sort_by=date&sort_dir=DESC"
 				});
 			}
 		}
