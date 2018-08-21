@@ -1035,7 +1035,7 @@ input {
   max-height: calc(420px / 2 + 4px);
   overflow: hidden; }
   .track_playback .panel {
-    height: calc(50% - 2px);
+    height: calc(50% - 2px) !important;
     margin: 0;
     padding: 0;
     position: relative; }
