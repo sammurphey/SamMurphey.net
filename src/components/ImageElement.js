@@ -4,13 +4,15 @@ class ImageElement extends Component {
 	state = {
 		alt: "",
 		id: "",
-		path: "error",
 		container_style: {},
-		image_style: {},
-		img_shape: "",
-		img_pos: "",
+		img_style: {},
+		shape: "",
+		pos: "",
 		override_shape: "",
-		title: ""
+		title: "",
+		color: "",
+		src: false,
+		src_set: ""
 	}
 	componentDidMount () {
 		if (this.props.ref_id) {
@@ -30,13 +32,35 @@ class ImageElement extends Component {
 		}
 	}
 	getData (ref_id) {
-		fetch("https://api.sammurphey.net/index.php?table=imgs&id=" + ref_id)
+		fetch("https://api.sammurphey.net/v2/index.php?table=imgs&id=" + ref_id)
 			.then(res => res.json())
 				.then((data) => {
 					var img = data[0],
+						base = "https://cdn.sammurphey.net/v2/",
+						i, src, src_set = "",
 						cs  = {},
 						is  = {},
 						shape = "";
+
+					// PATHS
+					src = base + img.path + "." + img.ext;
+					for (i = 0; i < img.sizes; i += 1) {
+						var new_path = base + img.path,
+							tmp_size = i + 1,
+							new_size;
+						if (tmp_size < 7) {
+							new_size = tmp_size * 100;
+						} else if (tmp_size < 14) {
+							new_size = tmp_size * 200;
+						} else {
+							new_size = tmp_size * 300;
+						}
+						src_set += new_path + "__" + new_size + "px." + img.ext + " " + new_size + "w, ";
+						if (i + 1 === img.sizes) {
+							src_set += new_path + "." + img.ext + " " + img.original_size + "w";
+						}
+					}
+					// POSITION
 					switch (img.position) {
 						case "left":
 							cs = {flexDirection: "row"};
@@ -55,11 +79,14 @@ class ImageElement extends Component {
 							cs = {justifyContent: "center", alignItems: "center"};
 							break;
 					}
+
+					// SHAPE OVERRIDE CHECK
 					if (this.state.override_shape) {
 						shape = this.state.override_shape;
 					} else {
 						shape = img.shape;
 					}
+					// ACTUALL SHAPE
 					switch (shape) {
 						case "tall":
 							is = {height: "auto", width: 100 + "%"};
@@ -70,14 +97,19 @@ class ImageElement extends Component {
 								is = {height: 100 + "%", width: "auto"};
 								break;
 					}
+
+					// COMMIT RESULTS
 					this.setState ({
 						alt: img.alt || img.title,
-						path: img.path,
 						title: img.title || img.alt,
+						color: img.color,
 						container_style: cs,
+						src: src,
+						src_set: src_set,
 						img_style: is,
-						img_shape: shape,
-						img_pos: img.position
+						shape: shape,
+						ext: img.ext,
+						pos: img.position
 					})
 				});
 	}
@@ -87,7 +119,8 @@ class ImageElement extends Component {
 	render () {
 		return (
 			<div className="img_container" data-id={this.state.id} data-shape={this.state.img_shape} data-pos={this.state.img_pos} style={this.state.container_style}>
-				<img alt={this.state.alt} src={this.state.path} style={this.state.img_style} title={this.state.title} onLoad={this.handleImgLoad}/>
+				{this.state.src && this.state.src_set && <img alt={this.state.alt} src={this.state.src} srcSet={this.state.src_set} style={this.state.img_style} title={this.state.title} onLoad={this.handleImgLoad}/>}
+				{this.state.ext === "mp4" && <video src={this.state.src}/>}
 			</div>
 		);
 	}

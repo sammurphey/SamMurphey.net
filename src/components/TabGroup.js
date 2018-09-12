@@ -52,7 +52,7 @@ class TabGroup extends Component {
 	}
 	getSong (name) {
 		console.log("getting song...")
-		var url = "https://api.sammurphey.net/index.php?table=songs&name=" + name + "&public=true";
+		var url = "https://api.sammurphey.net/v2/index.php?table=songs&name=" + name + "&public=true";
 		fetch(url)
 			.then(res => res.json())
 				.then((data) => {

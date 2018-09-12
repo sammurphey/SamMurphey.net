@@ -89,7 +89,7 @@ class Main extends Component {
 		routes: []
 	}
 	componentDidMount () {
-		fetch("https://api.sammurphey.net/index.php?public=true&table=_refs")
+		fetch("https://api.sammurphey.net/v2/index.php?public=true&table=_refs")
 			.then(res => res.json())
 				.then((data) => {
 					this.setState({"routes": data});

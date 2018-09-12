@@ -23,7 +23,7 @@ class GridItem extends Component {
 	}
 	getData(ref_id, table) {
 		if (ref_id && table) {
-			fetch("https://api.sammurphey.net/index.php?table=" + table + "&id=" + ref_id)
+			fetch("https://api.sammurphey.net/v2/index.php?table=" + table + "&id=" + ref_id)
 				.then(res => res.json())
 					.then((data) => {
 						var item = data[0];

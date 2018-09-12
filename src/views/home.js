@@ -14,7 +14,7 @@ class HomePage extends Component {
 	}
 
 	render () {
-		var url = "https://api.sammurphey.net/index.php?view=overview&sort_by=date&sort_dir=DESC";
+		var url = "https://api.sammurphey.net/v2/index.php?view=overview&sort_by=date&sort_dir=DESC";
 		return (
 			<div>
     			<article id="homepage_intro" className={this.state.anim} key="0">
