@@ -1,5 +1,15 @@
 import React, {Component} from "react";
 
+
+
+function Img(ext) {
+	switch(ext) {
+		case "jpg":
+		case "png":
+			//
+	}
+}
+
 class ImageElement extends Component {
 	state = {
 		alt: "",
@@ -11,7 +21,7 @@ class ImageElement extends Component {
 		override_shape: "",
 		title: "",
 		color: "",
-		src: false,
+		src: "",
 		src_set: ""
 	}
 	componentDidMount () {
@@ -51,9 +61,9 @@ class ImageElement extends Component {
 						if (tmp_size < 7) {
 							new_size = tmp_size * 100;
 						} else if (tmp_size < 14) {
-							new_size = tmp_size * 200;
+							new_size = 600 + ((tmp_size - 6) * 200);
 						} else {
-							new_size = tmp_size * 300;
+							new_size = 2000 + ((tmp_size - 13) * 400);
 						}
 						src_set += new_path + "__" + new_size + "px." + img.ext + " " + new_size + "w, ";
 						if (i + 1 === img.sizes) {
@@ -108,6 +118,7 @@ class ImageElement extends Component {
 						src_set: src_set,
 						img_style: is,
 						shape: shape,
+						size: img.original_size,
 						ext: img.ext,
 						pos: img.position
 					})
@@ -118,9 +129,15 @@ class ImageElement extends Component {
 	}
 	render () {
 		return (
-			<div className="img_container" data-id={this.state.id} data-shape={this.state.img_shape} data-pos={this.state.img_pos} style={this.state.container_style}>
-				{this.state.src && this.state.src_set && <img alt={this.state.alt} src={this.state.src} srcSet={this.state.src_set} style={this.state.img_style} title={this.state.title} onLoad={this.handleImgLoad}/>}
-				{this.state.ext === "mp4" && <video src={this.state.src}/>}
+			<div className="img_container" data-id={this.state.id} data-type={this.state.ext} data-shape={this.state.img_shape} data-pos={this.state.img_pos} style={this.state.container_style}>
+			{this.state.ext !== "mp4" &&
+				<img alt={this.state.alt} src={this.state.src} srcSet={this.state.src_set} style={this.state.img_style} title={this.state.title} onLoad={this.handleImgLoad}/>
+			}
+			{this.state.ext === "mp4" &&
+			<video width={this.state.size + "px"} autoPlay loop>
+				<source src={this.state.src} type="video/mp4"/>
+			</video>
+			}
 			</div>
 		);
 	}

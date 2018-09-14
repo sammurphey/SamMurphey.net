@@ -144,11 +144,15 @@
   position: relative;
   top: 0;
   width: 100%; }
-  .img_container.loaded {
+  .img_container.loaded, .img_container[data-type="mp4"] {
     animation: flicker_on 1s linear forwards; }
-  .img_container img {
+  .img_container img, .img_container video {
     flex-shrink: 0;
     object-fit: cover; }
+  .img_container video {
+    position: absolute;
+    height: 100%;
+    width: 100%; }
 
 a {
   color: inherit;

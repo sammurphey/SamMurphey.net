@@ -8,11 +8,16 @@
 	position: relative;
 	top: 0;
 	width: 100%;
-	&.loaded {
+	&.loaded, &[data-type = "mp4"] {
 		animation: flicker_on 1s linear forwards;
 	}
-	img {
+	img, video {
 		flex-shrink: 0;
 		object-fit: cover;
+	}
+	video {
+		position: absolute;
+		height: 100%;
+		width: 100%;
 	}
 }
