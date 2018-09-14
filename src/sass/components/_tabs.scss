@@ -1,12 +1,41 @@
-.tab_page {
-	max-height: $panelSize;
-	height: 100%;
-	overflow: auto;
-	width: calc(100% - 4px)!important;
-	&:not(.selected) {
+.tab_group {
+
+}
+
+.tabs {
+	flex-grow: 0;
+	flex-shrink: 0;
+	height: 84px;
+	width: 100%;
+	.tab {
+		background: $lightGrey;
+		color: $highlightColor;
+		&.selected {
+			background: $plasticColor;
+			color: $textColor;
+		}
+	}
+}
+
+.tab_pages {
+	flex-grow: 1;
+	padding: 2px;
+	.tab_page {
+		flex-grow: 0;
+		flex-shrink: 1;
 		height: 0;
-		overflow: hidden;
 		margin: 0;
+		max-height: $panelSize;
+		overflow: hidden;
 		padding: 0;
+		width: 0;
+		&.selected {
+			flex-grow: 1;
+			flex-shrink: 0;
+			height: 100%;
+			overflow: auto;
+			padding: $paddingXL $paddingXXL;
+			width: calc(100% - 4px)!important;
+		}
 	}
 }

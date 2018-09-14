@@ -55,7 +55,7 @@ class MusicPlayer extends Component {
 							{this.state.isPlaying && <svg height="32px" width="32px" />}
 							{!this.state.isPlaying && <svg height="32px" width="32px" />}
 						</button>
-						<div class="stream_link">
+						<div className="stream_link">
 							<p>
 								Streamable tracks coming soon...
 								{this.state.song.file && <span><br/>

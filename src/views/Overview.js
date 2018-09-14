@@ -59,6 +59,16 @@ class OverviewView extends Component {
 		console.log(url);
 		this.setState({"gridUrl": url});
 		switch(data.category) {
+			case "music":
+				this.setState({
+					"gridTitle": "All Recent Music Releases",
+					"gridDesc": [
+						"Browse work from all of the aliases above.",
+						"They are displayed in reverse-chronological order, with the most recent work first.",
+						"Tap on a tile to learn more about it."
+					]
+				});
+				break;
 			case "store":
 				this.setState({
 					"gridTitle": "All Products",
@@ -71,7 +81,7 @@ class OverviewView extends Component {
 				break;
 			default:
 				this.setState({
-					"gridTitle": "Recent " + data.title + " Projects",
+					"gridTitle": "All Recent " + data.title + " Projects",
 					"gridDesc": [
 						"Browse work from all of the subcategories above.",
 						"They are displayed in reverse-chronological order, with the most recent work first.",

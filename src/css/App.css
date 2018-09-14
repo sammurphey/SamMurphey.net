@@ -977,17 +977,6 @@ input {
       flex-grow: 0;
       flex-shrink: 1;
       width: 100%; } }
-  .album_info .tabs {
-    flex-grow: 0;
-    flex-shrink: 0;
-    height: 84px;
-    width: 100%; }
-    .album_info .tabs .tab {
-      background: #b1b1b1;
-      color: #FFF; }
-      .album_info .tabs .tab.selected {
-        background: #F8F8F8;
-        color: #000; }
 
 .has_album_data {
   display: flex;
@@ -1056,16 +1045,37 @@ input {
 .single_view .tab_page {
   width: calc(100% - 4px); }
 
-.tab_page {
-  max-height: 420px;
-  height: 100%;
-  overflow: auto;
-  width: calc(100% - 4px) !important; }
-  .tab_page:not(.selected) {
+.tabs {
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 84px;
+  width: 100%; }
+  .tabs .tab {
+    background: #b1b1b1;
+    color: #FFF; }
+    .tabs .tab.selected {
+      background: #F8F8F8;
+      color: #000; }
+
+.tab_pages {
+  flex-grow: 1;
+  padding: 2px; }
+  .tab_pages .tab_page {
+    flex-grow: 0;
+    flex-shrink: 1;
     height: 0;
-    overflow: hidden;
     margin: 0;
-    padding: 0; }
+    max-height: 420px;
+    overflow: hidden;
+    padding: 0;
+    width: 0; }
+    .tab_pages .tab_page.selected {
+      flex-grow: 1;
+      flex-shrink: 0;
+      height: 100%;
+      overflow: auto;
+      padding: 16px 32px;
+      width: calc(100% - 4px) !important; }
 
 .narrative_view .story_mode .panel_wrapper {
   height: auto;

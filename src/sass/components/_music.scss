@@ -39,20 +39,6 @@
 		flex-shrink: 1;
 		width: 100%;
 	}
-	.tabs {
-		flex-grow: 0;
-		flex-shrink: 0;
-		height: 84px;
-		width: 100%;
-		.tab {
-			background: $lightGrey;
-			color: $highlightColor;
-			&.selected {
-				background: $plasticColor;
-				color: $textColor;
-			}
-		}
-	}
 }
 
 .has_album_data {

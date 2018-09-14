@@ -87,13 +87,16 @@ class CategoryPreview extends Component {
 	}
 	render () {
 		return (
-			<div id="categories_container">
-				{this.state.data.map((item, k) => {
-					return (
-						<Category key={k} category={item.title} description={item.description} table={item.subcategories} displayHeaders={this.state.displayHeaders}/>
-					);
-				})}
-			</div>
+			<section className="category_preview">
+				{this.props.category == "music" && <div className="panel"><h2>Aliases</h2></div>}
+				<div id="categories_container">
+					{this.state.data.map((item, k) => {
+						return (
+							<Category key={k} category={item.title} description={item.description} table={item.subcategories} displayHeaders={this.state.displayHeaders}/>
+						);
+					})}
+				</div>
+			</section>
 		)
 	}
 }

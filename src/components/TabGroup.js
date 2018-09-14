@@ -34,7 +34,7 @@ class TabGroup extends Component {
 			if (data.category === "music") {
 				console.log("is music");
 				if (data.song_ids) {
-					tabs.unshift("Now Playing");
+				//	tabs.unshift("Now Playing");
 				}
 				if (data.category) {
 					tabs.push("Music Videos");
@@ -68,27 +68,64 @@ class TabGroup extends Component {
 					this.setState({"song": data});
 				})
 	}
+	handleTabSwitch (id) {
+		console.log("switching to tab #" + id);
+		var tab, tabs = document.getElementsByClassName("tab"),
+			new_tab = document.getElementById("tab_" + id),
+			tab_page, tab_pages = document.getElementsByClassName("tab_page"),
+			new_tab_page = document.getElementById("tab_page_" + id),
+			i;
+		for (i = 0; i < tabs.length; i += 1) {
+			tab = tabs[i];
+			tab_page = tab_pages[i];
+			tab.classList.remove("selected");
+			tab_page.classList.remove("selected");
+		}
+		new_tab.classList.add("selected");
+		new_tab_page.classList.add("selected");
+	}
 	render () {
+		console.log(this.state.data);
 		return(
-			<div className="album_info panel_wrapper">
+			<div className="album_info tab_group panel_wrapper">
 				<div className="tabs panel_wrapper">
 					{this.state.tabs.map((tab, k) => {
 						var c = "";
-						if (k === 1) {
+						if (k === 0) {
 							c = " selected";
 						}
 						return (
-							<div key={k} className={"panel tab" + c}>{tab}</div>
+							<div id={"tab_" + k} key={k} className={"panel tab" + c} onClick={() => {this.handleTabSwitch(k)}}>{tab}</div>
 						)
 					})}
 				</div>
+				<div className="tab_pages panel_wrapper">
 					{this.state.tabs.map((page, k) => {
 						var c = "";
-						if (k === 1) {
+						if (k === 0) {
 							c = " selected";
 						}
 						return (
-							<div key={k} className={"panel tab_page" + c}>
+							<div id={"tab_page_" + k}key={k} className={"panel tab_page" + c}>
+								<h2>{page}</h2>
+								{page === "about" && <div>
+								{this.state.data.description &&
+								Array.isArray(this.state.data.description) &&
+								<p>
+									{this.state.data.description.map((string, k) => {
+										return (
+											<span key={k}>
+												{string}<br/>
+											</span>
+										);
+									})}
+								</p>}
+								{this.state.data.description &&
+								!Array.isArray(this.state.data.description) &&
+								<p>
+									{this.state.data.description}
+								</p>}
+								</div>}
 								{page === "now_playing" && <div>
 									{this.state.song && <div>
 										<h2>{this.state.song.title}</h2>
@@ -114,6 +151,7 @@ class TabGroup extends Component {
 							</div>
 						)
 					})}
+				</div>
 			</div>
 		)
 	}

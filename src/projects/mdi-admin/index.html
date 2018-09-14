@@ -126,7 +126,7 @@
 		<p>Custom build admin area web app developed for managing Master Demolition Inc's projects, images, videos, blog posts, and web page content. Every aspect of the demolition company's web presence could be managed from this once place. As the public sites arcitecture became larger and more abstracted it became nescessary for a management system as editing json data by hand was becoming unreasonable. In addition the creation of this web app ensured the sites longevity well beyond my time on the project.</p>
 		<article>
 			<section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_admin/1.gif"><img src="https://cdn.sammurphey.net/mdi_admin/1.gif"></a>
@@ -136,7 +136,7 @@
         <p>The admin dashboard consisted of a nnumber of cards for different sections of the site, as well as some actionable items on each one. Of all the managable sections included: blogs, images, locations, webpages, projects, slideshows, and tools.</p>
       </section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_admin/2.jpg"><img src="https://cdn.sammurphey.net/mdi_admin/2.jpg"></a>
@@ -146,7 +146,7 @@
         <p>This image served as a guide for me while building the site. It helped me keep track of the ways in which data would flow throughout the different sections and how each reference file would need to be altered when one particular item was edited. While as an overview it may look like a confusing mess, folllowing a single arrow through the chart would quickly tell me all the info I needed to continue with the development.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_admin/3.gif"><img src="https://cdn.sammurphey.net/mdi_admin/3.gif"></a>
@@ -156,7 +156,7 @@
         <p>Of course the site needed to be locked away from the outside world. Users would need to log in with Google Oauth2.0 and match a whitelist of tokens in order to gain access.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_admin/4.1.png"><img src="https://cdn.sammurphey.net/mdi_admin/4.1.png"></a>
@@ -171,7 +171,7 @@
         <p>Many areas of the admin area looked quite similar, with a number of text fields filling in data and labeling the whole thing in the library. Blogs are an accesable example to give of this flow. After clicking on the blog card in the dashboard they would be taken to the list view seen in the first photo here. This would display all published posts, and clicking on one would give the ability to edit it. Further down the page was a simalar list for draft posts and a section for restoring deleted posts. Once inside users have the ability to update titles, descriptions, featured images, and page content. </p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_admin/5.png"><img src="https://cdn.sammurphey.net/mdi_admin/5.png"></a>
@@ -181,7 +181,7 @@
         <p>At the bottom of the edit page is the meta data section, where dates, keywords, and visability could be changed. Additionally you could assign a particular related service, which would include the post for consideration to be featured on that relavant service page on the public site. A script on the site would ultimately decided whether or not to feature the post by taking in a number of additional factors at runtime.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_admin/6.1.gif"><img src="https://cdn.sammurphey.net/mdi_admin/6.1.gif"></a>
@@ -196,7 +196,7 @@
         <p>The forms themselves are what make up the majority of the content in this web app and so a good deal of time went into optimizing their look and performance. Pulling heavily from material design with a few custom additions to fit the branding led to a minimal look with a number of custom elements. The select box design for example is entirely custom built giving consistent visual feel across all the form elements.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_admin/7.gif"><img src="https://cdn.sammurphey.net/mdi_admin/7.gif"></a>
@@ -206,7 +206,7 @@
         <p>The image libary was one of the key points in the entire site. As seen in the flow chart at the begining, editing an image would require an change to nearly every reference file and vice versa. Loading the image library ran a nearly identicle script as the one on MDI's public site, but would include images marked as private as well. The loading of images took in one reference file which would calculate the number of image continaners to create and the number of items needed to fill "above the fold". Once everything was calculated it would send off ajax requests for the images and populate them with dense srcsets keeping load times to a minimum.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_admin/8.1.gif"><img src="https://cdn.sammurphey.net/mdi_admin/8.1.gif"></a>
@@ -226,7 +226,7 @@
         <p>Once the library was loaded, the admin would be able to click on an image to open and edit it. The opening image animation was extensively optimized to be as performant as possible. Calculating the image size, the final full size, and the difference between beforehand lent to the insertion of a new absolutely positioned element that could be dropped in right on top of the original image. And then 2d transformed into its final position. </p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_admin/9.1.gif"><img src="https://cdn.sammurphey.net/mdi_admin/9.1.gif"></a>

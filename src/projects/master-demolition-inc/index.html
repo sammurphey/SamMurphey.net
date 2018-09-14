@@ -126,7 +126,7 @@
 		<p>Web development and design work for a Los Angeles Demolition Company. This started as a small promotional site, simply for converting adwords customers. Over time, the site gained more traffic and they were getting booked for more and more demolition projects. As a result the pictures and datasets I had to draw from grew, and so did the site. At it's core you have service pages describing the work, a contact page for general inquiries, a guided quote form, image gallery, and blog detailing the ongoing projects.</p>
 		<article>
 			<section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_web/1.jpg"><img src="https://cdn.sammurphey.net/mdi_web/1.jpg"></a>
@@ -146,7 +146,7 @@
         <p>Here you can see some of the original concept designs for the site. On the left is one of the earliest drafts, later more detailed versions would be made up in Photoshop. Here you can see a clear plan for an app shell arcitecture, ensuring that visitors to the site would not have to wait long before seeing pixels on screen.</p>
       </section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_web/2.jpg"><img src="https://cdn.sammurphey.net/mdi_web/2.jpg"></a>
@@ -156,7 +156,7 @@
         <p>In addition to the website I was tasked with designing the companies logo. We of course went through several different designs before homing in on the diamond and hard hat look. A good deal of time went into perfecting the geometry of the hard hat, getting it to the sweet spot of high readability and low vertex count. The design was perfected using illustrator and a web ready SVG was then carefully combed through and recoded to get the whole thing below the 14kb threshold. </p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_web/3.1.png"><img src="https://cdn.sammurphey.net/mdi_web/3.1.png"></a>
@@ -171,7 +171,7 @@
         <p>As mentioned above, one of the key points of the design was high readability. To accomplish this goal, two versions of the logo were made, one for small screens (or icons), and a larger one with more details. Since the version on the website was finalized in SVG this lent itself the oppurtunity to include both resolutions in one file. Using interally defined media queries, pieces of the logo would be hidden or become visable based on it's size.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_web/5.1.gif"><img src="https://cdn.sammurphey.net/mdi_web/5.1.gif"></a>
@@ -191,7 +191,7 @@
         <p>A few itterations of the spinner design. Going with an app shell arcitecture, there was a critical need for loading indication. Ultimatly a spinner was the most universally understood and gave an oppertunity to reinforce the branding. Tweaks were then made to the diamonds personality by varying its stroke width and the way in which it would move. One of the first animatics included two diamonds rotating in opposite directions with some interesting clipping effects. While it was a fun look, it took away from the immediate connection to the logo. The, more plain, spinning diamond was the clear option. The custom bezier timing of the animation was directly influenced by the Material Design Motion discussed at length during the Chrome Dev Summit in 2016. The speed and timing are intended to give a sence of tagibility to the spinner as if gravity were effecting its movements.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_web/6.1.gif"><img src="https://cdn.sammurphey.net/mdi_web/6.1.gif"></a>
@@ -206,7 +206,7 @@
         <p>One of the main points required in the design was a hero slideshow. Above you can see how this was done for for both mobile, and large screens. The soft fade between slides is subtle but eye catching. Personally I'm not a big fan of slideshows that actually move large elements accross the screen, and in context with the rest of the design it really would have been overkill. The more delicate approach used here allows you to focus on the imagery and highlights the changing text. The call to action at the bottom of the slides is where the real eye catching fun came in. An expanding button (or bar on smaller screens) would display text relevant to the current slide, and clicking on it would take you to the appropriate service page. This button is immediately noticeable upon first page visit and it's quick playfull movements contrast greatly agaist the peaceful slide transitions. This combination of movement was directly influencial in that button being one of the most clicked items on the entire site, serving its purpose exceptionally well.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_web/7.1.gif"><img src="https://cdn.sammurphey.net/mdi_web/7.1.gif"></a>
@@ -221,7 +221,7 @@
 				<p>Once the core functionality of the slideshow was nailed down, the next step was to optimize it's delivery. First, the code was reworked a number of times in order to get the imagery on screen in under 500ms. Secondly the whole section was hidden by default and only displayed after an onload hook on the first image. This ensured that the whole object came on screen at once, rather than seeing pieces of other slides pop in below. The result is much more eye catching and professional looking.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_web/9.gif"><img src="https://cdn.sammurphey.net/mdi_web/9.gif"></a>
@@ -231,7 +231,7 @@
 				<p>Further along down the homepage's design are two blue "cards" which showcase the company's different services. The work is split between commercial and residential services, thus the two separate cards. The imagery and the text layout were carefully designed for optimal legibility at all screen sizes. Not only affecting flow and text size, the images themselves would swap out at a number of breakpoints, ensuring that the user is never downloading larger images than they need for their particular screen.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_web/8.gif"><img src="https://cdn.sammurphey.net/mdi_web/8.gif"></a>
@@ -241,7 +241,7 @@
 				<p>Moving to a new page within the app shell arcitecture meant that all child elements would need to be removed and new ones filled in. This was done by fading out each "section" and removing the node once it was invisable. The elements were removed in reverse order up the page with a 30ms delay between each removal. This in combination with a smooth scroll back to the top made them leave just a little faster than the users movement. The combination made it very clear you were moving to a new page, and the timing left a blank page at about halfway through the scroll. Not only minimiznig repaints but also avoids overwhelming the users visual sences.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_web/10.1.gif"><img src="https://cdn.sammurphey.net/mdi_web/10.1.gif"></a>
@@ -256,7 +256,7 @@
 				<p>Deeper into the site is the gallery page. Here all of the photos and videos from the company's previous demolition projects are shown off. The first image here shows some of my early efforts in creating this gallery where you can see each photos json data being pulled in. This was done along with an overall reference json file which let the parser determine the number of image containers to build before a single jpg request gets sent out. Building it this was meant that when the image loaded and fades in, there is only a repain incured on the container element, and no reflow ever has to happen. Additionally it gives the user a very clear indication that a large ammount of content is on the way in a more explicit way than the spinner animation would accomplish on its own. This percieved performance benifit was apsolutly crucial for such a massive library. Additionally each image object included an array of srcset's to further speed up the real load time. Finally the spinner. On all other pages it exists while the content loads and fades out when it's all done. In most cases that's a only a few seconds and provides a comfortable distraction from having to wait. But here on the image library the "finished content" event would only fire once every image was added, and would ultimately be up to 20 seconds before it dissapeared. This made the page feel slow again so something had to change. The solution was on parse of the reference json a script would quickly take into account the devices screen size and calculate the number of images needed to fill cover the "above the fold" area. A counter callback on each image load would then check if this threshold was reached and remove the spinner when the user had a full page ready to interact with. This again optimized the percieved performace of the page and gave the user clear indication that they were free to start clicking and opening images.</p>
 			</section>
       <section>
-				<div class="flex">
+				<div className="flex">
 					<div>
 						<figure>
 							<a href="https://cdn.sammurphey.net/mdi_web/11.1.gif"><img src="https://cdn.sammurphey.net/mdi_web/11.1.gif"></a>
