@@ -1,12 +1,31 @@
 import React, {Component} from "react";
 
 
+function handleImgLoad (e) {
+	e.target.parentNode.classList.add("loaded");
+}
 
-function Img(ext) {
-	switch(ext) {
+function ImageContents (props) {
+	switch(props.ext) {
+		case "mp4":
+			return (
+				<video autoPlay loop>
+					<source src={props.src} type="video/mp4" />
+				</video>
+			);
 		case "jpg":
 		case "png":
-			//
+		default:
+			return (
+				<img
+					alt={props.alt}
+					src={props.src}
+					srcSet={props.src_set}
+					style={props.img_style}
+					title={props.title}
+					onLoad={handleImgLoad}
+				/>
+			);
 	}
 }
 
@@ -124,20 +143,10 @@ class ImageElement extends Component {
 					})
 				});
 	}
-	handleImgLoad (e) {
-		e.target.parentNode.classList.add("loaded");
-	}
 	render () {
 		return (
 			<div className="img_container" data-id={this.state.id} data-type={this.state.ext} data-shape={this.state.img_shape} data-pos={this.state.img_pos} style={this.state.container_style}>
-			{this.state.ext !== "mp4" &&
-				<img alt={this.state.alt} src={this.state.src} srcSet={this.state.src_set} style={this.state.img_style} title={this.state.title} onLoad={this.handleImgLoad}/>
-			}
-			{this.state.ext === "mp4" &&
-			<video width={this.state.size + "px"} autoPlay loop>
-				<source src={this.state.src} type="video/mp4"/>
-			</video>
-			}
+				<ImageContents alt={this.state.alt} title={this.state.title} ext={this.state.ext} src={this.state.src} src_set={this.state.src_set} img_style={this.state.img_style} />
 			</div>
 		);
 	}

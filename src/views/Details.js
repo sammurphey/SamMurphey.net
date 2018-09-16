@@ -47,6 +47,9 @@ class DetailsView extends Component {
 	componentWillUnmount () {
 		this.setState({anim: "page-leave"});
 	}
+	capitalizeFirstLetter(string) {
+	    return string.charAt(0).toUpperCase() + string.slice(1);
+	}
 	getData () {
 		console.log("getting project data");
 		var url = "https://api.sammurphey.net/v2/index.php?table=" + this.props.table + "&id=" + this.props.ref_id + "&public=true";
@@ -61,6 +64,19 @@ class DetailsView extends Component {
 					}
 					console.log(data);
 					if (data) {
+						if (data.title) {
+							var title_prefix = "Sam Murphey",
+								separator = " | ";
+							if (data.alias) {
+								title_prefix = data.alias
+							}
+							if (data.category !== "music" && data.subcategory) {
+								separator += this.capitalizeFirstLetter(data.subcategory) + " | ";
+							} else if (data.category){
+								separator += this.capitalizeFirstLetter(data.category) + " | ";
+							}
+							document.title = title_prefix + separator + data.title;
+						}
 						if (data.narrative) {
 							if (data.narrative.charAt(0) === "[") {
 								data.narrative = JSON.parse(data.narrative);

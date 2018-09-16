@@ -3,12 +3,46 @@ import {Redirect, Link} from "react-router-dom";
 import ImageElement from "./ImageElement";
 import MusicPlayer from "./MusicPlayer";
 
+function submitSearch () {
+	var str = document.getElementById("search_box").value;
+	this.setState({"nextSearch": str});
+}
+
+function SearchIntro (props) {
+	return (
+	<div className="search_view">
+		<div className="panel_wrapper">
+
+			<input type="text" name="search_box" id="search_box" placeholder={this.state.currentSearch} ref={this.input} />
+
+			<input type="submit" name="submit_search" id="submit_search" className="btn" value="Go"  onClick={((e) => this.submitSearch(e))} />
+
+		</div>
+		{this.state.nextSearch && <Redirect
+		  to={{
+			pathname: "/search/" + this.state.nextSearch
+		}} />}
+	</div>)
+}
+
+function HeroImg (props) {
+	if (props.id){
+		return(
+			<div className="hero_img panel">
+				<ImageElement ref_id={props.id}/>
+			</div>
+		);
+	} else {
+		return false;
+	}
+}
+
 class Intro extends Component {
 	state = {
 		title: "",
 		data: [],
 		alias: [],
-		hasImg: false,
+		showHero: false,
 		currentSearch: "",
 		nextSearch: false
 	}
@@ -26,7 +60,7 @@ class Intro extends Component {
 		if (this.props.view) {
 			this.setState({"view": this.props.view});
 			if (this.props.view === "project" || this.props.view === "details") {
-				this.setState({"hasImg": true});
+				this.setState({"showHero": true});
 			}
 		}
 	}
@@ -43,15 +77,11 @@ class Intro extends Component {
 		}
 		if (_props.view !== prevProps.view) {
 			if (_props.view === "project" || _props.view === "details") {
-				this.setState({"hasImg": true});
+				this.setState({"showHero": true});
 			} else {
-				this.setState({"hasImg": false});
+				this.setState({"showHero": false});
 			}
 		}
-	}
-	submitSearch () {
-		var str = document.getElementById("search_box").value;
-		this.setState({"nextSearch": str});
 	}
 	render () {
 		return (
@@ -93,7 +123,7 @@ class Intro extends Component {
 									<p className="subtitle">
 										Released: <span>{this.state.data.date}</span>
 										<br/>
-										Publisher: {this.state.data.label && <span>{this.state.data.label}</span>}{!this.state.data.label && <span>Self Released</span>}
+										Publisher: {this.state.data.label && <span><a href={this.state.data.label_link}>{this.state.data.label}</a></span>}{!this.state.data.label && <span>Self Released</span>}
 									</p>
 								</div>
 							</div>}
@@ -162,24 +192,10 @@ class Intro extends Component {
 
 
 						{/*search*/}
-						{this.state.view === "search" && <div className="search_view">
-							<div className="panel_wrapper">
-
-								<input type="text" name="search_box" id="search_box" placeholder={this.state.currentSearch} ref={this.input} />
-
-								<input type="submit" name="submit_search" id="submit_search" className="btn" value="Go"  onClick={((e) => this.submitSearch(e))} />
-
-							</div>
-							{this.state.nextSearch && <Redirect
-					          to={{
-					            pathname: "/search/" + this.state.nextSearch
-							}} />}
-						</div>}
+						{this.state.view === "search" && <SearchIntro />}
 					</div>}
 				</div>
-				{this.state.hasImg && <div className="hero_img panel">
-					{this.state.data.cover_img && <ImageElement ref_id={this.state.data.cover_img} />}
-				</div>}
+				{this.state.showHero && <HeroImg id={this.state.data.cover_img} />}
 			</section>
 		);
 	}

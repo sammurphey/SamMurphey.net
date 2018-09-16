@@ -104,7 +104,7 @@ class Main extends Component {
 							<OverviewView category="all" title="Hello World," table="default" />
 						)} />
 						{this.state.routes.map((route) => (
-							<Route exact={true} path={route.url} key={route.url} render={() => (
+							<Route exact={true} path={"/" + route.url} key={route.url} render={() => (
 								<ViewContainer data={route} />
 							)} />
 						))}
@@ -196,5 +196,4 @@ class Main extends Component {
 			)}
 		/>
 	))}*/
-
 export default Main;

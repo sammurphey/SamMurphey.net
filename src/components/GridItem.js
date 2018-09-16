@@ -34,7 +34,7 @@ class GridItem extends Component {
 							cover_img: item.cover_img,
 							date: item.date,
 							img_id: item.cover_img,
-							url: item.url,
+							url: "/" + item.url,
 							title: item.title,
 							subtitle: item.alias
 						});

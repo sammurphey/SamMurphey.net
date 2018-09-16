@@ -32,6 +32,9 @@ class SubcategoryView extends Component {
 	componentWillUnmount () {
 		this.setState({anim: "page-leave"});
 	}
+	capitalizeFirstLetter(string) {
+	    return string.charAt(0).toUpperCase() + string.slice(1);
+	}
 	getData () {
 		console.log("getting overview data");
 		var url = "https://api.sammurphey.net/v2/index.php?table=" + this.props.table + "&id=" + this.props.ref_id + "&public=true";
@@ -39,9 +42,17 @@ class SubcategoryView extends Component {
 		fetch(url)
 			.then(res => res.json())
 			.then((data) => {
-				this.setState({"data": data[0]});
+				data = data[0]
+				if (data.category === "music") {
+					document.title = this.capitalizeFirstLetter(data.title) + " | Releases";
+				} else {
+					if (data.title) {
+						document.title = "Sam Murphey | " + this.capitalizeFirstLetter(data.title);
+					}
+				}
+				this.setState({"data": data});
 				console.log(this.state.data);
-				this.updateGrid(data[0]);
+				this.updateGrid(data);
 			});
 	}
 	updateGrid (data) {

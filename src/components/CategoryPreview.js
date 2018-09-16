@@ -88,7 +88,7 @@ class CategoryPreview extends Component {
 	render () {
 		return (
 			<section className="category_preview">
-				{this.props.category == "music" && <div className="panel"><h2>Aliases</h2></div>}
+				{this.props.category === "music" && <div className="panel"><h2>Aliases</h2></div>}
 				<div id="categories_container">
 					{this.state.data.map((item, k) => {
 						return (

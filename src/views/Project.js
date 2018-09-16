@@ -60,6 +60,9 @@ class ProjectView extends Component {
 			"now_playing": true
 		});
 	}
+	capitalizeFirstLetter(string) {
+	    return string.charAt(0).toUpperCase() + string.slice(1);
+	}
 	getData () {
 		console.log("getting project data");
 		var url = "https://api.sammurphey.net/v2/index.php?table=" + this.props.table + "&id=" + this.props.ref_id + "&public=true";
@@ -74,6 +77,19 @@ class ProjectView extends Component {
 					}
 					console.log(data);
 					if (data) {
+						if (data.title) {
+							var title_prefix = "Sam Murphey",
+								separator = " | ";
+							if (data.alias) {
+								title_prefix = data.alias
+							}
+							if (data.category !== "music" && data.subcategory) {
+								separator += this.capitalizeFirstLetter(data.subcategory) + " | ";
+							} else if (data.category){
+								separator += this.capitalizeFirstLetter(data.category) + " | ";
+							}
+							document.title = title_prefix + separator + data.title;
+						}
 						if (data.narrative) {
 							if (data.narrative.charAt(0) === "[") {
 								data.narrative = JSON.parse(data.narrative);
@@ -271,7 +287,7 @@ class ProjectView extends Component {
 					{/* related */}
 						{this.state.data.related && <div className="related_view panel">
 							<h2>Related</h2>
-							<p>Check out these other projects.</p>
+							<p>If you enjoyed this, you might want to check these out too...</p>
 						</div>}
 						{this.state.data.related && <Grid data={this.state.data.related} data_type="related" />}
 					</div>}

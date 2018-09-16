@@ -33,19 +33,28 @@ class OverviewView extends Component {
 	componentWillUnmount () {
 		this.setState({anim: "page-leave"});
 	}
+	capitalizeFirstLetter(string) {
+	    return string.charAt(0).toUpperCase() + string.slice(1);
+	}
 	getData () {
 		console.log("getting overview data");
 		if (this.props.category !== "all") {
+			document.title = "Sam Murphey | " + this.props.category;
 			var url = "https://api.sammurphey.net/v2/index.php?table=" + this.props.table + "&id=" + this.props.ref_id + "&public=true";
 			console.log(url);
 			fetch(url)
 				.then(res => res.json())
 				.then((data) => {
-					this.setState({"data": data[0]});
+					data = data[0]
+					if (data.title) {
+						document.title = "Sam Murphey | " + this.capitalizeFirstLetter(data.title);
+					}
+					this.setState({"data": data});
 					console.log(this.state.data);
-					this.updateGrid(data[0]);
+					this.updateGrid(data);
 				});
 		} else {
+			document.title = "Sam Murphey | Homepage";
 			var data = {
 				description: "My name is Samantha Murphey. I'm a 23 year old trans-lesbian hacker-girl living in LA. I have a passion for merging art and code and so I spend most of my time building web-apps and producing music. There's quite a lot of material on this site to see / hear / play with, so I suggest choosing one of the categories below or to the left to start off with. Or if you think you can brave the chaos, scroll down a bit further for a full reverse-chronological view of ALL my work.",
 				category: "all"
