@@ -5,13 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Init variables
-$document_title = "Sam Murphey | Homepage";
-$document_description = "My name is Samantha Murphey. I'm a 23 year old trans-lesbian hacker-girl living in LA, with a passion for merging art and code!";
-$keywords = "code, art, music, design, games, transgender, lgbt, los angeles";
-$document_url = "https://sammurphey.net";
-$robots_txt= "INDEX FOLLOW";
-$document_version = "7.3.3";
-$creation_date = "9/16/2017";
+require_once("./src/DefaultValues.php");
 
 ?>
 <!DOCTYPE html>
@@ -39,14 +33,14 @@ $creation_date = "9/16/2017";
 	<link rel="cannonical" href="<?php echo $document_url; ?>">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script>
+	<!--<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script',
 	'https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-93371306-1', 'auto');
 	ga('send', 'pageview');
-	</script>
+</script>-->
 	<style>
 		<?php require_once("./src/css/index.css"); ?>
 	</style>

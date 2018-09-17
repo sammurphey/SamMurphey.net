@@ -498,7 +498,7 @@ input {
         #header .btn#search_btn {
           position: fixed;
           right: 32px;
-          top: 0; } }
+          top: 20px; } }
       #header .btn#search_btn:active, #header .btn#search_btn:focus, #header .btn#search_btn:hover {
         background: none; }
         #header .btn#search_btn:active svg polygon, #header .btn#search_btn:focus svg polygon, #header .btn#search_btn:hover svg polygon {
@@ -715,6 +715,12 @@ input {
         left: 88px;
         right: auto;
         top: 0px; }
+  .panel .corner-spacer {
+    display: inline-block;
+    width: 30px; }
+    @media (min-width: 600px) {
+      .panel .corner-spacer {
+        display: none; } }
 
 .inline_panel {
   display: flex;

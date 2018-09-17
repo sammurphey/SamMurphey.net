@@ -88,7 +88,7 @@ class Intro extends Component {
 			<section id="intro">
 				<div className="panel">
 					<div className="corner"></div>
-					<h1><span className="corner-spacer">&nbsp;</span>{this.props.title}</h1>
+					<h1><span className="corner-spacer"></span>{this.props.title}</h1>
 					{this.state.data && <div className="has_data">
 
 						{(this.state.view === "overview" || this.state.view === "subcategory") && <div className="default_view">

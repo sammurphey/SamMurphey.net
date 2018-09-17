@@ -1,7 +1,10 @@
 <?php
-
-require_once("./src/components/Router.php");
 require_once("./src/components/Header.php");
-?>
+echo "<div id='app'>";
+		require_once("./src/components/Router.php");
+		include_once("./src/components/Footer.php");
 
-<link href="./src/css/App.css" media="none" onload="if(media!='all')media='all'" rel="stylesheet">
+echo "</div>";
+?>
+<link href="./src/css/App.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400i" rel="stylesheet" media="none" onload="if(media!='all')media='all'" rel="stylesheet">
