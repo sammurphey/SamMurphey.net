@@ -474,6 +474,7 @@ input {
         top: 60px; } }
   #header .btn {
     border: 0;
+    display: inline-block;
     z-index: 4; }
     #header .btn#logo_btn, #header .btn#search_btn {
       align-items: center;
@@ -491,7 +492,6 @@ input {
       #header .btn#logo_btn * {
         padding: 0; }
     #header .btn#search_btn {
-      opacity: 0.4;
       position: absolute;
       right: calc(0px - 100vw + 142px); }
       @media (min-width: 600px) {
@@ -500,8 +500,7 @@ input {
           right: 32px;
           top: 0; } }
       #header .btn#search_btn:active, #header .btn#search_btn:focus, #header .btn#search_btn:hover {
-        background: none;
-        opacity: 1; }
+        background: none; }
         #header .btn#search_btn:active svg polygon, #header .btn#search_btn:focus svg polygon, #header .btn#search_btn:hover svg polygon {
           fill: none;
           stroke: #00EFF1; }
@@ -553,7 +552,7 @@ input {
           #menu ul li a:active {
             color: #00EFF1 !important; } }
 
-#main {
+#app {
   background: #989898;
   border-top: 4px solid #525252;
   border-right: 4px solid #CCC;
@@ -565,19 +564,19 @@ input {
   position: relative;
   z-index: 1;
   width: 100%; }
-  #main article {
+  #app article {
     flex-direction: column;
     margin-bottom: 18px !important;
     z-index: 3; }
     @media (max-width: 640px) {
-      #main article {
+      #app article {
         margin-bottom: 8px !important; } }
-    #main article > .has_data {
+    #app article > .has_data {
       display: flex;
       height: auto;
       flex-direction: column;
       width: 100%; }
-  #main article, #main footer {
+  #app article, #app footer {
     display: flex;
     flex-wrap: wrap;
     margin: 55px auto;
@@ -604,7 +603,7 @@ input {
 			width: calc(64px * 32);
 		}*/ }
     @media (min-width: 840px) {
-      #main article, #main footer {
+      #app article, #app footer {
         margin: 64px auto;
         width: calc(100% - (138px * 2)); } }
 
@@ -1147,9 +1146,6 @@ body {
         left: 15px;
         top: 15px;
         width: calc(100% - (15px * 2)); } }
-  body #root, body .App {
-    height: 100%;
-    width: 100%; }
 
 .version_number {
   font-size: 6px;

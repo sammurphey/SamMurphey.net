@@ -56,6 +56,7 @@
 	}
 	.btn {
 		border: 0;
+		display: inline-block;
 		z-index: 4;
 		&#logo_btn, &#search_btn {
 			align-items: center;
@@ -79,7 +80,6 @@
 			}
 		}
 		&#search_btn {
-		  	opacity: 0.4;
 		  	position: absolute;
 			right: calc(0px - 100vw + 142px);
 
@@ -92,7 +92,6 @@
 			&:focus,
 			&:hover {
 				background: none;
-				opacity: 1;
 				svg {
 					polygon {
 						fill: none;

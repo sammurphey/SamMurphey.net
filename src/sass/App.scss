@@ -39,10 +39,6 @@ body {
 			width: calc(100% - (#{$pageMarginLrg} * 2));
 		}
 	}
-	#root, .App {
-		height: 100%;
-		width: 100%;
-	}
 }
 
 .version_number {
