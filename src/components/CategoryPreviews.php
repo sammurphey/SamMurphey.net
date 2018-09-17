@@ -5,8 +5,6 @@
 	<?php
 		if ($current_category === "all") {
 
-		} else {
-
 		}
 	?>
 </article>

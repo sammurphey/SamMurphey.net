@@ -143,7 +143,11 @@
 		}
 	}
 }
-
+.subcategories_previews {
+	header {
+		margin-top: 4px;
+	}
+}
 .inline_panel {
 	display: flex;
 	flex-direction: column;

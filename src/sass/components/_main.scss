@@ -1,78 +1,46 @@
 @import "../vars";
 
-#app {
+main#app {
 	background: $baseColor;
 	border-top: 4px solid #525252;
 	border-right: 4px solid #CCC;
-	border-left: 4px solid #AAA;
+	border-left: 4px solid #7d7d7d;
 	flex-direction: column;
 	height: 100%;
-	//height: calc(100% - (#{$pageMarginSml} * 2));
-	//left: $pageMarginSml;
-	//margin: 10px;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	position: relative;
-	//position: absolute;
-	//top: $pageMarginSml;
-	//width: calc(100% - (#{$pageMarginSml} * 2));
 	z-index: 1;
-	//@media (min-width: 840px) {
-	//	height: calc(100% - (#{$pageMarginLrg} * 2));
-	//	left: $pageMarginLrg;
-	//	top: $pageMarginLrg;
-	//	width: calc(100% - (#{$pageMarginLrg} * 2));
-	//}
-
 	width: 100%;
-	//* {
-	//	display: none;
-	//}
-	article {
-		flex-direction: column;
-		margin-bottom: 18px!important;
-		z-index: 3;
-		@media(max-width: 640px) {
-			margin-bottom: 8px!important;
-		}
-		> .has_data {
-			display: flex;
-			height: auto;
-			flex-direction: column;
-			width: 100%;
-		}
-	}
-	article, footer {
+	& > article, & > #footer {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 55px auto;
 		position: relative;
 		width: 100%;
 		will-change: transform;
 		z-index: 2;
-
-		// sidebar active
+		/* sidebar active*/
 		@media(min-width: 840px) {
-			margin: $blockSize auto;
 			width: calc(100% - (#{$pagePaddingLrg} * 2));
 		}
-		/*@media(min-width: 1068px) {
-			width: calc(#{$blockSize} * 12);
+	}
+	& > article {
+		flex-direction: column;
+		margin: 55px auto 18px auto;
+		@media(min-width: 840px) {
+			margin: 114px auto 8px auto;
 		}
-		@media(min-width: 1324px) {
-			width: calc(#{$blockSize} * 16);
-		}
-		@media(min-width: 1580px) {
-			width: calc(#{$blockSize} * 20);
-		}
-		@media(min-width: 1836px) {
-			width: calc(#{$blockSize} * 24);
-		}
-		@media(min-width: 2092px) {
-			width: calc(#{$blockSize} * 28);
-		}
-		@media(min-width: 2248px) {
-			width: calc(#{$blockSize} * 32);
+		/*> .has_data {
+			display: flex;
+			height: auto;
+			flex-direction: column;
+			width: 100%;
 		}*/
+	}
+	#footer {
+		margin: 55px auto;
+		@media(min-width: 840px) {
+			margin: $blockSize auto;
+		}
 	}
 }
