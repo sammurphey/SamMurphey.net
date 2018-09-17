@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<section class="category_preview">
+<article class="category_preview">
 	<?php
 		if ($current_category === "all") {
 
@@ -9,4 +9,5 @@
 
 		}
 	?>
-</section>
+</article>
+https://sammurphey.net/projects/becreative360

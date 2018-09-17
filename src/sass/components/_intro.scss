@@ -1,15 +1,16 @@
 @import "../vars";
 
 #intro {
-	display: flex;
+/*	display: flex;
 	flex-direction: column-reverse;
-	flex-wrap: wrap;
+	flex-wrap: wrap; */
 	height: auto;
+	padding-top: 16px;
 	position: relative;
 	z-index: 4;
 	@media(min-width: 840px) {
-		flex-direction: row;
-		flex-wrap: nowrap;
+/*		flex-direction: row;
+		flex-wrap: nowrap;*/
 		min-height: $panelSize;
 	}
 	.project_view & {

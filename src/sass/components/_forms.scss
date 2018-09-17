@@ -3,7 +3,7 @@
 textarea,
 input {
 	background: $baseColor!important;
-	border: 1px solid $textColor;
+	border: 1px solid $black;
 	color: $highlightColor;
 	cursor: pointer;
 	display: block;
@@ -63,7 +63,7 @@ input {
 	}
 	&[type="submit"] {
 		background: rgba(255, 255, 255, 0)!important;
-		color: $textColor!important;
+		color: $black!important;
 		&:hover {
 			background: $highlightColor!important;
 			border-color: $darkGrey!important;

@@ -90,16 +90,17 @@
     transform: translateY(8px); } }
 
 #intro {
-  display: flex;
-  flex-direction: column-reverse;
-  flex-wrap: wrap;
+  /*	display: flex;
+	flex-direction: column-reverse;
+	flex-wrap: wrap; */
   height: auto;
+  padding-top: 16px;
   position: relative;
   z-index: 4; }
   @media (min-width: 840px) {
     #intro {
-      flex-direction: row;
-      flex-wrap: nowrap;
+      /*		flex-direction: row;
+		flex-wrap: nowrap;*/
       min-height: 420px; } }
   @media (max-width: 839px) {
     .project_view #intro .corner, .project_view #intro .corner-spacer {
@@ -191,12 +192,12 @@ p {
   position: relative;
   word-break: break-word; }
   .panel p {
-    color: #989898; }
+    color: #666; }
     .panel p.subtitle {
       color: #000; }
       .panel p.subtitle a,
       .panel p.subtitle span {
-        color: #989898; }
+        color: #666; }
   p + * {
     margin-top: 16px; }
 
