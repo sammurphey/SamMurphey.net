@@ -1,6 +1,6 @@
 <?php
 function api_fetch($params, $public = true) {
-	$api_url = "https://api.sammurphey.net/v2/index.php?" . $params;
+	$api_url = "https://api.sammurphey.net/v3/index.php?" . $params;
 	if ($public) {
 		$api_url .= "&public=true";
 	}

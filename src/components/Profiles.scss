@@ -1,0 +1,13 @@
+.profile_photo {
+	flex-grow: 0;
+	flex-shrink: 0;
+	margin-right: $gridSize;
+	.img_container {
+		background: $plasticColor;
+		border-radius: 50%;
+		box-shadow: $chip_shadow;
+		height: $blockSize;
+		overflow: hidden;
+		width: $blockSize;
+	}
+}
