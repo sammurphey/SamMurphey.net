@@ -13,7 +13,7 @@ main#app {
 	z-index: 1;
 	width: 100%;
 	& > article, & > #footer {
-		display: flex;
+		display: flex!important;
 		flex-wrap: wrap;
 		position: relative;
 		width: 100%;

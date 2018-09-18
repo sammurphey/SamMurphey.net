@@ -51,19 +51,35 @@
 				foreach($subcategories as $subcategory) {
 					?>
 					<div class="inline_panel">
-						<div class="panel panel_header">
-						<?php
-							if (array_key_exists("cover_img", $subcategory)) {
-								echo "<div class='profile_bg'><div class='bg_container'>" . img_element($subcategory["cover_img"], "tall") . "</div></div>";
-							}
-							if (array_key_exists("profile_img", $subcategory)) {
+						<a href="<?php echo $subcategory['url']; ?>">
+							<div class="panel panel_header">
+							<?php
+								if (array_key_exists("cover_img", $subcategory) && $subcategory["cover_img"]) {
+									echo "<div class='profile_bg'><div class='bg_container'>" . img_element($subcategory["cover_img"], "tall") . "</div></div>";
+								}
+								if (array_key_exists("profile_img", $subcategory) && $subcategory["profile_img"]) {
+									echo "<div class='profile_photo'>" . img_element($subcategory["profile_img"]) . "</div>";
+								}
+							echo "<h3>" . $subcategory["title"] . "</h3>";
+							?>
+							</div>
+							<div class="panel panel_article">
+								<?php
+									if (array_key_exists("description", $subcategory)) {
 
-							}
-						echo "<h3>" . $subcategory["title"] . "</h3>";
-						?>
-						</div>
-						<div class="panel panel_article">
-						</div>
+										echo "<p>";
+										if (is_array($subcategory["description"])) {
+											foreach ($subcategory["description"] as $line) {
+												echo "<p>" . $line . "<br/></p>";
+											}
+										} else {
+											echo $subcategory["description"];
+										}
+										echo "</p>";
+									}
+								?>
+							</div>
+						</a>
 					</div>
 				<?php
 				}

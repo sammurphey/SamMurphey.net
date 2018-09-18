@@ -32,6 +32,7 @@ require_once("./src/DefaultValues.php");
 	<link rel="alternate" href="<?php echo $document_url; ?>" hreflang="en">
 	<link rel="cannonical" href="<?php echo $document_url; ?>">
 
+	<link rel="shortcut icon" href="https://sammurphey.net/favicon.ico">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<!--<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -42,10 +43,11 @@ require_once("./src/DefaultValues.php");
 	ga('send', 'pageview');
 </script>-->
 	<style>
-		<?php require_once("./src/css/index.css"); ?>
+		<?php
+		require_once($php_root. "src/css/index.css"); ?>
 	</style>
 </head>
 <body>
-	<?php require_once("./src/App.php"); ?>
+	<?php require_once($php_root . "src/App.php"); ?>
 </body>
 </html>

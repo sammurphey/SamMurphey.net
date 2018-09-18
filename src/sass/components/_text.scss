@@ -63,7 +63,7 @@ p {
 	}
 }
 h1, h2, h3, h4, h5, h6 {
-	display: inline-block;
+	display: block;
 	margin: 0 0 8px 0;
 	word-break: break-word;
 	&:last-child {

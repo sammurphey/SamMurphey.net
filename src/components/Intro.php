@@ -2,6 +2,9 @@
 		<div class="corner"></div>
 		<h1 id='page_title'><span class="corner-spacer"></span><?php echo $page_title; ?></h1>
 		<?php
+			if ($page_profile_photo) {
+				echo "<div class='profile_photo lrg'>" . img_element($page_profile_photo) . "</div>";
+			}
 			if ($page_description) {
 				echo "<p id='page_description'>";
 				if (is_array($page_description)) {

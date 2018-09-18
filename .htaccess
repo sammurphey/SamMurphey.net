@@ -1,9 +1,7 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.gif|\.jpeg|\.bmp|\.svg|\.otf|\.ttf|\.woff|\.woff2)$
+RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.gif|\.jpeg|\.bmp|\.svg|\.otf|\.ttf|\.woff|\.woff2|\.php|\.css)$
 RewriteRule ^(.*)$ ./index.php [NC,L,QSA]
 </IfModule>
 
@@ -23,7 +21,7 @@ RewriteRule ^(.*)$ ./index.php [NC,L,QSA]
 </IfModule>
 
 <IfModule mod_headers.c>
-  <FilesMatch "\.(html|js|css|xml|gz)$">
+  <FilesMatch "\.(html|php|js|css|xml|gz)$">
     Header append Vary: Accept-Encoding
   </FilesMatch>
 </IfModule>

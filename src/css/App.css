@@ -202,7 +202,7 @@ p {
     margin-top: 16px; }
 
 h1, h2, h3, h4, h5, h6 {
-  display: inline-block;
+  display: block;
   margin: 0 0 8px 0;
   word-break: break-word; }
   h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
@@ -565,7 +565,7 @@ main#app {
   z-index: 1;
   width: 100%; }
   main#app > article, main#app > #footer {
-    display: flex;
+    display: flex !important;
     flex-wrap: wrap;
     position: relative;
     width: 100%;
@@ -723,7 +723,7 @@ main#app {
   @media (min-width: 1580px) {
     .inline_panel {
       width: 33.3333333%; } }
-  .inline_panel > * {
+  .inline_panel .panel_header, .inline_panel .panel_article {
     padding: 16px calc(64px / 2); }
   .inline_panel .panel_header {
     align-items: center;
@@ -733,7 +733,9 @@ main#app {
     position: relative; }
     @media (max-width: 1580px) {
       .inline_panel .panel_header h2 {
-        font-size: 10px; } }
+        font-size: 10px; }
+      .inline_panel .panel_header .profile_photo .img_container {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); } }
     .inline_panel .panel_header .profile_bg {
       height: 100%;
       left: 0;
@@ -1145,14 +1147,19 @@ main#app {
 .profile_photo {
   flex-grow: 0;
   flex-shrink: 0;
+  float: left;
   margin-right: 16px; }
   .profile_photo .img_container {
     background: #F8F8F8;
     border-radius: 50%;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
     height: 64px;
     overflow: hidden;
     width: 64px; }
+  .profile_photo.lrg {
+    margin-top: 12px; }
+    .profile_photo.lrg .img_container {
+      height: 70px;
+      width: 70px; }
 
 .version_number {
   font-size: 6px;

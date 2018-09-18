@@ -159,7 +159,7 @@
 	@media(min-width: 1580px) {
 		width: 33.3333333%;
 	}
-	> * {
+	.panel_header, .panel_article {
 		padding: $paddingXL calc(#{$blockSize} / 2);
 	}
 	.panel_header {
@@ -171,6 +171,11 @@
 		@media(max-width: 1580px) {
 			h2 {
 				font-size: 10px;
+			}
+			.profile_photo {
+				.img_container {
+					box-shadow: $chip_shadow;
+				}
 			}
 		}
 		.profile_bg {

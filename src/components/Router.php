@@ -1,37 +1,52 @@
 <?php
 
 // get data
+$ref_data = false;
 if (strlen($current_path) > 0) {
-	$tmp_data = api_fetch("url=". $current_path);
-	$data = api_fetch("table=". $tmp_data["table"] . "&id=" . $tmp_data["ref_id"]);
+	$ref_data = api_fetch("url=". $current_path);
+	$data = api_fetch("table=". $ref_data["table"] . "&id=" . $ref_data["ref_id"]);
 } else { //homepage, just get all the projects
 	$data = api_fetch("view=overview");
+	$page_profile_photo = 701;
 }
-
-if (array_key_exists("view", $data)) { $current_view = $data["view"]; }
-if (array_key_exists("title", $data)) { $page_title = $data["title"]; }
-if (array_key_exists("description", $data)) { $page_description = $data["description"]; } else {
+if ($ref_data && valExists("view", $ref_data)) {
+	$current_view = $ref_data["view"];
+}
+if (valExists("category", $data)) {
+	$current_category = $data["category"];
+}
+if (valExists("title", $data)) {
+	$page_title = $data["title"];
+}
+if (valExists("description", $data)) {
+	$page_description = $data["description"];
+} else {
 	if ($current_view !== "overview") {
 		$page_description = "";
 	}
 }
-if (array_key_exists("category", $data)) { $current_category = $data["category"]; }
-// echo "<pre>";
-// print_r($data);
-// echo "<br/><br/><b>".$view."</b></pre>";
+if (valExists("profile_img", $data)) {
+	$page_profile_photo = $data["profile_img"];
+}
 
+ echo "<pre>Refs<br/>";
+
+ print_r($ref_data);
+ echo "<br/>Data<br/>";
+ print_r($data);
+ echo "<br/><br/><b>".$view."</b></pre>";
 
 switch ($current_view) {
 	case "overview":
-		include_once("./src/views/Overview.php");
+		include_once($php_root . "src/views/Overview.php");
 		break;
 	case "subcategory":
-		include_once("./src/views/Subcategory.php");
+		include_once($php_root . "src/views/Subcategory.php");
 		break;
 	case "project":
-		include_once("./src/views/Project.php");
+		include_once($php_root . "src/views/Project.php");
 		break;
 	case "details":
-		include_once("./src/views/Details.php");
+		include_once($php_root . "src/views/Details.php");
 		break;
 }
