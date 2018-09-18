@@ -10,44 +10,76 @@
 		position: fixed;
 		top: 16px;
 		width: calc(#{$blockSize} * 2);
-		.contents {
-			height: 100%;
-			position: relative;
-			width: 100%;
-			> * {
-				opacity: 0.3;
-			}
-		}
 	}
 }
 
 
-#console {
+.rotated_contents {
 	bottom: calc(#{$blockSize} + #{$gridSize});
 	cursor: pointer;
-	display: flex;
-	flex-wrap: wrap;
 	height: $blockSize;
-	justify-content: flex-start;
 	opacity: 1!important;
 	position: absolute;
 	transform: rotateZ(-90deg);
 	transform-origin: 32px 0px;
 	width: calc(100vh - (#{$blockSize} * 3));
-	* {
+	.content_block {
+		display: none;
+		float: left;
 		height: calc(#{$blockSize} / 2);
 		font-size: $gridSize;
 		line-height: calc(#{$blockSize} / 2);
-		margin: 0 $gridSize;;
-		opacity: 0.4;
+		margin: 0 $gridSize;
+		opacity: .4;
 		padding: 0;
+		@media(min-height: 470px) {
+			display: inline-block;
+		}
 		&:focus,
 		&:hover {
 			opacity: 1;
 		}
+		@media(max-height: 619px) {
+			clear: both;
+			&:last-child {
+				display: none;
+			}
+		}
 	}
 }
 
+.sidebar_title {
+	&.sml {
+		display: inline;
+		@media(min-height: 680px) {
+			display: none;
+		}
+	}
+	&.med {
+		display: none;
+		@media(min-height: 680px) and (max-height: 739px) {
+			display: inline;
+		}
+	}
+	&.lrg {
+		display: none;
+		@media(min-height: 740px) {
+			display: inline;
+		}
+	}
+}
+.sidebar_desc {
+	opacity: .6;
+	&.sml {
+		display: none;
+	}
+	&.med {
+		display: none;
+	}
+	&.lrg {
+		display: inline;
+	}
+}
 
 #qr_wrapper {
 	bottom: calc(#{$gridSize} * 2);
@@ -57,12 +89,9 @@
 	display: block;
 	height: $blockSize;
 	left: calc(#{$gridSize} * 2);
+	opacity: .4;
 	position: absolute;
-	//transition: background ease .3s;
 	width: $blockSize;
-	#qr_code {
-		position: relative;
-	}
 	&.active {
 		border-color: $tealColor;
 		opacity: 0.6;
@@ -72,6 +101,6 @@
 		opacity: 1;
 	}
 	#qr_code {
-
+		position: relative;
 	}
 }
