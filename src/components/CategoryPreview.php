@@ -22,7 +22,7 @@
 			?>
 				<section id="<?php echo $category; ?>_category_preview">
 					<header class="panel">
-						<h2><?php echo $category; ?></h2>
+						<h2><?php echo ucSmart($category); ?></h2>
 						<p>
 						<?php
 							if (is_array($current_category_data["description"])) {
@@ -45,13 +45,27 @@
 			}
 			if ($subcategories) {
 				echo "<div class='panel_container'>";
+				if (array_key_exists("id", $subcategories)) {
+					$subcategories = [$subcategories];
+				}
 				foreach($subcategories as $subcategory) {
 					?>
-						<div class="inline_panel">
-							<div class="panel panel_header"></div>
-							<div class="panel panel_article"></div>
+					<div class="inline_panel">
+						<div class="panel panel_header">
+						<?php
+							if (array_key_exists("cover_img", $subcategory)) {
+								echo "<div class='profile_bg'><div class='bg_container'>" . img_element($subcategory["cover_img"], "tall") . "</div></div>";
+							}
+							if (array_key_exists("profile_img", $subcategory)) {
+
+							}
+						echo "<h3>" . $subcategory["title"] . "</h3>";
+						?>
 						</div>
-					<?php
+						<div class="panel panel_article">
+						</div>
+					</div>
+				<?php
 				}
 				echo "</div>";
 			}
