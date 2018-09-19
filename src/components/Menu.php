@@ -1,19 +1,19 @@
 <nav id="menu">
 	<ul>
 		<li>
-			<a href="./music" class="btn">Music</a>
+			<a href="<?php echo $htp_root;?>music" class="btn">Music</a>
 		</li>
 		<li>
-			<a href="./code" class="btn">Code</a>
+			<a href="<?php echo $htp_root;?>code" class="btn">Code</a>
 		</li>
 		<li>
-			<a href="./art" class="btn">Art</a>
+			<a href="<?php echo $htp_root;?>art" class="btn">Art</a>
 		</li>
 		<li>
-			<a href="./design" class="btn">Design</a>
+			<a href="<?php echo $htp_root;?>design" class="btn">Design</a>
 		</li>
 		<li>
-			<a href="./store" class="btn">Store</a>
+			<a href="<?php echo $htp_root;?>store" class="btn">Store</a>
 		</li>
 	</ul>
 </nav>

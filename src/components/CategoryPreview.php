@@ -36,9 +36,9 @@
 							?>
 							</p>
 						</header>
-					<section class='subcategories_previews'>
 				<?php
 			}
+			echo "<section class='subcategories_previews'>";
 			if ($category === "music" ){
 				echo "<header class='panel'><h3>Aliases</h3></header>";
 				$subcategories = api_fetch("table=aliases&sort_by=order");
@@ -72,7 +72,7 @@
 										echo "<p>";
 										if (is_array($subcategory["description"])) {
 											foreach ($subcategory["description"] as $line) {
-												echo "<p>" . $line . "<br/></p>";
+												echo "<span>" . $line . "<br/></span>";
 											}
 										} else {
 											echo $subcategory["description"];
@@ -87,7 +87,7 @@
 				}
 				echo "</div>";
 			}
-			echo "</section>";
+			echo "</section></section>";
 		}
 	?>
 </article>
