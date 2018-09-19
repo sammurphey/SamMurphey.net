@@ -5,16 +5,17 @@ main#app {
 	border-top: 4px solid #525252;
 	border-right: 4px solid #CCC;
 	border-left: 4px solid #7d7d7d;
-	flex-direction: column;
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	& > article, & > #footer {
-		display: flex!important;
-		flex-wrap: wrap;
+	.overview_view,
+	.subcategory_view,
+	.project_view,
+	.details_view,
+	#footer {
 		position: relative;
 		width: 100%;
 		will-change: transform;
@@ -24,20 +25,19 @@ main#app {
 			width: calc(100% - (#{$pagePaddingLrg} * 2));
 		}
 	}
-	& > article {
-		flex-direction: column;
+	.overview_view,
+	.subcategory_view,
+	.project_view,
+	.details_view {
+		display: block;
 		margin: 55px auto 18px auto;
 		@media(min-width: 840px) {
 			margin: 114px auto 8px auto;
 		}
-		/*> .has_data {
-			display: flex;
-			height: auto;
-			flex-direction: column;
-			width: 100%;
-		}*/
 	}
 	#footer {
+		display: flex;
+		flex-wrap: wrap;
 		margin: 55px auto;
 		@media(min-width: 840px) {
 			margin: $blockSize auto;

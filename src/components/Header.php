@@ -1,5 +1,5 @@
 <header id="header">
-	<a href="./" id="logo_btn" class="btn">
+	<a href="<?php echo $htp_root; ?>" id="logo_btn" class="btn">
 		<svg class="med icon" width="48" height="48" viewbox="0 0 100 100">
 			<path d="M 0 0 L 100 0 L 110 100 L 96 100 L 96 56 L 52 100 	L 0 100 L 0 0
 			M 7 4 L 50 48 L 93 4

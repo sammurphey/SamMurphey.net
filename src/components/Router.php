@@ -34,7 +34,7 @@ if (valExists("profile_img", $data)) {
  print_r($ref_data);
  echo "<br/>Data<br/>";
  print_r($data);
- echo "<br/><br/><b>".$view."</b></pre>";
+ echo "<br/><br/><b>".$current_view."</b></pre>";
 
 switch ($current_view) {
 	case "overview":

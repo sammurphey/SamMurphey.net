@@ -18,25 +18,27 @@
 
 	// Display selected categories
 		foreach ($current_categories as $category) {
-			$current_category_data = api_fetch("table=categories&category=".$category);
-			?>
-				<section id="<?php echo $category; ?>_category_preview">
-					<header class="panel">
-						<h2><?php echo ucSmart($category); ?></h2>
-						<p>
-						<?php
-							if (is_array($current_category_data["description"])) {
-								foreach($current_category_data["description"] as $line) {
-									echo "<span>". $line . "<br/></span>";
+			if ($current_category === "all") {
+				$current_category_data = api_fetch("table=categories&category=".$category);
+				?>
+					<section id="<?php echo $category; ?>_category_preview">
+						<header class="panel">
+							<h2><?php echo ucSmart($category); ?></h2>
+							<p>
+							<?php
+								if (is_array($current_category_data["description"])) {
+									foreach($current_category_data["description"] as $line) {
+										echo "<span>". $line . "<br/></span>";
+									}
+								} else {
+									echo $current_category_data["description"];
 								}
-							} else {
-								echo $current_category_data["description"];
-							}
-						?>
-						</p>
-					</header>
-				<section class='subcategories_previews'>
-			<?php
+							?>
+							</p>
+						</header>
+					<section class='subcategories_previews'>
+				<?php
+			}
 			if ($category === "music" ){
 				echo "<header class='panel'><h3>Aliases</h3></header>";
 				$subcategories = api_fetch("table=aliases&sort_by=order");
@@ -51,7 +53,7 @@
 				foreach($subcategories as $subcategory) {
 					?>
 					<div class="inline_panel">
-						<a href="<?php echo $subcategory['url']; ?>">
+						<a href="<?php echo $htp_root . $subcategory['url']; ?>">
 							<div class="panel panel_header">
 							<?php
 								if (array_key_exists("cover_img", $subcategory) && $subcategory["cover_img"]) {

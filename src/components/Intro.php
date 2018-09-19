@@ -1,6 +1,10 @@
 <header id="intro" class="panel">
 		<div class="corner"></div>
-		<h1 id='page_title'><span class="corner-spacer"></span><?php echo $page_title; ?></h1>
+		<h1 id='page_title' <?php
+		 	if ($page_profile_photo) {
+				echo "class='with_profile'";
+			}
+		?>><span class="corner-spacer"></span><?php echo $page_title; ?></h1>
 		<?php
 			if ($page_profile_photo) {
 				echo "<div class='profile_photo lrg'>" . img_element($page_profile_photo) . "</div>";

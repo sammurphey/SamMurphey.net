@@ -1,4 +1,4 @@
-<footer id="footer" class={this.state.anim}>
+<footer id="footer">
 	<div id="speakers"></div>
 	<!--<section id="newsletter_panel" class="panel">
 		<h2>Stay in Touch</h2>

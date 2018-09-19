@@ -11,12 +11,21 @@
 		width: $blockSize;
 	}
 	&.lrg {
-		margin-top: 12px;
+		margin-left: $gridSize;
+		margin-bottom: 8px;
+		margin-top: 0;
+		@media(min-width: 840px) {
+			margin-bottom: 0;
+			margin-top: 12px;
+		}
+
 		.img_container {
-			height: 70px;
-			width: 70px;
-			//height: 142px;
-			//width: 142px;
+			height: 64px;
+			width: 64px;
+			@media(min-width: 840px) {
+				height: 96px;
+				width: 96px;
+			}
 		}
 	}
 }
