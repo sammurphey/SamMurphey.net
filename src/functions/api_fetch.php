@@ -15,4 +15,9 @@ function api_fetch($params, $public = true) {
 		return false;
 	}
 }
+function api_push($params) {
+	$api_url = "https://api.sammurphey.net/v3/push/index.php?" . $params;
+	$api_res = file_get_contents($api_url);
+	return $api_res;
+}
 ?>

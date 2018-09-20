@@ -29,12 +29,12 @@ if (valExists("profile_img", $data)) {
 	$page_profile_photo = $data["profile_img"];
 }
 
- echo "<pre>Refs<br/>";
+//echo "<pre>Refs<br/>";
 
- print_r($ref_data);
- echo "<br/>Data<br/>";
- print_r($data);
- echo "<br/><br/><b>".$current_view."</b></pre>";
+//print_r($ref_data);
+//echo "<br/>Data<br/>";
+//print_r($data);
+//echo "<br/><br/><b>".$current_view."</b></pre>";
 
 switch ($current_view) {
 	case "overview":

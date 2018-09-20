@@ -50,26 +50,19 @@
 			if ($grid_data) {
 				echo "<section class='grid'>";
 					foreach ($grid_data as $grid_item) {
-						$item_data = api_fetch("table=" . $grid_item["table"] . "&id=" . $grid_item["ref_id"]);
-						if ($item_data) {
-							echo "<div class='grid_item'><a href='" . $htp_root . $item_data["url"] ."'>";
-								if (valExists("cover_img", $item_data)) {
-									echo img_element($item_data["cover_img"]);
-								}
-								echo "<div class='container'><div class='content'>";
-									echo "<h3>";
-										if (valExists("alias", $item_data)) {
-											echo "<span class='subtitle'>" . $item_data["alias"] . "<br/></span>";
-										}
-									echo "<span class='title'>" . $item_data["title"] . "</span></h3>";
-									echo "<p class='date'>" . $item_data["date"] . "</p>";
-									echo "<div class='grid_item_sidebar'><p>";
-										echo "<span>" . ucSmart($grid_item["category"]) . "<br/></span>";
-										echo "<span>" . ucSmart($grid_item["subcategory"]) . "</span>";
-									echo "</p></div>";
-								echo "</div></div>";
-							echo "</a></div>";
-						}
+						echo "<div class='grid_item'><a href='" . $htp_root . $grid_item["url"] ."'>";
+							if (valExists("cover_img", $grid_item)) {
+								echo img_element($grid_item["cover_img"]);
+							}
+							echo "<div class='container'><div class='content'>";
+								echo "<h3>" . $grid_item["title"] . "</h3>";
+								echo "<p class='date'>" . $grid_item["date"] . "</p>";
+								echo "<aside class='grid_item_sidebar'><p>";
+									echo "<span>" . ucSmart($grid_item["category"]) . "<br/></span>";
+									echo "<span>" . ucSmart($grid_item["subcategory"]) . "</span>";
+								echo "</p></aside>";
+							echo "</div></div>";
+						echo "</a></div>";
 					}
 				echo "</section>";
 			}
