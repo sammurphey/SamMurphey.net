@@ -95,7 +95,7 @@
   display: flex;
   flex-wrap: wrap;
   height: auto;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   padding-top: 8px;
   position: relative;
   z-index: 4; }
@@ -746,6 +746,7 @@ main#app {
   .inline_panel .panel_header {
     align-items: center;
     display: flex;
+    margin-bottom: 4px;
     min-height: 96px;
     pointer-events: none;
     position: relative; }
