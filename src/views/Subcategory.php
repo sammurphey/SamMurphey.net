@@ -5,7 +5,7 @@
 			include_once($php_root . "src/components/Albums.php");
 			include_once($php_root . "src/components/Singles.php");
 		} else {
-			include_once($php_root . "src/components/SubcategoryGrid.php");
+			include_once($php_root . "src/components/Grid.php");
 		}
 	?>
 </article>

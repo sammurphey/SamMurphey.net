@@ -12,8 +12,13 @@ if (strlen($current_path) > 0) {
 if ($ref_data && valExists("view", $ref_data)) {
 	$current_view = $ref_data["view"];
 }
-if (valExists("category", $data)) {
-	$current_category = $data["category"];
+if ($ref_data) {
+	if (valExists("category", $ref_data)) {
+		$current_category = $ref_data["category"];
+	}
+	if (valExists("subcategory", $ref_data)) {
+		$current_subcategory = $ref_data["subcategory"];
+	}
 }
 if (valExists("title", $data)) {
 	$page_title = $data["title"];
