@@ -6,6 +6,7 @@
 	.img_container {
 		background: $plasticColor;
 		border-radius: 50%;
+		box-shadow: $chip_shadow;
 		height: $blockSize;
 		overflow: hidden;
 		width: $blockSize;

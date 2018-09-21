@@ -25,11 +25,21 @@ if (valExists("title", $data)) {
 }
 if (valExists("description", $data)) {
 	$page_description = $data["description"];
+	if (substr($page_description, 0, 1) === "[") {
+		$page_description = json_decode($page_description, true);
+	}
 } else {
 	if ($current_view !== "overview") {
 		$page_description = "";
 	}
 }
+if (valExists("links", $data)) {
+	$page_links = $data["links"];
+	if (substr($page_links, 0, 1) === "[") {
+		$page_links = json_decode($page_links, true);
+	}
+}
+
 if (valExists("profile_img", $data)) {
 	$page_profile_photo = $data["profile_img"];
 }

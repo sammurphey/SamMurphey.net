@@ -95,7 +95,7 @@
   display: flex;
   flex-wrap: wrap;
   height: auto;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   padding-top: 8px;
   position: relative;
   z-index: 4; }
@@ -172,7 +172,7 @@ a {
   cursor: pointer;
   position: relative;
   text-decoration: inherit; }
-  a[rel="nofollow"] {
+  a[rel="noopener noreferrer"] {
     cursor: alias; }
   a:focus, a:hover {
     color: #00EFF1 !important; }
@@ -326,6 +326,12 @@ button,
   border-radius: 50%;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
   margin: 0 calc(64px / 2) calc(64px / 2) 0; }
+  .chip.sml {
+    height: 36px;
+    margin: 0 16px 16px 0;
+    min-width: 0;
+    padding: 2px;
+    width: 36px; }
   .chip .icon {
     opacity: 0.5; }
   .chip:focus, .chip:hover {
@@ -536,6 +542,13 @@ input {
   margin: 16px 34px 34px 34px;
   width: calc(100% - 68px); }
 
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
 #menu {
   display: none; }
   @media (min-width: 840px) {
@@ -549,11 +562,7 @@ input {
       width: calc(64px * 2);
       z-index: 4; }
       #menu ul {
-        display: flex;
         flex-direction: column;
-        list-style: none;
-        margin: 0;
-        padding: 0;
         pointer-events: all; }
         #menu ul li {
           text-decoration: none; }
@@ -752,9 +761,7 @@ main#app {
     position: relative; }
     @media (max-width: 1580px) {
       .inline_panel .panel_header h2 {
-        font-size: 10px; }
-      .inline_panel .panel_header .profile_photo .img_container {
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); } }
+        font-size: 10px; } }
     .inline_panel .panel_header .profile_bg {
       height: 100%;
       left: 0;
@@ -1171,6 +1178,7 @@ main#app {
   .profile_photo .img_container {
     background: #F8F8F8;
     border-radius: 50%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
     height: 64px;
     overflow: hidden;
     width: 64px; }

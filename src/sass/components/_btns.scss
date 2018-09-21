@@ -71,6 +71,13 @@ button,
 	border-radius: 50%;
 	box-shadow: $chip_shadow;
 	margin: 0 calc(#{$blockSize} / 2) calc(#{$blockSize} / 2) 0;
+	&.sml {
+	    height: 36px;
+		margin: 0 $gridSize $gridSize 0;
+		min-width: 0;
+		padding: 2px;
+		width: 36px;
+	}
 	.icon {
 		opacity: 0.5;
 	}

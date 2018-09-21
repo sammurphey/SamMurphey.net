@@ -10,9 +10,13 @@
 		<p><a href="#">Prefer RSS? Click here.</a></p>
 	</section>-->
 	<section id="social_panel" class="panel">
-		<h2>Connect Online</h2>
-		<p>Follow me on these social networks to see photos, updates, and WIP posts.</p>
-		<div class="chips_container">
+		<header>
+			<h2>Connect Online</h2>
+			<p>Follow me on these social networks to see photos, updates, and WIP posts.</p>
+		</header>
+		<nav class="chips_container">
+			<ul>
+				
 			<a href="https://patreon.com/sammurphey" class="btn chip" rel="noopener noreferrer" target="_blank">
 				<img class="icon" src="https://cdn.sammurphey.net/social/patreon.svg" alt="Patreon Logo" title="Patreon" />
 			</a>
@@ -49,7 +53,8 @@
 			<a href="https://www.linkedin.com/in/sammurphey" class="btn chip" rel="noopener noreferrer" target="_blank">
 				<img class="icon" src="https://cdn.sammurphey.net/social/linkedin.svg" alt="LinkedIn Logo" title="LinkedIn" />
 			</a>
-		</div>
+		</ul>
+		</nav>
 		<div class="corner bottom-right"></div>
 	</section>
 </footer>

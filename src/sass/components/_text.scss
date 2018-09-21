@@ -5,7 +5,7 @@ a {
 	cursor: pointer;
 	position: relative;
 	text-decoration: inherit;
-	&[rel="nofollow"] {
+	&[rel="noopener noreferrer"] {
 		cursor: alias;
 	}
 	&:focus,
