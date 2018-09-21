@@ -5,9 +5,20 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Init variables
-require_once("./src/DefaultValues.php");
+$php_root = $_SERVER['DOCUMENT_ROOT'] . "/sammurphey_dev/";
+$htp_root = "http://localhost/sammurphey_dev/";
+$api_root = "https://api.sammurphey.net/";
+$cdn_root = "https://cdn.sammurphey.net/v2/";
 
+// get data
+require_once($php_root . "src/DefaultValues.php");
+require_once($php_root . "src/functions/get_current_url.php");
+require_once($php_root . "src/functions/api_fetch.php");
+require_once($php_root . "src/functions/uc_smart.php");
+require_once($php_root . "src/functions/val_exists.php");
+require_once($php_root . "src/Headers.php");
 ?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>

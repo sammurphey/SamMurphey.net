@@ -20,6 +20,12 @@
 		foreach ($current_categories as $category) {
 			if ($current_category === "all") {
 				$current_category_data = api_fetch("table=categories&category=".$category);
+				if (valExists("description", $current_category_data)) {
+					$current_category_description = $current_category_data["description"];
+					if (substr($current_category_description, 0, 1) === "[") {
+						$current_category_description = json_decode($current_category_description, true);
+					}
+				}
 				?>
 					<section id="<?php echo $category; ?>_category_preview">
 						<header class="panel">
@@ -34,6 +40,11 @@
 									echo $current_category_data["description"];
 								}
 							?>
+							</p>
+							<p>
+								<?php
+									echo "<a href='" . $htp_root . strtolower($category) . "'>See everything on the " . strtolower($category) . " page.</a>"
+								?>
 							</p>
 						</header>
 				<?php
@@ -51,6 +62,12 @@
 					$subcategories = [$subcategories];
 				}
 				foreach($subcategories as $subcategory) {
+					if (valExists("description", $subcategory)) {
+						$subcategory_description = $subcategory["description"];
+						if (substr($subcategory_description, 0, 1) === "[") {
+							$subcategory_description = json_decode($subcategory_description, true);
+						}
+					}
 					?>
 					<div class="inline_panel">
 						<a href="<?php echo $htp_root . $subcategory['url']; ?>">
@@ -67,15 +84,13 @@
 							</div>
 							<div class="panel panel_article">
 								<?php
-									if (array_key_exists("description", $subcategory)) {
+									if ($subcategory_description) {
 
 										echo "<p>";
-										if (is_array($subcategory["description"])) {
-											foreach ($subcategory["description"] as $line) {
-												echo "<span>" . $line . "<br/></span>";
-											}
+										if (is_array($subcategory_description)) {
+											echo $subcategory_description[0];
 										} else {
-											echo $subcategory["description"];
+											echo $subcategory_description;
 										}
 										echo "</p>";
 									}
