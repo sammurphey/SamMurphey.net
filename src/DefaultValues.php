@@ -21,4 +21,5 @@ $current_category = "all";
 $page_title = "Hello World,";
 $page_description = "My name is Samantha Murphey. I'm a 23 y/o trans-lesbian hacker-girl living in LA, with a passion for merging art and code! I make web-apps, produce music, design logos and fonts, and draw with everything from pencils to 3D. There's quite a lot of material on this site to see / hear / play with, so I suggest choosing one of the categories below or to the left to start off with. Or if you think you can brave the chaos, scroll down a bit further for a full reverse-chronological view of ALL my work.";
 $page_profile_photo = false;
+$page_hero_img = false;
 $page_links = false;

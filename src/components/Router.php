@@ -7,7 +7,8 @@ if (strlen($current_path) > 0) {
 	$data = api_fetch("table=". $ref_data["table"] . "&id=" . $ref_data["ref_id"]);
 } else { //homepage, just get all the projects
 	$data = api_fetch("view=overview");
-	$page_profile_photo = 701;
+	$page_profile_photo = 332;
+	// 701
 }
 if ($ref_data && valExists("view", $ref_data)) {
 	$current_view = $ref_data["view"];
@@ -44,6 +45,10 @@ if (valExists("profile_img", $data)) {
 	$page_profile_photo = $data["profile_img"];
 }
 
+if (valExists("cover_img", $data)) {
+	$page_hero_img = $data["cover_img"];
+}
+
 //echo "<pre>Refs<br/>";
 
 //print_r($ref_data);
@@ -51,6 +56,7 @@ if (valExists("profile_img", $data)) {
 //print_r($data);
 //echo "<br/><br/><b>".$current_view."</b></pre>";
 
+require_once("./src/components/Sidebar.php");
 switch ($current_view) {
 	case "overview":
 		include_once($php_root . "src/views/Overview.php");

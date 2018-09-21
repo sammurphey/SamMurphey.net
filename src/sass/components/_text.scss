@@ -76,14 +76,16 @@ h1 {
 	min-height: 32px;
     line-height: 32px;
 	margin-top: 0;
-	@media(min-width: 600px) {
+	@media(min-width: 840px) {
+		font-size: 42px;
+		min-height: 42px;
+		line-height: 42px;
+	}
+	@media(min-width: 1024px) {
 		font-size: 48px;
 		margin-top: 12px;
 		min-height: 48px;
 	    line-height: 48px;
-		.corner-spacer {
-			display: none;
-		}
 	}
 }
 h2 {

@@ -138,13 +138,6 @@
 			}
 		}
 	}
-	.corner-spacer {
-		display: inline-block;
-		width: 30px;
-		@media (min-width: 600px) {
-			display: none;
-		}
-	}
 }
 .subcategories_previews {
 	header {

@@ -11,7 +11,6 @@ require_once("./src/functions/val_exists.php");
 echo "<main id='app'>";
 		require_once("./src/functions/img_element.php");
 		require_once("./src/components/Router.php");
-		require_once("./src/components/Sidebar.php");
 		include_once("./src/components/Footer.php");
 echo "</main>";
 ?>

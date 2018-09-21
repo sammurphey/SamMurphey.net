@@ -1,15 +1,11 @@
-<header id="intro" class="panel<?php if ($current_category == "all") {
-	echo " homepage_intro";
-}?>">
+<header id="intro" class="music_player panel">
 		<div class="corner"></div>
-		<h1 id='page_title' <?php
-		 	if ($page_profile_photo) {
-				echo "class='with_profile'";
-			}
-		?>><span class="corner-spacer">&nbsp;</span><?php echo $page_title; ?></h1>
+		<h1 id="page_title" <?php if ($page_hero_img) {
+			echo "class='with_hero'";
+		}?>><span class="corner-spacer">&nbsp;</span><?php echo $page_title; ?></h1>
 		<?php
-			if ($page_profile_photo) {
-				echo "<div class='profile_photo lrg'>" . img_element($page_profile_photo) . "</div>";
+			if ($page_hero_img) {
+				echo "<div class='hero_img'>" . img_element($page_hero_img) . "</div>";
 			}
 			if ($page_description) {
 				echo "<p id='page_description'>";

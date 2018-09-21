@@ -90,62 +90,89 @@
     transform: translateY(8px); } }
 
 #intro {
-  align-content: baseline;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
   height: auto;
   margin-bottom: 4px;
   padding-top: 8px;
   position: relative;
-  z-index: 4; }
+  z-index: 4;
+  /*> .panel {
+		flex-grow: 0;
+		flex-shrink: 1;
+		padding-top: 16px;
+		position: relative;
+		@media(min-width: 840px) {
+			min-height: 100%;
+			width: 100%;
+		}
+		&:not(.hero_img) {
+			&:hover #connected_panel,
+			&:focus #connected_panel {
+				background: $plasticColor;
+			}
+		}
+		.has_data {
+			.info_view {
+				margin-right: 16px;
+				.info_sidebar {
+					max-width: $panelSize;
+					transform: rotateZ(-90deg);
+					position: absolute;
+					right: -59px;
+					bottom: 80px
+				}
+			}
+		}
+	}*/ }
   @media (min-width: 840px) {
     #intro {
       min-height: 416px;
       padding-top: 16px; } }
-  @media (max-width: 839px) {
-    .project_view #intro .corner, .project_view #intro .corner-spacer {
-      display: none; } }
   #intro h1 {
+    margin-bottom: 0;
     width: 100%; }
     @media (max-width: 839px) {
       #intro h1 {
         margin-top: 8px; } }
+    #intro h1 span {
+      float: left; }
     #intro h1.with_profile {
       float: left;
-      width: calc(100% - 96px); }
+      width: calc(100% - 80px); }
       @media (min-width: 840px) {
         #intro h1.with_profile {
-          width: calc(100% - 128px); } }
-  #intro > .panel {
-    flex-grow: 0;
-    flex-shrink: 1;
-    padding-top: 16px;
-    position: relative; }
-    @media (min-width: 840px) {
-      #intro > .panel {
-        min-height: 100%;
-        width: 100%; } }
-    #intro > .panel.hero_img {
-      padding: 0; }
-      #intro > .panel.hero_img, #intro > .panel.hero_img * {
-        height: calc(100vw - (10px * 2));
-        width: 100%; }
-        @media (min-width: 840px) {
-          #intro > .panel.hero_img, #intro > .panel.hero_img * {
-            height: 416px;
-            width: 416px; } }
-    #intro > .panel:not(.hero_img):hover #connected_panel,
-    #intro > .panel:not(.hero_img):focus #connected_panel {
-      background: #F8F8F8; }
-    #intro > .panel .has_data .info_view {
-      margin-right: 16px; }
-      #intro > .panel .has_data .info_view .info_sidebar {
-        max-width: 416px;
-        transform: rotateZ(-90deg);
-        position: absolute;
-        right: -59px;
-        bottom: 80px; }
+          width: calc(100% - 112px); } }
+    #intro h1.with_hero {
+      width: 100%; }
+      @media (min-width: 460px) {
+        #intro h1.with_hero {
+          float: left;
+          width: calc(100% - 192px); } }
+      @media (min-width: 1024px) {
+        #intro h1.with_hero {
+          width: calc(100% - 416px); } }
+  @media (max-width: 400px) {
+    #intro p {
+      clear: both; } }
+  #intro .profile_photo {
+    float: right; }
+  #intro .hero_img {
+    background: #989898;
+    float: right;
+    height: calc(100vw - (10px * 2));
+    padding: 0 0 4px 4px;
+    width: 100%; }
+    @media (min-width: 460px) {
+      #intro .hero_img {
+        height: 192px;
+        width: 192px; } }
+    @media (min-width: 1024px) {
+      #intro .hero_img {
+        height: 416px;
+        width: 416px; } }
+  #intro.music_player {
+    padding: 0; }
+    #intro.music_player h1 {
+      margin: 28px 16px 8px 32px; }
 
 .img_container {
   align-items: center;
@@ -226,14 +253,17 @@ h1 {
   min-height: 32px;
   line-height: 32px;
   margin-top: 0; }
-  @media (min-width: 600px) {
+  @media (min-width: 840px) {
+    h1 {
+      font-size: 42px;
+      min-height: 42px;
+      line-height: 42px; } }
+  @media (min-width: 1024px) {
     h1 {
       font-size: 48px;
       margin-top: 12px;
       min-height: 48px;
-      line-height: 48px; }
-      h1 .corner-spacer {
-        display: none; } }
+      line-height: 48px; } }
 
 h2 {
   font-size: 22px;
@@ -729,12 +759,6 @@ main#app {
         left: 88px;
         right: auto;
         top: 0px; }
-  .panel .corner-spacer {
-    display: inline-block;
-    width: 30px; }
-    @media (min-width: 600px) {
-      .panel .corner-spacer {
-        display: none; } }
 
 .subcategories_previews header {
   margin-top: 4px; }
@@ -1183,8 +1207,9 @@ main#app {
     overflow: hidden;
     width: 64px; }
   .profile_photo.lrg {
-    margin-left: 16px;
     margin-bottom: 8px;
+    margin-left: 16px;
+    margin-right: 0;
     margin-top: 0; }
     @media (min-width: 840px) {
       .profile_photo.lrg {
