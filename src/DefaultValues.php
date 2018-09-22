@@ -18,3 +18,5 @@ $page_description = "My name is Samantha Murphey. I'm a 23 y/o trans-lesbian hac
 $page_profile_photo = false;
 $page_hero_img = false;
 $page_links = false;
+$page_credits = false;
+$page_keywords = false;

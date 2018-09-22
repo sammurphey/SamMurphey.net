@@ -9,5 +9,6 @@
 				include_once($php_root . "src/components/Intro.php");
 				break;
 		}
+		include_once($php_root . "src/components/Meta.php");
 	?>
 </article>

@@ -19,6 +19,21 @@ if (valExists("cover_img", $data)) {
 	$page_hero_img = $data["cover_img"];
 }
 
+if (valExists("credits", $data)) {
+	$page_credits = $data["credits"];
+	if (substr($page_credits, 0, 1) === "[") {
+		$page_credits = json_decode($page_credits, true);
+	}
+}
+
+if (valExists("keywords", $data)) {
+	$page_keywords = $data["keywords"];
+	if (substr($page_keywords, 0, 1) === "[") {
+		$page_keywords = json_decode($page_keywords, true);
+		sort($page_keywords);
+	}
+}
+
 require_once("./src/components/Sidebar.php");
 switch ($current_view) {
 	case "overview":
