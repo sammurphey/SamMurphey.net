@@ -94,62 +94,35 @@
   margin-bottom: 4px;
   padding-top: 8px;
   position: relative;
-  z-index: 4;
-  /*> .panel {
-		flex-grow: 0;
-		flex-shrink: 1;
-		padding-top: 16px;
-		position: relative;
-		@media(min-width: 840px) {
-			min-height: 100%;
-			width: 100%;
-		}
-		&:not(.hero_img) {
-			&:hover #connected_panel,
-			&:focus #connected_panel {
-				background: $plasticColor;
-			}
-		}
-		.has_data {
-			.info_view {
-				margin-right: 16px;
-				.info_sidebar {
-					max-width: $panelSize;
-					transform: rotateZ(-90deg);
-					position: absolute;
-					right: -59px;
-					bottom: 80px
-				}
-			}
-		}
-	}*/ }
+  z-index: 4; }
   @media (min-width: 840px) {
     #intro {
       min-height: 416px;
       padding-top: 16px; } }
-  #intro h1 {
+  #intro h1#page_title {
     margin-bottom: 0;
     width: 100%; }
     @media (max-width: 839px) {
-      #intro h1 {
+      #intro h1#page_title {
         margin-top: 8px; } }
-    #intro h1 span {
+    #intro h1#page_title span {
       float: left; }
-    #intro h1.with_profile {
+    #intro h1#page_title.with_profile {
       float: left;
       width: calc(100% - 80px); }
       @media (min-width: 840px) {
-        #intro h1.with_profile {
+        #intro h1#page_title.with_profile {
           width: calc(100% - 112px); } }
-    #intro h1.with_hero {
+    #intro h1#page_title.with_hero {
+      margin-right: 80px;
       width: 100%; }
       @media (min-width: 460px) {
-        #intro h1.with_hero {
+        #intro h1#page_title.with_hero {
           float: left;
-          width: calc(100% - 192px); } }
+          width: calc(100% - 272px); } }
       @media (min-width: 1024px) {
-        #intro h1.with_hero {
-          width: calc(100% - 464px); } }
+        #intro h1#page_title.with_hero {
+          width: calc(100% - 544px); } }
   @media (max-width: 400px) {
     #intro #page_description {
       clear: both; } }
@@ -170,6 +143,15 @@
       #intro .hero_img {
         height: 416px;
         width: 416px; } }
+  #intro .info_sidebar {
+    bottom: 192px;
+    position: absolute;
+    transform: rotateZ(-90deg);
+    right: 264px;
+    width: calc(416px - 32px); }
+    #intro .info_sidebar p {
+      height: 24px;
+      margin: 0; }
   #intro.music_player {
     padding: 0; }
     #intro.music_player h1 {
@@ -204,26 +186,44 @@ a {
     cursor: alias; }
   a:focus, a:hover {
     color: #00EFF1 !important; }
-  p > a {
+  p > a,
+  dt > a,
+  dd > a {
     padding: 0 10px !important; }
-    p > a::before, p > a::after {
+    p > a::before, p > a::after,
+    dt > a::before,
+    dt > a::after,
+    dd > a::before,
+    dd > a::after {
       display: block;
       position: absolute;
       top: -8px;
       transform: translateX(0);
       transition: transform .2s linear; }
-    p > a::before {
+    p > a::before,
+    dt > a::before,
+    dd > a::before {
       content: "[";
       left: 0; }
-    p > a::after {
+    p > a::after,
+    dt > a::after,
+    dd > a::after {
       content: "]";
       right: 0; }
-    p > a:focus::before, p > a:hover::before {
+    p > a:focus::before, p > a:hover::before,
+    dt > a:focus::before,
+    dt > a:hover::before,
+    dd > a:focus::before,
+    dd > a:hover::before {
       transform: translateX(-8px); }
-    p > a:focus::after, p > a:hover::after {
+    p > a:focus::after, p > a:hover::after,
+    dt > a:focus::after,
+    dt > a:hover::after,
+    dd > a:focus::after,
+    dd > a:hover::after {
       transform: translateX(8px); }
 
-p {
+p, dt, dl {
   font-family: 'Ubuntu Mono', monospace;
   font-size: 17px;
   font-weight: lighter;
@@ -231,14 +231,9 @@ p {
   margin: 0;
   position: relative;
   word-break: break-word; }
-  .panel p {
+  .panel p, .panel dt, .panel dl {
     color: #666; }
-    .panel p.subtitle {
-      color: #000; }
-      .panel p.subtitle a,
-      .panel p.subtitle span {
-        color: #666; }
-  p + * {
+  p + *, dt + *, dl + * {
     margin-top: 16px; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -282,6 +277,15 @@ h3, h4, h5, h6 {
 
 ul, ol {
   margin: 8px 0 0 0; }
+
+dt, dl, dd {
+  margin: 0; }
+
+.subtitle {
+  color: #000 !important; }
+  .subtitle a,
+  .subtitle span {
+    color: #666; }
 
 button,
 .btn {
@@ -1014,35 +1018,28 @@ main#app {
   #qr_wrapper #qr_code {
     position: relative; }
 
-.music_data .info_sidebar {
-  bottom: 188px !important; }
-
-.album_view {
-  flex-wrap: wrap; }
-  @media (min-width: 840px) {
-    .album_view {
-      flex-wrap: nowrap; } }
-
-.song_list {
-  max-width: 416px; }
-  .song_list ol {
+#tracklist {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 416px; }
+  #tracklist ol {
+    margin-top: 16px;
     padding: 0 0 0 40px; }
-    .song_list ol li + * {
+    #tracklist ol li + * {
       padding-top: 8px; }
-    .song_list ol li a {
+    #tracklist ol li a {
       color: #989898;
       font-family: "Ubuntu", sans-serif;
       font-style: italic; }
 
-.album_info {
-  display: none; }
-  @media (min-width: 840px) {
-    .album_info {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 0;
-      flex-shrink: 1;
-      width: 100%; } }
+.tab_group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 1;
+  width: 100%; }
+  .tab_group#music_details {
+    width: calc(100% - (416px + 4px)); }
 
 .has_album_data {
   display: flex;
@@ -1057,14 +1054,19 @@ main#app {
     margin-left: 32px;
     width: 100%; }
 
-.music_player {
+#intro.music_player {
+  margin-bottom: 2px; }
+  #intro.music_player h1#page_title {
+    margin-right: 96px; }
+  #intro.music_player > p.subtitle {
+    margin-left: 32px; }
+
+.now_playing {
   bottom: 4px;
   height: calc(416px / 2);
   left: 0;
   position: absolute;
   width: 100%; }
-  .music_player #page_description {
-    margin-left: 32px; }
 
 .track_art {
   display: none; }
@@ -1113,11 +1115,13 @@ main#app {
 .single_view .tab_page {
   width: calc(100% - 4px); }
 
+.tab_group {
+  position: relative; }
+
 .tabs {
   flex-grow: 0;
   flex-shrink: 0;
-  height: 84px;
-  width: 100%; }
+  height: 84px; }
   .tabs .tab {
     background: #b1b1b1;
     color: #FFF; }
@@ -1127,15 +1131,18 @@ main#app {
 
 .tab_pages {
   flex-grow: 1;
-  padding: 2px; }
+  padding: 2px;
+  max-width: 100%; }
   .tab_pages .tab_page {
     flex-grow: 0;
     flex-shrink: 1;
     height: 0;
     margin: 0;
     max-height: 416px;
-    overflow: hidden;
+    width: 100%;
+    overflow: auto;
     padding: 0;
+    position: relative;
     width: 0; }
     .tab_pages .tab_page.selected {
       flex-grow: 1;
@@ -1144,6 +1151,8 @@ main#app {
       overflow: auto;
       padding: 16px 32px;
       width: calc(100% - 4px) !important; }
+    .tab_pages .tab_page.grid {
+      padding: 0; }
 
 .narrative_view .story_mode .panel_wrapper {
   height: auto;

@@ -1,18 +1,23 @@
 @import "../vars";
 
-.music_player {
-	bottom: 4px;
-	height: calc(#{$panelSize} / 2);
-	left: 0;
-	position: absolute;
-	width: 100%;
-	#page_description {
+#intro.music_player {
+	margin-bottom: 2px;
+	h1#page_title {
+		margin-right: 96px;
+	}
+	> p.subtitle {
 		margin-left: 32px;
 	}
 }
 
 
-
+.now_playing {
+	bottom: 4px;
+	height: calc(#{$panelSize} / 2);
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
 .track_art {
 	display: none;
 	@media(min-width: 840px) {

@@ -26,9 +26,10 @@ if (valExists("title", $data)) {
 				$title_prefix = $ref_data["alias"];
 			}
 		}
+		$title_separator .= "Music | ";
 	} elseif ($current_subcategory) {
 		$title_separator .= ucSmart($current_subcategory) . " | ";
-	} else if ($current_category) {
+	} elseif ($current_category) {
 		$title_separator .= ucSmart($current_category) . " | ";
 	}
 	if ($title_prefix == $page_title) {

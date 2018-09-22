@@ -1,21 +1,11 @@
 @import "../vars";
 
-.music_data {
-	.info_sidebar {
-		bottom: 188px!important;
-	}
-}
-
-.album_view {
-	flex-wrap: wrap;
-	@media(min-width: 840px) {
-		flex-wrap: nowrap;
-	}
-}
-
-.song_list {
-	max-width: $panelSize;
+#tracklist {
+	flex-grow: 0;
+	flex-shrink: 0;
+	width: $panelSize;
 	ol {
+		margin-top: 16px;
 		padding: 0 0 0 40px;
 		li {
 			& + * {
@@ -30,17 +20,16 @@
 	}
 }
 
-.album_info {
-	display: none;
-	@media(min-width: 840px) {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 0;
-		flex-shrink: 1;
-		width: 100%;
+.tab_group {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 0;
+	flex-shrink: 1;
+	width: 100%;
+	&#music_details {
+		width: calc(100% - (#{$panelSize} + 4px));
 	}
 }
-
 .has_album_data {
 	display: flex;
 	justify-content: flex-start;

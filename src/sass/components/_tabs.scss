@@ -1,12 +1,11 @@
 .tab_group {
-
+	position: relative;
 }
 
 .tabs {
 	flex-grow: 0;
 	flex-shrink: 0;
 	height: 84px;
-	width: 100%;
 	.tab {
 		background: $lightGrey;
 		color: $highlightColor;
@@ -20,14 +19,17 @@
 .tab_pages {
 	flex-grow: 1;
 	padding: 2px;
+	max-width: 100%;
 	.tab_page {
 		flex-grow: 0;
 		flex-shrink: 1;
 		height: 0;
 		margin: 0;
 		max-height: $panelSize;
-		overflow: hidden;
+		width: 100%;
+		overflow: auto;
 		padding: 0;
+		position: relative;
 		width: 0;
 		&.selected {
 			flex-grow: 1;
@@ -36,6 +38,9 @@
 			overflow: auto;
 			padding: $paddingXL $paddingXXL;
 			width: calc(100% - 4px)!important;
+		}
+		&.grid {
+			padding: 0;
 		}
 	}
 }

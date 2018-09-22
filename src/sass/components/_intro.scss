@@ -14,7 +14,7 @@
 		min-height: $panelSize;
 		padding-top: 16px;
 	}
-	h1 {
+	h1#page_title {
 		margin-bottom: 0;
 		width: 100%;
 		@media(max-width: 839px) {
@@ -35,13 +35,15 @@
 			}
 		}
 		&.with_hero {
+			margin-right: 80px;
 			width: 100%;
 			@media(min-width: 460px) {
 				float: left;
-				width: calc(100% - 192px);
+				width: calc(100% - 272px);
 			}
 			@media(min-width: 1024px) {
-				width: calc(100% - 464px);
+
+				width: calc(100% - 544px);
 			}
 		}
 	}
@@ -74,38 +76,21 @@
 			//width: calc(100% - 4px);
 		}
 	}
+	.info_sidebar {
+		bottom: 192px;
+		position: absolute;
+		transform: rotateZ(-90deg);
+		right: 264px;
+		width: calc(#{$panelSize} - 32px);
+		p {
+			height: 24px;
+			margin: 0;
+		}
+	}
 	&.music_player {
 		padding: 0;
 		h1 {
 			margin: 28px 16px 8px 32px;
 		}
 	}
-	/*> .panel {
-		flex-grow: 0;
-		flex-shrink: 1;
-		padding-top: 16px;
-		position: relative;
-		@media(min-width: 840px) {
-			min-height: 100%;
-			width: 100%;
-		}
-		&:not(.hero_img) {
-			&:hover #connected_panel,
-			&:focus #connected_panel {
-				background: $plasticColor;
-			}
-		}
-		.has_data {
-			.info_view {
-				margin-right: 16px;
-				.info_sidebar {
-					max-width: $panelSize;
-					transform: rotateZ(-90deg);
-					position: absolute;
-					right: -59px;
-					bottom: 80px
-				}
-			}
-		}
-	}*/
 }

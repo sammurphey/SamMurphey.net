@@ -7,33 +7,21 @@
 			if ($page_hero_img) {
 				echo "<div class='hero_img'>" . img_element($page_hero_img) . "</div>";
 			}
-			if ($page_description) {
-				echo "<p id='page_description'>";
-				if (is_array($page_description)) {
-					foreach ($page_description as $line) {
-						echo "<span>".$line."<br/></span>";
-					}
+			$alias_data = api_fetch("table=aliases&id=" . $data["alias"]);
+			if ($alias_data) {
+				echo "<p class='subtitle'>By: <a href='" . $htp_root . $alias_data["url"] . "' title='Visit artist page.'>" . $alias_data["title"] . "</a></p>";
+			}
+
+			echo "<aside class='info_sidebar'>";
+			echo "<p class='subtitle'>Released: <span>" . $data["date"] . "</span></p>";
+			echo "<p class='subtitle'>Publisher: <a title='Visit publisher' rel='noopener noreferrer' target='_blank' ";
+				if (valExists("label", $data)) {
+					$label_data = json_decode($data["label"], true);
+					echo "href='" . $label_data["url"] . "'>" . $label_data["name"];
 				} else {
-					echo $page_description;
+					echo "href='https://sammurphey.bandcamp.com'>Self Released";
 				}
-				echo "</p>";
-			}
-			if ($page_links) {
-				echo "<nav class='external_links'><ul>";
-				foreach($page_links as $link) {
-					echo "<li><a href='" . $link["url"] . "' title='" . $link["name"] . "' class='btn chip sml' target='_blank' rel='noopener noreferrer'>";
-
-						$link_img = $cdn_root . "ui/social/" . strtolower($link["name"]) . ".svg";
-
-						$test = get_headers($link_img);
-						if ($test[0] !== "HTTP/1.1 200 OK") {
-							$link_img = $cdn_root . "social/web.svg";
-						}
-
-						echo "<img class='icon' src='" . $link_img . "'>";
-					echo "</a></li>";
-				}
-				echo "</ul></nav>";
-			}
+				echo "</a></p>";
+			echo "</aside>";
 		?>
 </header>
