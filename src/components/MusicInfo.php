@@ -29,16 +29,18 @@
 				}
 				echo "</p></section>";
 			}
-			if ($data["adtl_imgs"]) {
-				$adtl_imgs = json_decode($data["adtl_imgs"], true);
-				if ($adtl_imgs) {
-					echo "<section class='tab_page grid selected'>";
-						foreach($adtl_imgs as $img) {
-							echo "<div class='grid_item'><a href='" . $htp_root . "gallery/" . $img . "'>" . img_element($img) . "</a></div>";
-						}
-					echo "</section>";
+			echo "<noscript>";
+				if ($data["adtl_imgs"]) {
+					$adtl_imgs = json_decode($data["adtl_imgs"], true);
+					if ($adtl_imgs) {
+						echo "<section class='tab_page grid selected'>";
+							foreach($adtl_imgs as $img) {
+								echo "<div class='grid_item'><a href='" . $htp_root . "gallery/" . $img . "'>" . img_element($img) . "</a></div>";
+							}
+						echo "</section>";
+					}
 				}
-			}
+			echo "</noscript>";
 		echo "</article>";
 	echo "</section>";
 ?>

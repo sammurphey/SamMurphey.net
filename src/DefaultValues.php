@@ -20,3 +20,4 @@ $page_hero_img = false;
 $page_links = false;
 $page_credits = false;
 $page_keywords = false;
+$related_pages = false;

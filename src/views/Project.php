@@ -9,6 +9,11 @@
 				include_once($php_root . "src/components/Intro.php");
 				break;
 		}
-		include_once($php_root . "src/components/Meta.php");
+		if ($page_credits || $page_keywords) {
+			include_once($php_root . "src/components/Meta.php");
+		}
+		if ($related_pages) {
+			include_once($php_root . "src/components/Related.php");
+		}
 	?>
 </article>

@@ -33,6 +33,12 @@ if (valExists("keywords", $data)) {
 		sort($page_keywords);
 	}
 }
+if (valExists("related", $data)) {
+	$related_pages = api_fetch("in=" . $data["related"]);
+	if (valExists("id", $related_pages)) {
+		$related_pages = [$related_pages];
+	}
+}
 
 require_once("./src/components/Sidebar.php");
 switch ($current_view) {
