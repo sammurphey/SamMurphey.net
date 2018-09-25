@@ -586,10 +586,10 @@ nav ul {
 
 #menu {
   display: none; }
-  @media (min-width: 840px) {
+  @media (min-width: 840px) and (min-height: 438px) {
     #menu {
+      bottom: auto;
       display: block;
-      height: calc(100vh - 36px);
       left: 23px;
       pointer-events: none;
       position: absolute;
@@ -603,10 +603,17 @@ nav ul {
           text-decoration: none; }
           #menu ul li + * {
             margin-top: 8px; }
-          #menu ul li a:focus, #menu ul li a:hover {
+          #menu ul li a.btn:focus, #menu ul li a.btn:hover {
             color: #FFF !important; }
-          #menu ul li a:active {
+          #menu ul li a.btn:active {
             color: #00EFF1 !important; } }
+  @media (min-width: 840px) and (min-height: 438px) and (max-height: 572px) {
+    #menu {
+      bottom: 22px;
+      top: auto; }
+      #menu ul li a.btn {
+        height: 48px;
+        padding: 8px 16px; } }
 
 main#app {
   background: #989898;
@@ -1000,23 +1007,26 @@ main#app {
     display: inline; }
 
 #qr_wrapper {
-  bottom: calc(16px * 2);
-  border: 1px solid #989898;
-  box-sizing: content-box;
-  cursor: pointer;
-  display: block;
-  height: 64px;
-  left: calc(16px * 2);
-  opacity: .4;
-  position: absolute;
-  width: 64px; }
-  #qr_wrapper.active {
-    border-color: #00EFF1;
-    opacity: 0.6; }
-  #qr_wrapper:focus, #qr_wrapper:hover {
-    opacity: 1; }
-  #qr_wrapper #qr_code {
-    position: relative; }
+  display: none; }
+  @media (min-height: 437px) {
+    #qr_wrapper {
+      bottom: calc(16px * 2);
+      border: 1px solid #989898;
+      box-sizing: content-box;
+      cursor: pointer;
+      display: block;
+      height: 64px;
+      left: calc(16px * 2);
+      opacity: .4;
+      position: absolute;
+      width: 64px; }
+      #qr_wrapper.active {
+        border-color: #00EFF1;
+        opacity: 0.6; }
+      #qr_wrapper:focus, #qr_wrapper:hover {
+        opacity: 1; }
+      #qr_wrapper #qr_code {
+        position: relative; } }
 
 #tracklist {
   flex-grow: 0;

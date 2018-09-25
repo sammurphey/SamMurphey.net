@@ -13,9 +13,9 @@ nav {
 
 #menu {
 	display: none;
-	@media(min-width: 840px) {
+	@media(min-width: 840px) AND (min-height: 438px) {
+		bottom: auto;
 		display: block;
-		height: calc(100vh - 36px);
 		left: 23px;
 		pointer-events: none;
 		position: absolute;
@@ -31,7 +31,8 @@ nav {
 				& + * {
 					margin-top: $paddingLrg;
 				}
-				a {
+				a.btn {
+
 					&:focus,
 					&:hover {
 						color: $highlightColor!important;
@@ -40,6 +41,14 @@ nav {
 						color: $tealColor!important;
 					}
 				}
+			}
+		}
+		@media(max-height: 572px) {
+			bottom: 22px;
+			top: auto;
+			ul li a.btn {
+				height: 48px;
+				padding: 8px 16px;
 			}
 		}
 	}
