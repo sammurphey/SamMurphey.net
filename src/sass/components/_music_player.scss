@@ -1,16 +1,12 @@
 @import "../vars";
 
-#intro.music_player {
+.music_player {
 	margin-bottom: 2px;
-	h1#page_title {
-		margin-right: 96px;
-	}
-	> p.subtitle {
-		margin-left: 32px;
+	padding: 0;
+	h1 {
+	//	margin: 28px 16px 8px 32px;
 	}
 }
-
-
 .now_playing {
 	bottom: 4px;
 	height: calc(#{$panelSize} / 2);

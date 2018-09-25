@@ -1,9 +1,19 @@
 @import "../vars";
 
+#music_info {
+	flex-wrap: wrap;
+	@media(min-width: 1154px) {
+		flex-wrap: nowrap;
+	}
+}
+
 #tracklist {
 	flex-grow: 0;
 	flex-shrink: 0;
-	width: $panelSize;
+	width: calc(100% - 4px);
+	@media(min-width: 1154px) {
+		width: $panelSize;
+	}
 	ol {
 		margin-top: 16px;
 		padding: 0 0 0 40px;
@@ -20,15 +30,12 @@
 	}
 }
 
-.tab_group {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 0;
-	flex-shrink: 1;
+#music_details {
 	width: 100%;
-	&#music_details {
+	@media(min-width: 1154px) {
 		width: calc(100% - (#{$panelSize} + 4px));
 	}
+
 }
 .has_album_data {
 	display: flex;

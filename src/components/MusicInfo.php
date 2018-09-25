@@ -29,18 +29,21 @@
 				}
 				echo "</p></section>";
 			}
-			echo "<noscript>";
+			//echo "<noscript>";
 				if ($data["adtl_imgs"]) {
 					$adtl_imgs = json_decode($data["adtl_imgs"], true);
 					if ($adtl_imgs) {
-						echo "<section class='tab_page grid selected'>";
+						echo "<section class='tab_page grid_container selected'>";
+							echo "<header class='tab_page_header panel'><h2>Photos</h2></header>";
+							echo "<article class='grid'>";
 							foreach($adtl_imgs as $img) {
-								echo "<div class='grid_item'><a href='" . $htp_root . "gallery/" . $img . "'>" . img_element($img) . "</a></div>";
+								echo "<section class='grid_item'><a href='" . $htp_root . "gallery/" . $img . "'>" . img_element($img) . "</a></section>";
 							}
+							echo "</article>";
 						echo "</section>";
 					}
 				}
-			echo "</noscript>";
+			//echo "</noscript>";
 		echo "</article>";
 	echo "</section>";
 ?>

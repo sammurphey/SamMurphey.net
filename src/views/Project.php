@@ -7,6 +7,12 @@
 				break;
 			default:
 				include_once($php_root . "src/components/Intro.php");
+				if (valExists("narrative", $data)) {
+				//	include_once($php_root . "srv/components/Narrative");
+				}
+				if (valExists("adtl_imgs", $data)) {
+
+				}
 				break;
 		}
 		if ($page_credits || $page_keywords) {

@@ -1,11 +1,21 @@
 .tab_group {
+	display: flex;
+	flex-direction: column;
 	position: relative;
+	width: calc(100% - 4px);
+	@media(min-width: 1154px) {
+		width: 100%;
+	}
 }
 
 .tabs {
+	display: flex;
 	flex-grow: 0;
 	flex-shrink: 0;
 	height: 84px;
+	@media(max-width: 839px) {
+		display: none;
+	}
 	.tab {
 		background: $lightGrey;
 		color: $highlightColor;
@@ -18,28 +28,41 @@
 
 .tab_pages {
 	flex-grow: 1;
+	flex-wrap: wrap;
 	padding: 2px;
 	max-width: 100%;
+	@media(min-width: 840px) {
+		flex-wrap: nowrap;
+	}
 	.tab_page {
-		flex-grow: 0;
-		flex-shrink: 1;
-		height: 0;
+		height: auto;
 		margin: 0;
-		max-height: $panelSize;
 		width: 100%;
 		overflow: auto;
-		padding: 0;
 		position: relative;
-		width: 0;
-		&.selected {
-			flex-grow: 1;
-			flex-shrink: 0;
-			height: 100%;
-			overflow: auto;
-			padding: $paddingXL $paddingXXL;
-			width: calc(100% - 4px)!important;
+		@media(min-width: 840px) {
+			flex-grow: 0;
+			flex-shrink: 1;
+			height: 0;
+			max-height: $panelSize;
+			padding: 0;
+			width: 0;
+			&.selected {
+				flex-grow: 1;
+				flex-shrink: 0;
+				height: 100%;
+				overflow: auto;
+				padding: $paddingXL $paddingXXL;
+				width: calc(100% - 4px)!important;
+			}
+			.tab_page_header {
+				display: none;
+			}
 		}
-		&.grid {
+		.tab_page_header {
+			margin: 4px 0 2px 0;
+		}
+		&.grid_container {
 			padding: 0;
 		}
 	}

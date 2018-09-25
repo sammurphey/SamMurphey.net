@@ -162,6 +162,7 @@
 		align-items: center;
 		display: flex;
 		margin-bottom: 4px;
+		margin-top: 2px;
 		min-height: 96px;
 		pointer-events: none;
 		position: relative;
@@ -199,8 +200,8 @@
 		}
 	}
 	.panel_article {
-		min-height: 192px;
-		height: calc(100% - 104px);
+		height: 192px;
+		overflow: auto;
 	}
 }
 #social_panel {

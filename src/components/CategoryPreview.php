@@ -63,9 +63,11 @@
 									echo "</header>";
 									echo "<article class='panel panel_article'>";
 										if (valExists("description", $subcategory)) {
+											$subcategory_description = $subcategory["description"];
 											echo "<p>";
-												if (is_array($subcategory["description"])) {
-													echo $subcategory["description"][0];
+												if (substr($subcategory_description, 0, 1) === "[") {
+													$subcategory_description = json_decode($subcategory_description, true);
+													echo $subcategory_description[0];
 												} else {
 													echo $subcategory["description"];
 												}

@@ -9,7 +9,7 @@
 			}
 			$alias_data = api_fetch("table=aliases&id=" . $data["alias"]);
 			if ($alias_data) {
-				echo "<p class='subtitle'>By: <a href='" . $htp_root . $alias_data["url"] . "' title='Visit artist page.'>" . $alias_data["title"] . "</a></p>";
+				echo "<p id='page_description' class='subtitle'>By: <a href='" . $htp_root . $alias_data["url"] . "' title='Visit artist page.'>" . $alias_data["title"] . "</a></p>";
 			}
 
 			echo "<aside class='info_sidebar'>";

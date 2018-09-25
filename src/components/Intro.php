@@ -11,6 +11,11 @@
 			if ($page_profile_photo) {
 				echo "<div class='profile_photo lrg'>" . img_element($page_profile_photo) . "</div>";
 			}
+			if ($current_view == "project" || $current_view == "details") {
+				if ($page_hero_img) {
+					echo "<div class='hero_img'>" . img_element($page_hero_img) . "</div>";
+				}
+			}
 			if ($page_description) {
 				echo "<p id='page_description'>";
 				if (is_array($page_description)) {
@@ -39,5 +44,6 @@
 				}
 				echo "</ul></nav>";
 			}
+			echo "<span class='clear_left'></span>";
 		?>
 </header>
