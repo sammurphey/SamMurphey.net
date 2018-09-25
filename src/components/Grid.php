@@ -4,10 +4,12 @@
 		$grid_title = false;
 		$grid_desc = false;
 		$grid_url = false;
+
 			switch($current_view) {
 				case "overview": {
 					$grid_url = "category=" . $current_category . "&view=overview&sort_by=date&sort_dir=DESC";
 					switch($current_category) {
+
 						case "music": {
 							$grid_title = "All Recent Music Releases";
 							$grid_desc = [
@@ -28,7 +30,6 @@
 						}
 						case "all": {
 							$grid_url = "view=overview&sort_by=date&sort_dir=DESC";
-							break;
 						}
 						default: {
 							$grid_title = "All Recent";

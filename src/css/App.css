@@ -1235,6 +1235,9 @@ main#app {
           height: 96px;
           width: 96px; } }
 
+.subcategories_previews header {
+  margin-bottom: 0; }
+
 .version_number {
   font-size: 6px;
   position: absolute;
