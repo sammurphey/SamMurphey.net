@@ -78,7 +78,7 @@ function img_element ($id, $override_shape = false) {
 
 	switch($img_data["ext"]) {
 		case "mp4":
-			$img_elem .= "<video autoPlay loop><source src='" . $img_src . "' type='video/mp4'/></video>";
+			$img_elem .= "<video autoPlay loop muted><source src='" . $img_src . "' type='video/mp4'/></video>";
 			break;
 		default:
 			$img_elem .= "<img alt='" . $img_alt . "' title='" . $img_title . "' style='" . $img_style . "' src='" . $img_src . "'";

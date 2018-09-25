@@ -6,6 +6,9 @@
 		 	if ($page_profile_photo) {
 				echo "class='with_profile'";
 			}
+			if ($page_hero_img) {
+				echo "class='with_hero'";
+			}
 		?>><span class="corner-spacer">&nbsp;</span><?php echo $page_title; ?></h1>
 		<?php
 			if ($page_profile_photo) {
@@ -44,6 +47,6 @@
 				}
 				echo "</ul></nav>";
 			}
-			echo "<span class='clear_left'></span>";
+			echo "<div class='clear_left'></div>";
 		?>
 </header>

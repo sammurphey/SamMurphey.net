@@ -101,7 +101,7 @@
       padding: 0; } }
   #intro h1#page_title {
     margin-bottom: 0;
-    margin-left: 32px;
+    margin-left: 48px;
     margin-top: 0;
     padding-bottom: 32px;
     padding-top: 16px;
@@ -109,6 +109,9 @@
     @media (min-width: 460px) {
       #intro h1#page_title {
         padding-bottom: 0; } }
+    @media (min-width: 840px) {
+      #intro h1#page_title {
+        margin-left: 32px; } }
     #intro h1#page_title span {
       float: left; }
     #intro h1#page_title.with_profile {
@@ -118,19 +121,24 @@
         #intro h1#page_title.with_profile {
           width: calc(100% - 160px); } }
     #intro h1#page_title.with_hero {
-      width: 100%; }
+      width: calc(100% - 64px); }
       @media (min-width: 460px) {
         #intro h1#page_title.with_hero {
           float: left;
-          margin-right: 32px;
+          margin-right: 0;
+          width: calc(100% - 272px); } }
+      @media (min-width: 840px) {
+        #intro h1#page_title.with_hero {
           width: calc(100% - 256px); } }
       @media (min-width: 1154px) {
         #intro h1#page_title.with_hero {
-          margin-right: 80px;
+          margin-right: 48px;
           width: calc(100% - 528px); } }
   #intro p#page_description {
-    margin-left: 32px; }
-    @media (max-width: 400px) {
+    margin-left: 32px;
+    padding-top: 16px;
+    padding-right: 32px; }
+    @media (max-width: 460px) {
       #intro p#page_description {
         clear: both; } }
   #intro .profile_photo {
@@ -143,6 +151,7 @@
     float: right;
     height: calc(100vw - (10px * 2));
     margin-bottom: 0;
+    margin-left: 32px;
     padding: 4px 0;
     width: 100%; }
     @media (min-width: 460px) {
