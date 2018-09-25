@@ -38,6 +38,9 @@
 			@media(min-width: 840px) {
 				right: 32px;
 			}
+			@media(min-width: 840px) AND (max-height: 437px) {
+				right: 64px;
+			}
 			&:active,
 			&:focus,
 			&:hover {
@@ -52,7 +55,11 @@
 		}
 		&#menu_btn {
 			display: none;
-			@media(max-width: 840px) {
+			@media(max-width: 839px) {
+				display: flex;
+				right: 16px;
+			}
+			@media(min-width: 840px) AND (max-height: 437px) {
 				display: flex;
 				right: 16px;
 			}

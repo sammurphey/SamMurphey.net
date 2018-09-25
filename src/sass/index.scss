@@ -61,16 +61,16 @@ header, section, footer, aside, nav, main, article, figure {
 #header {
 	#header_corner {
 		height: 122px;
-		left: 10px;
-		position: absolute;
-		top: 10px;
-		width: 122px;
-		z-index: 2;
+	    left: 10px;
+	    position: absolute;
+	    top: 10px;
+	    width: 122px;
+	    z-index: 5;
 		@media(min-width: 840px) {
 			height: 128px;
-			left: 13px;
-			top: 13px;
-			width: 128px;
+	        left: 13px;
+	        top: 13px;
+	        width: 128px;
 		}
 		&::after {
 			background: #FFF;
@@ -80,19 +80,16 @@ header, section, footer, aside, nav, main, article, figure {
 			height: 113px;
 			left: -63px;
 			top: -30px;
-			/* left: calc(0px - (calc(16px * 4))); */
 			position: absolute;
-			/* top: calc(calc(16px * 4) + 2px); */
 			-webkit-transform: rotateZ(-45deg);
 			-ms-transform: rotate(-45deg);
 			transform: rotateZ(-45deg);
 			width: 181px;
 			border-radius: 3px;
 			overflow: hidden;
-			@media(max-width: 640px) {
-				border: 0;
-				left: -68px;
-				top: -34px;
+			@media(min-width: 840px) {
+				left: -62px;
+			    top: -27px;
 			}
 		}
 		&::before {
@@ -108,9 +105,9 @@ header, section, footer, aside, nav, main, article, figure {
 			-ms-transform: rotate(-45deg);
 			transform: rotateZ(-45deg);
 			width: 179px;
-			@media(max-width: 640px) {
-				left: -29px;
-				top: 60px;
+			@media(min-width: 840px) {
+				left: -22px;
+				top: 65px;
 			}
 		}
 	}
@@ -130,6 +127,7 @@ header, section, footer, aside, nav, main, article, figure {
 			position: absolute;
 			left: 0;
 			top: 0;
+			z-index: 6;
 			* {
 				padding: 0;
 			}

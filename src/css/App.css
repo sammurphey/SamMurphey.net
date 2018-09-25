@@ -533,6 +533,9 @@ input {
     @media (min-width: 840px) {
       #header .header_btn#search_btn {
         right: 32px; } }
+    @media (min-width: 840px) and (max-height: 437px) {
+      #header .header_btn#search_btn {
+        right: 64px; } }
     #header .header_btn#search_btn:active, #header .header_btn#search_btn:focus, #header .header_btn#search_btn:hover {
       background: none; }
       #header .header_btn#search_btn:active svg polygon, #header .header_btn#search_btn:focus svg polygon, #header .header_btn#search_btn:hover svg polygon {
@@ -540,7 +543,11 @@ input {
         stroke: #00EFF1; }
   #header .header_btn#menu_btn {
     display: none; }
-    @media (max-width: 840px) {
+    @media (max-width: 839px) {
+      #header .header_btn#menu_btn {
+        display: flex;
+        right: 16px; } }
+    @media (min-width: 840px) and (max-height: 437px) {
       #header .header_btn#menu_btn {
         display: flex;
         right: 16px; } }
@@ -578,36 +585,117 @@ nav ul {
   margin: 0;
   padding: 0; }
 
+#menu_checkbox {
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  background: none;
+  background: none !important;
+  border: none; }
+  @media (max-width: 839px) {
+    #menu_checkbox:checked ~ #menu {
+      transform: translateX(-183px); } }
+  @media (min-width: 840px) and (max-height: 437px) {
+    #menu_checkbox:checked ~ #menu {
+      transform: translateX(-183px); } }
+
 #menu {
-  display: none; }
+  background: #FFF;
+  bottom: auto;
+  display: block;
+  height: calc(100vh - 20px);
+  left: auto;
+  padding: 32px;
+  position: absolute;
+  right: -183px;
+  top: 2px;
+  transition: transform .6s ease;
+  width: 192px;
+  will-change: transform;
+  z-index: 4; }
+  #menu::after {
+    border-top: 4px solid #464545;
+    border-right: 4px solid #c5c5c5;
+    display: block;
+    content: "";
+    height: 100%;
+    left: -32px;
+    position: absolute;
+    top: 0;
+    width: 32px; }
+  #menu #close_menu_btn {
+    position: absolute;
+    top: -12px;
+    right: 16px; }
+    #menu #close_menu_btn svg {
+      padding: 6px; }
+    #menu #close_menu_btn:hover, #menu #close_menu_btn:focus, #menu #close_menu_btn:active {
+      background: none; }
+      #menu #close_menu_btn:hover svg, #menu #close_menu_btn:focus svg, #menu #close_menu_btn:active svg {
+        fill: #00EFF1; }
   @media (min-width: 840px) and (min-height: 438px) {
     #menu {
-      bottom: auto;
-      display: block;
+      background: none;
+      height: auto;
       left: 23px;
+      margin: 0;
+      padding: 0;
       pointer-events: none;
-      position: absolute;
+      right: auto;
       top: 199px;
-      width: calc(64px * 2);
-      z-index: 4; }
+      transition: none;
+      width: calc(64px * 2); }
+      #menu::after {
+        content: none; }
+      #menu #close_menu_btn {
+        display: none; } }
+  #menu ul {
+    flex-direction: column;
+    margin-top: 24px;
+    pointer-events: all; }
+    @media (min-width: 840px) {
       #menu ul {
-        flex-direction: column;
-        pointer-events: all; }
-        #menu ul li {
-          text-decoration: none; }
-          #menu ul li + * {
-            margin-top: 8px; }
-          #menu ul li a.btn:focus, #menu ul li a.btn:hover {
-            color: #FFF !important; }
-          #menu ul li a.btn:active {
-            color: #00EFF1 !important; } }
-  @media (min-width: 840px) and (min-height: 438px) and (max-height: 572px) {
+        margin-top: 0; } }
+    #menu ul li {
+      text-decoration: none; }
+      #menu ul li + * {
+        margin-top: 8px; }
+      #menu ul li a.btn:focus, #menu ul li a.btn:hover {
+        border-color: #00EFF1; }
+      @media (min-width: 840px) and (min-height: 438px) {
+        #menu ul li a.btn:focus, #menu ul li a.btn:hover {
+          border-color: #FFF !important;
+          color: #FFF !important; } }
+      #menu ul li a.btn:active {
+        color: #00EFF1 !important; }
+  @media (min-width: 840px) and (max-height: 572px) {
     #menu {
       bottom: 22px;
       top: auto; }
       #menu ul li a.btn {
         height: 48px;
         padding: 8px 16px; } }
+  @media (min-width: 840px) and (max-height: 437px) {
+    #menu {
+      height: calc(100vh - 30px);
+      top: 7px;
+      right: -177px; }
+      #menu #close_menu_btn {
+        left: auto;
+        padding: 0;
+        right: -32px; }
+      #menu ul {
+        display: block;
+        height: 100%;
+        overflow: auto;
+        padding-right: 4px; }
+        #menu ul::-webkit-scrollbar-thumb {
+          background: #666; }
+          #menu ul::-webkit-scrollbar-thumb:hover {
+            background: #00EFF1; }
+          #menu ul::-webkit-scrollbar-thumb:active {
+            background: #00EFF1; } }
 
 main#app {
   background: #989898;
