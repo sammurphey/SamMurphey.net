@@ -1,64 +1,11 @@
 @import "../vars";
 
 #header {
-	height: calc(#{$blockSize} * 2 - 6px);
-	left: 10px;
-	position: absolute;
-	top: 10px;
-	width: calc(#{$blockSize} * 2 - 6px);
-	z-index: 2;
-	@media(min-width: 840px) {
-		height: calc(#{$blockSize} * 2);
-		left: 13px;
-		top: 13px;
-		width: calc(#{$blockSize} * 2);
-	}
-	&::after {
-		background: #FFF;
-		border-bottom: 4px solid #797979;
-		content: "";
-		display: block;
-		height: 113px;
-		left: -62px;
-		top: -28px;
-		/* left: calc(0px - (calc(16px * 4))); */
-		position: absolute;
-		/* top: calc(calc(16px * 4) + 2px); */
-		-webkit-transform: rotateZ(-45deg);
-		-ms-transform: rotate(-45deg);
-		transform: rotateZ(-45deg);
-		width: 181px;
-		border-radius: 3px;
-		overflow: hidden;
-		@media(max-width: 640px) {
-			border: 0;
-			left: -68px;
-			top: -34px;
-		}
-	}
-	&::before {
-		-webkit-box-shadow: 0px 1px 8px 1.3px rgba(0, 0, 0, 0.15);
-		box-shadow: 0px 1px 8px 1.3px rgba(0, 0, 0, 0.15);
-		content: "";
-		height: 3px;
-		display: block;
-		left: -22px;
-		position: absolute;
-		top: 64px;
-		-webkit-transform: rotateZ(-45deg);
-		-ms-transform: rotate(-45deg);
-		transform: rotateZ(-45deg);
-		width: 179px;
-		@media(max-width: 640px) {
-			left: -29px;
-			top: 60px;
-		}
-	}
-	.btn {
+	.header_btn {
 		border: 0;
 		display: inline-block;
 		z-index: 4;
-		&#logo_btn, &#search_btn {
+		&#logo_btn, &#search_btn, &#menu_btn {
 			align-items: center;
 			background: none;
 			display: flex;
@@ -79,13 +26,17 @@
 				padding: 0;
 			}
 		}
-		&#search_btn {
-		  	position: fixed;
-			right: 16px;
+		&#search_btn, &#menu_btn {
+		  	position: absolute;
 			top: 8px;
 			@media(min-width: 840px) {
-				right: 32px;
 				top: 20px;
+			}
+		}
+		&#search_btn {
+			right: 64px;
+			@media(min-width: 840px) {
+				right: 32px;
 			}
 			&:active,
 			&:focus,
@@ -95,6 +46,29 @@
 					polygon {
 						fill: none;
 						stroke: $tealColor;
+					}
+				}
+			}
+		}
+		&#menu_btn {
+			display: none;
+			@media(max-width: 840px) {
+				display: flex;
+				right: 16px;
+			}
+			svg {
+				padding: 6px;
+			}
+			&:active,
+			&:focus,
+			&:hover {
+				background: none;
+				svg {
+					path {
+						fill: none;
+					}
+					.color {
+						fill: $tealColor;
 					}
 				}
 			}

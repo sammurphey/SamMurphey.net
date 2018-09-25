@@ -503,90 +503,55 @@ input {
   input + * {
     margin-top: 8px; }
 
-#header {
-  height: calc(64px * 2 - 6px);
-  left: 10px;
-  position: absolute;
-  top: 10px;
-  width: calc(64px * 2 - 6px);
-  z-index: 2; }
-  @media (min-width: 840px) {
-    #header {
-      height: calc(64px * 2);
-      left: 13px;
-      top: 13px;
-      width: calc(64px * 2); } }
-  #header::after {
-    background: #FFF;
-    border-bottom: 4px solid #797979;
-    content: "";
-    display: block;
-    height: 113px;
-    left: -62px;
-    top: -28px;
-    /* left: calc(0px - (calc(16px * 4))); */
+#header .header_btn {
+  border: 0;
+  display: inline-block;
+  z-index: 4; }
+  #header .header_btn#logo_btn, #header .header_btn#search_btn, #header .header_btn#menu_btn {
+    align-items: center;
+    background: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0; }
+    #header .header_btn#logo_btn:active *, #header .header_btn#logo_btn:focus *, #header .header_btn#logo_btn:hover *, #header .header_btn#search_btn:active *, #header .header_btn#search_btn:focus *, #header .header_btn#search_btn:hover *, #header .header_btn#menu_btn:active *, #header .header_btn#menu_btn:focus *, #header .header_btn#menu_btn:hover * {
+      fill: #00EFF1; }
+  #header .header_btn#logo_btn {
     position: absolute;
-    /* top: calc(calc(16px * 4) + 2px); */
-    -webkit-transform: rotateZ(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotateZ(-45deg);
-    width: 181px;
-    border-radius: 3px;
-    overflow: hidden; }
-    @media (max-width: 640px) {
-      #header::after {
-        border: 0;
-        left: -68px;
-        top: -34px; } }
-  #header::before {
-    -webkit-box-shadow: 0px 1px 8px 1.3px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 1px 8px 1.3px rgba(0, 0, 0, 0.15);
-    content: "";
-    height: 3px;
-    display: block;
-    left: -22px;
-    position: absolute;
-    top: 64px;
-    -webkit-transform: rotateZ(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotateZ(-45deg);
-    width: 179px; }
-    @media (max-width: 640px) {
-      #header::before {
-        left: -29px;
-        top: 60px; } }
-  #header .btn {
-    border: 0;
-    display: inline-block;
-    z-index: 4; }
-    #header .btn#logo_btn, #header .btn#search_btn {
-      align-items: center;
-      background: none;
-      display: flex;
-      justify-content: center;
-      margin: 0;
+    left: 0;
+    top: 0; }
+    #header .header_btn#logo_btn * {
       padding: 0; }
-      #header .btn#logo_btn:active *, #header .btn#logo_btn:focus *, #header .btn#logo_btn:hover *, #header .btn#search_btn:active *, #header .btn#search_btn:focus *, #header .btn#search_btn:hover * {
+  #header .header_btn#search_btn, #header .header_btn#menu_btn {
+    position: absolute;
+    top: 8px; }
+    @media (min-width: 840px) {
+      #header .header_btn#search_btn, #header .header_btn#menu_btn {
+        top: 20px; } }
+  #header .header_btn#search_btn {
+    right: 64px; }
+    @media (min-width: 840px) {
+      #header .header_btn#search_btn {
+        right: 32px; } }
+    #header .header_btn#search_btn:active, #header .header_btn#search_btn:focus, #header .header_btn#search_btn:hover {
+      background: none; }
+      #header .header_btn#search_btn:active svg polygon, #header .header_btn#search_btn:focus svg polygon, #header .header_btn#search_btn:hover svg polygon {
+        fill: none;
+        stroke: #00EFF1; }
+  #header .header_btn#menu_btn {
+    display: none; }
+    @media (max-width: 840px) {
+      #header .header_btn#menu_btn {
+        display: flex;
+        right: 16px; } }
+    #header .header_btn#menu_btn svg {
+      padding: 6px; }
+    #header .header_btn#menu_btn:active, #header .header_btn#menu_btn:focus, #header .header_btn#menu_btn:hover {
+      background: none; }
+      #header .header_btn#menu_btn:active svg path, #header .header_btn#menu_btn:focus svg path, #header .header_btn#menu_btn:hover svg path {
+        fill: none; }
+      #header .header_btn#menu_btn:active svg .color, #header .header_btn#menu_btn:focus svg .color, #header .header_btn#menu_btn:hover svg .color {
         fill: #00EFF1; }
-    #header .btn#logo_btn {
-      position: absolute;
-      left: 0;
-      top: 0; }
-      #header .btn#logo_btn * {
-        padding: 0; }
-    #header .btn#search_btn {
-      position: fixed;
-      right: 16px;
-      top: 8px; }
-      @media (min-width: 840px) {
-        #header .btn#search_btn {
-          right: 32px;
-          top: 20px; } }
-      #header .btn#search_btn:active, #header .btn#search_btn:focus, #header .btn#search_btn:hover {
-        background: none; }
-        #header .btn#search_btn:active svg polygon, #header .btn#search_btn:focus svg polygon, #header .btn#search_btn:hover svg polygon {
-          fill: none;
-          stroke: #00EFF1; }
 
 #footer {
   display: flex;

@@ -34,7 +34,8 @@ if (valExists("keywords", $data)) {
 	}
 }
 if (valExists("related", $data)) {
-	$related_pages = api_fetch("in=" . $data["related"]);
+	$related_ids = str_replace(" ", "", $data["related"]);
+	$related_pages = api_fetch("in=" . $related_ids);
 	if (valExists("id", $related_pages)) {
 		$related_pages = [$related_pages];
 	}

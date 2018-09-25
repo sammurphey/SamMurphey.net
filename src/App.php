@@ -2,7 +2,6 @@
 <link href="<?php echo $htp_root; ?>src/css/App.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'" rel="stylesheet">
 <?php
 require_once("./src/components/Header.php");
-require_once("./src/components/Menu.php");
 // functions
 echo "<main id='app'>";
 		require_once("./src/functions/img_element.php");
