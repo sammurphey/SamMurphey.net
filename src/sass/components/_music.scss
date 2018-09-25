@@ -33,7 +33,9 @@
 #music_details {
 	width: 100%;
 	@media(min-width: 1154px) {
-		width: calc(100% - (#{$panelSize} + 4px));
+		#tracklist + & {
+			width: calc(100% - (#{$panelSize} + 4px));
+		}
 	}
 
 }

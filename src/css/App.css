@@ -91,7 +91,7 @@
 
 #intro {
   height: auto;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   padding: 0 0 32px 0 !important;
   position: relative;
   z-index: 4; }
@@ -147,7 +147,7 @@
     margin-right: 16px; }
   #intro .hero_img {
     background: #989898;
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2) inset, 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12) inset;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2) inset, 0 2px 2px 0 rgba(0, 0, 0, 0.14) inset, 0 1px 5px 0 rgba(0, 0, 0, 0.12) inset;
     float: right;
     height: calc(100vw - (10px * 2));
     margin-bottom: 0;
@@ -1086,7 +1086,7 @@ main#app {
 #music_details {
   width: 100%; }
   @media (min-width: 1154px) {
-    #music_details {
+    #tracklist + #music_details {
       width: calc(100% - (416px + 4px)); } }
 
 .has_album_data {
@@ -1300,6 +1300,9 @@ main#app {
         .profile_photo.lrg .img_container {
           height: 96px;
           width: 96px; } }
+
+#intro + .category_preview {
+  margin-top: 4px; }
 
 .version_number {
   font-size: 6px;

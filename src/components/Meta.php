@@ -1,4 +1,4 @@
-<section class="panel">
+<section id="metadata" class="panel">
 	<h2>Metadata</h2>
 	<?php
 		if ($page_credits) {

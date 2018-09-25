@@ -8,10 +8,10 @@
 			default:
 				include_once($php_root . "src/components/Intro.php");
 				if (valExists("narrative", $data)) {
-				//	include_once($php_root . "srv/components/Narrative");
+					include_once($php_root . "srv/components/Narrative");
 				}
-				if (valExists("adtl_imgs", $data)) {
-
+				if (valExists("imgs", $data)) {
+					include_once($php_root . "src/components/ProjectImgs.php");
 				}
 				break;
 		}
