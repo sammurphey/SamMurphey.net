@@ -32,7 +32,7 @@
 		}
 		&.with_profile {
 			float: left;
-			width: calc(100% - 128px);
+			width: calc(100% - 144px);
 			@media(min-width: 840px) {
 				width: calc(100% - 160px);
 			}
@@ -111,8 +111,5 @@
 	}
 	.external_links {
 		margin: 16px 32px 0 32px;
-	}
-	.clear_left {
-		clear: left;
 	}
 }

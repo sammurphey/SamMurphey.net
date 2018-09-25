@@ -3,10 +3,10 @@
 }?>">
 		<div class="corner"></div>
 		<h1 id='page_title' <?php
+			if ($page_profile_photo) {
+				echo "class='with_profile'";
+			}
 			if ($current_view == "project" || $current_view == "details") {
-			 	if ($page_profile_photo) {
-					echo "class='with_profile'";
-				}
 				if ($page_hero_img) {
 					echo "class='with_hero'";
 				}

@@ -1,41 +1,36 @@
-<section class="narrative">
-	<article class="story_mode">
-		<?php
-			$narrative = json_decode($data["narrative"], true);
-			if ($narrative) {
-				foreach ($narrative as $row) {
-					echo "<section class='panel_wrapper'>";
-					foreach ($row as $panel) {
-						if (valExists("p", $panel)) {
-							echo "<section class='panel text_elem'>";
-								if (!is_array($panel["p"])) {
-									echo "<p>" . $panel["p"] ."</p>";
-								} else {
-									foreach ($panel["p"] as $str) {
-										if (substr($str, 0, 1) === "#") {
-											echo "<h2>" . str_replace("#", "", $str) . "</h2>";
-										} else {
-											echo "<p>" . $str . "</p>";
-										}
-									}
+<article id="narrative" class="panel_wrapper">
+	<?php
+		$narrative = json_decode($data["narrative"], true);
+		if ($narrative) {
+			foreach ($narrative as $row) {
+				echo "<section class='panel'>";
+					if (valExists("i", $row)) {
+							if (is_array($row["i"])) {
+								foreach ($row["i"] as $img) {
+									echo img_element($img);
 								}
-							echo "</section>";
-						} elseif (valExists("i", $panel)) {
-							echo "<section class='panel img_elem'>";
-								if (is_array($panel["i"])) {
-									foreach ($panel["i"] as $img) {
-										echo img_element($img);
-									}
-								} else {
-									echo img_element($panel["i"]);
-								}
-							echo "</section>";
-						}
-
+							} else {
+								echo img_element($row["i"]);
+							}
 					}
-					echo "</section>";
-				}
+
+					if (valExists("p", $row)) {
+						echo "<dl class='text_elem'>";
+							if (!is_array($row["p"])) {
+								echo "<dd>" . $row["p"] ."</dd>";
+							} else {
+								foreach ($row["p"] as $str) {
+									if (substr($str, 0, 1) === "#") {
+										echo "<dt>" . str_replace("#", "", $str) . "</dt>";
+									} else {
+										echo "<dd>" . $str . "</dd>";
+									}
+								}
+							}
+						echo "</dl>";
+					}
+				echo "<p class='clear_left'></p></section>";
 			}
-		?>
-	</article>
-</section>
+		}
+	?>
+</article>

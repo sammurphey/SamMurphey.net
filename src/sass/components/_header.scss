@@ -80,11 +80,10 @@
 			}
 		}
 		&#search_btn {
-		  	position: absolute;
-			right: calc(0px - 100vw + 142px);
-
-			@media(min-width: 600px) {
-				position: fixed;
+		  	position: fixed;
+			right: 16px;
+			top: 8px;
+			@media(min-width: 840px) {
 				right: 32px;
 				top: 20px;
 			}

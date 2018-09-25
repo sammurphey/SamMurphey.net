@@ -7,9 +7,11 @@
 				break;
 			default:
 				include_once($php_root . "src/components/Intro.php");
-				if (valExists("narrative", $data)) {
-					include_once($php_root . "src/components/Narrative.php");
-				}
+				echo "<section id='project_info'>";
+					if (valExists("narrative", $data)) {
+						include_once($php_root . "src/components/Narrative.php");
+					}
+				echo "</section>";
 				if (valExists("imgs", $data)) {
 					include_once($php_root . "src/components/ProjectImgs.php");
 				}
