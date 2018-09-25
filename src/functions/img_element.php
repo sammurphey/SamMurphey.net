@@ -4,7 +4,6 @@ function img_element ($id, $override_shape = false) {
 	$src_base = "https://cdn.sammurphey.net/v2/";
 	$img_src = $src_base . $img_data["path"] . "." . $img_data["ext"];
 
-
 	//ALT + TITLE
 	if ($img_data["alt"]) {
 		$img_alt = $img_data["alt"];
@@ -75,7 +74,6 @@ function img_element ($id, $override_shape = false) {
 			$img_style = "height: 100%; width: auto";
 	}
 	$img_elem = "<div class='img_container' data-id='" . $id . "' data-type='" . $img_data["ext"] . "' data-shape='" . $img_shape . "' data-pos='" . $img_data["position"] . "' style='" . $img_container_style . "'>";
-
 	switch($img_data["ext"]) {
 		case "mp4":
 			$img_elem .= "<video autoPlay loop muted><source src='" . $img_src . "' type='video/mp4'/></video>";
