@@ -1,4 +1,4 @@
-<section id="releated">
+<section id="related">
 	<header class="panel">
 		<h2>Releated</h2>
 		<p>If you enjoyed this, you might want to check out these too...</p>

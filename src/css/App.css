@@ -854,6 +854,9 @@ main#app {
     height: 192px;
     overflow: auto; }
 
+.panel + #related {
+  margin: 4px 0 0 0; }
+
 #social_panel {
   width: 100% !important;
   margin: 0; }
@@ -1221,7 +1224,7 @@ main#app {
 #narrative {
   flex-wrap: wrap;
   height: auto;
-  margin-bottom: 4px; }
+  margin-bottom: 2px; }
   #narrative .panel {
     padding: 0; }
     @media (min-width: 840px) {
@@ -1232,27 +1235,40 @@ main#app {
       box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2) inset, 0 2px 2px 0 rgba(0, 0, 0, 0.14) inset, 0 1px 5px 0 rgba(0, 0, 0, 0.12) inset;
       float: right;
       height: auto;
-      margin: 0;
-      padding: 0 0 4px 4px;
+      margin: 0 0 0 32px;
+      padding: 0 0 0 4px;
       width: 188px; }
       @media (min-width: 1154px) {
         #narrative .panel .img_container {
-          width: 416px; } }
+          width: calc(416px / 2); } }
+      #narrative .panel .img_container video, #narrative .panel .img_container img {
+        position: relative; }
       #narrative .panel .img_container[data-shape="wide"] {
         height: 188px;
         width: auto; }
         @media (min-width: 1154px) {
           #narrative .panel .img_container[data-shape="wide"] {
-            height: 416px; } }
+            height: calc(416px / 2); } }
+      #narrative .panel .img_container[data-type="mp4"] {
+        height: auto;
+        width: 188px; }
+        @media (min-width: 1154px) {
+          #narrative .panel .img_container[data-type="mp4"] {
+            width: calc(416px *.75); } }
     #narrative .panel:nth-child(odd) .img_container {
       float: left;
-      padding: 0 4px 4px 0; }
-    #narrative .panel .text_elem {
-      display: inline; }
-      #narrative .panel .text_elem > * {
-        clear: both;
-        display: inline;
-        padding: 32px; }
+      margin: 0 32px 0 0;
+      padding: 0 4px 0 0; }
+    #narrative .panel p {
+      padding: 32px 32px 0 32px; }
+      #narrative .panel p + #narrative .panel p {
+        padding: 0 32px 0 32px; }
+      #narrative .panel p:first-child {
+        padding: 32px !important; }
+    #narrative .panel:nth-child(odd) p:nth-child(2) {
+      padding: 32px 32px 0 32px !important; }
+    #narrative .panel:nth-child(odd) p:last-child {
+      padding: 0 32px 32px 32px; }
 
 /* {
 		height: auto;

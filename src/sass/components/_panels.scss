@@ -204,6 +204,9 @@
 		overflow: auto;
 	}
 }
+.panel + #related {
+	margin: 4px 0 0 0;
+}
 #social_panel {
 	width: 100%!important;
 	margin: 0;

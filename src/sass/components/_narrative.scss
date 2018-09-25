@@ -3,7 +3,7 @@
 #narrative {
 	flex-wrap: wrap;
 	height: auto;
-	margin-bottom: 4px;
+	margin-bottom: 2px;
 	@media(max-width: 839px) {
 		&:nth-child(odd){
 		//	flex-direction: column-reverse;
@@ -21,35 +21,63 @@
 			box-shadow: 0 3px 1px -2px rgba(0,0,0,.2) inset, 0 2px 2px 0 rgba(0,0,0,.14) inset, 0 1px 5px 0 rgba(0,0,0,.12) inset;
 			float: right;
 			height: auto;
-			margin: 0;
-			padding: 0 0 4px 4px;
+			//left: 32px;
+			margin: 0 0 0 32px;
+			padding: 0 0 0 4px;
+			//top: -32px;
 			width: 188px;
 			@media(min-width: 1154px) {
-				width: $panelSize;
+				width: calc(#{$panelSize} / 2);
+			}
+			video, img {
+				position: relative;
 			}
 			&[data-shape="wide"] {
 				height: 188px;
 				@media(min-width: 1154px) {
-					height: $panelSize;
+					height: calc(#{$panelSize} / 2);
 				}
 				width: auto;
 			}
-
+			&[data-type="mp4"] {
+				height: auto;
+				width: 188px;
+				@media(min-width: 1154px) {
+					width: calc(#{$panelSize} *.75);
+				}
+				//&[data-shape="wide"] {
+				//	height: auto;
+				//	width: 188px;
+				//	@media(min-width: 1154px) {
+				//		width: calc(#{$panelSize} / 2);
+				//	}
+				//}
+			}
 		}
 		&:nth-child(odd) {
 			.img_container {
 				float: left;
-				padding: 0 4px 4px 0;
+				//left: -32px;
+				margin: 0 32px 0 0;
+				padding: 0 4px 0 0;
 			}
 		}
 
-		.text_elem {
-			display: inline;
-			//float: right;
-			> * {
-				clear: both;
-				display: inline;
-				padding: $paddingXXL;
+		p {
+			padding: 32px 32px 0 32px;
+			& + & {
+				padding: 0 32px 0 32px;
+			}
+			&:first-child {
+				padding: 32px!important;
+			}
+		}
+		&:nth-child(odd) {
+			p:nth-child(2) {
+				padding: 32px 32px 0 32px!important;
+			}
+			p:last-child {
+				padding: 0 32px 32px 32px;
 			}
 		}
 		&:nth-child(even) {

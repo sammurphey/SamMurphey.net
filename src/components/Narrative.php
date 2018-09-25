@@ -15,21 +15,21 @@
 					}
 
 					if (valExists("p", $row)) {
-						echo "<dl class='text_elem'>";
+						//echo "<dl class='text_elem'>";
 							if (!is_array($row["p"])) {
-								echo "<dd>" . $row["p"] ."</dd>";
+								echo "<p>" . $row["p"] ."</p>";
 							} else {
 								foreach ($row["p"] as $str) {
 									if (substr($str, 0, 1) === "#") {
-										echo "<dt>" . str_replace("#", "", $str) . "</dt>";
+										echo "<p>" . str_replace("#", "", $str) . "</p>";
 									} else {
-										echo "<dd>" . $str . "</dd>";
+										echo "<p>" . $str . "</p>";
 									}
 								}
 							}
-						echo "</dl>";
+						//echo "</dl>";
 					}
-				echo "<p class='clear_left'></p></section>";
+				echo "</section>";
 			}
 		}
 	?>
