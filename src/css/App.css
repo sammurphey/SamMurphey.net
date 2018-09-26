@@ -1222,21 +1222,32 @@ main#app {
   @media (min-width: 1154px) {
     .tab_group {
       width: 100%; } }
+  .tab_group input[type="radio"] {
+    display: none; }
 
 .tabs {
-  display: flex;
   flex-grow: 0;
   flex-shrink: 0;
-  height: 84px; }
+  height: 84px;
+  margin: 0; }
   @media (max-width: 839px) {
     .tabs {
       display: none; } }
-  .tabs .tab {
-    background: #b1b1b1;
-    color: #FFF; }
-    .tabs .tab.selected {
-      background: #F8F8F8;
-      color: #000; }
+  .tabs ul {
+    display: flex;
+    width: 100%; }
+    .tabs ul li {
+      flex-grow: 1;
+      margin: 2px; }
+      .tabs ul li .tab {
+        background: #b1b1b1;
+        color: #FFF;
+        margin: 0; }
+
+#tab_selector_1:checked ~ nav #tab_1,
+#tab_selector_2:checked ~ nav #tab_2 {
+  background: #F8F8F8;
+  color: #000; }
 
 .tab_pages {
   flex-grow: 1;
@@ -1247,32 +1258,25 @@ main#app {
     .tab_pages {
       flex-wrap: nowrap; } }
   .tab_pages .tab_page {
+    display: none;
     height: auto;
     margin: 0;
     width: 100%;
-    overflow: auto;
     position: relative; }
     @media (min-width: 840px) {
       .tab_pages .tab_page {
-        flex-grow: 0;
-        flex-shrink: 1;
-        height: 0;
         max-height: 416px;
-        padding: 0;
-        width: 0; }
-        .tab_pages .tab_page.selected {
-          flex-grow: 1;
-          flex-shrink: 0;
-          height: 100%;
-          overflow: auto;
-          padding: 16px 32px;
-          width: calc(100% - 4px) !important; }
+        overflow: auto; }
         .tab_pages .tab_page .tab_page_header {
           display: none; } }
+    .tab_pages .tab_page#page_2 {
+      padding: 0 8px 0 0 !important; }
     .tab_pages .tab_page .tab_page_header {
       margin: 4px 0 2px 0; }
-    .tab_pages .tab_page.grid_container {
-      padding: 0; }
+
+#tab_selector_1:checked ~ section #page_1,
+#tab_selector_2:checked ~ section #page_2 {
+  display: block; }
 
 #narrative {
   flex-wrap: wrap;

@@ -6,24 +6,38 @@
 	@media(min-width: 1154px) {
 		width: 100%;
 	}
+	input[type="radio"] {
+		display: none;
+	}
 }
 
 .tabs {
-	display: flex;
 	flex-grow: 0;
 	flex-shrink: 0;
 	height: 84px;
+	margin: 0;
 	@media(max-width: 839px) {
 		display: none;
 	}
-	.tab {
-		background: $lightGrey;
-		color: $highlightColor;
-		&.selected {
-			background: $plasticColor;
-			color: $black;
+	ul {
+		display: flex;
+		width: 100%;
+		li {
+			flex-grow: 1;
+			margin: 2px;
+			.tab {
+				background: $lightGrey;
+				color: $highlightColor;
+				margin: 0;
+			}
 		}
 	}
+}
+
+#tab_selector_1:checked ~ nav #tab_1,
+#tab_selector_2:checked ~ nav #tab_2, {
+	background: $plasticColor;
+	color: $black;
 }
 
 .tab_pages {
@@ -35,35 +49,32 @@
 		flex-wrap: nowrap;
 	}
 	.tab_page {
+		display: none;
 		height: auto;
 		margin: 0;
 		width: 100%;
-		overflow: auto;
 		position: relative;
 		@media(min-width: 840px) {
-			flex-grow: 0;
-			flex-shrink: 1;
-			height: 0;
+			//flex-grow: 0;
+			//flex-shrink: 1;
+			//height: 0;
 			max-height: $panelSize;
-			padding: 0;
-			width: 0;
-			&.selected {
-				flex-grow: 1;
-				flex-shrink: 0;
-				height: 100%;
-				overflow: auto;
-				padding: $paddingXL $paddingXXL;
-				width: calc(100% - 4px)!important;
-			}
+			overflow: auto;
+			//padding: 0;
+			//width: 0;
 			.tab_page_header {
 				display: none;
 			}
 		}
+		&#page_2 {
+			padding: 0 8px 0 0!important;
+		}
 		.tab_page_header {
 			margin: 4px 0 2px 0;
 		}
-		&.grid_container {
-			padding: 0;
-		}
 	}
+}
+#tab_selector_1:checked ~ section #page_1,
+#tab_selector_2:checked ~ section #page_2, {
+	display: block;
 }

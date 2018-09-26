@@ -1,5 +1,7 @@
-<article id="music_info" class="panel_wrapper">
+<section id="music_info" class="panel_wrapper">
 <?php
+
+	// TRACKLIST
 	if ($current_view == "project" && valExists("songs", $data)) {
 		echo "<section id='tracklist' class='panel'><header><h2>Tracklist</h2></header><ol>";
 			$songs_data = json_decode($data["songs"], true);
@@ -8,18 +10,39 @@
 			}
 		echo "</ol></section>";
 	}
+
+
+
+
+
+	//TABS GROUP
 	echo "<section id='music_details' class='tab_group panel_wrapper'>";
-		echo "<header class='tabs panel_wrapper'>";
+
+		/// RADIO BUTTONS
+		if ($page_description) {
+			echo "<input id='tab_selector_1' name='tabs_selectors' type='radio' checked='true' />";
+		}
+		echo "<input id='tab_selector_2' name='tabs_selectors' type='radio'";
+		if (!$page_description) {
+			echo "checked='true'";
+		}
+		echo "/>";
+
+		// TAB BUTTONS
+		echo "<nav class='tabs panel_wrapper'><ul>";
+
 			if ($page_description) {
-				echo "<div id='desc_tab' class='tab panel '>About</div>";
+				echo "<li><label for='tab_selector_1' id='tab_1' class='tab panel'>About</label></li>";
 			}
 			if ($data["adtl_imgs"]) {
-				echo "<div id='img_tab' class='tab panel selected'>Photos</div>";
+				echo "<li><label for='tab_selector_2' id='tab_2' class='tab panel'>Photos</label></li>";
 			}
-		echo "</header>";
-		echo "<article class='tab_pages panel_wrapper'>";
+		echo "</ul></nav>";
+
+		// PAGES
+		echo "<section class='tab_pages panel_wrapper'>";
 			if ($page_description) {
-				echo "<section class='tab_page panel'><header><h2>About</h2></header><p>";
+				echo "<section id='page_1' class='tab_page panel'><header><h2>About</h2></header><p>";
 				if (is_array($page_description)) {
 					foreach($page_description as $line) {
 						echo "<span>" . $line . "<br/></span>";
@@ -29,22 +52,20 @@
 				}
 				echo "</p></section>";
 			}
-			//echo "<noscript>";
-				if ($data["adtl_imgs"]) {
-					$adtl_imgs = json_decode($data["adtl_imgs"], true);
-					if ($adtl_imgs) {
-						echo "<section class='tab_page grid_container selected'>";
-							echo "<header class='tab_page_header panel'><h2>Photos</h2></header>";
-							echo "<article class='grid'>";
-							foreach($adtl_imgs as $img) {
-								echo "<section class='grid_item'><a href='" . $htp_root . "gallery/" . $img . "'>" . img_element($img) . "</a></section>";
-							}
-							echo "</article>";
-						echo "</section>";
-					}
+			if ($data["adtl_imgs"]) {
+				$adtl_imgs = json_decode($data["adtl_imgs"], true);
+				if ($adtl_imgs) {
+					echo "<section id='page_2' class='tab_page grid_container selected'>";
+						echo "<header class='tab_page_header panel'><h2>Photos</h2></header>";
+						echo "<article class='grid'>";
+						foreach($adtl_imgs as $img) {
+							echo "<section class='grid_item'><a href='" . $htp_root . "gallery/" . $img . "'>" . img_element($img) . "</a></section>";
+						}
+						echo "</article>";
+					echo "</section>";
 				}
-			//echo "</noscript>";
-		echo "</article>";
+			}
+		echo "</section>";
 	echo "</section>";
 ?>
-</article>
+</section>
