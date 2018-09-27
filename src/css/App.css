@@ -924,6 +924,9 @@ main#app {
 .panel + #related {
   margin: 4px 0 0 0; }
 
+#intro + #metadata {
+  margin-top: 4px; }
+
 #social_panel {
   width: 100% !important;
   margin: 0; }
