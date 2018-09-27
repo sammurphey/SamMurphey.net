@@ -3,10 +3,10 @@
 		<h2>Releated</h2>
 		<p>If you enjoyed this, you might want to check out these too...</p>
 	</header>
-	<section class="grid">
+	<nav><ul class="grid">
 		<?php
 			foreach($related_pages as $page) {
-				echo "<div class='grid_item'><a href='" . $htp_root . $page["url"] . "'>";
+				echo "<li class='grid_item'><a href='" . $htp_root . $page["url"] . "'>";
 					if (valExists("cover_img", $page)) {
 						echo img_element($page["cover_img"]);
 					}
@@ -18,8 +18,8 @@
 							echo "<span>" . ucSmart($page["subcategory"]) . "</span>";
 						echo "</p></aside>";
 					echo "</div></div>";
-				echo "</a></div>";
+				echo "</a></li>";
 			}
 		?>
-	</section>
+	</ul></nav>
 </section>

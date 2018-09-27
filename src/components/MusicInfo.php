@@ -57,11 +57,11 @@
 				if ($adtl_imgs) {
 					echo "<section id='page_2' class='tab_page grid_container selected'>";
 						echo "<header class='tab_page_header panel'><h2>Photos</h2></header>";
-						echo "<article class='grid'>";
+						echo "<nav><ul class='grid'>";
 						foreach($adtl_imgs as $img) {
-							echo "<section class='grid_item'><a href='" . $htp_root . "gallery/" . $img . "'>" . img_element($img) . "</a></section>";
+							echo "<li class='grid_item'><a href='" . $htp_root . "gallery/" . $img . "'>" . img_element($img) . "</a></li>";
 						}
-						echo "</article>";
+						echo "</ul></nav>";
 					echo "</section>";
 				}
 			}

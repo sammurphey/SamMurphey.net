@@ -5,9 +5,9 @@
 		if (valExists("id", $albums_data)) {
 			$albums_data = [$albums_data];
 		}
-		echo "<section class='grid'>";
+		echo "<nav<ul class='grid'>";
 		foreach($albums_data as $album) {
-			echo "<div class='grid_item'><a href='" . $htp_root . $album["url"] . "'>";
+			echo "<li class='grid_item'><a href='" . $htp_root . $album["url"] . "'>";
 				if(valExists("cover_img", $album)) {
 					echo img_element($album["cover_img"]);
 				}
@@ -21,8 +21,8 @@
 						echo "<span>Album</span>";
 					echo "</p></div>";
 				echo "</div></div>";
-			echo "</a></div>";
+			echo "</a></li>";
 		}
-		echo "</section></article>";
+		echo "</ul></nav></article>";
 	}
 ?>

@@ -75,13 +75,13 @@
 		echo "</header>";
 			$grid_data = api_fetch($grid_url);
 			if ($grid_data) {
-				echo "<section class='grid'>";
+				echo "<nav><ul class='grid'>";
 					if (valExists("id", $grid_data)) {
 						//	Returned one result.
 						$grid_data = [$grid_data];
 					}
 					foreach ($grid_data as $grid_item) {
-						echo "<div class='grid_item'><a href='" . $htp_root . $grid_item["url"] ."'>";
+						echo "<li class='grid_item'><a href='" . $htp_root . $grid_item["url"] ."'>";
 							if (valExists("cover_img", $grid_item)) {
 								echo img_element($grid_item["cover_img"]);
 							}
@@ -93,9 +93,9 @@
 									echo "<span>" . ucSmart($grid_item["subcategory"]) . "</span>";
 								echo "</p></aside>";
 							echo "</div></div>";
-						echo "</a></div>";
+						echo "</a></li>";
 					}
-				echo "</section>";
+				echo "</ul></nav>";
 			}
 		?>
 </article>

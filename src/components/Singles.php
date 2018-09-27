@@ -5,9 +5,9 @@
 		if (valExists("id", $singles_data)) {
 			$singles_data = [$singles_data];
 		}
-		echo "<section class='grid'>";
+		echo "<nav><ul class='grid'>";
 		foreach($singles_data as $single) {
-			echo "<div class='grid_item'><a href='" . $htp_root . $single["url"] . "'>";
+			echo "<li class='grid_item'><a href='" . $htp_root . $single["url"] . "'>";
 				if(valExists("cover_img", $single)) {
 					echo img_element($single["cover_img"]);
 				}
@@ -23,8 +23,8 @@
 						echo "<span>Single</span>";
 					echo "</p></div>";
 				echo "</div></div>";
-			echo "</a></div>";
+			echo "</a><li>";
 		}
-		echo "</section></article>";
+		echo "</ul></nav></article>";
 	}
 ?>
