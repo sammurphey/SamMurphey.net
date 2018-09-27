@@ -49,6 +49,9 @@
 				}
 				echo "</ul></nav>";
 			}
+			if ($current_view == "404") {
+				echo "<nav class='back_home_link'><a href='" . $htp_root . "' class='btn'>Back to Home</a></nav>";
+			}
 			echo "<div class='clear_left'></div>";
 		?>
 </header>

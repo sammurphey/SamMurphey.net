@@ -15,6 +15,7 @@ main#app {
 	.subcategory_view,
 	.project_view,
 	.details_view,
+	.null_view,
 	#footer {
 		position: relative;
 		width: 100%;
@@ -28,7 +29,8 @@ main#app {
 	.overview_view,
 	.subcategory_view,
 	.project_view,
-	.details_view {
+	.details_view,
+	.null_view {
 		display: block;
 		margin: 55px auto 18px auto;
 		@media(min-width: 840px) {

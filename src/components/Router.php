@@ -42,9 +42,9 @@ if (valExists("related", $data)) {
 }
 
 require_once("./src/components/Sidebar.php");
+
 switch ($current_view) {
 	case "overview":
-
 		include_once($php_root . "src/views/Overview.php");
 		break;
 	case "subcategory":
@@ -56,4 +56,6 @@ switch ($current_view) {
 	case "details":
 		include_once($php_root . "src/views/Details.php");
 		break;
+	case "404":
+		include($php_root . "src/views/404.php");
 }

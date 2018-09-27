@@ -115,7 +115,12 @@
 			}
 		}
 	}
-	.external_links {
+	.external_links,
+	.back_home_link {
 		margin: 16px 32px 0 32px;
+	}
+	.back_home_link {
+		display: inline-block;
+		width: auto;
 	}
 }
