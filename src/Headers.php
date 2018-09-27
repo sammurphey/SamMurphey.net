@@ -2,9 +2,16 @@
 $ref_data = "unused";
 $data = false;
 if (strlen($current_path) > 0) {
-	$ref_data = api_fetch("url=". $current_path);
-	if (valExists("table", $ref_data) && valExists("ref_id", $ref_data)) {
-		$data = api_fetch("table=". $ref_data["table"] . "&id=" . $ref_data["ref_id"]);
+	if (strpos($current_path, "gallery/") !== false) {
+		$img_id = str_replace("gallery/", "", $current_path);
+		$current_view = "details";
+		$current_category = "img";
+		$data = api_fetch("table=imgs&id=" . $img_id);
+	} else {
+		$ref_data = api_fetch("url=". $current_path);
+		if (valExists("table", $ref_data) && valExists("ref_id", $ref_data)) {
+			$data = api_fetch("table=". $ref_data["table"] . "&id=" . $ref_data["ref_id"]);
+		}
 	}
 } else { //homepage, just get all the projects
 	$data = api_fetch("view=overview");

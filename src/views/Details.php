@@ -4,6 +4,9 @@
 			case "music":
 				include_once($php_root . "src/components/MusicPlayer.php");
 				break;
+			case "img":
+				include_once($php_root . "src/components/FullSizeImg.php");
+				break;
 			default:
 				include_once($php_root . "src/components/Intro.php");
 		}
