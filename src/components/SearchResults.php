@@ -5,9 +5,10 @@
 		if (valExists("id", $data)) {
 			$data = [$data];
 		}
-		echo"<section class='grid'>";
+		echo"<nav><ul class='grid'>";
+
 			foreach($data as $result) {
-				echo "<section class='grid_item'><a href='" . $htp_root . $result["url"] ."'>";
+				echo "<li class='grid_item'><a href='" . $htp_root . $result["url"] ."'>";
 					if (valExists("cover_img", $result)) {
 						echo img_element($result["cover_img"]);
 					}
@@ -19,8 +20,16 @@
 							echo "<span>" . ucSmart($result["subcategory"]) . "</span>";
 						echo "</p></aside>";
 					echo "</div></div>";
-				echo "</a></section>";
+				echo "</a><li>";
 			}
+		echo "</ul></nav>";
+	} else {
+		echo "<section class='panel'>";
+		if (strlen($search_term) > 0 && $search_term !== "blank_default") {
+			echo "<p>Sorry we couldn't find anything that matched your search.</p>";
+		} else {
+			echo "<p>Enter keywords in the box above to display relevant projects here.</p>";
+		}
 		echo "</section>";
 	}
 	?>

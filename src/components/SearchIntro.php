@@ -1,10 +1,14 @@
 <header id="intro" class="panel search_intro">
 		<div class="corner"></div>
 		<h1 id='page_title'><span class="corner-spacer">&nbsp;</span>Search</h1>
-		<div class="search_box_container">
+		<form action="<?php echo $htp_root; ?>src/functions/process_search.php" class="search_box_container" method="post">
 			<?php
-				echo "<input type='text' name='search' id='search' />";
-				echo "<a class='btn' href='" . $htp_root . "search/'>Go</a>";
+				echo "<input type='text' name='search' id='search' ";
+					if (strlen($search_term) > 0 && $search_term !== "blank_default") {
+						echo "placeholder='" . $search_term . "'";
+					}
+				echo "/>";
+				echo "<input type='submit' class='btn' value='Go' />";
 			?>
 		</div>
 </header>

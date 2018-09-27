@@ -19,7 +19,7 @@ if (strlen($current_path) > 0) {
 				$data = api_fetch("search=" . $search_term . "&sort_by=date&sort_dir=DESC");
 			}
 		} else {
-			$search_term = true;
+			$search_term = "blank_default";
 		}
 	}else {
 		$ref_data = api_fetch("url=". $current_path);
