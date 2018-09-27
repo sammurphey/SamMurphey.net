@@ -1,7 +1,11 @@
 #footer {
 	display:flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	margin-top: 18px!important;
+	margin: 18px auto 4px auto!important;
+	@media(min-width:840px) {
+		margin-bottom: 114px!important;
+	}
 	z-index: 2;
 	.panel {
 		width: calc(50% - 4px);

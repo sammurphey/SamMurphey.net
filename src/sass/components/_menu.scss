@@ -112,6 +112,7 @@ nav {
 					}
 				}
 				&:active {
+					border-color: $tealColor!important;
 					color: $tealColor!important;
 				}
 			}

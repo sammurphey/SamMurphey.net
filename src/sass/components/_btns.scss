@@ -53,6 +53,13 @@ button,
 			width: auto;
 		}
 	}
+	.panel & {
+		&:focus,
+		&:hover {
+			border-color: $tealColor;
+			color: $tealColor;
+		}
+	}
 	&:focus,
 	&:hover {
 		background: rgba(255, 255, 255, .2);
@@ -61,7 +68,7 @@ button,
 	}
 	&:active {
 		background: rgba(0, 0, 0, .05);
-		border-color: $tealColor;
+		border-color: $tealColor!important;
 		color: $tealColor;
 	}
 }

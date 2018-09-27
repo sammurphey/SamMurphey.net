@@ -1,13 +1,19 @@
-.search_view {
-	.panel_wrapper {
-		flex-wrap: nowrap;
+.search_intro {
+	.search_box_container {
+		align-items: center;
+		display: flex;
 		justify-content: center;
-		margin-top:8px;
-		@media(min-width: 840px) {
-			margin-top: 82px;
+		padding: 32px;
+		.btn {
+			flex-grow: 0;
+			margin: 0 0 0 4px;
 		}
-		>* {
-			margin: 0;
-		}
+	}
+}
+
+#search_results {
+	flex-direction: column;
+	header {
+		width: calc(100% - 4px);
 	}
 }

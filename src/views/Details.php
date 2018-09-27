@@ -7,6 +7,10 @@
 			case "img":
 				include_once($php_root . "src/components/FullSizeImg.php");
 				break;
+			case "search":
+				include_once($php_root . "src/components/SearchIntro.php");
+				include_once($php_root . "src/components/SearchResults.php");
+				break;
 			default:
 				include_once($php_root . "src/components/Intro.php");
 		}

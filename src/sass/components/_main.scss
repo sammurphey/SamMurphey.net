@@ -37,12 +37,4 @@ main#app {
 			margin: 114px auto 8px auto;
 		}
 	}
-	#footer {
-		display: flex;
-		flex-wrap: wrap;
-		margin: 55px auto;
-		@media(min-width: 840px) {
-			margin: $blockSize auto;
-		}
-	}
 }
