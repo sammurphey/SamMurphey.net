@@ -132,20 +132,20 @@
         #intro h1#page_title.with_hero {
           float: left;
           margin-right: 0;
-          width: calc(100% - 272px); } }
+          width: calc(100% - 304px); } }
       @media (min-width: 840px) {
         #intro h1#page_title.with_hero {
-          width: calc(100% - 256px); } }
+          width: calc(100% - 288px); } }
       @media (min-width: 1154px) {
         #intro h1#page_title.with_hero {
           margin-right: 48px;
-          width: calc(100% - 528px); } }
-  #intro p#page_description {
+          width: calc(100% - 560px); } }
+  #intro .page_description {
     margin-left: 32px;
     padding-top: 16px;
     padding-right: 32px; }
     @media (max-width: 460px) {
-      #intro p#page_description {
+      #intro .page_description {
         clear: both; } }
   #intro .profile_photo {
     float: right;
@@ -157,9 +157,10 @@
     float: right;
     height: calc(100vw - (10px * 2));
     margin-bottom: 0;
-    margin-left: 32px;
+    margin-left: 64px;
     padding: 4px 0;
-    width: 100%; }
+    width: 100%;
+    z-index: 5; }
     @media (min-width: 460px) {
       #intro .hero_img {
         height: 192px;
@@ -1284,13 +1285,13 @@ main#app {
     .tab_pages {
       flex-wrap: nowrap; } }
   .tab_pages .tab_page {
-    display: none;
     height: auto;
     margin: 0;
     width: 100%;
     position: relative; }
     @media (min-width: 840px) {
       .tab_pages .tab_page {
+        display: none;
         max-height: 416px;
         overflow: auto; }
         .tab_pages .tab_page .tab_page_header {
@@ -1440,8 +1441,15 @@ main#app {
 ::-webkit-scrollbar-thumb {
   background: #F8F8F8; }
   ::-webkit-scrollbar-thumb:hover {
-    background: #FFF; }
+    background: #00EFF1; }
   ::-webkit-scrollbar-thumb:active {
+    background: #00EFF1; }
+
+.panel::-webkit-scrollbar-thumb {
+  background: #666; }
+  .panel::-webkit-scrollbar-thumb:hover {
+    background: #00EFF1; }
+  .panel::-webkit-scrollbar-thumb:active {
     background: #00EFF1; }
 
 ::selection {

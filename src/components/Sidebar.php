@@ -1,6 +1,3 @@
-<?php
-	$last_updated = "9/15/2018";
- ?>
 <aside id="sidebar">
 		<!-- links -->
 		<section class="rotated_contents">

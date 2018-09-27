@@ -8,4 +8,10 @@
 	}
 	$current_path = str_replace("sammurphey_dev", "", $current_path); // dev env
 	$current_path = ltrim(rtrim($current_path, "/"), "/");
+	$current_path = explode("?", $current_path);
+	if (count($current_path) > 1) {
+		$current_params = $current_path[1];
+	}
+	$current_path = $current_path[0];
+
 ?>

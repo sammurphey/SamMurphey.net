@@ -43,13 +43,23 @@
 ::-webkit-scrollbar-thumb {
 	background: $plasticColor;
 	&:hover {
-		background: $highlightColor;
+		background: $tealColor;
 	}
 	&:active {
 		background: $tealColor;
 	}
 }
-
+.panel {
+	&::-webkit-scrollbar-thumb {
+		background: $textColor;
+		&:hover {
+			background: $tealColor;
+		}
+		&:active {
+			background: $tealColor;
+		}
+	}
+}
 ::selection {
   background: $tealColor; /* WebKit/Blink Browsers */
 }

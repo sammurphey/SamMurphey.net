@@ -49,12 +49,12 @@
 		flex-wrap: nowrap;
 	}
 	.tab_page {
-		display: none;
 		height: auto;
 		margin: 0;
 		width: 100%;
 		position: relative;
 		@media(min-width: 840px) {
+			display: none;
 			//flex-grow: 0;
 			//flex-shrink: 1;
 			//height: 0;

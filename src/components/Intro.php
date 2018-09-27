@@ -18,11 +18,11 @@
 			}
 			if ($current_view == "project" || $current_view == "details") {
 				if ($page_hero_img) {
-					echo "<div class='hero_img'>" . img_element($page_hero_img) . "</div>";
+					echo "<div class='hero_img'><a href='" . $htp_root . "gallery/" . $page_hero_img . "'>" . img_element($page_hero_img) . "</a></div>";
 				}
 			}
 			if ($page_description) {
-				echo "<p id='page_description'>";
+				echo "<p class='page_description'>";
 				if (is_array($page_description)) {
 					foreach ($page_description as $line) {
 						echo "<span>".$line."<br/></span>";
