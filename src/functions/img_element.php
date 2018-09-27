@@ -1,5 +1,5 @@
 <?php
-function img_element ($id, $override_shape = false) {
+function img_element ($id, $override_shape = false, $controls = false) {
 	$img_data = api_fetch("table=imgs&id=" . $id);
 	$src_base = "https://cdn.sammurphey.net/v2/";
 	$img_src = $src_base . $img_data["path"] . "." . $img_data["ext"];
@@ -76,7 +76,13 @@ function img_element ($id, $override_shape = false) {
 	$img_elem = "<div class='img_container' data-id='" . $id . "' data-type='" . $img_data["ext"] . "' data-shape='" . $img_shape . "' data-pos='" . $img_data["position"] . "' style='" . $img_container_style . "'>";
 	switch($img_data["ext"]) {
 		case "mp4":
-			$img_elem .= "<video autoPlay loop muted><source src='" . $img_src . "' type='video/mp4'/></video>";
+			$img_elem .= "<video autoPlay loop ";
+			if ($controls) {
+				$img_elem .= "controls ";
+			} else {
+				$img_elem .= "muted ";
+			}
+			$img_elem .= "><source src='" . $img_src . "' type='video/mp4'/></video>";
 			break;
 		default:
 			$img_elem .= "<img alt='" . $img_alt . "' title='" . $img_title . "' style='" . $img_style . "' src='" . $img_src . "'";

@@ -59,6 +59,7 @@ require_once($php_root . "src/Headers.php");
 	</style>
 </head>
 <body>
+	<span class="version_number">V-7.4.0</span>
 	<?php require_once($php_root . "src/App.php"); ?>
 </body>
 </html>

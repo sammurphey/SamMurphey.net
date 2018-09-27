@@ -1415,16 +1415,22 @@ main#app {
 #intro + .category_preview > section > header {
   margin-top: 4px; }
 
+.full_size_img .img_container, .full_size_img img, .full_size_img video {
+  cursor: zoom-in;
+  display: inline-block !important;
+  position: relative; }
+
 .version_number {
   font-size: 6px;
   position: absolute;
   bottom: 0;
-  right: 10px; }
+  left: 10px; }
   @media (min-width: 840px) {
     .version_number {
       bottom: -4px;
       font-size: 8px;
-      line-height: 20px; } }
+      line-height: 20px;
+      left: 15px; } }
 
 ::-webkit-scrollbar {
   cursor: pointer;
