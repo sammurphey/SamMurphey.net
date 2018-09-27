@@ -6,6 +6,12 @@
 	padding: 0 0 32px 0!important;
 	position: relative;
 	z-index: 4;
+	@media(min-width: 460px) {
+		min-height: 192px;
+	}
+	@media(min-width: 840px) {
+		min-height: 224px;
+	}
 	@media(min-width: 1154px) {
 		min-height: $panelSize;
 		padding: 0;

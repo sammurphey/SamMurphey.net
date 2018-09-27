@@ -1,5 +1,5 @@
-.category_preview {
-	#intro + & {
+#intro + .category_preview {
+	& > section > header {
 		margin-top: 4px;
 	}
 }

@@ -30,19 +30,21 @@
 
 		foreach ($current_categories as $category) {
 			echo "<section id='" . $category["category"] . "_category_preview'>";
-				echo "<header class='panel'>";
-					echo "<h2>" . ucSmart($category["title"]) . "</h2>";
-					echo "<p>";
-					if (is_array($category["description"])) {
-						foreach($category["description"] as $desc){
-							echo "<span>". $desc . "<br/></span>";
+				if ($current_category == "all") {
+					echo "<header class='panel'>";
+						echo "<h2>" . ucSmart($category["title"]) . "</h2>";
+						echo "<p>";
+						if (is_array($category["description"])) {
+							foreach($category["description"] as $desc){
+								echo "<span>". $desc . "<br/></span>";
+							}
+						} else {
+							echo $category["description"];
 						}
-					} else {
-						echo $category["description"];
-					}
-					echo "</p>";
-					echo "<p><a href='" . $htp_root . strtolower($category["url"]) . "'>See everything on the " . strtolower($category["title"]) . " page.</a></p>";
+						echo "</p>";
+						echo "<p><a href='" . $htp_root . strtolower($category["url"]) . "'>See everything on the " . strtolower($category["title"]) . " page.</a></p>";
 					echo "</header>";
+				}
 				if (valExists("subcategories", $category)) {
 					$subcategories = $category["subcategories"];
 					echo "<section class='subcategories_previews'>";
