@@ -195,6 +195,11 @@
   #intro .back_home_link {
     display: inline-block;
     width: auto; }
+  #intro.full_size_img {
+    display: flex;
+    flex-direction: column-reverse; }
+    #intro.full_size_img .imgLink {
+      z-index: 1; }
 
 .img_container {
   align-items: center;

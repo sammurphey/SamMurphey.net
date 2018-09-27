@@ -123,4 +123,14 @@
 		display: inline-block;
 		width: auto;
 	}
+	&.full_size_img {
+		display: flex;
+		flex-direction: column-reverse;
+		.imgLink {
+			z-index: 1;
+		}
+		#title {
+			
+		}
+	}
 }
