@@ -3,7 +3,7 @@
 		switch ($current_category) {
 			case "music":
 				include_once($php_root . "src/components/MusicPlayer.php");
-				if (valExists("songs", $data) || valExists("adtl_imgs", $data)){
+				if (valExists("songs", $data) || $page_description || valExists("adtl_imgs", $data)){
 					include_once($php_root . "src/components/MusicInfo.php");
 				}
 				break;

@@ -12,8 +12,15 @@
 }
 
 #search_results {
-	flex-direction: column;
+	flex-wrap: wrap;
+	* {
+		flex-grow: 1;
+		flex-shrink: 0;
+	}
 	header {
 		width: calc(100% - 4px);
+	}
+	nav {
+		width: 100%;
 	}
 }

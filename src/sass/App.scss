@@ -21,18 +21,6 @@
 @import "components/categories";
 @import "components/gallery";
 
-.version_number {
-	font-size: 6px;
-	position: absolute;
-	bottom: 0;
-	left: 10px;
-	@media(min-width: 840px) {
-		bottom: -4px;
-		font-size: 8px;
-		line-height: 20px;
-		left: 15px;
-	}
-}
 
 ::-webkit-scrollbar {
 	cursor: pointer;

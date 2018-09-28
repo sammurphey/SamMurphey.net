@@ -26,6 +26,26 @@ button,
 			color: $tealColor!important;
 		}
 	}
+	.panel li > & {
+		&:not(.chip) {
+			align-items: center;
+			display: flex;
+			margin-right: $paddingLrg;
+			.icon, svg {
+				height: 32px;
+				opacity: 1;
+				padding: 5px 8px 11px 0;
+				width: 32px;
+			}
+			&:hover,
+			&:focus,
+			&:active {
+				.icon, svg {
+					fill: $tealColor;
+				}
+			}
+		}
+	}
 	& + * {
 		margin-top: $paddingLrg;
 	}

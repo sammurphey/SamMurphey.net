@@ -29,15 +29,20 @@
 		echo "/>";
 
 		// TAB BUTTONS
-		echo "<nav class='tabs panel_wrapper'><ul>";
-
-			if ($page_description) {
-				echo "<li><label for='tab_selector_1' id='tab_1' class='tab panel'>About</label></li>";
-			}
-			if ($data["adtl_imgs"]) {
-				echo "<li><label for='tab_selector_2' id='tab_2' class='tab panel'>Photos</label></li>";
-			}
-		echo "</ul></nav>";
+		if ($page_description && valExists("adtl_imgs", $data)) {
+			?>
+				<nav class="tabs panel_wrapper">
+					<ul>
+						<li>
+							<label for="tab_selector_1" id="tab_1" class="tab panel">About</label>
+						</li>
+						<li>
+							<label for="tab_selector_2" id="tab_2" class="tab panel">Photos</label>
+						</li>
+					</ul>
+				</nav>
+			<?php
+		}
 
 		// PAGES
 		echo "<section class='tab_pages panel_wrapper'>";

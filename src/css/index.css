@@ -144,3 +144,21 @@ header, section, footer, aside, nav, main, article, figure {
   width: 100%; }
   #app > * {
     display: none; }
+
+.version_number, .sitemap {
+  bottom: 0;
+  font-size: 6px;
+  left: auto;
+  position: absolute;
+  right: 10px; }
+  .version_number:first-child, .sitemap:first-child {
+    left: 10px;
+    right: auto; }
+  @media (min-width: 840px) {
+    .version_number, .sitemap {
+      bottom: -4px;
+      font-size: 8px;
+      line-height: 20px;
+      right: 15px; }
+      .version_number:first-child, .sitemap:first-child {
+        left: 15px; } }

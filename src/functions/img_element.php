@@ -15,6 +15,8 @@ function img_element ($id, $override_shape = false, $controls = false) {
 	} else {
 		$img_title = $img_data["alt"];
 	}
+	$img_alt = escapeQuotes($img_alt);
+	$img_title = escapeQuotes($img_title);
 	// SRC SET
 	if ($img_data["sizes"]) {
 		$img_srcset = "";

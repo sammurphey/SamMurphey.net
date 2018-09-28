@@ -156,3 +156,23 @@ header, section, footer, aside, nav, main, article, figure {
 		display: none;
 	}
 }
+.version_number, .sitemap {
+	bottom: 0;
+	font-size: 6px;
+	left: auto;
+	position: absolute;
+	right: 10px;
+	&:first-child {
+		left: 10px;
+		right: auto;
+	}
+	@media(min-width: 840px) {
+		bottom: -4px;
+		font-size: 8px;
+		line-height: 20px;
+		right: 15px;
+		&:first-child {
+			left: 15px;
+		}
+	}
+}

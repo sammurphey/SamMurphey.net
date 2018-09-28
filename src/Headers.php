@@ -86,5 +86,6 @@ if (!$search_term) {
 		$current_category = "none";
 		$page_title = "404";
 		$page_description = "Sorry, but the page you requested could not be found.";
+		$document_description = $page_description;
 	}
 }

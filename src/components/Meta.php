@@ -14,10 +14,13 @@
 		}
 		if ($page_keywords) {
 			echo "<p class='subtitle'>Keywords: ";
+			$processed_keywords = [];
 			if (is_array($page_keywords)) {
 				foreach($page_keywords as $keyword) {
-					echo "<span><a href='" . $htp_root . "search/" . $keyword . "'>" . $keyword . "</a>, </span>";
+					$processed_keywords[] = "<a href='" . $htp_root . "search/" . $keyword . "'>" . $keyword . "</a>";
 				}
+				$processed_keywords = implode(", </span><span>", $processed_keywords);
+				echo "<span>" . $processed_keywords . "</span>";
 			} else {
 				echo "<span>" . $page_keywords . "</span>";
 			}

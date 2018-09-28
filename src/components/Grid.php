@@ -7,10 +7,10 @@
 
 			switch($current_view) {
 				case "overview": {
-					$grid_url = "category=" . $current_category . "&view=overview&sort_by=date&sort_dir=DESC";
+					$grid_url = "category=" . $current_category . "&sort_by=date&sort_dir=DESC";
 					switch($current_category) {
-
 						case "music": {
+							$grid_url .= "&view=overview";
 							$grid_title = "All Recent Music Releases";
 							$grid_desc = [
 								"Browse work from all of the aliases above.",
@@ -47,7 +47,7 @@
 					break;
 				}
 				case "subcategory": {
-					$grid_url = "subcategory=" . $current_subcategory . "&view=overview&sort_by=date&sort_dir=DESC";
+					$grid_url = "subcategory=" . $current_subcategory . "&sort_by=date&sort_dir=DESC";
 					if ($current_subcategory == "3d") {
 						$grid_title = "All Recent 3D Work";
 					} elseif ($current_subcategory == "social") {
