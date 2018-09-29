@@ -3,10 +3,15 @@
 
 	// TRACKLIST
 	if ($current_view == "project" && valExists("songs", $data)) {
+		$songs_data = api_fetch("table=songs&in=" . $data["songs"]);
+		$song_ids = explode(",",$data["songs"]);
 		echo "<section id='tracklist' class='panel'><header><h2>Tracklist</h2></header><ol>";
-			$songs_data = json_decode($data["songs"], true);
-			foreach ($songs_data as $song) {
-				echo "<li><a data-id='" . $song["id"] ."' href='" . $htp_root . $current_path . "?now_playing=" . urlencode($song["name"]) . "'>" . $song["name"] . "</a></li>";
+			foreach ($song_ids as $song_id) {
+				foreach($songs_data as $song) {
+					if ($song["id"] == $song_id) {
+						echo "<li><a data-id='" . $song_id ."' href='" . $htp_root . $song["url"] . "'>" . $song["title"] . "</a></li>";
+					}
+				}
 			}
 		echo "</ol></section>";
 	}
@@ -50,7 +55,7 @@
 				echo "<section id='page_1' class='tab_page panel'><header><h2>About</h2></header><p>";
 				if (is_array($page_description)) {
 					foreach($page_description as $line) {
-						echo "<span>" . $line . "<br/></span>";
+						echo "<span>" . $line . "<br/><br/></span>";
 					}
 				} else {
 					echo $page_description;

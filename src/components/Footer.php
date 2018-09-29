@@ -12,48 +12,76 @@
 	<section id="social_panel" class="panel">
 		<header>
 			<h2>Connect Online</h2>
-			<p>Follow me on these social networks to see photos, updates, and WIP posts.</p>
+			<p>Follow me on these social networks to see photos, updates, and WIP posts.<br/><br/></p>
 		</header>
 		<nav class="chips_container">
 			<ul>
-				
-			<a href="https://patreon.com/sammurphey" class="btn chip" rel="noopener noreferrer" target="_blank">
-				<img class="icon" src="https://cdn.sammurphey.net/social/patreon.svg" alt="Patreon Logo" title="Patreon" />
-			</a>
-			<a href="https://twitter.com/weirdoonthebus" class="btn chip" rel="noopener noreferrer" target="_blank">
-				<img class="icon" src="https://cdn.sammurphey.net/social/twitter.svg" alt="Twitter Logo" title="Twitter" />
-			</a>
-			<a href="https://instagram.com/essaitchteeemel" class="btn chip" rel="noopener noreferrer" target="_blank">
-				<img class="icon" src="https://cdn.sammurphey.net/social/instagram.svg" alt="Instagram Logo" title="Instagram" />
-			</a>
-			<a href="https://sammurphey.tumblr.com" class="btn chip" rel="noopener noreferrer" target="_blank">
-				<img class="icon" src="https://cdn.sammurphey.net/social/tumblr.svg" alt="Tumblr Logo" title="Tumblr" />
-			</a>
-			<a href="https://ello.co/sammurphey" class="btn chip" rel="noopener noreferrer">
-				<img class="icon" src="https://cdn.sammurphey.net/social/ello.svg" alt="Ello Logo" title="Ello" />
-			</a>
-			<a href="https://sammurphey.bandcamp.com" class="btn chip" rel="noopener noreferrer" target="_blank">
-				<img class="icon" src="https://cdn.sammurphey.net/social/bandcamp.svg" alt="Bandcamp Logo" title="Bandcamp" />
-			</a>
-			<a href="https://soundcloud.com/sammurphey" class="btn chip" rel="noopener noreferrer" target="_blank">
-				<img class="icon" src="https://cdn.sammurphey.net/social/soundcloud.svg" alt="Soundcloud Logo" title="Soundcloud" />
-			</a>
-			<a href="https://github.com/sammurphey" class="btn chip" rel="noopener noreferrer" target="_blank">
-				<img class="icon" src="https://cdn.sammurphey.net/social/github.svg" alt="GitHub Logo" title="GitHub" />
-			</a>
-			<a href="https://codepen.com/sammurphey" class="btn chip" rel="noopener noreferrer" target="_blank">
-				<img class="icon" src="https://cdn.sammurphey.net/social/codepen.svg" alt="CodePen Logo" title="CodePen" />
-			</a>
-			<a href="https://stackoverflow.com/users/2719504/sam-murphey" class="btn chip" rel="noopener noreferrer" target="_blank">
-				<img class="icon" src="https://cdn.sammurphey.net/social/stackoverflow.svg" alt="StackOverflow Logo" title="StackOverflow" />
-			</a>
-			<a href="https://facebook.com" class="btn chip" rel="noopener noreferrer" target="_blank">
-				<img class="icon" src="https://cdn.sammurphey.net/social/facebook.svg" alt="Facebook Logo" title="Facebook" />
-			</a>
-			<a href="https://www.linkedin.com/in/sammurphey" class="btn chip" rel="noopener noreferrer" target="_blank">
-				<img class="icon" src="https://cdn.sammurphey.net/social/linkedin.svg" alt="LinkedIn Logo" title="LinkedIn" />
-			</a>
-		</ul>
+				<li>
+					<a href="https://patreon.com/sammurphey" class="btn chip" title="Music Patreon" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/patreon.svg" alt="Patreon Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://patreon.com/weirdoonthebus" class="btn chip" title="Game Dev Patreon" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/patreon.svg" alt="Patreon Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/weirdoonthebus" class="btn chip" title="Twitter" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/twitter.svg" alt="Twitter Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://instagram.com/essaitchteeemel" class="btn chip"  title="Instagram" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/instagram.svg" alt="Instagram Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://sammurphey.tumblr.com" class="btn chip"  title="Tumblr" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/tumblr.svg" alt="Tumblr Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://ello.co/sammurphey" class="btn chip"  title="Ello" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/ello.svg" alt="Ello Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://sammurphey.bandcamp.com" class="btn chip" title="Bandcamp" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/bandcamp.svg" alt="Bandcamp Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://soundcloud.com/sammurphey" class="btn chip" title="Soundcloud" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/soundcloud.svg" alt="Soundcloud Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/sammurphey" class="btn chip" title="GitHub" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/github.svg" alt="GitHub Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://codepen.com/sammurphey" class="btn chip" title="CodePen" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/codepen.svg" alt="CodePen Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://stackoverflow.com/users/2719504/sam-murphey" class="btn chip"  title="StackOverflow" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/stackoverflow.svg" alt="StackOverflow Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://facebook.com" class="btn chip" title="Facebook" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/facebook.svg" alt="Facebook Logo" />
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/sammurphey" class="btn chip" title="LinkedIn" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/linkedin.svg" alt="LinkedIn Logo" />
+					</a>
+				</li>
+			</ul>
 		</nav>
 		<div class="corner bottom-right"></div>
 	</section>

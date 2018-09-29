@@ -15,7 +15,13 @@
 						echo "<p class='date'>" . $page["date"] . "</p>";
 						echo "<aside class='grid_item_sidebar'><p>";
 							echo "<span>" . ucSmart($page["category"]) . "<br/></span>";
-							echo "<span>" . ucSmart($page["subcategory"]) . "</span>";
+							echo "<span>";
+								if ($page["category"] == "music") {
+									echo $page["alias"];
+								} else {
+									echo ucSmart($page["subcategory"]);
+								}
+							echo "<span>";
 						echo "</p></aside>";
 					echo "</div></div>";
 				echo "</a></li>";

@@ -12,13 +12,11 @@
 					echo img_element($album["cover_img"]);
 				}
 				echo "<div class='container'><div class='content'>";
-					echo "<h3><span class='subtitle'>" . $page_title . " - <br/></span><span class='title'>" . $album["title"] . "</span></h3>";
+					echo "<h3>" . $album["title"] . "</h3>";
 					echo "<p class='date'>" . $album["date"] . "</p>";
 					echo "<div class='grid_item_sidebar'><p>";
-						if (valExists("category", $album)) {
-							echo "<span>" . ucSmart($album["category"]) . "</span>";
-						}
-						echo "<span>Album</span>";
+						echo "<span>Music<br/></span>";
+						echo "<span>" . $page_title . "</span>";
 					echo "</p></div>";
 				echo "</div></div>";
 			echo "</a></li>";

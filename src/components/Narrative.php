@@ -7,10 +7,10 @@
 					if (valExists("i", $row)) {
 							if (is_array($row["i"])) {
 								foreach ($row["i"] as $img) {
-									echo img_element($img);
+									echo "<a href='" . $htp_root . "gallery/" . $img . "'>" . img_element($img) . "</a>";
 								}
 							} else {
-								echo img_element($row["i"]);
+								echo "<a href='" . $htp_root . "gallery/" . $row["i"] . "'>" . img_element($row["i"]) . "</a>";
 							}
 					}
 
@@ -21,7 +21,7 @@
 							} else {
 								foreach ($row["p"] as $str) {
 									if (substr($str, 0, 1) === "#") {
-										echo "<p>" . str_replace("#", "", $str) . "</p>";
+										echo "<h2>" . str_replace("#", "", $str) . "</h2>";
 									} else {
 										echo "<p>" . $str . "</p>";
 									}

@@ -32,7 +32,7 @@
 							$grid_url = "view=overview&sort_by=date&sort_dir=DESC";
 						}
 						default: {
-							$grid_title = "All Recent";
+							$grid_title = "All Recent ";
 							if ($current_category !== "all") {
 								 $grid_title .= ucSmart($current_category);
 							}
@@ -81,19 +81,27 @@
 						$grid_data = [$grid_data];
 					}
 					foreach ($grid_data as $grid_item) {
-						echo "<li class='grid_item'><a href='" . $htp_root . $grid_item["url"] ."'>";
-							if (valExists("cover_img", $grid_item)) {
-								echo img_element($grid_item["cover_img"]);
-							}
-							echo "<div class='container'><div class='content'>";
-								echo "<h3>" . $grid_item["title"] . "</h3>";
-								echo "<p class='date'>" . $grid_item["date"] . "</p>";
-								echo "<aside class='grid_item_sidebar'><p>";
-									echo "<span>" . ucSmart($grid_item["category"]) . "<br/></span>";
-									echo "<span>" . ucSmart($grid_item["subcategory"]) . "</span>";
-								echo "</p></aside>";
-							echo "</div></div>";
-						echo "</a></li>";
+						if (strpos($grid_item["table"], "categor") === false) {
+							echo "<li class='grid_item'><a href='" . $htp_root . $grid_item["url"] ."'>";
+								if (valExists("cover_img", $grid_item)) {
+									echo img_element($grid_item["cover_img"]);
+								}
+								echo "<div class='container'><div class='content'>";
+									echo "<h3>" . $grid_item["title"] . "</h3>";
+									echo "<p class='date'>" . $grid_item["date"] . "</p>";
+									echo "<aside class='grid_item_sidebar'><p>";
+										echo "<span>" . ucSmart($grid_item["category"]) . "<br/></span>";
+										echo "<span>";
+											if ($grid_item["category"] == "music") {
+												echo $grid_item["alias"];
+											} else {
+											 echo ucSmart($grid_item["subcategory"]);
+											}
+										echo "</span>";
+									echo "</p></aside>";
+								echo "</div></div>";
+							echo "</a></li>";
+						}
 					}
 				echo "</ul></nav>";
 			}

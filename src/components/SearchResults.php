@@ -20,7 +20,7 @@
 							echo "<span>" . ucSmart($result["subcategory"]) . "</span>";
 						echo "</p></aside>";
 					echo "</div></div>";
-				echo "</a><li>";
+				echo "</a></li>";
 			}
 		echo "</ul></nav>";
 	} else {

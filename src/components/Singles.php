@@ -12,15 +12,11 @@
 					echo img_element($single["cover_img"]);
 				}
 				echo "<div class='container'><div class='content'>";
-					echo "<h3><span class='subtitle'>" . $page_title . " - <br/></span><span class='title'>" . $single["title"] . "</span></h3>";
-
+					echo "<h3>" . $single["title"] . "</h3>";
 					echo "<p class='date'>" . $single["date"] . "</p>";
-
 					echo "<div class='grid_item_sidebar'><p>";
-						if (valExists("category", $single)) {
-							echo "<span>" . ucSmart($single["category"]) . "</span>";
-						}
-						echo "<span>Single</span>";
+						echo "<span>Music<br/></span>";
+						echo "<span>" . $page_title . "</span>";
 					echo "</p></div>";
 				echo "</div></div>";
 			echo "</a><li>";

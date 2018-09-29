@@ -49,6 +49,46 @@
 				}
 				echo "</ul></nav>";
 			}
+			if (valExists("cta_text", $data)) {
+				$cta_text = $data["cta_text"];
+				echo "<p class='page_description'>";
+					if (substr($cta_text, 0, 1) === "[") {
+						$cta_text = json_decode($cta_text, true);
+						foreach($cta_text as $line) {
+							echo "<span>" . $line . "<br/></span>";
+						}
+					} else {
+						echo $cta_text;
+					}
+				echo "</p>";
+			}
+			if (valExists("cta_btns", $data)) {
+				$cta_btns = json_decode($data["cta_btns"], true);
+				if (is_array($cta_btns)) {
+					if (valExists("name", $cta_btns)) {
+						$cta_btns = [$cta_btns];
+					}
+					echo "<nav class='page_description'><ul>";
+						foreach($cta_btns as $btn) {
+							echo "<li><a href='" . $btn["url"] . "' rel='noopener noreferrer' class='btn cta_btn' target='_blank'>";
+								$btn_img = $cdn_root . "ui/social/"; if (valExists("icon",$btn)) {
+									$btn_img .= strtolower($btn["icon"]);
+								} else {
+									$btn_img .= strtolower($btn["name"]);
+								}
+								$btn_img .= ".svg";
+								$test = get_headers($btn_img);
+								if ($test[0] !== "HTTP/1.1 200 OK") {
+									$btn_img = $cdn_root . "ui/social/web.svg";
+								}
+								$btn_img = file_get_contents($btn_img);
+								echo $btn_img;
+							echo $btn["name"];
+							echo "</a></li>";
+						}
+					echo "</ul><nav>";
+				}
+			}
 			if ($current_view == "404") {
 				echo "<nav class='back_home_link'><a href='" . $htp_root . "' class='btn'>Back to Home</a></nav>";
 			}

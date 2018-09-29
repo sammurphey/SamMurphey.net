@@ -13,10 +13,7 @@
 
 #search_results {
 	flex-wrap: wrap;
-	* {
-		flex-grow: 1;
-		flex-shrink: 0;
-	}
+	justify-content: flex-start;
 	header {
 		width: calc(100% - 4px);
 	}

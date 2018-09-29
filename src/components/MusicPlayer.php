@@ -28,13 +28,13 @@
 					$stream_links = [$stream_links];
 				}
 				echo "<p class='page_description'>Streamable tracks coming soon..<br/>
-				In the meantime please listen on the following platforms:<br/><nav class='page_description'><ul>";
+				In the meantime please listen on the following platforms:<br/></p><nav class='page_description'><ul>";
 				foreach($stream_links as $link) {
 					echo "<li><a href='" . $link["url"] . "' title='Listen to " . $page_title . " on " . $link["name"] . "' rel='noopener noreferrer' class='btn' target='_blank'>";
 						$link_img = $cdn_root . "ui/social/" . strtolower($link["name"]) . ".svg";
 						$test = get_headers($link_img);
 						if ($test[0] !== "HTTP/1.1 200 OK") {
-							$link_img = $cdn_root . "social/web.svg";
+							$link_img = $cdn_root . "ui/social/web.svg";
 						}
 						$link_img = file_get_contents($link_img);
 						echo $link_img;

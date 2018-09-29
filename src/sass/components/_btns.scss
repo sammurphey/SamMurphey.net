@@ -41,7 +41,8 @@ button,
 			&:focus,
 			&:active {
 				.icon, svg {
-					fill: $tealColor;
+					fill: $tealColor!important;
+					//stroke: $tealColor!important;
 				}
 			}
 		}

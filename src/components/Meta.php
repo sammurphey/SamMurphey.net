@@ -17,12 +17,12 @@
 			$processed_keywords = [];
 			if (is_array($page_keywords)) {
 				foreach($page_keywords as $keyword) {
-					$processed_keywords[] = "<a href='" . $htp_root . "search/" . $keyword . "'>" . $keyword . "</a>";
+					$processed_keywords[] = "<a href='" . $htp_root . "search/" . $keyword . "'>" . strtolower($keyword) . "</a>";
 				}
 				$processed_keywords = implode(", </span><span>", $processed_keywords);
 				echo "<span>" . $processed_keywords . "</span>";
 			} else {
-				echo "<span>" . $page_keywords . "</span>";
+				echo "<span>" . strtolower($page_keywords) . "</span>";
 			}
 			echo "</p>";
 		}

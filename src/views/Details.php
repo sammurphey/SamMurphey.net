@@ -14,7 +14,7 @@
 			default:
 				include_once($php_root . "src/components/Intro.php");
 		}
-		if ($page_credits || $page_keywords) {
+		if ($current_category !== "search" && ($page_credits || $page_keywords)) {
 			include_once($php_root . "src/components/Meta.php");
 		}
 		if ($related_pages) {

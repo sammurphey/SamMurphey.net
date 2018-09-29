@@ -193,6 +193,8 @@
   #intro .external_links,
   #intro .back_home_link {
     margin: 16px 32px 0 32px; }
+  #intro .cta_btn {
+    margin: 0 8px 8px 0; }
   #intro .back_home_link {
     display: inline-block;
     width: auto; }
@@ -380,7 +382,7 @@ button,
     .btn:not(.chip):focus svg, .panel li >
     .btn:not(.chip):active .icon, .panel li >
     .btn:not(.chip):active svg {
-      fill: #00EFF1; }
+      fill: #00EFF1 !important; }
   button + *,
   .btn + * {
     margin-top: 8px; }
@@ -1071,6 +1073,9 @@ main#app {
   .grid_item:active .content {
     background-color: #00EFF1; }
 
+#intro + .subcategory_grid > header.panel {
+  margin-top: 4px; }
+
 #sidebar {
   display: none;
   z-index: 4; }
@@ -1370,16 +1375,23 @@ main#app {
       float: left;
       margin: 0 32px 0 0;
       padding: 0 4px 0 0; }
-    #narrative .panel p {
-      padding: 32px 32px 0 32px; }
-      #narrative .panel p + #narrative .panel p {
+    #narrative .panel p, #narrative .panel h2 {
+      padding: 32px 32px 0 32px;
+      z-index: -1; }
+      #narrative .panel p + #narrative .panel p, #narrative .panel h2 + #narrative .panel p, #narrative .panel p + #narrative .panel h2, #narrative .panel h2 + #narrative .panel h2 {
         padding: 0 32px 0 32px; }
-      #narrative .panel p:first-child {
+      #narrative .panel p:first-child, #narrative .panel h2:first-child {
         padding: 32px !important; }
-    #narrative .panel:nth-child(odd) p:nth-child(2) {
+    #narrative .panel:nth-child(odd) .img_element + p:nth-child(2) {
       padding: 32px 32px 0 32px !important; }
     #narrative .panel:nth-child(odd) p:last-child {
       padding: 0 32px 32px 32px; }
+      .img_element + #narrative .panel:nth-child(odd) p:last-child {
+        padding-top: 32px; }
+    #narrative .panel:nth-child(even) p:last-child {
+      padding: 0 32px 32px 32px; }
+      .img_element + #narrative .panel:nth-child(even) p:last-child {
+        padding-top: 32px; }
 
 /* {
 		height: auto;
@@ -1407,10 +1419,8 @@ main#app {
     margin: 0 0 0 4px; }
 
 #search_results {
-  flex-wrap: wrap; }
-  #search_results * {
-    flex-grow: 1;
-    flex-shrink: 0; }
+  flex-wrap: wrap;
+  justify-content: flex-start; }
   #search_results header {
     width: calc(100% - 4px); }
   #search_results nav {
