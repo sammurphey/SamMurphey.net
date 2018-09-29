@@ -11,6 +11,9 @@
 	}
 	.panel {
 		padding: 0;
+		@media(max-width: 839px) {
+			width: calc(100% - 4px);
+		}
 		@media(min-width: 840px) {
 			&:first-child {
 				text-align: right;
@@ -26,6 +29,13 @@
 			padding: 0 0 0 4px;
 			//top: -32px;
 			width: 188px;
+			@media(max-width: 839px) {
+				float: none!important;
+				height: auto;
+				margin: 0!important;
+				padding: 0 0 4px 0!important;
+				width: 100%;
+			}
 			@media(min-width: 1154px) {
 				width: calc(#{$panelSize} / 2);
 			}
@@ -38,10 +48,23 @@
 					height: calc(#{$panelSize} / 2);
 				}
 				width: auto;
+				@media(max-width: 839px) {
+					float: none!important;
+					height: auto;
+					margin: 0!important;
+					padding: 0 0 4px 0!important;
+					width: 100%;
+				}
 			}
 			&[data-type="mp4"] {
 				height: auto;
 				width: 188px;
+				@media(max-width: 839px) {
+					float: none!important;
+					margin: 0!important;
+					padding: 0 0 4px 0!important;
+					width: 100%;
+				}
 				@media(min-width: 1154px) {
 					width: calc(#{$panelSize} *.75);
 				}
@@ -70,6 +93,11 @@
 				padding: 0 32px 0 32px;
 			}
 			&:first-child {
+				padding: 32px!important;
+			}
+			@media(max-width: 839px) {
+				display: block;
+				float: none;
 				padding: 32px!important;
 			}
 		}
