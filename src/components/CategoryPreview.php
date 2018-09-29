@@ -5,6 +5,7 @@
 
 		// Choose which ones to show this time
 		$categories_data = api_fetch("table=categories&sort_by=id");
+		$data_copy = $categories_data;
 		$categories = [];
 		$separated_categories = [];
 
@@ -19,8 +20,11 @@
 					$subs = json_decode($cat["subcategories"], true);
 					$cat["subcategories"] = [];
 					foreach ($subs as $sub) {
-						$sub_index = $sub - 1;
-						$cat["subcategories"][] = $categories_data[$sub_index];
+						foreach($data_copy as $copy) {
+							if ($copy["id"] == $sub) {
+								$cat["subcategories"][] = $copy;
+							}
+						}
 					}
 					usort($cat["subcategories"], "catord");
 					$current_categories[] = $cat;
