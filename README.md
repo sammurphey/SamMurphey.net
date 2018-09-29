@@ -1,6 +1,6 @@
 # SamMurphey.net
 My personal site.
 
-![Website Preview](./website_preview.jpg)
+![Website Preview](./screenFetch-2018-09-28_23-27-1.png)
 
-Built using React.
+Built using PHP.
