@@ -40,6 +40,10 @@ if ($ref_data !== "unused") {
 	if (valExists("subcategory", $ref_data)) {
 		$current_subcategory = $ref_data["subcategory"];
 	}
+	if (valExists("keywords", $data)) {
+		$page_keywords = json_decode($data["keywords"], true);
+		$keywords = implode(", ", $page_keywords);
+	}
 }
 if (!$search_term) {
 	if ($data) {
