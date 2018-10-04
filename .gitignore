@@ -13,6 +13,7 @@
 /data
 /api
 /src/img
+BingSiteAuth.xml
 
 # misc
 .DS_Store
