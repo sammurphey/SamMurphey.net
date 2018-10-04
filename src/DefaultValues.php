@@ -6,7 +6,7 @@ $document_description = "My name is Samantha Murphey. I'm a 23 y/o trans-lesbian
 $keywords = "code, art, music, design, games, transgender, lgbt, los angeles";
 $document_url = "https://sammurphey.net";
 $robots_txt= "INDEX FOLLOW";
-$document_version = "7.3.3";
+$document_version = "7.4.0.1";
 $creation_date = "9/16/2017";
 
 // page basics
@@ -21,4 +21,4 @@ $page_links = false;
 $page_credits = false;
 $page_keywords = false;
 $related_pages = false;
-$last_updated = "9/28/2018";
+$last_updated = "10/03/2018";

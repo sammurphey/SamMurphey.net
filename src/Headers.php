@@ -43,34 +43,53 @@ if ($ref_data !== "unused") {
 }
 if (!$search_term) {
 	if ($data) {
+				// title
 		if (valExists("title", $data)) {
 			$page_title = $data["title"];
 			$title_prefix = "Sam Murphey";
 			$title_separator = " | ";
-			if ($current_category == "music") {
+			$title_suffix = "Homepage";
+			if ($current_category == "img") {
+				$title_separator .= "Gallery | ";
+				$title_suffix = "Img #" . $data["id"];
+			} elseif ($current_category == "music") {
 				if ($ref_data) {
 					if (valExists("alias", $ref_data)) {
 						$title_prefix = $ref_data["alias"];
 					}
 				}
-				$title_separator .= "Music | ";
-			} elseif ($current_subcategory) {
-				$title_separator .= ucSmart($current_subcategory) . " | ";
-			} elseif ($current_category) {
-				$title_separator .= ucSmart($current_category) . " | ";
-			}
-			if ($title_prefix == $page_title) {
-				if ($current_category == "music") {
+				if ($title_prefix == $page_title) {
 					$title_suffix = "Releases";
-				} else {
-					$title_suffix = "Homepage";
 				}
+				$title_separator .= "Music | ";
 			} else {
 				$title_suffix = $page_title;
+				if ($current_subcategory) {
+					$title_separator .= ucSmart($current_subcategory) . " | ";
+				} elseif ($current_category) {
+					$title_separator .= ucSmart($current_category) . " | ";
+				}
 			}
 			$document_title = $title_prefix . $title_separator . $title_suffix;
+
 		}
-		if (valExists("description", $data)) {
+
+				//	description
+		if ($current_category == "search") {
+			$page_description = "Search results for '" . $search_term . "'";
+		} elseif ($current_category == "img") {
+			if (valExists("title", $data)) {
+				$page_description = $data["title"];
+			} else {
+				$page_description = $data["alt"];
+			}
+			$document_description = "Img #" . $data["id"] . "; ";
+			if (is_array($page_description)) {
+				$document_description .= $page_description[0];
+			} else {
+				$document_description .= $page_description;
+			}
+		} elseif (valExists("description", $data)) {
 			$page_description = $data["description"];
 			if (substr($page_description, 0, 1) === "[") {
 				$page_description = json_decode($page_description, true);
@@ -88,4 +107,11 @@ if (!$search_term) {
 		$page_description = "Sorry, but the page you requested could not be found.";
 		$document_description = $page_description;
 	}
+} else {
+	$document_title = "Sam Murphey | Search | " . ucSmart($search_term);
 }
+// clean up
+//$page_title = escapeQuotes($page_title);
+$document_title = escapeQuotes($document_title);
+//$page_description = escapeQuotes($page_description);
+$document_description = escapeQuotes($document_description);

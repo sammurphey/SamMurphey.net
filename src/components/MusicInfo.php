@@ -55,7 +55,7 @@
 				echo "<section id='page_1' class='tab_page panel'><header><h2>About</h2></header><p>";
 				if (is_array($page_description)) {
 					foreach($page_description as $line) {
-						echo "<span>" . $line . "<br/><br/></span>";
+						echo "<span>" . escapeQuotes($line) . "<br/><br/></span>";
 					}
 				} else {
 					echo $page_description;

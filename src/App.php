@@ -14,7 +14,6 @@
 <?php
 require_once($php_root . "src/components/Header.php");
 echo "<main id='app'>";
-		require_once($php_root . "src/functions/security.php");
 		require_once($php_root . "src/functions/img_element.php");
 		require_once($php_root . "src/components/Router.php");
 		include_once($php_root . "src/components/Footer.php");

@@ -16,6 +16,7 @@ require_once($php_root . "src/functions/get_current_url.php");
 require_once($php_root . "src/functions/api_fetch.php");
 require_once($php_root . "src/functions/uc_smart.php");
 require_once($php_root . "src/functions/val_exists.php");
+require_once($php_root . "src/functions/security.php");
 require_once($php_root . "src/Headers.php");
 ?>
 
@@ -59,8 +60,8 @@ require_once($php_root . "src/Headers.php");
 	</style>
 </head>
 <body>
-	<span class="version_number">V-7.4.0</span>
-	<a href="<?php echo $htp_root; ?> sitemap.xml" class="sitemap">SITEMAP.XML</a>
+	<span class="version_number">V-<?php echo $document_version; ?></span>
+	<a href="<?php echo $htp_root; ?>sitemap.xml" class="sitemap">SITEMAP.XML</a>
 	<?php require_once($php_root . "src/App.php"); ?>
 </body>
 </html>

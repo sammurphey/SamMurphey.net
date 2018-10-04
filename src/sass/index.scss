@@ -137,7 +137,7 @@ header, section, footer, aside, nav, main, article, figure {
 		}
 	}
 }
-#menu {
+#menu , #menu:before, #menu:after {
 	display: none;
 }
 #app {

@@ -127,7 +127,7 @@ header, section, footer, aside, nav, main, article, figure {
   #header .header_btn#search_btn {
     display: none; }
 
-#menu {
+#menu, #menu:before, #menu:after {
   display: none; }
 
 #app {
