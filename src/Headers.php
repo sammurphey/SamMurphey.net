@@ -29,11 +29,16 @@ if (strlen($current_path) > 0) {
 		}
 	}
 } else { //homepage, just get all the projects
+	$current_view = "overview";
+	$current_category = "all";
 	$data = api_fetch("view=overview");
 	$page_profile_photo = 332;
 	// 701
 }
 if ($ref_data !== "unused") {
+	if (valExists("view",$ref_data)) {
+		$current_view = $ref_data["view"];
+	}
 	if (valExists("category", $ref_data)) {
 		$current_category = $ref_data["category"];
 	}
@@ -42,21 +47,25 @@ if ($ref_data !== "unused") {
 	}
 	if (valExists("keywords", $data)) {
 		$page_keywords = json_decode($data["keywords"], true);
-		$keywords = implode(", ", $page_keywords);
+		if (is_array($page_keywords)) {
+			if (count($page_keywords) > 1) {
+				$keywords = implode(", ", $page_keywords);
+			}
+		}
 	}
 }
 if (!$search_term) {
 	if ($data) {
 				// title
-		if (valExists("title", $data)) {
+		if ($current_category == "all") {
+			$page_title = "Hello World,";
+			$page_description = "My name is Samantha Murphey. I'm a 23 y/o trans-lesbian hacker-girl living in LA, with a passion for merging art and code! I make web-apps, produce music, design logos and fonts, and draw with everything from pencils to 3D. There's quite a lot of material on this site to see / hear / play with, so I suggest choosing one of the categories below or to the left to start off with. Or if you think you can brave the chaos, scroll to the bottom for a full reverse-chronological view of ALL my work.";
+		} elseif (valExists("title", $data)) {
 			$page_title = $data["title"];
 			$title_prefix = "Sam Murphey";
 			$title_separator = " | ";
 			$title_suffix = "Homepage";
-			if ($current_category == "all") {
-				$page_title = "Hello World,";
-				$page_description = "My name is Samantha Murphey. I'm a 23 y/o trans-lesbian hacker-girl living in LA, with a passion for merging art and code! I make web-apps, produce music, design logos and fonts, and draw with everything from pencils to 3D. There's quite a lot of material on this site to see / hear / play with, so I suggest choosing one of the categories below or to the left to start off with. Or if you think you can brave the chaos, scroll to the bottom for a full reverse-chronological view of ALL my work.";
-			} elseif ($current_category == "img") {
+			if ($current_category == "img") {
 				$title_separator .= "Gallery | ";
 				$title_suffix = "Img #" . $data["id"];
 			} elseif ($current_category == "music") {
@@ -65,10 +74,14 @@ if (!$search_term) {
 						$title_prefix = $ref_data["alias"];
 					}
 				}
-				if ($title_prefix == $page_title) {
+				if ($current_view == "overview") {
 					$title_suffix = "Releases";
 				}
 				$title_separator .= "Music | ";
+				$title_suffix = $data["title"];
+				if ($title_suffix == $title_prefix || $title_suffix == "Music") {
+					$title_suffix = "Releases";
+				}
 			} else {
 				$title_suffix = $page_title;
 				if ($current_subcategory) {
@@ -76,6 +89,10 @@ if (!$search_term) {
 				} elseif ($current_category) {
 					$title_separator .= ucSmart($current_category) . " | ";
 				}
+			}
+			if (strtolower($page_title) == $current_category) {
+				$title_separator = " | " . $page_title;
+				$title_suffix = "";
 			}
 			$document_title = $title_prefix . $title_separator . $title_suffix;
 
