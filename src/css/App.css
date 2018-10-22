@@ -146,7 +146,8 @@
     padding-right: 32px; }
     @media (max-width: 460px) {
       #intro .page_description {
-        clear: both; } }
+        clear: both;
+        padding-top: 0px; } }
   #intro .profile_photo {
     float: right;
     margin-top: 14px;
