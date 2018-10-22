@@ -58,9 +58,9 @@ p, dt, dl {
 	& + * {
 		margin-top: $gridSize;
 	}
-	span + span{
+	span{
 		display: block;
-		margin-top: 8px;
+		margin-bottom: 8px;
 	}
 }
 h1, h2, h3, h4, h5, h6 {

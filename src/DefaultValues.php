@@ -21,4 +21,4 @@ $page_links = false;
 $page_credits = false;
 $page_keywords = false;
 $related_pages = false;
-$last_updated = "10/10/2018";
+$last_updated = "10/22/2018";

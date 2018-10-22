@@ -285,9 +285,9 @@ p, dt, dl {
     margin-top: 8px; }
   p + *, dt + *, dl + * {
     margin-top: 16px; }
-  p span + span, dt span + span, dl span + span {
+  p span, dt span, dl span {
     display: block;
-    margin-top: 8px; }
+    margin-bottom: 8px; }
 
 h1, h2, h3, h4, h5, h6 {
   display: block;
@@ -1142,7 +1142,8 @@ main#app {
       display: inline; } }
 
 .sidebar_desc {
-  opacity: .6; }
+  opacity: .6;
+  display: inline; }
   .sidebar_desc.sml {
     display: none; }
   .sidebar_desc.med {
