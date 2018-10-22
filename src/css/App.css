@@ -142,7 +142,7 @@
           width: calc(100% - 560px); } }
   #intro .page_description {
     margin-left: 32px;
-    padding-top: 16px;
+    padding-top: 60px;
     padding-right: 32px; }
     @media (max-width: 460px) {
       #intro .page_description {
@@ -227,6 +227,7 @@
 a {
   color: inherit;
   cursor: pointer;
+  line-height: 32px;
   position: relative;
   text-decoration: inherit; }
   a[rel="noopener noreferrer"] {
@@ -274,14 +275,18 @@ p, dt, dl {
   font-family: 'Ubuntu Mono', monospace;
   font-size: 17px;
   font-weight: lighter;
-  line-height: calc(16px * 2);
+  line-height: 24px;
   margin: 0;
   position: relative;
   word-break: break-word; }
   .panel p, .panel dt, .panel dl {
-    color: #666; }
+    color: #666;
+    margin-top: 8px; }
   p + *, dt + *, dl + * {
     margin-top: 16px; }
+  p span + span, dt span + span, dl span + span {
+    display: block;
+    margin-top: 8px; }
 
 h1, h2, h3, h4, h5, h6 {
   display: block;

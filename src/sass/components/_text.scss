@@ -3,6 +3,7 @@
 a {
 	color: inherit;
 	cursor: pointer;
+	line-height: 32px;
 	position: relative;
 	text-decoration: inherit;
 	&[rel="noopener noreferrer"] {
@@ -46,15 +47,20 @@ p, dt, dl {
 	font-family: 'Ubuntu Mono', monospace;
 	font-size: 17px;
 	font-weight: lighter;
-	line-height: calc(#{$gridSize} * 2);
+	line-height: 24px;
 	margin: 0;
 	position: relative;
 	word-break: break-word;
 	.panel & {
 		color: $textColor;
+		margin-top: 8px;
 	}
 	& + * {
 		margin-top: $gridSize;
+	}
+	span + span{
+		display: block;
+		margin-top: 8px;
 	}
 }
 h1, h2, h3, h4, h5, h6 {
