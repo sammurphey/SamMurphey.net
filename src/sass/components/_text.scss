@@ -115,4 +115,9 @@ dt, dl, dd {
 	span {
 		color: $textColor;
 	}
+	#metadata & {
+		a, span {
+			display: inline!important;
+		}
+	}
 }
