@@ -27,6 +27,11 @@
 					</a>
 				</li>
 				<li>
+					<a href="https://facebook.com" class="btn chip" title="Facebook" rel="noopener noreferrer" target="_blank">
+						<img class="icon" src="https://cdn.sammurphey.net/social/facebook.svg" alt="Facebook Logo" />
+					</a>
+				</li>
+				<li>
 					<a href="https://instagram.com/essaitchteeemel" class="btn chip"  title="Instagram" rel="noopener noreferrer" target="_blank">
 						<img class="icon" src="https://cdn.sammurphey.net/social/instagram.svg" alt="Instagram Logo" />
 					</a>
@@ -59,11 +64,6 @@
 				<li>
 					<a href="https://codepen.com/sammurphey" class="btn chip" title="CodePen" rel="noopener noreferrer" target="_blank">
 						<img class="icon" src="https://cdn.sammurphey.net/social/codepen.svg" alt="CodePen Logo" />
-					</a>
-				</li>
-				<li>
-					<a href="https://facebook.com" class="btn chip" title="Facebook" rel="noopener noreferrer" target="_blank">
-						<img class="icon" src="https://cdn.sammurphey.net/social/facebook.svg" alt="Facebook Logo" />
 					</a>
 				</li>
 			</ul>
