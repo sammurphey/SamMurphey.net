@@ -10,6 +10,8 @@
 #tracklist {
 	flex-grow: 0;
 	flex-shrink: 0;
+    max-height: 501px;
+    overflow: auto;
 	width: calc(100% - 4px);
 	@media(min-width: 1154px) {
 		width: $panelSize;
@@ -19,7 +21,7 @@
 		padding: 0 0 0 40px;
 		li {
 			& + * {
-				padding-top: 8px;
+			//	padding-top: 8px;
 			}
 			a {
 				color: $baseColor;

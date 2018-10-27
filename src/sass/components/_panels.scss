@@ -210,6 +210,10 @@
 #intro + #metadata {
 	margin-top: 4px;
 }
+#support {
+	margin:4px 2px 0 2px;
+	width: calc(100% - 4px);
+}
 #social_panel {
 	width: 100%!important;
 	margin: 0;

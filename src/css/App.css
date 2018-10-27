@@ -133,9 +133,6 @@
           float: left;
           margin-right: 0;
           width: calc(100% - 304px); } }
-      @media (min-width: 840px) {
-        #intro h1#page_title.with_hero {
-          width: calc(100% - 288px); } }
       @media (min-width: 1154px) {
         #intro h1#page_title.with_hero {
           margin-right: 48px;
@@ -968,6 +965,10 @@ main#app {
 #intro + #metadata {
   margin-top: 4px; }
 
+#support {
+  margin: 4px 2px 0 2px;
+  width: calc(100% - 4px); }
+
 #social_panel {
   width: 100% !important;
   margin: 0; }
@@ -1186,6 +1187,8 @@ main#app {
 #tracklist {
   flex-grow: 0;
   flex-shrink: 0;
+  max-height: 501px;
+  overflow: auto;
   width: calc(100% - 4px); }
   @media (min-width: 1154px) {
     #tracklist {
@@ -1193,8 +1196,6 @@ main#app {
   #tracklist ol {
     margin-top: 16px;
     padding: 0 0 0 40px; }
-    #tracklist ol li + * {
-      padding-top: 8px; }
     #tracklist ol li a {
       color: #989898;
       font-family: "Ubuntu", sans-serif;
@@ -1514,11 +1515,16 @@ main#app {
   ::-webkit-scrollbar-thumb:active {
     background: #00EFF1; }
 
+.panel::-webkit-scrollbar {
+  width: 2px; }
+
 .panel::-webkit-scrollbar-thumb {
-  background: #666; }
+  background: #000;
+  width: 2px; }
   .panel::-webkit-scrollbar-thumb:hover {
     background: #00EFF1; }
   .panel::-webkit-scrollbar-thumb:active {
+    opacity: 1;
     background: #00EFF1; }
 
 ::selection {

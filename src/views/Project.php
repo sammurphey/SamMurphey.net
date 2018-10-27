@@ -22,6 +22,9 @@
 		if ($page_credits || $page_keywords) {
 			include_once($php_root . "src/components/Meta.php");
 		}
+		if (valExists("support", $data)) {
+			include($php_root . "src/components/Support.php");
+		}
 		if ($related_pages) {
 			include_once($php_root . "src/components/Related.php");
 		}

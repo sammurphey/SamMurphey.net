@@ -38,12 +38,17 @@
 	}
 }
 .panel {
+	&::-webkit-scrollbar {
+		width: $paddingSml;
+	}
 	&::-webkit-scrollbar-thumb {
-		background: $textColor;
+		background: $black;
+		width: $paddingSml;
 		&:hover {
 			background: $tealColor;
 		}
 		&:active {
+			opacity: 1;
 			background: $tealColor;
 		}
 	}
