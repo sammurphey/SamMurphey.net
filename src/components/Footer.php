@@ -22,11 +22,6 @@
 					</a>
 				</li>
 				<li>
-					<a href="https://patreon.com/weirdoonthebus" class="btn chip" title="Game Dev Patreon" rel="noopener noreferrer" target="_blank">
-						<img class="icon" src="https://cdn.sammurphey.net/social/patreon.svg" alt="Patreon Logo" />
-					</a>
-				</li>
-				<li>
 					<a href="https://twitter.com/weirdoonthebus" class="btn chip" title="Twitter" rel="noopener noreferrer" target="_blank">
 						<img class="icon" src="https://cdn.sammurphey.net/social/twitter.svg" alt="Twitter Logo" />
 					</a>
@@ -67,18 +62,8 @@
 					</a>
 				</li>
 				<li>
-					<a href="https://stackoverflow.com/users/2719504/sam-murphey" class="btn chip"  title="StackOverflow" rel="noopener noreferrer" target="_blank">
-						<img class="icon" src="https://cdn.sammurphey.net/social/stackoverflow.svg" alt="StackOverflow Logo" />
-					</a>
-				</li>
-				<li>
 					<a href="https://facebook.com" class="btn chip" title="Facebook" rel="noopener noreferrer" target="_blank">
 						<img class="icon" src="https://cdn.sammurphey.net/social/facebook.svg" alt="Facebook Logo" />
-					</a>
-				</li>
-				<li>
-					<a href="https://www.linkedin.com/in/sammurphey" class="btn chip" title="LinkedIn" rel="noopener noreferrer" target="_blank">
-						<img class="icon" src="https://cdn.sammurphey.net/social/linkedin.svg" alt="LinkedIn Logo" />
 					</a>
 				</li>
 			</ul>
