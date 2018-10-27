@@ -132,7 +132,7 @@
         #intro h1#page_title.with_hero {
           float: left;
           margin-right: 0;
-          width: calc(100% - 304px); } }
+          width: calc(100% - 288px); } }
       @media (min-width: 1154px) {
         #intro h1#page_title.with_hero {
           margin-right: 48px;
