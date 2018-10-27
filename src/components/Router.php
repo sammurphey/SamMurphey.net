@@ -49,8 +49,6 @@ if (valExists("related", $data)) {
 	//$related_pages = usort($related_pages, "order_rel");
 }
 
-require_once("./src/components/Sidebar.php");
-
 switch ($current_view) {
 	case "overview":
 		include_once($php_root . "src/views/Overview.php");

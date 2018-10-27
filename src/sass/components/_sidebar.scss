@@ -1,15 +1,17 @@
 @import "../vars";
 
 #sidebar {
-	display: none;
+	opacity: 1;
 	z-index: 4;
 	@media(min-width: 840px) {
-		display: block;
 		height: calc(100% - 36px);
 		right: 32px;
 		position: fixed;
 		top: 16px;
 		width: calc(#{$blockSize} * 2);
+	}
+	@media(max-width: 839px) {
+		display: none;
 	}
 }
 

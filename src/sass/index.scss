@@ -59,6 +59,7 @@ header, section, footer, aside, nav, main, article, figure {
     display: block;
 }
 #header {
+	height: 0;
 	#header_corner {
 		height: 122px;
 	    left: 10px;
@@ -114,17 +115,20 @@ header, section, footer, aside, nav, main, article, figure {
 	.header_btn {
 		border: 0;
 		display: inline-block;
+		height: 64px;
+		min-width: 64px;
+		padding: 16px;
 		z-index: 4;
-		&#logo_btn, &#search_btn {
+		&#logo_btn, &#search_btn, &#menu_btn  {
 			align-items: center;
 			background: none;
 			display: flex;
 			justify-content: center;
 			margin: 0;
 			padding: 0;
+			position: absolute;
 		}
 		&#logo_btn {
-			position: absolute;
 			left: 0;
 			top: 0;
 			z-index: 6;
@@ -132,13 +136,20 @@ header, section, footer, aside, nav, main, article, figure {
 				padding: 0;
 			}
 		}
-		&#search_btn {
-		  	display: none;
+		&#search_btn, &#menu_btn {
+		  	opacity: 0;
+			transition: opacity .6s ease;
 		}
 	}
 }
-#menu , #menu:before, #menu:after {
-	display: none;
+#menu, #menu:before, #menu:after {
+	opacity: 0;
+	transition: all .6s ease .4s;
+}
+#sidebar {
+	opacity: 0;
+	transition: opacity .6s ease .8s;
+	will-change: opacity;
 }
 #app {
 	background: #989898;
@@ -152,9 +163,6 @@ header, section, footer, aside, nav, main, article, figure {
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	& > * {
-		display: none;
-	}
 }
 .version_number, .sitemap {
 	bottom: 0;

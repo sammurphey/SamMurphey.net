@@ -2,31 +2,13 @@
 
 #header {
 	.header_btn {
-		border: 0;
-		display: inline-block;
-		z-index: 4;
-		&#logo_btn, &#search_btn, &#menu_btn {
-			align-items: center;
-			background: none;
-			display: flex;
-			justify-content: center;
-			margin: 0;
-			padding: 0;
-			&:active, &:focus, &:hover {
-				* {
-					fill: $tealColor;
-				}
-			}
-		}
-		&#logo_btn {
-			position: absolute;
-			left: 0;
-			top: 0;
+		&:active, &:focus, &:hover {
 			* {
-				padding: 0;
+				fill: $tealColor;
 			}
 		}
 		&#search_btn, &#menu_btn {
+			opacity: 1;
 		  	position: absolute;
 			top: 8px;
 			@media(min-width: 840px) {
