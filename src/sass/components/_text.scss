@@ -114,6 +114,7 @@ dt, dl, dd {
 	a,
 	span {
 		color: $textColor;
+		display: inline;
 	}
 	#metadata & {
 		a, span {

@@ -337,7 +337,8 @@ dt, dl, dd {
   color: #000 !important; }
   .subtitle a,
   .subtitle span {
-    color: #666; }
+    color: #666;
+    display: inline; }
   #metadata .subtitle a, #metadata .subtitle span {
     display: inline !important; }
 
