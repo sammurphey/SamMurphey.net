@@ -36,8 +36,9 @@ if (valExists("keywords", $data)) {
 	$page_keywords = $data["keywords"];
 	if (substr($page_keywords, 0, 1) === "[") {
 		$page_keywords = json_decode($page_keywords, true);
-
-		sort($page_keywords);
+		if (is_array($page_keywords)) {
+			sort($page_keywords);
+		}
 	}
 }
 if (valExists("related", $data)) {

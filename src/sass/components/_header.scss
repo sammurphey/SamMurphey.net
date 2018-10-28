@@ -3,8 +3,13 @@
 #header {
 	.header_btn {
 		&:active, &:focus, &:hover {
-			* {
+			svg {
 				fill: $tealColor;
+			}
+			&#search_btn {
+				* {
+					fill: $tealColor;
+				}
 			}
 		}
 		&#search_btn, &#menu_btn {

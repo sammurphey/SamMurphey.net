@@ -109,7 +109,7 @@
     margin-bottom: 0;
     margin-left: 48px;
     margin-top: 0;
-    padding-bottom: 32px;
+    padding-bottom: 8px;
     padding-top: 16px;
     width: 100%; }
     @media (min-width: 460px) {
@@ -142,15 +142,14 @@
     padding-top: 0px;
     padding-right: 32px; }
     #intro .page_description:first-child {
-      padding-top: 60px; }
+      padding-top: 68px; }
     @media (max-width: 460px) {
       #intro .page_description {
         clear: both;
-        padding-top: 0px; } }
+        padding-top: 8px; } }
   #intro .profile_photo {
     float: right;
-    margin-top: 14px;
-    margin-right: 16px; }
+    margin: 16px; }
   #intro .hero_img {
     background: #989898;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2) inset, 0 2px 2px 0 rgba(0, 0, 0, 0.14) inset, 0 1px 5px 0 rgba(0, 0, 0, 0.12) inset;
@@ -554,7 +553,10 @@ input {
   input + * {
     margin-top: 8px; }
 
-#header .header_btn:active *, #header .header_btn:focus *, #header .header_btn:hover * {
+#header .header_btn:active svg, #header .header_btn:focus svg, #header .header_btn:hover svg {
+  fill: #00EFF1; }
+
+#header .header_btn:active#search_btn *, #header .header_btn:focus#search_btn *, #header .header_btn:hover#search_btn * {
   fill: #00EFF1; }
 
 #header .header_btn#search_btn, #header .header_btn#menu_btn {
@@ -620,9 +622,6 @@ input {
   margin: 16px 34px 34px 34px;
   width: calc(100% - 68px); }
 
-#menu, #menu:before, #menu:after {
-  opacity: 1; }
-
 nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -651,10 +650,12 @@ nav ul {
   display: block;
   height: calc(100vh - 20px);
   left: auto;
+  opacity: 1;
   padding: 32px;
   position: absolute;
   right: -183px;
   top: 2px;
+  transition-property: transform;
   width: 192px;
   will-change: transform;
   z-index: 4; }
@@ -665,18 +666,20 @@ nav ul {
     content: "";
     height: 100%;
     left: -32px;
+    opacity: 1;
     position: absolute;
     top: 0;
+    transition-property: transform;
     width: 32px; }
   #menu #close_menu_btn {
     position: absolute;
     top: -12px;
     right: 16px; }
-    #menu #close_menu_btn svg {
+    #menu #close_menu_btn .icon {
       padding: 6px; }
     #menu #close_menu_btn:hover, #menu #close_menu_btn:focus, #menu #close_menu_btn:active {
-      background: none; }
-      #menu #close_menu_btn:hover svg, #menu #close_menu_btn:focus svg, #menu #close_menu_btn:active svg {
+      background: #FFF; }
+      #menu #close_menu_btn:hover .icon, #menu #close_menu_btn:focus .icon, #menu #close_menu_btn:active .icon {
         fill: #00EFF1; }
   @media (min-width: 840px) and (min-height: 438px) {
     #menu {

@@ -1,7 +1,7 @@
 @import "../vars";
 
 #menu, #menu:before, #menu:after {
-	opacity: 1;
+
 }
 nav {
 	ul {
@@ -36,11 +36,12 @@ nav {
 	display: block;
 	height: calc(100vh - 20px);
 	left: auto;
+	opacity: 1;
 	padding: 32px;
 	position: absolute;
 	right: -183px;
 	top: 2px;
-	//transition: all .6s ease;
+	transition-property: transform;
 	width: 192px;
 	will-change: transform;
 	z-index: 4;
@@ -51,22 +52,24 @@ nav {
 		content: "";
 		height: 100%;
 		left: -32px;
+		opacity: 1;
 		position: absolute;
 		top: 0;
+		transition-property: transform;
 		width: 32px;
 	}
 	#close_menu_btn {
 		position: absolute;
 		top: -12px;
 		right: 16px;
-		svg {
+		.icon {
 			padding: 6px;
 		}
 		&:hover,
 		&:focus,
 		&:active {
-			background: none;
-			svg {
+			background: $highlightColor;
+			.icon {
 				fill: $tealColor;
 			}
 		}

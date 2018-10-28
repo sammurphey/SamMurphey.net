@@ -144,7 +144,10 @@ header, section, footer, aside, nav, main, article, figure {
 }
 #menu, #menu:before, #menu:after {
 	opacity: 0;
-	transition: all .6s ease .4s;
+	transition-delay: .4s;
+	transition-duration: .6s;
+	transition-property: all;
+	transition-timing-function:  ease;
 }
 #sidebar {
 	opacity: 0;

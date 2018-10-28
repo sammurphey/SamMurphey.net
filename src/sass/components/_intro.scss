@@ -20,7 +20,7 @@
 		margin-bottom: 0;
 		margin-left: 48px;
 		margin-top: 0;
-		padding-bottom: 32px;
+		padding-bottom: 8px;
 		padding-top: 16px;
 		width: 100%;
 		@media(min-width: 460px) {
@@ -63,18 +63,17 @@
 		padding-top: 0px;
 		padding-right: 32px;
 		&:first-child {
-			padding-top: 60px;
+			padding-top: 68px;
 		}
 		@media(max-width: 460px) {
 			clear: both;
-			padding-top: 0px;
+			padding-top: 8px;
 		}
 
 	}
 	.profile_photo {
 		float: right;
-		margin-top: 14px;
-		margin-right: 16px;
+		margin: 16px;
 	}
 	.hero_img {
 		background: $baseColor;
