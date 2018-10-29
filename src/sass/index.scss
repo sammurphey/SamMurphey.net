@@ -166,6 +166,14 @@ header, section, footer, aside, nav, main, article, figure {
 	position: relative;
 	z-index: 1;
 	width: 100%;
+	.overview_view,
+	.subcategory_view,
+	.project_view,
+	.details_view,
+	.null_view,
+	#footer {
+		opacity: 0;
+	}
 }
 .version_number, .sitemap {
 	bottom: 0;

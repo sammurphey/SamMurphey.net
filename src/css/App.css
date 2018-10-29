@@ -745,7 +745,7 @@ nav ul {
           #menu ul::-webkit-scrollbar-thumb:active {
             background: #00EFF1; } }
 
-main#app {
+#app {
   background: #989898;
   border-top: 4px solid #525252;
   border-right: 4px solid #CCC;
@@ -756,38 +756,40 @@ main#app {
   position: relative;
   z-index: 1;
   width: 100%; }
-  main#app .overview_view,
-  main#app .subcategory_view,
-  main#app .project_view,
-  main#app .details_view,
-  main#app .null_view,
-  main#app #footer {
+  #app .overview_view,
+  #app .subcategory_view,
+  #app .project_view,
+  #app .details_view,
+  #app .null_view,
+  #app #footer {
     position: relative;
+    transition: all .8s linear;
     width: 100%;
     will-change: transform;
     z-index: 2;
+    opacity: 1;
     /* sidebar active*/ }
     @media (min-width: 840px) {
-      main#app .overview_view,
-      main#app .subcategory_view,
-      main#app .project_view,
-      main#app .details_view,
-      main#app .null_view,
-      main#app #footer {
+      #app .overview_view,
+      #app .subcategory_view,
+      #app .project_view,
+      #app .details_view,
+      #app .null_view,
+      #app #footer {
         width: calc(100% - (138px * 2)); } }
-  main#app .overview_view,
-  main#app .subcategory_view,
-  main#app .project_view,
-  main#app .details_view,
-  main#app .null_view {
+  #app .overview_view,
+  #app .subcategory_view,
+  #app .project_view,
+  #app .details_view,
+  #app .null_view {
     display: block;
     margin: 55px auto 18px auto; }
     @media (min-width: 840px) {
-      main#app .overview_view,
-      main#app .subcategory_view,
-      main#app .project_view,
-      main#app .details_view,
-      main#app .null_view {
+      #app .overview_view,
+      #app .subcategory_view,
+      #app .project_view,
+      #app .details_view,
+      #app .null_view {
         margin: 114px auto 8px auto; } }
 
 .panel_wrapper {
@@ -848,7 +850,7 @@ main#app {
   display: block;
   margin: 2px;
   padding: 16px;
-  transition: background .2s linear; }
+  transition: all .2s linear; }
   @media (min-width: 600px) {
     .panel {
       padding: calc(16px * 2); } }

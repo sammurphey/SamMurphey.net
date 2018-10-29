@@ -78,7 +78,7 @@
 	display: block;
 	margin: 2px;
 	padding: $paddingXL;
-	transition: background .2s linear;
+	transition: all .2s linear;
 	@media(min-width: 600px) {
 		padding: calc(#{$paddingXL} * 2);
 	}

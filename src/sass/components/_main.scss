@@ -1,6 +1,6 @@
 @import "../vars";
 
-main#app {
+#app {
 	background: $baseColor;
 	border-top: 4px solid #525252;
 	border-right: 4px solid #CCC;
@@ -17,10 +17,12 @@ main#app {
 	.details_view,
 	.null_view,
 	#footer {
+
 		position: relative;
+		transition: all .8s linear;
 		width: 100%;
 		will-change: transform;
-		z-index: 2;
+		z-index: 2;opacity: 1;
 		/* sidebar active*/
 		@media(min-width: 840px) {
 			width: calc(100% - (#{$pagePaddingLrg} * 2));
