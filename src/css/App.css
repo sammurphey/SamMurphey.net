@@ -469,7 +469,6 @@ input {
   background: #989898 !important;
   border: 1px solid #000;
   color: #FFF;
-  cursor: pointer;
   display: block;
   height: 64px;
   font-family: "Kepler-452b", monospace;
@@ -498,7 +497,8 @@ input {
   input:hover {
     background: #b1b1b1 !important;
     border-color: #5f5f5f !important;
-    color: #FFF; }
+    color: #FFF;
+    cursor: pointer; }
     textarea:hover::placeholder,
     input:hover::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -517,7 +517,8 @@ input {
   input:focus,
   input:active {
     border-color: #00EFF1 !important;
-    color: #FFF; }
+    color: #FFF;
+    cursor: text; }
     textarea:focus::placeholder, textarea:active::placeholder,
     input:focus::placeholder,
     input:active::placeholder {
@@ -548,57 +549,55 @@ input {
     input[type="submit"]:focus,
     input[type="submit"]:active {
       border-color: #00EFF1 !important;
-      color: #00EFF1 !important; }
+      color: #00EFF1 !important;
+      cursor: pointer; }
   textarea + *,
   input + * {
     margin-top: 8px; }
 
-#header .header_btn:active svg, #header .header_btn:focus svg, #header .header_btn:hover svg {
-  fill: #00EFF1; }
-
-#header .header_btn:active#search_btn *, #header .header_btn:focus#search_btn *, #header .header_btn:hover#search_btn * {
-  fill: #00EFF1; }
-
-#header .header_btn#search_btn, #header .header_btn#menu_btn {
-  opacity: 1;
-  position: absolute;
-  top: 8px; }
-  @media (min-width: 840px) {
-    #header .header_btn#search_btn, #header .header_btn#menu_btn {
-      top: 20px; } }
-
-#header .header_btn#search_btn {
-  right: 64px; }
-  @media (min-width: 840px) {
-    #header .header_btn#search_btn {
-      right: 32px; } }
-  @media (min-width: 840px) and (max-height: 437px) {
-    #header .header_btn#search_btn {
-      right: 64px; } }
-  #header .header_btn#search_btn:active, #header .header_btn#search_btn:focus, #header .header_btn#search_btn:hover {
-    background: none; }
-    #header .header_btn#search_btn:active svg polygon, #header .header_btn#search_btn:focus svg polygon, #header .header_btn#search_btn:hover svg polygon {
-      fill: none;
-      stroke: #00EFF1; }
-
-#header .header_btn#menu_btn {
-  display: none; }
-  @media (max-width: 839px) {
-    #header .header_btn#menu_btn {
-      display: flex;
-      right: 16px; } }
-  @media (min-width: 840px) and (max-height: 437px) {
-    #header .header_btn#menu_btn {
-      display: flex;
-      right: 16px; } }
-  #header .header_btn#menu_btn svg {
-    padding: 6px; }
-  #header .header_btn#menu_btn:active, #header .header_btn#menu_btn:focus, #header .header_btn#menu_btn:hover {
-    background: none; }
-    #header .header_btn#menu_btn:active svg path, #header .header_btn#menu_btn:focus svg path, #header .header_btn#menu_btn:hover svg path {
-      fill: none; }
-    #header .header_btn#menu_btn:active svg .color, #header .header_btn#menu_btn:focus svg .color, #header .header_btn#menu_btn:hover svg .color {
-      fill: #00EFF1; }
+.header_btn {
+  opacity: 1; }
+  .header_btn:active svg, .header_btn:focus svg, .header_btn:hover svg {
+    fill: #00EFF1; }
+  .header_btn:active#search_btn *, .header_btn:focus#search_btn *, .header_btn:hover#search_btn * {
+    fill: #00EFF1; }
+  .header_btn#search_btn, .header_btn#menu_btn {
+    position: absolute;
+    top: 8px; }
+    @media (min-width: 840px) {
+      .header_btn#search_btn, .header_btn#menu_btn {
+        top: 20px; } }
+  .header_btn#search_btn {
+    right: 64px; }
+    @media (min-width: 840px) {
+      .header_btn#search_btn {
+        right: 32px; } }
+    @media (min-width: 840px) and (max-height: 437px) {
+      .header_btn#search_btn {
+        right: 64px; } }
+    .header_btn#search_btn:active, .header_btn#search_btn:focus, .header_btn#search_btn:hover {
+      background: none; }
+      .header_btn#search_btn:active svg polygon, .header_btn#search_btn:focus svg polygon, .header_btn#search_btn:hover svg polygon {
+        fill: none;
+        stroke: #00EFF1; }
+  .header_btn#menu_btn {
+    display: none; }
+    @media (max-width: 839px) {
+      .header_btn#menu_btn {
+        display: flex;
+        right: 16px; } }
+    @media (min-width: 840px) and (max-height: 437px) {
+      .header_btn#menu_btn {
+        display: flex;
+        right: 16px; } }
+    .header_btn#menu_btn svg {
+      padding: 6px; }
+    .header_btn#menu_btn:active, .header_btn#menu_btn:focus, .header_btn#menu_btn:hover {
+      background: none; }
+      .header_btn#menu_btn:active svg path, .header_btn#menu_btn:focus svg path, .header_btn#menu_btn:hover svg path {
+        fill: none; }
+      .header_btn#menu_btn:active svg .color, .header_btn#menu_btn:focus svg .color, .header_btn#menu_btn:hover svg .color {
+        fill: #00EFF1; }
 
 #footer {
   display: flex;

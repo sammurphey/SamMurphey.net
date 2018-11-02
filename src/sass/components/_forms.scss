@@ -5,7 +5,6 @@ input {
 	background: $baseColor!important;
 	border: 1px solid $black;
 	color: $highlightColor;
-	cursor: pointer;
 	display: block;
 	height: $blockSize;
 	font-family: "Kepler-452b", monospace;
@@ -32,6 +31,7 @@ input {
 		background: $lightGrey!important;
 		border-color: $darkGrey!important;
 		color: $highlightColor;
+		cursor: pointer;
 		&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 			color: $highlightColor;
 			opacity: 1; /* Firefox */
@@ -48,6 +48,7 @@ input {
 	&:focus, &:active {
 		border-color: $tealColor!important;
 		color: $highlightColor;
+		cursor: text;
 		&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 			color: $highlightColor;
 			opacity: 1; /* Firefox */
@@ -72,6 +73,7 @@ input {
 		&:focus, &:active {
 			border-color: $tealColor!important;
 			color: $tealColor!important;
+			cursor: pointer;
 		}
 	}
 	& + * {

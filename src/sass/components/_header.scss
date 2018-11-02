@@ -1,69 +1,67 @@
 @import "../vars";
 
-#header {
-	.header_btn {
-		&:active, &:focus, &:hover {
-			svg {
-				fill: $tealColor;
-			}
-			&#search_btn {
-				* {
-					fill: $tealColor;
-				}
-			}
-		}
-		&#search_btn, &#menu_btn {
-			opacity: 1;
-		  	position: absolute;
-			top: 8px;
-			@media(min-width: 840px) {
-				top: 20px;
-			}
+.header_btn {
+	opacity: 1;
+	&:active, &:focus, &:hover {
+		svg {
+			fill: $tealColor;
 		}
 		&#search_btn {
+			* {
+				fill: $tealColor;
+			}
+		}
+	}
+	&#search_btn, &#menu_btn {
+	  	position: absolute;
+		top: 8px;
+		@media(min-width: 840px) {
+			top: 20px;
+		}
+	}
+	&#search_btn {
+		right: 64px;
+		@media(min-width: 840px) {
+			right: 32px;
+		}
+		@media(min-width: 840px) AND (max-height: 437px) {
 			right: 64px;
-			@media(min-width: 840px) {
-				right: 32px;
-			}
-			@media(min-width: 840px) AND (max-height: 437px) {
-				right: 64px;
-			}
-			&:active,
-			&:focus,
-			&:hover {
-				background: none;
-				svg {
-					polygon {
-						fill: none;
-						stroke: $tealColor;
-					}
+		}
+		&:active,
+		&:focus,
+		&:hover {
+			background: none;
+			svg {
+				polygon {
+					fill: none;
+					stroke: $tealColor;
 				}
 			}
 		}
-		&#menu_btn {
-			display: none;
-			@media(max-width: 839px) {
-				display: flex;
-				right: 16px;
-			}
-			@media(min-width: 840px) AND (max-height: 437px) {
-				display: flex;
-				right: 16px;
-			}
+	}
+	&#menu_btn {
+		display: none;
+		@media(max-width: 839px) {
+			display: flex;
+			right: 16px;
+		}
+		@media(min-width: 840px) AND (max-height: 437px) {
+			display: flex;
+			right: 16px;
+		}
+		svg {
+			padding: 6px;
+		}
+		&:active,
+		&:focus,
+		&:hover {
+			background: none;
 			svg {
-				padding: 6px;
-			}
-			&:active,
-			&:focus,
-			&:hover {
-				background: none;
-				svg {
-					path {
-						fill: none;
-					}
-					.color {
-						fill: $tealColor;
-					}
+				path {
+					fill: none;
+				}
+				.color {
+					fill: $tealColor;
 				}
 			}
 		}
